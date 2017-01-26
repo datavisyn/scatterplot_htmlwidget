@@ -10,12 +10,14 @@ HTMLWidgets.widget({
     el.style.position = 'relative';
     el.style.overflow = 'auto';
 
-	var s = null;
+	  var s = null;
 
     return {
 
       renderValue: function(x) {
-        s = new datavisyn.scatterplot.Scatterplot(x, el);
+        console.log(window);
+        var data = HTMLWidgets.dataframeToD3(x.data);
+        s = new datavisyn.scatterplot.Scatterplot(data, el, x.options);
       },
 
       resize: function(width, height) {

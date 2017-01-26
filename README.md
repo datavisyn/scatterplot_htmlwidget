@@ -8,12 +8,12 @@ Installation
 
 ```R
 devtools::install_github("datavisyn/scatterplot_htmlwidget")
-library(scatterplot)
+library(datavisynScatterplot)
 ```
 
 Examples
 --------
 
 ```R
-scatterplot(mtcars)
+datavisynScatterplot(x=mtcars$mpg,y=mtcars$hp)
 ```
