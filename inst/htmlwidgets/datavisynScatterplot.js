@@ -15,15 +15,20 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
-        console.log(window);
         var data = HTMLWidgets.dataframeToD3(x.data);
         s = new datavisyn.scatterplot.Scatterplot(data, el, x.options);
+        var elem = el.childNodes[0];
+        elem.style.width='100%';
+        elem.style.height='100%';
+        s.render();
       },
 
       resize: function(width, height) {
         el.style.width = width;
         el.style.height = height;
-        s.update();
+        if (s) {
+          s.render();
+        }
       }
 
     };

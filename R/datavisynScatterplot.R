@@ -10,7 +10,7 @@ datavisynScatterplot <- function(x, y, xlab='x', ylab='y', width = NULL, height 
 
   # forward options using x
   x = list(
-    data=cbind(x = x, y = y),
+    data=data.frame(x = x, y = y),
     options=list(xlabel=xlab, ylabel=ylab, xlim=c(min(x),max(x)), ylim=c(min(y),max(y)))
   )
   # create widget

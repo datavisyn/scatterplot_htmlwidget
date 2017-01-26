@@ -1,10 +1,14910 @@
 /*! datavisyn-scatterplot - v0.0.1 - 2017
 * https://phovea.caleydo.org
 * Copyright (c) 2017 datavisyn GmbH; Licensed BSD-3-Clause*/
-!function(t,n){"object"==typeof exports&&"object"==typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.scatterplot=n():(t.datavisyn=t.datavisyn||{},t.datavisyn.scatterplot=n())}(this,function(){return function(t){function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}var e={};return n.m=t,n.c=e,n.i=function(t){return t},n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},n.p="",n(n.s=321)}([function(t,n,e){"use strict";var i=(e(39),e(220),e(89));e.d(n,"i",function(){return i.a});var r=e(221);e.d(n,"c",function(){return r.a});var a=e(40);e.d(n,"h",function(){return a.a});var o=(e(41),e(222));e.d(n,"a",function(){return o.a});var u=(e(223),e(3));e.d(n,"f",function(){return u.c});var s=e(44);e.d(n,"k",function(){return s.a});var c=e(92);e.d(n,"j",function(){return c.a});var f=e(251);e.d(n,"d",function(){return f.a});var h=(e(252),e(46));e.d(n,"g",function(){return h.a});var l=e(43);e.d(n,"b",function(){return l.a}),e.d(n,"e",function(){return l.c})},function(t,n,e){"use strict";function i(t,n,e,o){function u(n){return t(n=new Date(+n)),n}return u.floor=u,u.ceil=function(e){return t(e=new Date(e-1)),n(e,1),t(e),e},u.round=function(t){var n=u(t),e=u.ceil(t);return t-n<e-t?n:e},u.offset=function(t,e){return n(t=new Date(+t),null==e?1:Math.floor(e)),t},u.range=function(e,i,r){var a=[];if(e=u.ceil(e),r=null==r?1:Math.floor(r),!(e<i&&r>0))return a;do a.push(new Date(+e));while(n(e,r),t(e),e<i);return a},u.filter=function(e){return i(function(n){if(n>=n)for(;t(n),!e(n);)n.setTime(n-1)},function(t,i){if(t>=t)for(;--i>=0;)for(;n(t,1),!e(t););})},e&&(u.count=function(n,i){return r.setTime(+n),a.setTime(+i),t(r),t(a),Math.floor(e(r,a))},u.every=function(t){return t=Math.floor(t),isFinite(t)&&t>0?t>1?u.filter(o?function(n){return o(n)%t===0}:function(n){return u.count(0,n)%t===0}):u:null}),u}n.a=i;var r=new Date,a=new Date},function(t,n,e){"use strict";var i=e(59);e.d(n,"c",function(){return i.a});var r=e(10);e.d(n,"f",function(){return r.a});var a=e(60);e.d(n,"d",function(){return a.a});var o=(e(121),e(61),e(62));e.d(n,"h",function(){return o.a});var u=(e(122),e(133),e(134),e(65),e(124),e(125),e(126),e(127),e(63),e(128),e(129),e(28));e.d(n,"e",function(){return u.a});var s=e(64);e.d(n,"g",function(){return s.a});var c=(e(130),e(131));e.d(n,"i",function(){return c.a});var f=(e(132),e(66));e.d(n,"a",function(){return f.a}),e.d(n,"b",function(){return f.b});e(67),e(68),e(135)},function(t,n,e){"use strict";function i(t,n){this._groups=t,this._parents=n}function r(){return new i([[document.documentElement]],P)}var a=e(245),o=e(246),u=e(234),s=e(228),c=e(90),f=e(233),h=e(238),l=e(241),d=e(248),p=e(226),_=e(240),v=e(239),y=e(247),b=e(232),g=e(231),m=e(225),x=e(249),w=e(242),M=e(227),T=e(250),E=e(235),N=e(243),S=e(237),A=e(224),k=e(236),C=e(244),L=e(229),D=e(43),z=e(230);e.d(n,"b",function(){return P}),n.a=i;var P=[null];i.prototype=r.prototype={constructor:i,select:a.a,selectAll:o.a,filter:u.a,data:s.a,enter:c.a,exit:f.a,merge:h.a,order:l.a,sort:d.a,call:p.a,nodes:_.a,node:v.a,size:y.a,empty:b.a,each:g.a,attr:m.a,style:x.a,property:w.a,classed:M.a,text:T.a,html:E.a,raise:N.a,lower:S.a,append:A.a,insert:k.a,remove:C.a,datum:L.a,on:D.b,dispatch:z.a},n.c=r},function(t,n,e){"use strict";function i(t,n){var e=t.__transition;if(!e||!(e=e[n])||e.state>h)throw new Error("too late");return e}function r(t,n){var e=t.__transition;if(!e||!(e=e[n])||e.state>d)throw new Error("too late");return e}function a(t,n){var e=t.__transition;if(!e||!(e=e[n]))throw new Error("too late");return e}function o(t,n,i){function r(t){i.state=l,i.timer.restart(a,i.delay,i.time),i.delay<=t&&a(t-i.delay)}function a(r){var h,v,b,g;if(i.state!==l)return u();for(h in f)if(g=f[h],g.name===i.name){if(g.state===p)return e.i(s.b)(a);g.state===_?(g.state=y,g.timer.stop(),g.on.call("interrupt",t,t.__data__,g.index,g.group),delete f[h]):+h<n&&(g.state=y,g.timer.stop(),delete f[h])}if(e.i(s.b)(function(){i.state===p&&(i.state=_,i.timer.restart(o,i.delay,i.time),o(r))}),i.state=d,i.on.call("start",t,t.__data__,i.index,i.group),i.state===d){for(i.state=p,c=new Array(b=i.tween.length),h=0,v=-1;h<b;++h)(g=i.tween[h].value.call(t,t.__data__,i.index,i.group))&&(c[++v]=g);c.length=v+1}}function o(n){for(var e=n<i.duration?i.ease.call(null,n/i.duration):(i.timer.restart(u),i.state=v,1),r=-1,a=c.length;++r<a;)c[r].call(null,e);i.state===v&&(i.on.call("end",t,t.__data__,i.index,i.group),u())}function u(){i.state=y,i.timer.stop(),delete f[n];for(var e in f)return;delete t.__transition}var c,f=t.__transition;f[n]=i,i.timer=e.i(s.a)(r,0,i.time)}var u=e(32),s=e(110);e.d(n,"d",function(){return l}),e.d(n,"a",function(){return d}),e.d(n,"b",function(){return v}),e.d(n,"c",function(){return y}),n.g=i,n.e=r,n.f=a;var c=e.i(u.a)("start","end","interrupt"),f=[],h=0,l=1,d=2,p=3,_=4,v=5,y=6;n.h=function(t,n,e,i,r,a){var u=t.__transition;if(u){if(e in u)return}else t.__transition={};o(t,e,{name:n,index:i,group:r,on:c,tween:f,time:a.time,delay:a.delay,duration:a.duration,ease:a.ease,timer:null,state:h})}},function(t,n,e){"use strict";var i=e(30);e.d(n,"f",function(){return i.h}),e.d(n,"e",function(){return i.g}),e.d(n,"d",function(){return i.f});var r=e(147);e.d(n,"c",function(){return r.b}),e.d(n,"b",function(){return r.a});var a=e(146);e.d(n,"a",function(){return a.a})},function(t,n,e){"use strict";var i=e(36);e.d(n,"b",function(){return i.a});var r=(e(77),e(35),e(78),e(80),e(20));e.d(n,"a",function(){return r.a});var a=(e(81),e(175));e.d(n,"c",function(){return a.a});var o=e(83);e.d(n,"h",function(){return o.a});var u=e(177);e.d(n,"f",function(){return u.a}),e.d(n,"i",function(){return u.b});var s=e(179);e.d(n,"e",function(){return s.a});var c=e(82);e.d(n,"g",function(){return c.a});var f=(e(172),e(173),e(171),e(170));e.d(n,"d",function(){return f.a});e(174)},function(t,n,e){"use strict";e.d(n,"e",function(){return i}),e.d(n,"d",function(){return r}),e.d(n,"c",function(){return a}),e.d(n,"b",function(){return o}),e.d(n,"a",function(){return u});var i=1e3,r=6e4,a=36e5,o=864e5,u=6048e5},function(t,n,e){"use strict";function i(t,n,e,i){this._groups=t,this._parents=n,this._name=e,this._id=i}function r(t){return e.i(o.f)().transition(t)}function a(){return++T}var o=e(0),u=e(298),s=e(299),c=e(300),f=e(301),h=e(302),l=e(303),d=e(304),p=e(305),_=e(306),v=e(307),y=e(308),b=e(309),g=e(310),m=e(311),x=e(312),w=e(313),M=e(27);n.a=i,n.b=a;var T=0,E=o.f.prototype;i.prototype=r.prototype={constructor:i,select:v.a,selectAll:y.a,filter:l.a,merge:d.a,selection:b.a,transition:w.a,call:E.call,nodes:E.nodes,node:E.node,size:E.size,empty:E.empty,each:E.each,on:p.a,attr:u.a,attrTween:s.a,style:g.a,styleTween:m.a,text:x.a,remove:_.a,tween:M.a,delay:c.a,duration:f.a,ease:h.a}},function(t,n,e){"use strict";e.d(n,"a",function(){return r}),e.d(n,"b",function(){return a});var i=Array.prototype,r=i.map,a=i.slice},function(t,n,e){"use strict";n.a=function(t,n){return t<n?-1:t>n?1:t>=n?0:NaN}},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";n.a=function(t){return null===t?NaN:+t}},function(t,n,e){"use strict";function i(t,n){return function(e){return t+e*n}}function r(t,n,e){return t=Math.pow(t,e),n=Math.pow(n,e)-t,e=1/e,function(i){return Math.pow(t+i*n,e)}}function a(t,n){var r=n-t;return r?i(t,r>180||r<-180?r-360*Math.round(r/360):r):e.i(s.a)(isNaN(t)?n:t)}function o(t){return 1===(t=+t)?u:function(n,i){return i-n?r(n,i,t):e.i(s.a)(isNaN(n)?i:n)}}function u(t,n){var r=n-t;return r?i(t,r):e.i(s.a)(isNaN(t)?n:t)}var s=e(79);n.b=a,n.c=o,n.a=u},function(t,n,e){"use strict";n.a=function(t){return t.match(/.{6}/g).map(function(t){return"#"+t})}},function(t,n,e){"use strict";function i(t){var n=t.domain;return t.ticks=function(t){var i=n();return e.i(a.a)(i[0],i[i.length-1],null==t?10:t)},t.tickFormat=function(t,i){return e.i(s.a)(n(),t,i)},t.nice=function(i){var r=n(),o=r.length-1,u=null==i?10:i,s=r[0],c=r[o],f=e.i(a.b)(s,c,u);return f&&(f=e.i(a.b)(Math.floor(s/f)*f,Math.ceil(c/f)*f,u),r[0]=Math.floor(s/f)*f,r[o]=Math.ceil(c/f)*f,n(r)),t},t}function r(){var t=e.i(u.a)(u.b,o.a);return t.copy=function(){return e.i(u.c)(t,r())},i(t)}var a=e(2),o=e(6),u=e(22),s=e(216);n.b=i,n.a=r},function(t,n,e){"use strict";e.d(n,"a",function(){return i}),e.d(n,"b",function(){return r}),e.d(n,"d",function(){return a}),e.d(n,"c",function(){return o});var i=1e-12,r=Math.PI,a=r/2,o=2*r},function(t,n,e){"use strict";n.a=function(t,n){if((i=t.length)>1)for(var e,i,r=1,a=t[n[0]],o=a.length;r<i;++r){e=a,a=t[n[r]];for(var u=0;u<o;++u)a[u][1]+=a[u][0]=isNaN(e[u][1])?e[u][0]:e[u][1]}}},function(t,n,e){"use strict";n.a=function(t){for(var n=t.length,e=new Array(n);--n>=0;)e[n]=n;return e}},function(t,n,e){"use strict";var i=e(34);n.a=function(t){return t=e.i(i.a)(Math.abs(t)),t?t[1]:NaN}},function(t,n,e){"use strict";n.a=function(t,n){return t=+t,n-=t,function(e){return t+n*e}}},function(t,n,e){"use strict";var i=e(180);e.d(n,"a",function(){return i.a})},function(t,n,e){"use strict";function i(t,n){return(n-=t=+t)?function(e){return(e-t)/n}:e.i(d.a)(n)}function r(t){return function(n,e){var i=t(n=+n,e=+e);return function(t){return t<=n?0:t>=e?1:i(t)}}}function a(t){return function(n,e){var i=t(n=+n,e=+e);return function(t){return t<=0?n:t>=1?e:i(t)}}}function o(t,n,e,i){var r=t[0],a=t[1],o=n[0],u=n[1];return a<r?(r=e(a,r),o=i(u,o)):(r=e(r,a),o=i(o,u)),function(t){return o(r(t))}}function u(t,n,i,r){var a=Math.min(t.length,n.length)-1,o=new Array(a),u=new Array(a),s=-1;for(t[a]<t[0]&&(t=t.slice().reverse(),n=n.slice().reverse());++s<a;)o[s]=i(t[s],t[s+1]),u[s]=r(n[s],n[s+1]);return function(n){var i=e.i(f.c)(t,n,1,a)-1;return u[i](o[i](n))}}function s(t,n){return n.domain(t.domain()).range(t.range()).interpolate(t.interpolate()).clamp(t.clamp())}function c(t,n){function e(){return c=Math.min(v.length,y.length)>2?u:o,f=d=null,s}function s(n){return(f||(f=c(v,y,g?r(t):t,b)))(+n)}var c,f,d,v=_,y=_,b=h.b,g=!1;return s.invert=function(t){return(d||(d=c(y,v,i,g?a(n):n)))(+t)},s.domain=function(t){return arguments.length?(v=l.a.call(t,p.a),e()):v.slice()},s.range=function(t){return arguments.length?(y=l.b.call(t),e()):y.slice()},s.rangeRound=function(t){return y=l.b.call(t),b=h.c,e()},s.clamp=function(t){return arguments.length?(g=!!t,e()):g},s.interpolate=function(t){return arguments.length?(b=t,e()):b},e()}var f=e(2),h=e(6),l=e(9),d=e(38),p=e(86);n.b=i,n.c=s,n.a=c;var _=[0,1]},function(t,n,e){"use strict";function i(t,n,e){t._context.bezierCurveTo((2*t._x0+t._x1)/3,(2*t._y0+t._y1)/3,(t._x0+2*t._x1)/3,(t._y0+2*t._y1)/3,(t._x0+4*t._x1+n)/6,(t._y0+4*t._y1+e)/6)}function r(t){this._context=t}n.b=i,n.a=r,r.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._y0=this._y1=NaN,this._point=0},lineEnd:function(){switch(this._point){case 3:i(this,this._x1,this._y1);case 2:this._context.lineTo(this._x1,this._y1)}(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2;break;case 2:this._point=3,this._context.lineTo((5*this._x0+this._x1)/6,(5*this._y0+this._y1)/6);default:i(this,t,n)}this._x0=this._x1,this._x1=t,this._y0=this._y1,this._y1=n}}},function(t,n,e){"use strict";function i(t,n,e){t._context.bezierCurveTo(t._x1+t._k*(t._x2-t._x0),t._y1+t._k*(t._y2-t._y0),t._x2+t._k*(t._x1-n),t._y2+t._k*(t._y1-e),t._x2,t._y2)}function r(t,n){this._context=t,this._k=(1-n)/6}n.b=i,n.a=r,r.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._x2=this._y0=this._y1=this._y2=NaN,this._point=0},lineEnd:function(){switch(this._point){case 2:this._context.lineTo(this._x2,this._y2);break;case 3:i(this,this._x1,this._y1)}(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2,this._x1=t,this._y1=n;break;case 2:this._point=3;default:i(this,t,n)}this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return new r(t,n)}return e.tension=function(n){return t(+n)},e})(0)},function(t,n,e){"use strict";function i(t){this._context=t}i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._point=0},lineEnd:function(){(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2;default:this._context.lineTo(t,n)}}},n.a=function(t){return new i(t)}},function(t,n,e){"use strict";n.a=function(){}},function(t,n,e){"use strict";function i(t,n){var i,r;return function(){var a=e.i(o.e)(this,t),u=a.tween;if(u!==i){r=i=u;for(var s=0,c=r.length;s<c;++s)if(r[s].name===n){r=r.slice(),r.splice(s,1);break}}a.tween=r}}function r(t,n,i){var r,a;if("function"!=typeof i)throw new Error;return function(){var u=e.i(o.e)(this,t),s=u.tween;if(s!==r){a=(r=s).slice();for(var c={name:n,value:i},f=0,h=a.length;f<h;++f)if(a[f].name===n){a[f]=c;break}f===h&&a.push(c)}u.tween=a}}function a(t,n,i){var r=t._id;return t.each(function(){var t=e.i(o.e)(this,r);(t.value||(t.value={}))[n]=i.apply(this,arguments)}),function(t){return e.i(o.f)(t,r).value[n]}}var o=e(4);n.b=a,n.a=function(t,n){var a=this._id;if(t+="",arguments.length<2){for(var u,s=e.i(o.f)(this.node(),a).tween,c=0,f=s.length;c<f;++c)if((u=s[c]).name===t)return u.value;return null}return this.each((null==n?i:r)(a,t,n))}},function(t,n,e){"use strict";var i=e(12);n.a=function(t,n,e){if(null==e&&(e=i.a),r=t.length){if((n=+n)<=0||r<2)return+e(t[0],0,t);if(n>=1)return+e(t[r-1],r-1,t);var r,a=(r-1)*n,o=Math.floor(a),u=+e(t[o],o,t),s=+e(t[o+1],o+1,t);return u+(s-u)*(a-o)}}},function(t,n,e){"use strict";function i(){}function r(t,n){var e=new i;if(t instanceof i)t.each(function(t,n){e.set(n,t)});else if(Array.isArray(t)){var r,a=-1,o=t.length;if(null==n)for(;++a<o;)e.set(a,t[a]);else for(;++a<o;)e.set(n(r=t[a],a,t),r)}else if(t)for(var u in t)e.set(u,t[u]);return e}e.d(n,"b",function(){return a});var a="$";i.prototype=r.prototype={constructor:i,has:function(t){return a+t in this},get:function(t){return this[a+t]},set:function(t,n){return this[a+t]=n,this},remove:function(t){var n=a+t;return n in this&&delete this[n]},clear:function(){for(var t in this)t[0]===a&&delete this[t]},keys:function(){var t=[];for(var n in this)n[0]===a&&t.push(n.slice(1));return t},values:function(){var t=[];for(var n in this)n[0]===a&&t.push(this[n]);return t},entries:function(){var t=[];for(var n in this)n[0]===a&&t.push({key:n.slice(1),value:this[n]});return t},size:function(){var t=0;for(var n in this)n[0]===a&&++t;return t},empty:function(){for(var t in this)if(t[0]===a)return!1;return!0},each:function(t){for(var n in this)n[0]===a&&t(this[n],n.slice(1),this)}},n.a=r},function(t,n,e){"use strict";function i(){}function r(t){var n;return t=(t+"").trim().toLowerCase(),(n=x.exec(t))?(n=parseInt(n[1],16),new c(n>>8&15|n>>4&240,n>>4&15|240&n,(15&n)<<4|15&n,1)):(n=w.exec(t))?a(parseInt(n[1],16)):(n=M.exec(t))?new c(n[1],n[2],n[3],1):(n=T.exec(t))?new c(255*n[1]/100,255*n[2]/100,255*n[3]/100,1):(n=E.exec(t))?o(n[1],n[2],n[3],n[4]):(n=N.exec(t))?o(255*n[1]/100,255*n[2]/100,255*n[3]/100,n[4]):(n=S.exec(t))?f(n[1],n[2]/100,n[3]/100,1):(n=A.exec(t))?f(n[1],n[2]/100,n[3]/100,n[4]):k.hasOwnProperty(t)?a(k[t]):"transparent"===t?new c(NaN,NaN,NaN,0):null}function a(t){return new c(t>>16&255,t>>8&255,255&t,1)}function o(t,n,e,i){return i<=0&&(t=n=e=NaN),new c(t,n,e,i)}function u(t){return t instanceof i||(t=r(t)),t?(t=t.rgb(),new c(t.r,t.g,t.b,t.opacity)):new c}function s(t,n,e,i){return 1===arguments.length?u(t):new c(t,n,e,null==i?1:i)}function c(t,n,e,i){this.r=+t,this.g=+n,this.b=+e,this.opacity=+i}function f(t,n,e,i){return i<=0?t=n=e=NaN:e<=0||e>=1?t=n=NaN:n<=0&&(t=NaN),new d(t,n,e,i)}function h(t){if(t instanceof d)return new d(t.h,t.s,t.l,t.opacity);if(t instanceof i||(t=r(t)),!t)return new d;if(t instanceof d)return t;t=t.rgb();var n=t.r/255,e=t.g/255,a=t.b/255,o=Math.min(n,e,a),u=Math.max(n,e,a),s=NaN,c=u-o,f=(u+o)/2;return c?(s=n===u?(e-a)/c+6*(e<a):e===u?(a-n)/c+2:(n-e)/c+4,c/=f<.5?u+o:2-u-o,s*=60):c=f>0&&f<1?0:s,new d(s,c,f,t.opacity)}function l(t,n,e,i){return 1===arguments.length?h(t):new d(t,n,e,null==i?1:i)}function d(t,n,e,i){this.h=+t,this.s=+n,this.l=+e,this.opacity=+i}function p(t,n,e){return 255*(t<60?n+(e-n)*t/60:t<180?e:t<240?n+(e-n)*(240-t)/60:n)}var _=e(31);n.c=i,e.d(n,"e",function(){return v}),e.d(n,"d",function(){return y}),n.h=r,n.b=u,n.g=s,n.a=c,n.f=l;var v=.7,y=1/v,b="\\s*([+-]?\\d+)\\s*",g="\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",m="\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",x=/^#([0-9a-f]{3})$/,w=/^#([0-9a-f]{6})$/,M=new RegExp("^rgb\\("+[b,b,b]+"\\)$"),T=new RegExp("^rgb\\("+[m,m,m]+"\\)$"),E=new RegExp("^rgba\\("+[b,b,b,g]+"\\)$"),N=new RegExp("^rgba\\("+[m,m,m,g]+"\\)$"),S=new RegExp("^hsl\\("+[g,m,m]+"\\)$"),A=new RegExp("^hsla\\("+[g,m,m,g]+"\\)$"),k={aliceblue:15792383,antiquewhite:16444375,aqua:65535,aquamarine:8388564,azure:15794175,beige:16119260,bisque:16770244,black:0,blanchedalmond:16772045,blue:255,blueviolet:9055202,brown:10824234,burlywood:14596231,cadetblue:6266528,chartreuse:8388352,chocolate:13789470,coral:16744272,cornflowerblue:6591981,cornsilk:16775388,crimson:14423100,cyan:65535,darkblue:139,darkcyan:35723,darkgoldenrod:12092939,darkgray:11119017,darkgreen:25600,darkgrey:11119017,darkkhaki:12433259,darkmagenta:9109643,darkolivegreen:5597999,darkorange:16747520,darkorchid:10040012,darkred:9109504,darksalmon:15308410,darkseagreen:9419919,darkslateblue:4734347,darkslategray:3100495,darkslategrey:3100495,darkturquoise:52945,darkviolet:9699539,deeppink:16716947,deepskyblue:49151,dimgray:6908265,dimgrey:6908265,dodgerblue:2003199,firebrick:11674146,floralwhite:16775920,forestgreen:2263842,fuchsia:16711935,gainsboro:14474460,ghostwhite:16316671,gold:16766720,goldenrod:14329120,gray:8421504,green:32768,greenyellow:11403055,grey:8421504,honeydew:15794160,hotpink:16738740,indianred:13458524,indigo:4915330,ivory:16777200,khaki:15787660,lavender:15132410,lavenderblush:16773365,lawngreen:8190976,lemonchiffon:16775885,lightblue:11393254,lightcoral:15761536,lightcyan:14745599,lightgoldenrodyellow:16448210,lightgray:13882323,lightgreen:9498256,lightgrey:13882323,lightpink:16758465,lightsalmon:16752762,lightseagreen:2142890,lightskyblue:8900346,lightslategray:7833753,lightslategrey:7833753,lightsteelblue:11584734,lightyellow:16777184,lime:65280,limegreen:3329330,linen:16445670,magenta:16711935,maroon:8388608,mediumaquamarine:6737322,mediumblue:205,mediumorchid:12211667,mediumpurple:9662683,mediumseagreen:3978097,mediumslateblue:8087790,mediumspringgreen:64154,mediumturquoise:4772300,mediumvioletred:13047173,midnightblue:1644912,mintcream:16121850,mistyrose:16770273,moccasin:16770229,navajowhite:16768685,navy:128,oldlace:16643558,olive:8421376,olivedrab:7048739,orange:16753920,orangered:16729344,orchid:14315734,palegoldenrod:15657130,palegreen:10025880,paleturquoise:11529966,palevioletred:14381203,papayawhip:16773077,peachpuff:16767673,peru:13468991,pink:16761035,plum:14524637,powderblue:11591910,purple:8388736,rebeccapurple:6697881,red:16711680,rosybrown:12357519,royalblue:4286945,saddlebrown:9127187,salmon:16416882,sandybrown:16032864,seagreen:3050327,seashell:16774638,sienna:10506797,silver:12632256,skyblue:8900331,slateblue:6970061,slategray:7372944,slategrey:7372944,snow:16775930,springgreen:65407,steelblue:4620980,tan:13808780,teal:32896,thistle:14204888,tomato:16737095,turquoise:4251856,violet:15631086,wheat:16113331,white:16777215,whitesmoke:16119285,yellow:16776960,yellowgreen:10145074};e.i(_.a)(i,r,{displayable:function(){return this.rgb().displayable()},toString:function(){return this.rgb()+""}}),e.i(_.a)(c,s,e.i(_.b)(i,{brighter:function(t){return t=null==t?y:Math.pow(y,t),new c(this.r*t,this.g*t,this.b*t,this.opacity)},darker:function(t){return t=null==t?v:Math.pow(v,t),new c(this.r*t,this.g*t,this.b*t,this.opacity)},rgb:function(){return this},displayable:function(){return 0<=this.r&&this.r<=255&&0<=this.g&&this.g<=255&&0<=this.b&&this.b<=255&&0<=this.opacity&&this.opacity<=1},toString:function(){var t=this.opacity;return t=isNaN(t)?1:Math.max(0,Math.min(1,t)),(1===t?"rgb(":"rgba(")+Math.max(0,Math.min(255,Math.round(this.r)||0))+", "+Math.max(0,Math.min(255,Math.round(this.g)||0))+", "+Math.max(0,Math.min(255,Math.round(this.b)||0))+(1===t?")":", "+t+")")}})),e.i(_.a)(d,l,e.i(_.b)(i,{brighter:function(t){return t=null==t?y:Math.pow(y,t),new d(this.h,this.s,this.l*t,this.opacity)},darker:function(t){return t=null==t?v:Math.pow(v,t),new d(this.h,this.s,this.l*t,this.opacity)},rgb:function(){var t=this.h%360+360*(this.h<0),n=isNaN(t)||isNaN(this.s)?0:this.s,e=this.l,i=e+(e<.5?e:1-e)*n,r=2*e-i;return new c(p(t>=240?t-240:t+120,r,i),p(t,r,i),p(t<120?t+240:t-120,r,i),this.opacity)},displayable:function(){return(0<=this.s&&this.s<=1||isNaN(this.s))&&0<=this.l&&this.l<=1&&0<=this.opacity&&this.opacity<=1}}))},function(t,n,e){"use strict";function i(t,n){var e=Object.create(t.prototype);for(var i in n)e[i]=n[i];return e}n.b=i,n.a=function(t,n,e){t.prototype=n.prototype=e,e.constructor=t}},function(t,n,e){"use strict";var i=e(148);e.d(n,"a",function(){return i.a})},function(t,n,e){"use strict";var i=e(163);e.d(n,"f",function(){return i.a}),e.d(n,"c",function(){return i.b});var r=(e(76),e(74));e.d(n,"a",function(){return r.a});var a=e(167);e.d(n,"e",function(){return a.a});var o=e(168);e.d(n,"b",function(){return o.a});var u=e(169);e.d(n,"d",function(){return u.a})},function(t,n,e){"use strict";n.a=function(t,n){if((e=(t=n?t.toExponential(n-1):t.toExponential()).indexOf("e"))<0)return null;var e,i=t.slice(0,e);return[i.length>1?i[0]+i.slice(2):i,+t.slice(e+1)]}},function(t,n,e){"use strict";function i(t,n,e,i,r){var a=t*t,o=a*t;return((1-3*t+3*a-o)*n+(4-6*a+3*o)*e+(1+3*t+3*a-3*o)*i+o*r)/6}n.b=i,n.a=function(t){var n=t.length-1;return function(e){var r=e<=0?e=0:e>=1?(e=1,n-1):Math.floor(e*n),a=t[r],o=t[r+1],u=r>0?t[r-1]:2*a-o,s=r<n-1?t[r+2]:2*o-a;return i((e-r/n)*n,u,a,o,s)}}},function(t,n,e){"use strict";var i=e(5),r=e(82),a=e(77),o=e(80),u=e(20),s=e(81),c=e(83),f=e(79);n.a=function(t,n){var h,l=typeof n;return null==n||"boolean"===l?e.i(f.a)(n):("number"===l?u.a:"string"===l?(h=e.i(i.f)(n))?(n=h,r.a):c.a:n instanceof i.f?r.a:n instanceof Date?o.a:Array.isArray(n)?a.a:isNaN(n)?s.a:u.a)(t,n)}},function(t,n,e){"use strict";n.a=function(t,n,e,i,r){this.node=t,this.x0=n,this.y0=e,this.x1=i,this.y1=r}},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";function i(t){return function(){var n=this.ownerDocument,e=this.namespaceURI;return e===o.a&&n.documentElement.namespaceURI===o.a?n.createElement(t):n.createElementNS(e,t)}}function r(t){return function(){return this.ownerDocument.createElementNS(t.space,t.local)}}var a=e(40),o=e(41);n.a=function(t){var n=e.i(a.a)(t);return(n.local?r:i)(n)}},function(t,n,e){"use strict";var i=e(41);n.a=function(t){var n=t+="",e=n.indexOf(":");return e>=0&&"xmlns"!==(n=t.slice(0,e))&&(t=t.slice(e+1)),i.b.hasOwnProperty(n)?{space:i.b[n],local:t}:t}},function(t,n,e){"use strict";e.d(n,"a",function(){return i});var i="http://www.w3.org/1999/xhtml";n.b={svg:"http://www.w3.org/2000/svg",xhtml:i,xlink:"http://www.w3.org/1999/xlink",xml:"http://www.w3.org/XML/1998/namespace",xmlns:"http://www.w3.org/2000/xmlns/"}},function(t,n,e){"use strict";n.a=function(t,n){var e=t.ownerSVGElement||t;if(e.createSVGPoint){var i=e.createSVGPoint();return i.x=n.clientX,i.y=n.clientY,i=i.matrixTransform(t.getScreenCTM().inverse()),[i.x,i.y]}var r=t.getBoundingClientRect();return[n.clientX-r.left-t.clientLeft,n.clientY-r.top-t.clientTop]}},function(t,n,e){"use strict";function i(t,n,e){return t=r(t,n,e),function(n){var e=n.relatedTarget;e&&(e===this||8&e.compareDocumentPosition(this))||t.call(this,n)}}function r(t,n,e){return function(i){var r=f;f=i;try{t.call(this,this.__data__,n,e)}finally{f=r}}}function a(t){return t.trim().split(/^|\s+/).map(function(t){var n="",e=t.indexOf(".");return e>=0&&(n=t.slice(e+1),t=t.slice(0,e)),{type:t,name:n}})}function o(t){return function(){var n=this.__on;if(n){for(var e,i=0,r=-1,a=n.length;i<a;++i)e=n[i],t.type&&e.type!==t.type||e.name!==t.name?n[++r]=e:this.removeEventListener(e.type,e.listener,e.capture);++r?n.length=r:delete this.__on}}}function u(t,n,e){var a=c.hasOwnProperty(t.type)?i:r;return function(i,r,o){var u,s=this.__on,c=a(n,r,o);if(s)for(var f=0,h=s.length;f<h;++f)if((u=s[f]).type===t.type&&u.name===t.name)return this.removeEventListener(u.type,u.listener,u.capture),this.addEventListener(u.type,u.listener=c,u.capture=e),void(u.value=n);this.addEventListener(t.type,c,e),u={type:t.type,name:t.name,value:n,listener:c,capture:e},s?s.push(u):this.__on=[u]}}function s(t,n,e,i){var r=f;t.sourceEvent=f,f=t;try{return n.apply(e,i)}finally{f=r}}e.d(n,"a",function(){return f}),n.c=s;var c={},f=null;if("undefined"!=typeof document){var h=document.documentElement;"onmouseenter"in h||(c={mouseenter:"mouseover",mouseleave:"mouseout"})}n.b=function(t,n,e){var i,r,s=a(t+""),c=s.length;{if(!(arguments.length<2)){for(f=n?u:o,null==e&&(e=!1),i=0;i<c;++i)this.each(f(s[i],n,e));return this}var f=this.node().__on;if(f)for(var h,l=0,d=f.length;l<d;++l)for(i=0,h=f[l];i<c;++i)if((r=s[i]).type===h.type&&r.name===h.name)return h.value}}},function(t,n,e){"use strict";function i(){}n.a=function(t){return null==t?i:function(){return this.querySelector(t)}}},function(t,n,e){"use strict";var i=e(43);n.a=function(){for(var t,n=i.a;t=n.sourceEvent;)n=t;return n}},function(t,n,e){"use strict";n.a=function(t){return t.ownerDocument&&t.ownerDocument.defaultView||t.document&&t||t.defaultView}},function(t,n,e){"use strict";function i(t,n,e){var i=t._x1,r=t._y1,o=t._x2,u=t._y2;if(t._l01_a>a.a){var s=2*t._l01_2a+3*t._l01_a*t._l12_a+t._l12_2a,c=3*t._l01_a*(t._l01_a+t._l12_a);i=(i*s-t._x0*t._l12_2a+t._x2*t._l01_2a)/c,r=(r*s-t._y0*t._l12_2a+t._y2*t._l01_2a)/c}if(t._l23_a>a.a){var f=2*t._l23_2a+3*t._l23_a*t._l12_a+t._l12_2a,h=3*t._l23_a*(t._l23_a+t._l12_a);o=(o*f+t._x1*t._l23_2a-n*t._l12_2a)/h,u=(u*f+t._y1*t._l23_2a-e*t._l12_2a)/h}t._context.bezierCurveTo(i,r,o,u,t._x2,t._y2)}function r(t,n){this._context=t,this._alpha=n}var a=e(16),o=e(24);n.a=i,r.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._x2=this._y0=this._y1=this._y2=NaN,this._l01_a=this._l12_a=this._l23_a=this._l01_2a=this._l12_2a=this._l23_2a=this._point=0},lineEnd:function(){switch(this._point){case 2:this._context.lineTo(this._x2,this._y2);break;case 3:this.point(this._x2,this._y2)}(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){if(t=+t,n=+n,this._point){var e=this._x2-t,r=this._y2-n;this._l23_a=Math.sqrt(this._l23_2a=Math.pow(e*e+r*r,this._alpha))}switch(this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2;break;case 2:this._point=3;default:i(this,t,n)}this._l01_a=this._l12_a,this._l12_a=this._l23_a,this._l01_2a=this._l12_2a,this._l12_2a=this._l23_2a,this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return n?new r(t,n):new o.a(t,0)}return e.alpha=function(n){return t(+n)},e})(.5)},function(t,n,e){"use strict";var i=e(21),r=e(11),a=e(25),o=e(98);n.a=function(){function t(t){var r,a,o,l=t.length,d=!1;for(null==c&&(h=f(o=e.i(i.a)())),r=0;r<=l;++r)!(r<l&&s(a=t[r],r,t))===d&&((d=!d)?h.lineStart():h.lineEnd()),d&&h.point(+n(a,r,t),+u(a,r,t));if(o)return h=null,o+""||null}var n=o.a,u=o.b,s=e.i(r.a)(!0),c=null,f=a.a,h=null;return t.x=function(i){return arguments.length?(n="function"==typeof i?i:e.i(r.a)(+i),t):n},t.y=function(n){return arguments.length?(u="function"==typeof n?n:e.i(r.a)(+n),t):u},t.defined=function(n){return arguments.length?(s="function"==typeof n?n:e.i(r.a)(!!n),t):s},t.curve=function(n){return arguments.length?(f=n,null!=c&&(h=f(c)),t):f},t.context=function(n){return arguments.length?(null==n?c=h=null:h=f(c=n),t):c},t}},function(t,n,e){"use strict";function i(t){for(var n,e=0,i=-1,r=t.length;++i<r;)(n=+t[i][1])&&(e+=n);return e}var r=e(18);n.a=i,n.b=function(t){var n=t.map(i);return e.i(r.a)(t).sort(function(t,e){return n[t]-n[e]})}},function(t,n,e){"use strict";function i(t){return a=e.i(r.a)(t),o=a.format,u=a.parse,s=a.utcFormat,c=a.utcParse,a}var r=e(109);e.d(n,"c",function(){return o}),e.d(n,"a",function(){return s}),e.d(n,"b",function(){return c});var a,o,u,s,c;i({dateTime:"%x, %X",date:"%-m/%-d/%Y",time:"%-I:%M:%S %p",periods:["AM","PM"],days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],shortDays:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],months:["January","February","March","April","May","June","July","August","September","October","November","December"],shortMonths:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]})},function(t,n,e){"use strict";var i=(e(1),e(279));e.d(n,"t",function(){return i.a}),e.d(n,"h",function(){return i.a});var r=e(282);e.d(n,"s",function(){return r.a}),e.d(n,"g",function(){return r.a});var a=e(280);e.d(n,"r",function(){return a.a});var o=e(278);e.d(n,"q",function(){return o.a});var u=e(277);e.d(n,"i",function(){return u.a});var s=e(289);e.d(n,"p",function(){return s.a}),e.d(n,"k",function(){return s.a}),e.d(n,"l",function(){return s.b});var c=e(281);e.d(n,"o",function(){return c.a});var f=e(290);e.d(n,"j",function(){return f.a});var h=e(285);e.d(n,"f",function(){return h.a});var l=e(284);e.d(n,"e",function(){return l.a});var d=e(283);e.d(n,"d",function(){return d.a});var p=e(287);e.d(n,"c",function(){return p.a}),e.d(n,"m",function(){return p.a}),e.d(n,"n",function(){return p.b});var _=e(286);e.d(n,"b",function(){return _.a});var v=e(288);e.d(n,"a",function(){return v.a})},function(t,n,e){"use strict";function i(){return g||(w(r),g=x.now()+m)}function r(){g=0}function a(){this._call=this._time=this._next=null}function o(t,n,e){var i=new a;return i.restart(t,n,e),i}function u(){i(),++p;for(var t,n=l;n;)(t=g-n._time)>=0&&n._call.call(null,t),n=n._next;--p}function s(){g=(b=x.now())+m,p=_=0;try{u()}finally{p=0,f(),g=0}}function c(){var t=x.now(),n=t-b;n>y&&(m-=n,b=t)}function f(){for(var t,n,e=l,i=1/0;e;)e._call?(i>e._time&&(i=e._time),t=e,e=e._next):(n=e._next,e._next=null,e=t?t._next=n:l=n);d=t,h(i)}function h(t){if(!p){_&&(_=clearTimeout(_));var n=t-g;n>24?(t<1/0&&(_=setTimeout(s,n)),v&&(v=clearInterval(v))):(v||(v=setInterval(c,y)),p=1,w(s))}}n.c=i,n.b=a,n.a=o;var l,d,p=0,_=0,v=0,y=1e3,b=0,g=0,m=0,x="object"==typeof performance&&performance.now?performance:Date,w="function"==typeof requestAnimationFrame?requestAnimationFrame:function(t){setTimeout(t,17)};a.prototype=o.prototype={constructor:a,restart:function(t,n,e){if("function"!=typeof t)throw new TypeError("callback is not a function");e=(null==e?i():+e)+(null==n?0:+n),this._next||d===this||(d?d._next=this:l=this,d=this),this._call=t,this._time=e,h()},stop:function(){this._call&&(this._call=null,this._time=1/0,h())}}},function(t,n,e){"use strict";function i(t,n,i,r,o){return r?r:o?t.domain(o):t.domain(e.i(a.h)(i,n));
-}var r=e(136),a=e(2),o=e(33),u=e(84),s=e(0),c=e(314),f=e(70),h=e(188),l=e(57),d=e(55),p=e(56),_=e(116),v=e(54),y=e(117),b=e(319);e.n(b);e.d(n,"b",function(){return g});var g,m=this&&this.__extends||function(t,n){function e(){this.constructor=t}for(var i in n)n.hasOwnProperty(i)&&(t[i]=n[i]);t.prototype=null===n?Object.create(n):(e.prototype=n.prototype,new e)};!function(t){t[t.x=0]="x",t[t.y=1]="y",t[t.xy=2]="xy"}(g||(g={}));var x,w=[0,100];!function(t){t[t.DIRTY=0]="DIRTY",t[t.SELECTION_CHANGED=1]="SELECTION_CHANGED",t[t.ZOOMED=2]="ZOOMED",t[t.PERFORM_SCALE_AND_TRANSLATE=3]="PERFORM_SCALE_AND_TRANSLATE",t[t.AFTER_SCALE_AND_TRANSLATE=4]="AFTER_SCALE_AND_TRANSLATE",t[t.PERFORM_TRANSLATE=5]="PERFORM_TRANSLATE",t[t.AFTER_TRANSLATE=6]="AFTER_TRANSLATE",t[t.PERFORM_SCALE=7]="PERFORM_SCALE",t[t.AFTER_SCALE=8]="AFTER_SCALE"}(x||(x={}));var M=function(t){function n(n,r,a){var o=t.call(this)||this;o.props={margin:{left:32,top:10,bottom:32,right:10},clickRadius:10,zoom:{scale:g.xy,delay:300,scaleExtent:[1,+(1/0)],window:null,scaleTo:1,translateBy:[0,0]},format:{},x:function(t){return t.x},y:function(t){return t.y},xlabel:"x",ylabel:"y",xscale:e.i(u.scaleLinear)().domain([0,100]),yscale:e.i(u.scaleLinear)().domain([0,100]),symbol:e.i(l.circleSymbol)(),tooltipDelay:500,showTooltip:y.a,isSelectEvent:function(t){return t.ctrlKey||t.altKey},lasso:{interval:100},extras:null},o.normalized2pixel={x:e.i(u.scaleLinear)().domain(w),y:e.i(u.scaleLinear)().domain(w)},o.showTooltipHandle=-1,o.lasso=new _.a,o.currentTransform=c.a,o.zommHandle=-1,o.dragHandle=-1,o.props=e.i(d.a)(o.props,a),o.props.xscale=i(o.props.xscale,o.props.x,n,a.xscale,a.xlim),o.props.yscale=i(o.props.yscale,o.props.y,n,a.yscale,a.ylim),o.parent=r.ownerDocument.createElement("div"),r.appendChild(o.parent),o.parent.innerHTML='\n      <canvas class="'+v.a+'-data-layer"></canvas>\n      <canvas class="'+v.a+'-selection-layer" '+(o.isSelectAble()||o.hasExtras()?"":'style="visibility: hidden"')+'></canvas>\n      <svg class="'+v.a+'-axis-left" style="width: '+(o.props.margin.left+2)+'px;">\n        <g transform="translate('+o.props.margin.left+',0)"><g>\n      </svg>\n      <svg class="'+v.a+'-axis-bottom" style="height: '+o.props.margin.bottom+'px;">\n        <g><g>\n      </svg>\n      <div class="'+v.a+'-axis-bottom-label" style="left: '+(o.props.margin.left+2)+"px; right: "+o.props.margin.right+'px"><div>'+o.props.xlabel+'</div></div>\n      <div class="'+v.a+'-axis-left-label"  style="top: '+(o.props.margin.top+2)+"px; bottom: "+o.props.margin.bottom+'px"><div>'+o.props.ylabel+"</div></div>\n    ",o.parent.classList.add(v.a),o.canvasDataLayer=o.parent.children[0],o.canvasSelectionLayer=o.parent.children[1];var p=e.i(s.a)(o.parent);if(null!==o.props.zoom.scale){var b=o.props.zoom;o.zoomBehavior=e.i(c.b)().on("start",o.onZoomStart.bind(o)).on("zoom",o.onZoom.bind(o)).on("end",o.onZoomEnd.bind(o)).scaleExtent(b.scaleExtent).filter(function(){return!(0!==s.b.button||o.isSelectAble()&&o.props.isSelectEvent(s.b))}),p.call(o.zoomBehavior).on("wheel",function(){return s.b.preventDefault()}),null!=b.window?o.window=b.window:(o.zoomBehavior.scaleTo(p,b.scaleTo),o.zoomBehavior.translateBy(p,b.translateBy[0],b.translateBy[1]))}if(o.isSelectAble()){var m=e.i(f.a)().on("start",o.onDragStart.bind(o)).on("drag",o.onDrag.bind(o)).on("end",o.onDragEnd.bind(o)).filter(function(){return 0===s.b.button&&o.props.isSelectEvent(s.b)});p.call(m).on("click",function(){return o.onClick(s.b)})}return o.hasTooltips()&&p.on("mouseleave",function(){return o.onMouseLeave(s.b)}).on("mousemove",function(){return o.onMouseMove(s.b)}),o.setDataImpl(n),o.selectionTree=e.i(h.a)([],o.tree.x(),o.tree.y()),o}return m(n,t),Object.defineProperty(n.prototype,"data",{get:function(){return this.tree.data()},set:function(t){this.setDataImpl(t),this.selectionTree=e.i(h.a)([],this.tree.x(),this.tree.y()),this.render(x.DIRTY)},enumerable:!0,configurable:!0}),n.prototype.setDataImpl=function(t){var n=this,i=this.props.xscale.copy().range(w),r=this.props.yscale.copy().range(w);this.tree=e.i(h.a)(t,function(t){return i(n.props.x(t))},function(t){return r(n.props.y(t))})},n.prototype.isSelectAble=function(){return null!=this.props.isSelectEvent&&this.props.isSelectEvent!==!1},n.prototype.hasExtras=function(){return null!=this.props.extras},n.prototype.hasTooltips=function(){return null!=this.props.showTooltip&&this.props.showTooltip!==!1},Object.defineProperty(n.prototype,"selection",{get:function(){return this.isSelectAble()?this.selectionTree.data():[]},set:function(t){this.setSelection(t)},enumerable:!0,configurable:!0}),n.prototype.setSelection=function(t){var e=this;if(!this.isSelectAble())return!1;if(null==t&&(t=[]),0===t.length)return this.clearSelection();var i=!1,r=this.selection.slice();return t.forEach(function(t){var n=r.indexOf(t);n<0?(e.selectionTree.add(t),i=!0):r.splice(n,1)}),i=i||r.length>0,this.selectionTree.removeAll(r),i&&(this.emit(n.EVENT_SELECTION_CHANGED,this),this.render(x.SELECTION_CHANGED)),i},n.prototype.clearSelection=function(){var t=null!==this.selectionTree&&this.selectionTree.size()>0;return t&&(this.selectionTree=e.i(h.a)([],this.tree.x(),this.tree.y()),this.emit(n.EVENT_SELECTION_CHANGED,this),this.render(x.SELECTION_CHANGED)),t},n.prototype.addToSelection=function(t){return!(0===t.length||!this.isSelectAble())&&(this.selectionTree.addAll(t),this.emit(n.EVENT_SELECTION_CHANGED,this),this.render(x.SELECTION_CHANGED),!0)},n.prototype.removeFromSelection=function(t){return!(0===t.length||!this.isSelectAble())&&(this.selectionTree.removeAll(t),this.emit(n.EVENT_SELECTION_CHANGED,this),this.render(x.SELECTION_CHANGED),!0)},n.prototype.selectWithTester=function(t){var n=e.i(p.a)(this.tree,t);return this.setSelection(n)},n.prototype.checkResize=function(){var t=this.canvasDataLayer;return(t.width!==t.clientWidth||t.height!==t.clientHeight)&&(this.canvasSelectionLayer.width=t.width=t.clientWidth,this.canvasSelectionLayer.height=t.height=t.clientHeight,!0)},n.prototype.resized=function(){this.render(x.DIRTY)},n.prototype.rescale=function(t,n){var e=this.currentTransform,i=this.props.zoom.scale;switch(t){case g.x:return i===g.x||i===g.xy?e.rescaleX(n):n;case g.y:return i===g.y||i===g.xy?e.rescaleY(n):n}throw new Error("Not Implemented")},n.prototype.transformedScales=function(){var t=this.rescale(g.x,this.props.xscale),n=this.rescale(g.y,this.props.yscale);return{xscale:t,yscale:n}},n.prototype.getMouseNormalizedPos=function(t){function n(t){var n=t.range();return Math.abs(n[1]-n[0])}var i=this;void 0===t&&(t=e.i(s.c)(this.parent));var r=this.transformedNormalized2PixelScales(),a=r.n2pX,o=r.n2pY,u=function(){var t=i.props.clickRadius,e=i.currentTransform,r=e.k*n(i.normalized2pixel.x),a=e.k*n(i.normalized2pixel.y),o=w[1]-w[0],u=t/r*o,s=t/a*o;return[u,s]},c=u(),f=c[0],h=c[1];return{x:a.invert(t[0]),y:o.invert(t[1]),clickRadiusX:f,clickRadiusY:h}},n.prototype.transformedNormalized2PixelScales=function(){var t=this.rescale(g.x,this.normalized2pixel.x),n=this.rescale(g.y,this.normalized2pixel.y);return{n2pX:t,n2pY:n}},Object.defineProperty(n.prototype,"window",{get:function(){var t=this.transformedScales(),n=t.xscale,e=t.yscale;return{xMinMax:n.range().map(n.invert.bind(n)),yMinMax:e.range().map(e.invert.bind(e))}},set:function(t){var n=this.window2transform(t),i=n.k,r=n.tx,a=n.ty,o=e.i(s.a)(this.parent);this.zoomBehavior.scaleTo(o,i),this.zoomBehavior.translateBy(o,r,a),this.render()},enumerable:!0,configurable:!0}),n.prototype.window2transform=function(t){var n=function(t,n){var e=n(t[0]),i=n(t[1]),r=(n.range()[1]-n.range()[0])/(i-e);return{k:r,t:n.range()[0]-e}},e=this.props.zoom.scale,i=e===g.x||e===g.xy?n(t.xMinMax,this.props.xscale):null,r=e===g.y||e===g.xy?n(t.yMinMax,this.props.yscale):null,a=1;return i&&r?a=Math.min(i.k,r.k):i?a=i.k:r&&(a=r.k),{k:a,tx:i?i.t:0,ty:r?r.t:0}},Object.defineProperty(n.prototype,"domain",{get:function(){return{xMinMax:this.props.xscale.domain(),yMinMax:this.props.yscale.domain()}},enumerable:!0,configurable:!0}),n.prototype.onZoomStart=function(){this.zoomStartTransform=this.currentTransform},n.prototype.onZoomEnd=function(){var t=this.zoomStartTransform,n=this.currentTransform,e=t.x!==n.x||t.y!==n.y,i=t.k!==n.k;e&&i?this.render(x.AFTER_SCALE_AND_TRANSLATE):i?this.render(x.AFTER_SCALE):e&&this.render(x.AFTER_TRANSLATE)},n.prototype.onZoom=function(){var t=s.b,e=t.transform,i=this.currentTransform;this.currentTransform=e;var r=this.props.zoom.scale,a=r!==g.y&&i.x!==e.x||r!==g.x&&i.y!==e.y,o=i.k!==e.k,u={x:r===g.x||r===g.xy?e.x-i.x:0,y:r===g.y||r===g.xy?e.y-i.y:0,kx:r===g.x||r===g.xy?e.k/i.k:1,ky:r===g.y||r===g.xy?e.k/i.k:1};a&&o?(this.emit(n.EVENT_WINDOW_CHANGED,this.window),this.render(x.PERFORM_SCALE_AND_TRANSLATE,u)):o?(this.emit(n.EVENT_WINDOW_CHANGED,this.window),this.render(x.PERFORM_SCALE,u)):a&&(this.emit(n.EVENT_WINDOW_CHANGED,this.window),this.render(x.PERFORM_TRANSLATE,u))},n.prototype.onDragStart=function(){this.lasso.start(s.b.x,s.b.y),this.clearSelection()||this.render(x.SELECTION_CHANGED)},n.prototype.onDrag=function(){this.dragHandle<0&&(this.dragHandle=setInterval(this.updateDrag.bind(this),this.props.lasso.interval)),this.lasso.setCurrent(s.b.x,s.b.y),this.render(x.SELECTION_CHANGED)},n.prototype.updateDrag=function(){this.lasso.pushCurrent()&&this.retestLasso()},n.prototype.retestLasso=function(){var t=this.transformedNormalized2PixelScales(),n=t.n2pX,e=t.n2pY,i=this.lasso.tester(n.invert.bind(n),e.invert.bind(e));return i&&this.selectWithTester(i)},n.prototype.onDragEnd=function(){clearInterval(this.dragHandle),this.dragHandle=-1,this.lasso.end(s.b.x,s.b.y),this.retestLasso()||this.render(x.SELECTION_CHANGED),this.lasso.clear()},n.prototype.onClick=function(t){if(t.button>0)return void(this.selection=[]);var n=this.getMouseNormalizedPos(),i=n.x,r=n.y,a=n.clickRadiusX,o=n.clickRadiusY,u=e.i(p.b)(i,r,a,o);this.selectWithTester(u)},n.prototype.showTooltip=function(t){var n=this.getMouseNormalizedPos(t),i=n.x,r=n.y,a=n.clickRadiusX,o=n.clickRadiusY,u=e.i(p.b)(i,r,a,o),s=e.i(p.a)(this.tree,u);this.props.showTooltip(this.parent,s,t[0],t[1]),this.showTooltipHandle=-1},n.prototype.onMouseMove=function(t){this.showTooltipHandle>=0&&this.onMouseLeave(t);var n=e.i(s.c)(this.parent);this.showTooltipHandle=setTimeout(this.showTooltip.bind(this,n),this.props.tooltipDelay)},n.prototype.onMouseLeave=function(t){clearTimeout(this.showTooltipHandle),this.showTooltipHandle=-1,this.props.showTooltip(this.parent,[],0,0)},n.prototype.render=function(t,i){function r(t,n,e,i){t=b(t),n=g(n),e=b(e),i=g(i);var r=Math.max(Math.abs(t-e),Math.abs(n-i));return r<5}var a=this;if(void 0===t&&(t=x.DIRTY),void 0===i&&(i={x:0,y:0,kx:1,ky:1}),this.checkResize())return this.resized();var o=this.canvasDataLayer,u=this.props.margin,s={x0:u.left,y0:u.top,x1:o.clientWidth-u.right,y1:o.clientHeight-u.bottom},c=s.x1-s.x0,f=s.y1-s.y0;this.emit(n.EVENT_RENDER,x[t],i),t===x.DIRTY&&(this.props.xscale.range([s.x0,s.x1]),this.props.yscale.range([s.y1,s.y0]),this.normalized2pixel.x.range(this.props.xscale.range()),this.normalized2pixel.y.range(this.props.yscale.range()));var h=this.transformedScales(),d=h.xscale,_=h.yscale,y=this.transformedNormalized2PixelScales(),b=y.n2pX,g=y.n2pY,m=function(t){return b.invert(t)},w=function(t){return g.invert(t)},M=e.i(p.c)(m(s.x0),w(s.y1),m(s.x1),w(s.y0)),T={zoomLevel:this.currentTransform.k},E=function(t){void 0===t&&(t=!1);var n=(t?a.canvasSelectionLayer:a.canvasDataLayer).getContext("2d");n.clearRect(0,0,o.width,o.height),n.save(),n.rect(s.x0,s.y0,c,f),n.clip();var e=t?a.selectionTree:a.tree,i=a.props.symbol(n,t?l.ERenderMode.SELECTED:l.ERenderMode.NORMAL,T),u=!t&&v.b;return a.renderTree(n,e,i,d,_,M,r,u),t&&a.hasExtras()&&(n.save(),a.props.extras(n,d,_),n.restore()),n.restore(),n},N=this.isSelectAble()||this.hasExtras()?function(){var t=E(!0);a.lasso.render(t)}:function(){},S=function(t,n,e,i){var r=a.canvasSelectionLayer.getContext("2d");r.clearRect(0,0,o.width,o.height),r.save(),r.rect(s.x0,s.y0,c,f),r.clip(),r.translate(t,n),r.drawImage(a.canvasDataLayer,s.x0,s.y0,c,f,s.x0,s.y0,c*e,f*i),r.restore(),u=[a.canvasSelectionLayer,a.canvasDataLayer],a.canvasDataLayer=u[0],a.canvasSelectionLayer=u[1],a.canvasDataLayer.className=v.a+"-data-layer",a.canvasSelectionLayer.className=v.a+"-selection-layer";var u},A=this.renderAxes.bind(this,d,_),k=E.bind(this,!1),C=function(){a.zommHandle>=0&&(clearTimeout(a.zommHandle),a.zommHandle=-1)};switch(e.i(v.c)(x[t]),t){case x.PERFORM_TRANSLATE:C(),S(i.x,i.y,i.kx,i.ky),N(),A(),this.zommHandle=setTimeout(this.render.bind(this,x.AFTER_TRANSLATE),this.props.zoom.delay);break;case x.SELECTION_CHANGED:N();break;case x.AFTER_TRANSLATE:C(),k();break;case x.AFTER_SCALE_AND_TRANSLATE:case x.AFTER_SCALE:break;default:C(),k(),A(),N()}},n.prototype.renderAxes=function(t,n){var i=this,a=e.i(r.a)(n),u=e.i(r.b)(t),c=e.i(s.a)(this.parent),f=function(t,n){var r=i.props.format[n];null!=r&&t.tickFormat("string"==typeof r?e.i(o.f)(r):r)};f(a,"y"),f(u,"x"),c.select("svg > g").call(a),c.select("svg:last-of-type > g").call(u)},n.prototype.renderTree=function(t,n,i,r,a,o,u,s){function c(t,n,c,f,v){if(!o(n,c,f,v))return y+=s?e.i(p.d)(t):0,p.e;if(u(n,c,f,v)){var b=e.i(p.f)(t);return d++,_+=s?e.i(p.d)(t)-1:0,i.render(r(h(b)),a(l(b)),b),p.e}return e.i(p.g)(t)&&(d+=e.i(p.h)(t,function(t){return i.render(r(h(t)),a(l(t)),t)})),p.i}void 0===s&&(s=!1);var f=this.props,h=f.x,l=f.y,d=0,_=0,y=0;t.save(),n.visit(c),i.done(),s&&e.i(v.c)("rendered",d,"aggregated",_,"hidden",y,"total",this.tree.size()),t.beginPath(),t.closePath(),t.restore()},n}(b.EventEmitter);n.a=M,M.EVENT_SELECTION_CHANGED="selectionChanged",M.EVENT_RENDER="render",M.EVENT_WINDOW_CHANGED="windowChanged"},function(t,n,e){"use strict";e.d(n,"a",function(){return i}),e.d(n,"b",function(){return r}),e.d(n,"c",function(){return a});var i="datavisyn-scatterplot",r=!0,a=r?console.log:function(){}},function(t,n,e){"use strict";function i(t){for(var n=[],e=1;e<arguments.length;e++)n[e-1]=arguments[e];return n=n.filter(function(t){return!!t}),0===n.length?t:(n.forEach(function(n){return Object.keys(n).forEach(function(e){var r=n[e];"[object Object]"===Object.prototype.toString.call(r)?t[e]=null!=t[e]?i(t[e],r):r:t[e]=r})}),t)}n.a=i},function(t,n,e){"use strict";function i(t,n,e,i){var r=e*e,a=i*i,o=u(t-e,n-i,t+e,n+i);return{test:function(e,i){return(e-t)*(e-t)/r+(i-n)*(i-n)/a<=1},testArea:o}}function r(t,n){function e(e){var i=t.x()(e),r=t.y()(e);n.test(i,r)&&u(e)}function i(t,i,r,s,c){var d=n.test(i,r),p=n.test(i,c),_=n.test(s,r),v=n.test(s,c);return d&&p&&_&&v?(o(t,u),h):n.testArea(i,r,s,c)?(f(t)&&a(t,e),l):h}var r=[],u=r.push.bind(r);return t.visit(i),r}function a(t,n){if(!t||!f(t))return 0;var e=0,i=t;do{var r=i.data;e++,n(r)}while(null!=(i=i.next));return e}function o(t,n){if(t)if(f(t))a(t,n);else{var e=t;e.forEach(function(t){return o(t,n)})}}function u(t,n,e,i){return function(r,a,o,u){return!(o<t||u<n||r>e||a>i)}}function s(t){var n=0;return o(t,function(){return n++}),n}function c(t){if(f(t))return t.data;var n=t;return n.reduce(function(t,n){return t?t:c(n)},null)}function f(t){return!t.length}e(2);e.d(n,"e",function(){return h}),e.d(n,"i",function(){return l}),n.b=i,n.a=r,n.h=a,n.c=u,n.d=s,n.f=c,n.g=f;var h=!0,l=!1},function(t,n,e){"use strict";function i(t,n,e){return void 0===t&&(t=u),void 0===n&&(n="steelblue"),void 0===e&&(e=5),function(i){return i.beginPath(),{render:function(n,r){i.translate(n,r),t.draw(i,e),i.translate(-n,-r)},done:function(){i.closePath(),i.fillStyle=n,i.fill()}}}}function r(t,n){void 0===t&&(t="steelblue"),void 0===n&&(n=20);var e=Math.sqrt(n/Math.PI),i=2*Math.PI,r=(a={},a[o.NORMAL]=t,a[o.HOVER]="orange",a[o.SELECTED]="red",a);return function(t,n){return t.beginPath(),{render:function(n,r){t.moveTo(n+e,r),t.arc(n,r,e,0,i)},done:function(){t.closePath(),t.fillStyle=r[n],t.fill()}}};var a}Object.defineProperty(n,"__esModule",{value:!0});var a=e(93);e.d(n,"ERenderMode",function(){return o}),e.d(n,"d3SymbolCircle",function(){return u}),e.d(n,"d3SymbolCross",function(){return s}),e.d(n,"d3SymbolDiamond",function(){return c}),e.d(n,"d3SymbolSquare",function(){return f}),e.d(n,"d3SymbolStar",function(){return h}),e.d(n,"d3SymbolTriangle",function(){return l}),e.d(n,"d3SymbolWye",function(){return d}),n.d3Symbol=i,n.circleSymbol=r;var o;!function(t){t[t.NORMAL=0]="NORMAL",t[t.SELECTED=1]="SELECTED",t[t.HOVER=2]="HOVER"}(o||(o={}));var u=a.a,s=a.b,c=a.c,f=a.d,h=a.e,l=a.f,d=a.g},function(t,n,e){"use strict";e.d(n,"b",function(){return r}),e.d(n,"a",function(){return a});var i=Array.prototype,r=i.slice,a=i.map},function(t,n,e){"use strict";var i=e(10),r=e(60),a=e.i(r.a)(i.a),o=a.right;a.left;n.a=o},function(t,n,e){"use strict";function i(t){return function(n,i){return e.i(r.a)(t(n),i)}}var r=e(10);n.a=function(t){return 1===t.length&&(t=i(t)),{left:function(n,e,i,r){for(null==i&&(i=0),null==r&&(r=n.length);i<r;){var a=i+r>>>1;t(n[a],e)<0?i=a+1:r=a}return i},right:function(n,e,i,r){for(null==i&&(i=0),null==r&&(r=n.length);i<r;){var a=i+r>>>1;t(n[a],e)>0?r=a:i=a+1}return i}}}},function(t,n,e){"use strict";var i=e(68);n.a=function(t,n){var r=e.i(i.a)(t,n);return r?Math.sqrt(r):r}},function(t,n,e){"use strict";n.a=function(t,n){var e,i,r,a=-1,o=t.length;if(null==n){for(;++a<o;)if(null!=(i=t[a])&&i>=i){e=r=i;break}for(;++a<o;)null!=(i=t[a])&&(e>i&&(e=i),r<i&&(r=i))}else{for(;++a<o;)if(null!=(i=n(t[a],a,t))&&i>=i){e=r=i;break}for(;++a<o;)null!=(i=n(t[a],a,t))&&(e>i&&(e=i),r<i&&(r=i))}return[e,r]}},function(t,n,e){"use strict";n.a=function(t,n){var e,i,r=-1,a=t.length;if(null==n){for(;++r<a;)if(null!=(i=t[r])&&i>=i){e=i;break}for(;++r<a;)null!=(i=t[r])&&e>i&&(e=i)}else{for(;++r<a;)if(null!=(i=n(t[r],r,t))&&i>=i){e=i;break}for(;++r<a;)null!=(i=n(t[r],r,t))&&e>i&&(e=i)}return e}},function(t,n,e){"use strict";n.a=function(t,n,e){t=+t,n=+n,e=(r=arguments.length)<2?(n=t,t=0,1):r<3?1:+e;for(var i=-1,r=0|Math.max(0,Math.ceil((n-t)/e)),a=new Array(r);++i<r;)a[i]=t+i*e;return a}},function(t,n,e){"use strict";n.a=function(t){return Math.ceil(Math.log(t.length)/Math.LN2)+1}},function(t,n,e){"use strict";function i(t,n,e){var i=Math.abs(n-t)/Math.max(0,e),r=Math.pow(10,Math.floor(Math.log(i)/Math.LN10)),s=i/r;return s>=a?r*=10:s>=o?r*=5:s>=u&&(r*=2),n<t?-r:r}var r=e(64);n.b=i;var a=Math.sqrt(50),o=Math.sqrt(10),u=Math.sqrt(2);n.a=function(t,n,a){var o=i(t,n,a);return e.i(r.a)(Math.ceil(t/o)*o,Math.floor(n/o)*o+o/2,o)}},function(t,n,e){"use strict";function i(t){return t.length}var r=e(63);n.a=function(t){if(!(u=t.length))return[];for(var n=-1,a=e.i(r.a)(t,i),o=new Array(a);++n<a;)for(var u,s=-1,c=o[n]=new Array(u);++s<u;)c[s]=t[s][n];return o}},function(t,n,e){"use strict";var i=e(12);n.a=function(t,n){var r,a,o=t.length,u=0,s=0,c=-1,f=0;if(null==n)for(;++c<o;)isNaN(r=e.i(i.a)(t[c]))||(a=r-u,u+=a/++f,s+=a*(r-u));else for(;++c<o;)isNaN(r=e.i(i.a)(n(t[c],c,t)))||(a=r-u,u+=a/++f,s+=a*(r-u));if(f>1)return s/(f-1)}},function(t,n,e){"use strict";e.d(n,"b",function(){return i}),e.d(n,"a",function(){return r});var i=Math.PI/180,r=180/Math.PI},function(t,n,e){"use strict";var i=e(150);e.d(n,"a",function(){return i.a});var r=e(71);e.d(n,"b",function(){return r.a}),e.d(n,"c",function(){return r.b})},function(t,n,e){"use strict";function i(t,n){var i=t.document.documentElement,o=e.i(r.a)(t).on("dragstart.drag",null);n&&(o.on("click.drag",a.a,!0),setTimeout(function(){o.on("click.drag",null)},0)),"onselectstart"in i?o.on("selectstart.drag",null):(i.style.MozUserSelect=i.__noselect,delete i.__noselect)}var r=e(0),a=e(72);n.b=i,n.a=function(t){var n=t.document.documentElement,i=e.i(r.a)(t).on("dragstart.drag",a.a,!0);"onselectstart"in n?i.on("selectstart.drag",a.a,!0):(n.__noselect=n.style.MozUserSelect,n.style.MozUserSelect="none")}},function(t,n,e){"use strict";function i(){r.b.stopImmediatePropagation()}var r=e(0);n.b=i,n.a=function(){r.b.preventDefault(),r.b.stopImmediatePropagation()}},function(t,n,e){"use strict";var i=e(34);e.d(n,"b",function(){return r});var r;n.a=function(t,n){var a=e.i(i.a)(t,n);if(!a)return t+"";var o=a[0],u=a[1],s=u-(r=3*Math.max(-8,Math.min(8,Math.floor(u/3))))+1,c=o.length;return s===c?o:s>c?o+new Array(s-c+1).join("0"):s>0?o.slice(0,s)+"."+o.slice(s):"0."+new Array(1-s).join("0")+e.i(i.a)(t,Math.max(0,n+s-1))[0]}},function(t,n,e){"use strict";function i(t){if(!(n=a.exec(t)))throw new Error("invalid format: "+t);var n,e=n[1]||" ",i=n[2]||">",o=n[3]||"-",u=n[4]||"",s=!!n[5],c=n[6]&&+n[6],f=!!n[7],h=n[8]&&+n[8].slice(1),l=n[9]||"";"n"===l?(f=!0,l="g"):r.a[l]||(l=""),(s||"0"===e&&"="===i)&&(s=!0,e="0",i="="),this.fill=e,this.align=i,this.sign=o,this.symbol=u,this.zero=s,this.width=c,this.comma=f,this.precision=h,this.type=l}var r=e(75),a=/^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;n.a=function(t){return new i(t)},i.prototype.toString=function(){return this.fill+this.align+this.sign+this.symbol+(this.zero?"0":"")+(null==this.width?"":Math.max(1,0|this.width))+(this.comma?",":"")+(null==this.precision?"":"."+Math.max(0,0|this.precision))+this.type}},function(t,n,e){"use strict";var i=e(164),r=e(73),a=e(166);n.a={"":i.a,"%":function(t,n){return(100*t).toFixed(n)},b:function(t){return Math.round(t).toString(2)},c:function(t){return t+""},d:function(t){return Math.round(t).toString(10)},e:function(t,n){return t.toExponential(n)},f:function(t,n){return t.toFixed(n)},g:function(t,n){return t.toPrecision(n)},o:function(t){return Math.round(t).toString(8)},p:function(t,n){return e.i(a.a)(100*t,n)},r:a.a,s:r.a,X:function(t){return Math.round(t).toString(16).toUpperCase()},x:function(t){return Math.round(t).toString(16)}}},function(t,n,e){"use strict";function i(t){return t}var r=e(19),a=e(165),o=e(74),u=e(75),s=e(73),c=["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];n.a=function(t){function n(t){function n(t){var n,e,o,u=g,f=m;if("c"===b)f=x(t)+f,t="";else{t=+t;var l=(t<0||1/t<0)&&(t*=-1,!0);if(t=x(t,y),l)for(n=-1,e=t.length,l=!1;++n<e;)if(o=t.charCodeAt(n),48<o&&o<58||"x"===b&&96<o&&o<103||"X"===b&&64<o&&o<71){l=!0;break}if(u=(l?"("===a?a:"-":"-"===a||"("===a?"":a)+u,f=f+("s"===b?c[8+s.b/3]:"")+(l&&"("===a?")":""),w)for(n=-1,e=t.length;++n<e;)if(o=t.charCodeAt(n),48>o||o>57){f=(46===o?d+t.slice(n+1):t.slice(n))+f,t=t.slice(0,n);break}}v&&!p&&(t=h(t,1/0));var M=u.length+t.length+f.length,T=M<_?new Array(_-M+1).join(i):"";switch(v&&p&&(t=h(T+t,T.length?_-f.length:1/0),T=""),r){case"<":return u+t+f+T;case"=":return u+T+t+f;case"^":return T.slice(0,M=T.length>>1)+u+t+f+T.slice(M)}return T+u+t+f}t=e.i(o.a)(t);var i=t.fill,r=t.align,a=t.sign,f=t.symbol,p=t.zero,_=t.width,v=t.comma,y=t.precision,b=t.type,g="$"===f?l[0]:"#"===f&&/[boxX]/.test(b)?"0"+b.toLowerCase():"",m="$"===f?l[1]:/[%p]/.test(b)?"%":"",x=u.a[b],w=!b||/[defgprs%]/.test(b);return y=null==y?b?6:12:/[gprs]/.test(b)?Math.max(1,Math.min(21,y)):Math.max(0,Math.min(20,y)),n.toString=function(){return t+""},n}function f(t,i){var a=n((t=e.i(o.a)(t),t.type="f",t)),u=3*Math.max(-8,Math.min(8,Math.floor(e.i(r.a)(i)/3))),s=Math.pow(10,-u),f=c[8+u/3];return function(t){return a(s*t)+f}}var h=t.grouping&&t.thousands?e.i(a.a)(t.grouping,t.thousands):i,l=t.currency,d=t.decimal;return{format:n,formatPrefix:f}}},function(t,n,e){"use strict";var i=e(36);n.a=function(t,n){var r,a=n?n.length:0,o=t?Math.min(a,t.length):0,u=new Array(a),s=new Array(a);for(r=0;r<o;++r)u[r]=e.i(i.a)(t[r],n[r]);for(;r<a;++r)s[r]=n[r];return function(t){for(r=0;r<o;++r)s[r]=u[r](t);return s}}},function(t,n,e){"use strict";var i=e(35);n.a=function(t){var n=t.length;return function(r){var a=Math.floor(((r%=1)<0?++r:r)*n),o=t[(a+n-1)%n],u=t[a%n],s=t[(a+1)%n],c=t[(a+2)%n];return e.i(i.b)((r-a/n)*n,o,u,s,c)}}},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";n.a=function(t,n){var e=new Date;return t=+t,n-=t,function(i){return e.setTime(t+n*i),e}}},function(t,n,e){"use strict";var i=e(36);n.a=function(t,n){var r,a={},o={};null!==t&&"object"==typeof t||(t={}),null!==n&&"object"==typeof n||(n={});for(r in n)r in t?a[r]=e.i(i.a)(t[r],n[r]):o[r]=n[r];return function(t){for(r in a)o[r]=a[r](t);return o}}},function(t,n,e){"use strict";function i(t){return function(n){var i,a,o=n.length,u=new Array(o),s=new Array(o),c=new Array(o);for(i=0;i<o;++i)a=e.i(r.e)(n[i]),u[i]=a.r||0,s[i]=a.g||0,c[i]=a.b||0;return u=t(u),s=t(s),c=t(c),a.opacity=1,function(t){return a.r=u(t),a.g=s(t),a.b=c(t),a+""}}}var r=e(5),a=e(35),o=e(78),u=e(13);n.a=function t(n){function i(t,n){var i=a((t=e.i(r.e)(t)).r,(n=e.i(r.e)(n)).r),o=a(t.g,n.g),s=a(t.b,n.b),c=e.i(u.a)(t.opacity,n.opacity);return function(n){return t.r=i(n),t.g=o(n),t.b=s(n),t.opacity=c(n),t+""}}var a=e.i(u.c)(n);return i.gamma=t,i}(1);i(a.a),i(o.a)},function(t,n,e){"use strict";function i(t){return function(){return t}}function r(t){return function(n){return t(n)+""}}var a=e(20),o=/[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,u=new RegExp(o.source,"g");n.a=function(t,n){var s,c,f,h=o.lastIndex=u.lastIndex=0,l=-1,d=[],p=[];for(t+="",n+="";(s=o.exec(t))&&(c=u.exec(n));)(f=c.index)>h&&(f=n.slice(h,f),d[l]?d[l]+=f:d[++l]=f),(s=s[0])===(c=c[0])?d[l]?d[l]+=c:d[++l]=c:(d[++l]=null,p.push({i:l,x:e.i(a.a)(s,c)})),h=u.lastIndex;return h<n.length&&(f=n.slice(h),d[l]?d[l]+=f:d[++l]=f),d.length<2?p[0]?r(p[0].x):i(n):(n=p.length,function(t){for(var e,i=0;i<n;++i)d[(e=p[i]).i]=e.x(t);return d.join("")})}},function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var i=e(202);e.d(n,"scaleBand",function(){return i.a}),e.d(n,"scalePoint",function(){return i.b});var r=e(208);e.d(n,"scaleIdentity",function(){return r.a});var a=e(15);e.d(n,"scaleLinear",function(){return a.a});var o=e(209);e.d(n,"scaleLog",function(){return o.a});var u=e(87);e.d(n,"scaleOrdinal",function(){return u.a}),e.d(n,"scaleImplicit",function(){return u.b});var s=e(210);e.d(n,"scalePow",function(){return s.a}),e.d(n,"scaleSqrt",function(){return s.b});var c=e(211);e.d(n,"scaleQuantile",function(){return c.a});var f=e(212);e.d(n,"scaleQuantize",function(){return f.a});var h=e(215);e.d(n,"scaleThreshold",function(){return h.a});var l=e(88);e.d(n,"scaleTime",function(){return l.a});var d=e(217);e.d(n,"scaleUtc",function(){return d.a});var p=e(203);e.d(n,"schemeCategory10",function(){return p.a});var _=e(205);e.d(n,"schemeCategory20b",function(){return _.a});var v=e(206);e.d(n,"schemeCategory20c",function(){return v.a});var y=e(204);e.d(n,"schemeCategory20",function(){return y.a});var b=e(207);e.d(n,"interpolateCubehelixDefault",function(){return b.a});var g=e(213);e.d(n,"interpolateRainbow",function(){return g.a}),e.d(n,"interpolateWarm",function(){return g.b}),e.d(n,"interpolateCool",function(){return g.c});var m=e(218);e.d(n,"interpolateViridis",function(){return m.a}),e.d(n,"interpolateMagma",function(){return m.b}),e.d(n,"interpolateInferno",function(){return m.c}),e.d(n,"interpolatePlasma",function(){return m.d});var x=e(214);e.d(n,"scaleSequential",function(){return x.a})},function(t,n,e){"use strict";n.a=function(t,n){t=t.slice();var e,i=0,r=t.length-1,a=t[i],o=t[r];return o<a&&(e=i,i=r,r=e,e=a,a=o,o=e),t[i]=n.floor(a),t[r]=n.ceil(o),t}},function(t,n,e){"use strict";n.a=function(t){return+t}},function(t,n,e){"use strict";function i(t){function n(n){var e=n+"",i=u.get(e);if(!i){if(c!==o)return c;u.set(e,i=s.push(n))}return t[(i-1)%t.length]}var u=e.i(r.a)(),s=[],c=o;return t=null==t?[]:a.b.call(t),n.domain=function(t){if(!arguments.length)return s.slice();s=[],u=e.i(r.a)();for(var i,a,o=-1,c=t.length;++o<c;)u.has(a=(i=t[o])+"")||u.set(a,s.push(i));return n},n.range=function(e){return arguments.length?(t=a.b.call(e),n):t.slice()},n.unknown=function(t){return arguments.length?(c=t,n):c},n.copy=function(){return i().domain(s).range(t).unknown(c)},n}var r=e(140),a=e(9);e.d(n,"b",function(){return o}),n.a=i;var o={name:"implicit"}},function(t,n,e){"use strict";function i(t){return new Date(t)}function r(t){return t instanceof Date?+t:+new Date(+t)}function a(t,n,s,c,m,x,w,M,T){function E(e){return(w(e)<e?C:x(e)<e?L:m(e)<e?D:c(e)<e?z:n(e)<e?s(e)<e?P:R:t(e)<e?O:U)(e)}function N(n,i,r,a){if(null==n&&(n=10),"number"==typeof n){var u=Math.abs(r-i)/n,s=e.i(o.d)(function(t){return t[2]}).right(H,u);s===H.length?(a=e.i(o.b)(i/g,r/g,n),n=t):s?(s=H[u/H[s-1][2]<H[s][2]/u?s-1:s],a=s[1],n=s[0]):(a=e.i(o.b)(i,r,n),n=M)}return null==a?n:n.every(a)}var S=e.i(h.a)(h.b,u.a),A=S.invert,k=S.domain,C=T(".%L"),L=T(":%S"),D=T("%I:%M"),z=T("%I %p"),P=T("%a %d"),R=T("%b %d"),O=T("%B"),U=T("%Y"),H=[[w,1,d],[w,5,5*d],[w,15,15*d],[w,30,30*d],[x,1,p],[x,5,5*p],[x,15,15*p],[x,30,30*p],[m,1,_],[m,3,3*_],[m,6,6*_],[m,12,12*_],[c,1,v],[c,2,2*v],[s,1,y],[n,1,b],[n,3,3*b],[t,1,g]];return S.invert=function(t){return new Date(A(t))},S.domain=function(t){return arguments.length?k(f.a.call(t,r)):k().map(i)},S.ticks=function(t,n){var e,i=k(),r=i[0],a=i[i.length-1],o=a<r;return o&&(e=r,r=a,a=e),e=N(t,r,a,n),e=e?e.range(r,a+1):[],o?e.reverse():e},S.tickFormat=function(t,n){return null==n?E:T(n)},S.nice=function(t,n){var i=k();return(t=N(t,i[0],i[i.length-1],n))?k(e.i(l.a)(i,t)):S},S.copy=function(){return e.i(h.c)(S,a(t,n,s,c,m,x,w,M,T))},S}var o=e(2),u=e(6),s=e(51),c=e(107),f=e(9),h=e(22),l=e(85);n.b=a;var d=1e3,p=60*d,_=60*p,v=24*_,y=7*v,b=30*v,g=365*v;n.a=function(){return a(s.j,s.o,s.p,s.i,s.q,s.r,s.s,s.t,c.b).domain([new Date(2e3,0,1),new Date(2e3,0,2)])}},function(t,n,e){"use strict";var i=function(t){return function(){return this.matches(t)}};if("undefined"!=typeof document){var r=document.documentElement;if(!r.matches){var a=r.webkitMatchesSelector||r.msMatchesSelector||r.mozMatchesSelector||r.oMatchesSelector;i=function(t){return function(){return a.call(this,t)}}}}n.a=i},function(t,n,e){"use strict";function i(t,n){this.ownerDocument=t.ownerDocument,this.namespaceURI=t.namespaceURI,this._next=null,this._parent=t,this.__data__=n}var r=e(91),a=e(3);n.b=i,n.a=function(){return new a.a(this._enter||this._groups.map(r.a),this._parents)},i.prototype={constructor:i,appendChild:function(t){return this._parent.insertBefore(t,this._next)},insertBefore:function(t,n){return this._parent.insertBefore(t,n)},querySelector:function(t){return this._parent.querySelector(t)},querySelectorAll:function(t){return this._parent.querySelectorAll(t)}}},function(t,n,e){"use strict";n.a=function(t){return new Array(t.length)}},function(t,n,e){"use strict";function i(){return[]}n.a=function(t){return null==t?i:function(){return this.querySelectorAll(t)}}},function(t,n,e){"use strict";var i=(e(253),e(94),e(48));e.d(n,"h",function(){return i.a});var r=(e(272),e(273),e(99),e(275),e(100));e.d(n,"a",function(){return r.a});var a=e(101);e.d(n,"b",function(){return a.a});var o=e(102);e.d(n,"c",function(){return o.a});var u=e(103);e.d(n,"d",function(){return u.a});var s=e(104);e.d(n,"e",function(){return s.a});var c=e(105);e.d(n,"f",function(){return c.a});var f=e(106);e.d(n,"g",function(){return f.a});var h=(e(255),e(256),e(23),e(257),e(95),e(96),e(24),e(258),e(259),e(47),e(260));e.d(n,"i",function(){return h.a});e(25),e(261),e(262),e(263),e(274),e(266),e(17),e(267),e(268),e(49),e(269),e(270),e(18),e(271)},function(t,n,e){"use strict";var i=e(21),r=e(11),a=e(25),o=e(48),u=e(98);n.a=function(){function t(t){var n,r,a,o,u,v=t.length,y=!1,b=new Array(v),g=new Array(v);for(null==d&&(_=p(u=e.i(i.a)())),n=0;n<=v;++n){if(!(n<v&&l(o=t[n],n,t))===y)if(y=!y)r=n,_.areaStart(),_.lineStart();else{for(_.lineEnd(),_.lineStart(),a=n-1;a>=r;--a)_.point(b[a],g[a]);_.lineEnd(),_.areaEnd()}y&&(b[n]=+s(o,n,t),g[n]=+f(o,n,t),_.point(c?+c(o,n,t):b[n],h?+h(o,n,t):g[n]))}if(u)return _=null,u+""||null}function n(){return e.i(o.a)().defined(l).curve(p).context(d)}var s=u.a,c=null,f=e.i(r.a)(0),h=u.b,l=e.i(r.a)(!0),d=null,p=a.a,_=null;return t.x=function(n){return arguments.length?(s="function"==typeof n?n:e.i(r.a)(+n),c=null,t):s},t.x0=function(n){return arguments.length?(s="function"==typeof n?n:e.i(r.a)(+n),t):s},t.x1=function(n){return arguments.length?(c=null==n?null:"function"==typeof n?n:e.i(r.a)(+n),t):c},t.y=function(n){return arguments.length?(f="function"==typeof n?n:e.i(r.a)(+n),
-h=null,t):f},t.y0=function(n){return arguments.length?(f="function"==typeof n?n:e.i(r.a)(+n),t):f},t.y1=function(n){return arguments.length?(h=null==n?null:"function"==typeof n?n:e.i(r.a)(+n),t):h},t.lineX0=t.lineY0=function(){return n().x(s).y(f)},t.lineY1=function(){return n().x(s).y(h)},t.lineX1=function(){return n().x(c).y(f)},t.defined=function(n){return arguments.length?(l="function"==typeof n?n:e.i(r.a)(!!n),t):l},t.curve=function(n){return arguments.length?(p=n,null!=d&&(_=p(d)),t):p},t.context=function(n){return arguments.length?(null==n?d=_=null:_=p(d=n),t):d},t}},function(t,n,e){"use strict";function i(t,n){this._context=t,this._k=(1-n)/6}var r=e(26),a=e(24);n.a=i,i.prototype={areaStart:r.a,areaEnd:r.a,lineStart:function(){this._x0=this._x1=this._x2=this._x3=this._x4=this._x5=this._y0=this._y1=this._y2=this._y3=this._y4=this._y5=NaN,this._point=0},lineEnd:function(){switch(this._point){case 1:this._context.moveTo(this._x3,this._y3),this._context.closePath();break;case 2:this._context.lineTo(this._x3,this._y3),this._context.closePath();break;case 3:this.point(this._x3,this._y3),this.point(this._x4,this._y4),this.point(this._x5,this._y5)}},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._x3=t,this._y3=n;break;case 1:this._point=2,this._context.moveTo(this._x4=t,this._y4=n);break;case 2:this._point=3,this._x5=t,this._y5=n;break;default:e.i(a.b)(this,t,n)}this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return new i(t,n)}return e.tension=function(n){return t(+n)},e})(0)},function(t,n,e){"use strict";function i(t,n){this._context=t,this._k=(1-n)/6}var r=e(24);n.a=i,i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._x2=this._y0=this._y1=this._y2=NaN,this._point=0},lineEnd:function(){(this._line||0!==this._line&&3===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1;break;case 1:this._point=2;break;case 2:this._point=3,this._line?this._context.lineTo(this._x2,this._y2):this._context.moveTo(this._x2,this._y2);break;case 3:this._point=4;default:e.i(r.b)(this,t,n)}this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return new i(t,n)}return e.tension=function(n){return t(+n)},e})(0)},function(t,n,e){"use strict";function i(t){this._curve=t}function r(t){function n(n){return new i(t(n))}return n._curve=t,n}var a=e(25);e.d(n,"b",function(){return o}),n.a=r;var o=r(a.a);i.prototype={areaStart:function(){this._curve.areaStart()},areaEnd:function(){this._curve.areaEnd()},lineStart:function(){this._curve.lineStart()},lineEnd:function(){this._curve.lineEnd()},point:function(t,n){this._curve.point(n*Math.sin(t),n*-Math.cos(t))}}},function(t,n,e){"use strict";function i(t){return t[0]}function r(t){return t[1]}n.a=i,n.b=r},function(t,n,e){"use strict";function i(t){var n=t.curve;return t.angle=t.x,delete t.x,t.radius=t.y,delete t.y,t.curve=function(t){return arguments.length?n(e.i(r.a)(t)):n()._curve},t}var r=e(97);e(48);n.a=i},function(t,n,e){"use strict";var i=e(16);n.a={draw:function(t,n){var e=Math.sqrt(n/i.b);t.moveTo(e,0),t.arc(0,0,e,0,i.c)}}},function(t,n,e){"use strict";n.a={draw:function(t,n){var e=Math.sqrt(n/5)/2;t.moveTo(-3*e,-e),t.lineTo(-e,-e),t.lineTo(-e,-3*e),t.lineTo(e,-3*e),t.lineTo(e,-e),t.lineTo(3*e,-e),t.lineTo(3*e,e),t.lineTo(e,e),t.lineTo(e,3*e),t.lineTo(-e,3*e),t.lineTo(-e,e),t.lineTo(-3*e,e),t.closePath()}}},function(t,n,e){"use strict";var i=Math.sqrt(1/3),r=2*i;n.a={draw:function(t,n){var e=Math.sqrt(n/r),a=e*i;t.moveTo(0,-e),t.lineTo(a,0),t.lineTo(0,e),t.lineTo(-a,0),t.closePath()}}},function(t,n,e){"use strict";n.a={draw:function(t,n){var e=Math.sqrt(n),i=-e/2;t.rect(i,i,e,e)}}},function(t,n,e){"use strict";var i=e(16),r=.8908130915292852,a=Math.sin(i.b/10)/Math.sin(7*i.b/10),o=Math.sin(i.c/10)*a,u=-Math.cos(i.c/10)*a;n.a={draw:function(t,n){var e=Math.sqrt(n*r),a=o*e,s=u*e;t.moveTo(0,-e),t.lineTo(a,s);for(var c=1;c<5;++c){var f=i.c*c/5,h=Math.cos(f),l=Math.sin(f);t.lineTo(l*e,-h*e),t.lineTo(h*a-l*s,l*a+h*s)}t.closePath()}}},function(t,n,e){"use strict";var i=Math.sqrt(3);n.a={draw:function(t,n){var e=-Math.sqrt(n/(3*i));t.moveTo(0,2*e),t.lineTo(-i*e,-e),t.lineTo(i*e,-e),t.closePath()}}},function(t,n,e){"use strict";var i=-.5,r=Math.sqrt(3)/2,a=1/Math.sqrt(12),o=3*(a/2+1);n.a={draw:function(t,n){var e=Math.sqrt(n/o),u=e/2,s=e*a,c=u,f=e*a+e,h=-c,l=f;t.moveTo(u,s),t.lineTo(c,f),t.lineTo(h,l),t.lineTo(i*u-r*s,r*u+i*s),t.lineTo(i*c-r*f,r*c+i*f),t.lineTo(i*h-r*l,r*h+i*l),t.lineTo(i*u+r*s,i*s-r*u),t.lineTo(i*c+r*f,i*f-r*c),t.lineTo(i*h+r*l,i*l-r*h),t.closePath()}}},function(t,n,e){"use strict";var i=e(50);e.d(n,"b",function(){return i.c}),e.d(n,"a",function(){return i.a});e(109),e(108),e(276)},function(t,n,e){"use strict";function i(t){return t.toISOString()}var r=e(50);e.d(n,"a",function(){return a});var a="%Y-%m-%dT%H:%M:%S.%LZ";Date.prototype.toISOString?i:e.i(r.a)(a)},function(t,n,e){"use strict";function i(t){if(0<=t.y&&t.y<100){var n=new Date(-1,t.m,t.d,t.H,t.M,t.S,t.L);return n.setFullYear(t.y),n}return new Date(t.y,t.m,t.d,t.H,t.M,t.S,t.L)}function r(t){if(0<=t.y&&t.y<100){var n=new Date(Date.UTC(-1,t.m,t.d,t.H,t.M,t.S,t.L));return n.setUTCFullYear(t.y),n}return new Date(Date.UTC(t.y,t.m,t.d,t.H,t.M,t.S,t.L))}function a(t){return{y:t,m:0,d:1,H:0,M:0,S:0,L:0}}function o(t){function n(t,n){return function(e){var i,r,a,o=[],u=-1,s=0,c=t.length;for(e instanceof Date||(e=new Date(+e));++u<c;)37===t.charCodeAt(u)&&(o.push(t.slice(s,u)),null!=(r=nt[i=t.charAt(++u)])?i=t.charAt(++u):r="e"===i?" ":"0",(a=n[i])&&(i=a(e,r)),o.push(i),s=u+1);return o.push(t.slice(s,u)),o.join("")}}function e(t,n){return function(e){var i=a(1900),u=o(i,t,e+="",0);if(u!=e.length)return null;if("p"in i&&(i.H=i.H%12+12*i.p),"W"in i||"U"in i){"w"in i||(i.w="W"in i?1:0);var s="Z"in i?r(a(i.y)).getUTCDay():n(a(i.y)).getDay();i.m=0,i.d="W"in i?(i.w+6)%7+7*i.W-(s+5)%7:i.w+7*i.U-(s+6)%7}return"Z"in i?(i.H+=i.Z/100|0,i.M+=i.Z%100,r(i)):n(i)}}function o(t,n,e,i){for(var r,a,o=0,u=n.length,s=e.length;o<u;){if(i>=s)return-1;if(r=n.charCodeAt(o++),37===r){if(r=n.charAt(o++),a=Ut[r in nt?n.charAt(o++):r],!a||(i=a(t,e,i))<0)return-1}else if(r!=e.charCodeAt(i++))return-1}return i}function u(t,n,e){var i=Et.exec(n.slice(e));return i?(t.p=Nt[i[0].toLowerCase()],e+i[0].length):-1}function s(t,n,e){var i=kt.exec(n.slice(e));return i?(t.w=Ct[i[0].toLowerCase()],e+i[0].length):-1}function tt(t,n,e){var i=St.exec(n.slice(e));return i?(t.w=At[i[0].toLowerCase()],e+i[0].length):-1}function et(t,n,e){var i=zt.exec(n.slice(e));return i?(t.m=Pt[i[0].toLowerCase()],e+i[0].length):-1}function it(t,n,e){var i=Lt.exec(n.slice(e));return i?(t.m=Dt[i[0].toLowerCase()],e+i[0].length):-1}function rt(t,n,e){return o(t,yt,n,e)}function at(t,n,e){return o(t,bt,n,e)}function ot(t,n,e){return o(t,gt,n,e)}function ut(t){return wt[t.getDay()]}function st(t){return xt[t.getDay()]}function ct(t){return Tt[t.getMonth()]}function ft(t){return Mt[t.getMonth()]}function ht(t){return mt[+(t.getHours()>=12)]}function lt(t){return wt[t.getUTCDay()]}function dt(t){return xt[t.getUTCDay()]}function pt(t){return Tt[t.getUTCMonth()]}function _t(t){return Mt[t.getUTCMonth()]}function vt(t){return mt[+(t.getUTCHours()>=12)]}var yt=t.dateTime,bt=t.date,gt=t.time,mt=t.periods,xt=t.days,wt=t.shortDays,Mt=t.months,Tt=t.shortMonths,Et=c(mt),Nt=f(mt),St=c(xt),At=f(xt),kt=c(wt),Ct=f(wt),Lt=c(Mt),Dt=f(Mt),zt=c(Tt),Pt=f(Tt),Rt={a:ut,A:st,b:ct,B:ft,c:null,d:E,e:E,H:N,I:S,j:A,L:k,m:C,M:L,p:ht,S:D,U:z,w:P,W:R,x:null,X:null,y:O,Y:U,Z:H,"%":K},Ot={a:lt,A:dt,b:pt,B:_t,c:null,d:F,e:F,H:I,I:Y,j:j,L:q,m:X,M:V,p:vt,S:B,U:W,w:G,W:Z,x:null,X:null,y:$,Y:J,Z:Q,"%":K},Ut={a:s,A:tt,b:et,B:it,c:rt,d:b,e:b,H:m,I:m,j:g,L:M,m:y,M:x,p:u,S:w,U:l,w:h,W:d,x:at,X:ot,y:_,Y:p,Z:v,"%":T};return Rt.x=n(bt,Rt),Rt.X=n(gt,Rt),Rt.c=n(yt,Rt),Ot.x=n(bt,Ot),Ot.X=n(gt,Ot),Ot.c=n(yt,Ot),{format:function(t){var e=n(t+="",Rt);return e.toString=function(){return t},e},parse:function(t){var n=e(t+="",i);return n.toString=function(){return t},n},utcFormat:function(t){var e=n(t+="",Ot);return e.toString=function(){return t},e},utcParse:function(t){var n=e(t,r);return n.toString=function(){return t},n}}}function u(t,n,e){var i=t<0?"-":"",r=(i?-t:t)+"",a=r.length;return i+(a<e?new Array(e-a+1).join(n)+r:r)}function s(t){return t.replace(rt,"\\$&")}function c(t){return new RegExp("^(?:"+t.map(s).join("|")+")","i")}function f(t){for(var n={},e=-1,i=t.length;++e<i;)n[t[e].toLowerCase()]=e;return n}function h(t,n,e){var i=et.exec(n.slice(e,e+1));return i?(t.w=+i[0],e+i[0].length):-1}function l(t,n,e){var i=et.exec(n.slice(e));return i?(t.U=+i[0],e+i[0].length):-1}function d(t,n,e){var i=et.exec(n.slice(e));return i?(t.W=+i[0],e+i[0].length):-1}function p(t,n,e){var i=et.exec(n.slice(e,e+4));return i?(t.y=+i[0],e+i[0].length):-1}function _(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.y=+i[0]+(+i[0]>68?1900:2e3),e+i[0].length):-1}function v(t,n,e){var i=/^(Z)|([+-]\d\d)(?:\:?(\d\d))?/.exec(n.slice(e,e+6));return i?(t.Z=i[1]?0:-(i[2]+(i[3]||"00")),e+i[0].length):-1}function y(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.m=i[0]-1,e+i[0].length):-1}function b(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.d=+i[0],e+i[0].length):-1}function g(t,n,e){var i=et.exec(n.slice(e,e+3));return i?(t.m=0,t.d=+i[0],e+i[0].length):-1}function m(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.H=+i[0],e+i[0].length):-1}function x(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.M=+i[0],e+i[0].length):-1}function w(t,n,e){var i=et.exec(n.slice(e,e+2));return i?(t.S=+i[0],e+i[0].length):-1}function M(t,n,e){var i=et.exec(n.slice(e,e+3));return i?(t.L=+i[0],e+i[0].length):-1}function T(t,n,e){var i=it.exec(n.slice(e,e+1));return i?e+i[0].length:-1}function E(t,n){return u(t.getDate(),n,2)}function N(t,n){return u(t.getHours(),n,2)}function S(t,n){return u(t.getHours()%12||12,n,2)}function A(t,n){return u(1+tt.i.count(e.i(tt.j)(t),t),n,3)}function k(t,n){return u(t.getMilliseconds(),n,3)}function C(t,n){return u(t.getMonth()+1,n,2)}function L(t,n){return u(t.getMinutes(),n,2)}function D(t,n){return u(t.getSeconds(),n,2)}function z(t,n){return u(tt.k.count(e.i(tt.j)(t),t),n,2)}function P(t){return t.getDay()}function R(t,n){return u(tt.l.count(e.i(tt.j)(t),t),n,2)}function O(t,n){return u(t.getFullYear()%100,n,2)}function U(t,n){return u(t.getFullYear()%1e4,n,4)}function H(t){var n=t.getTimezoneOffset();return(n>0?"-":(n*=-1,"+"))+u(n/60|0,"0",2)+u(n%60,"0",2)}function F(t,n){return u(t.getUTCDate(),n,2)}function I(t,n){return u(t.getUTCHours(),n,2)}function Y(t,n){return u(t.getUTCHours()%12||12,n,2)}function j(t,n){return u(1+tt.d.count(e.i(tt.a)(t),t),n,3)}function q(t,n){return u(t.getUTCMilliseconds(),n,3)}function X(t,n){return u(t.getUTCMonth()+1,n,2)}function V(t,n){return u(t.getUTCMinutes(),n,2)}function B(t,n){return u(t.getUTCSeconds(),n,2)}function W(t,n){return u(tt.m.count(e.i(tt.a)(t),t),n,2)}function G(t){return t.getUTCDay()}function Z(t,n){return u(tt.n.count(e.i(tt.a)(t),t),n,2)}function $(t,n){return u(t.getUTCFullYear()%100,n,2)}function J(t,n){return u(t.getUTCFullYear()%1e4,n,4)}function Q(){return"+0000"}function K(){return"%"}var tt=e(51);n.a=o;var nt={"-":"",_:" ",0:"0"},et=/^\s*\d+/,it=/^%/,rt=/[\\\^\$\*\+\?\|\[\]\(\)\.\{\}]/g},function(t,n,e){"use strict";var i=e(52);e.d(n,"c",function(){return i.c}),e.d(n,"a",function(){return i.a});var r=e(292);e.d(n,"b",function(){return r.a});e(291)},function(t,n,e){"use strict";var i=e(4);n.a=function(t,n){var e,r,a,o=t.__transition,u=!0;if(o){n=null==n?null:n+"";for(a in o)(e=o[a]).name===n?(r=e.state>i.a&&e.state<i.b,e.state=i.c,e.timer.stop(),r&&e.on.call("interrupt",t,t.__data__,e.index,e.group),delete o[a]):u=!1;u&&delete t.__transition}}},function(t,n,e){"use strict";var i=e(5),r=e(6);n.a=function(t,n){var a;return("number"==typeof n?r.a:n instanceof i.f?r.g:(a=e.i(i.f)(n))?(n=a,r.g):r.h)(t,n)}},function(t,n,e){"use strict";function i(t,n,e){this.k=t,this.x=n,this.y=e}function r(t){return t.__zoom||a}n.b=i,e.d(n,"a",function(){return a}),i.prototype={constructor:i,scale:function(t){return 1===t?this:new i(this.k*t,this.x,this.y)},translate:function(t,n){return 0===t&0===n?this:new i(this.k,this.x+this.k*t,this.y+this.k*n)},apply:function(t){return[t[0]*this.k+this.x,t[1]*this.k+this.y]},applyX:function(t){return t*this.k+this.x},applyY:function(t){return t*this.k+this.y},invert:function(t){return[(t[0]-this.x)/this.k,(t[1]-this.y)/this.k]},invertX:function(t){return(t-this.x)/this.k},invertY:function(t){return(t-this.y)/this.k},rescaleX:function(t){return t.copy().domain(t.range().map(this.invertX,this).map(t.invert,t))},rescaleY:function(t){return t.copy().domain(t.range().map(this.invertY,this).map(t.invert,t))},toString:function(){return"translate("+this.x+","+this.y+") scale("+this.k+")"}};var a=new i(1,0,0);r.prototype=i.prototype},function(t,n,e){var i=e(118);"string"==typeof i&&(i=[[t.i,i,""]]);e(320)(i,{});i.locals&&(t.exports=i.locals)},function(t,n,e){"use strict";function i(t,n){return new a.a(t,n)}Object.defineProperty(n,"__esModule",{value:!0});var r=e(114),a=(e.n(r),e(53)),o=e(57),u=e(84);e.d(n,"Scatterplot",function(){return a.a}),e.d(n,"EScaleAxes",function(){return a.b}),e.d(n,"scale",function(){return s}),e.d(n,"symbol",function(){return c}),n.create=i;var s=u,c=o;n.default=a.a},function(t,n,e){"use strict";function i(t,n){var e=t[0]-n[0],i=t[1]-n[1];return e*e+i*i}var r=e(93),a=e(181),o=e(2),u=e(56),s=e(55),c=100,f=function(){function t(t){this.props={lineWidth:5,strokeStyle:"rgba(0,0,0,1)",fillStyle:"rgba(0,0,0,0.2)"},this.line=e.i(r.h)().curve(r.i),this.points=[],this.current=null,e.i(s.a)(this.props,t)}return t.prototype.start=function(t,n){this.clear(),this.current=[t,n],this.points.push(this.current)},t.prototype.setCurrent=function(t,n){this.current=[t,n]},t.prototype.pushCurrent=function(){var t=this.points,n=t.length,e=this.current;return!(!e||n>0&&i(t[n-1],e)<c)&&(t.push(this.current),!0)},t.prototype.end=function(t,n){this.setCurrent(t,n),this.pushCurrent(),this.current=null},t.prototype.clear=function(){this.points=[],this.current=null},t.prototype.tester=function(t,n){if(this.points.length<3)return null;var i=e.i(a.a)(this.points.map(function(e){var i=e[0],r=e[1];return[t(i),n(r)]})),r=e.i(o.h)(i,function(t){return t[0]}),s=r[0],c=r[1],f=e.i(o.h)(i,function(t){return t[1]}),h=f[0],l=f[1];return{test:function(t,n){return e.i(a.b)(i,[t,n])},testArea:e.i(u.c)(s,h,c,l)}},t.prototype.render=function(t){function n(n){n&&(t.moveTo(n[0],n[1]),t.arc(n[0],n[1],3,0,2*Math.PI))}var e=this.points;t.save(),t.lineWidth=this.props.lineWidth,t.strokeStyle=this.props.strokeStyle,e.length>0&&(this.line.context(t)(e),t.fillStyle=this.props.fillStyle,t.fill(),t.stroke()),t.beginPath(),n(e[0]),n(this.current),t.closePath(),t.stroke(),t.restore()},t}();n.a=f},function(t,n,e){"use strict";function i(t,n){void 0===n&&(n=!0);var e=t.querySelector("div."+s.a+"-tooltip");return!e&&n&&(e=document.createElement("div"),e.innerHTML=c,e=e.childNodes[0],t.appendChild(e)),e}function r(t,n,e){t.style.display="block",t.style.left=n-t.clientWidth/2+"px",t.style.top=e-t.clientHeight+"px"}function a(t){if("function"==typeof t.toString){var n=t.toString();if("[object Object]"!==n)return n}return JSON.stringify(t)}function o(t,n,e,o){var u=i(t,n.length>0);if(0===n.length)return void(u&&(u.style.display=null));var s=u.querySelector("div");s.innerHTML="<pre>"+n.map(a).join("\n")+"</pre>",r(u,e,o)}var u=e(114),s=(e.n(u),e(54));n.a=o;var c='<div class="'+s.a+'-tooltip" role="tooltip">\n  <div></div>\n  <div></div>\n</div>'},function(t,n,e){n=t.exports=e(119)(),n.push([t.i,".datavisyn-scatterplot{position:relative}.datavisyn-scatterplot canvas{position:absolute;width:100%;height:100%}.datavisyn-scatterplot canvas.datavisyn-scatterplot-data-layer{pointer-events:none;z-index:1}.datavisyn-scatterplot canvas.datavisyn-scatterplot-selection-layer{z-index:2}.datavisyn-scatterplot svg{pointer-events:none;position:absolute;width:100%;height:100%}.datavisyn-scatterplot svg.datavisyn-scatterplot-axis-left{z-index:2}.datavisyn-scatterplot svg.datavisyn-scatterplot-axis-bottom{bottom:0;z-index:3}.datavisyn-scatterplot div.datavisyn-scatterplot-axis-bottom-label,.datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label{pointer-events:none;user-select:none;text-align:center;position:absolute}.datavisyn-scatterplot div.datavisyn-scatterplot-axis-bottom-label{bottom:0}.datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label{display:flex;justify-content:center;align-items:center;width:1em;white-space:nowrap}.datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label>div{transform:rotate(270deg);transform-origin:center center}.datavisyn-scatterplot .datavisyn-scatterplot-tooltip{display:none;position:absolute;width:auto;height:auto;z-index:4;padding:5px 0}.datavisyn-scatterplot .datavisyn-scatterplot-tooltip>:first-child{padding:3px 8px;color:#fff;text-align:center;background-color:#000;border-radius:4px}.datavisyn-scatterplot .datavisyn-scatterplot-tooltip>:last-child{margin-left:-5px;border-width:5px 5px 0;border-style:solid;border-color:transparent;border-top-color:#000;position:absolute;bottom:0;left:50%;width:0;height:0}.datavisyn-scatterplot-minimap{position:relative;background-color:gray}.datavisyn-scatterplot-minimap svg{width:100%;height:100%}",""])},function(t,n){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],n=0;n<this.length;n++){var e=this[n];e[2]?t.push("@media "+e[2]+"{"+e[1]+"}"):t.push(e[1])}return t.join("")},t.i=function(n,e){"string"==typeof n&&(n=[[null,n,""]]);for(var i={},r=0;r<this.length;r++){var a=this[r][0];"number"==typeof a&&(i[a]=!0)}for(r=0;r<n.length;r++){var o=n[r];"number"==typeof o[0]&&i[o[0]]||(e&&!o[2]?o[2]=e:e&&(o[2]="("+o[2]+") and ("+e+")"),t.push(o))}},t}},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict"},function(t,n,e){"use strict";e(58),e(59),e(120),e(62),e(123),e(66),e(65)},function(t,n,e){"use strict";n.a=function(t){return t}},function(t,n,e){"use strict"},function(t,n,e){"use strict";e(12)},function(t,n,e){"use strict";e(10),e(12),e(28)},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict";e(10)},function(t,n,e){"use strict";n.a=function(t,n,e){for(var i,r,a=(null==e?t.length:e)-(n=null==n?0:+n);a;)r=Math.random()*a--|0,i=t[a+n],t[a+n]=t[r+n],t[r+n]=i;return t}},function(t,n,e){"use strict"},function(t,n,e){"use strict";e(58),e(10),e(12),e(28)},function(t,n,e){"use strict";e(61)},function(t,n,e){"use strict";e(67)},function(t,n,e){"use strict";var i=e(138);e.d(n,"b",function(){return i.a}),e.d(n,"a",function(){return i.b})},function(t,n,e){"use strict";e.d(n,"a",function(){return i});var i=Array.prototype.slice},function(t,n,e){"use strict";function i(t,n,e){var i=t(e);return"translate("+(isFinite(i)?i:n(e))+",0)"}function r(t,n,e){var i=t(e);return"translate(0,"+(isFinite(i)?i:n(e))+")"}function a(t){var n=t.bandwidth()/2;return t.round()&&(n=Math.round(n)),function(e){return t(e)+n}}function o(){return!this.__axis}function u(t,n){function e(e){var f,m=null==s?n.ticks?n.ticks.apply(n,u):n.domain():s,x=null==c?n.tickFormat?n.tickFormat.apply(n,u):h.a:c,w=Math.max(y,0)+g,M=t===l||t===p?i:r,T=n.range(),E=T[0]+.5,N=T[T.length-1]+.5,S=(n.bandwidth?a:h.a)(n.copy()),A=e.selection?e.selection():e,k=A.selectAll(".domain").data([null]),C=A.selectAll(".tick").data(m,n).order(),L=C.exit(),D=C.enter().append("g").attr("class","tick"),z=C.select("line"),P=C.select("text"),R=t===l||t===_?-1:1,O=t===_||t===d?(f="x","y"):(f="y","x");k=k.merge(k.enter().insert("path",".tick").attr("class","domain").attr("stroke","#000")),C=C.merge(D),z=z.merge(D.append("line").attr("stroke","#000").attr(f+"2",R*y).attr(O+"1",.5).attr(O+"2",.5)),P=P.merge(D.append("text").attr("fill","#000").attr(f,R*w).attr(O,.5).attr("dy",t===l?"0em":t===p?"0.71em":"0.32em")),e!==A&&(k=k.transition(e),C=C.transition(e),z=z.transition(e),P=P.transition(e),L=L.transition(e).attr("opacity",v).attr("transform",function(t){return M(S,this.parentNode.__axis||S,t)}),D.attr("opacity",v).attr("transform",function(t){return M(this.parentNode.__axis||S,S,t)})),L.remove(),k.attr("d",t===_||t==d?"M"+R*b+","+E+"H0.5V"+N+"H"+R*b:"M"+E+","+R*b+"V0.5H"+N+"V"+R*b),C.attr("opacity",1).attr("transform",function(t){return M(S,S,t)}),z.attr(f+"2",R*y),P.attr(f,R*w).text(x),A.filter(o).attr("fill","none").attr("font-size",10).attr("font-family","sans-serif").attr("text-anchor",t===d?"start":t===_?"end":"middle"),A.each(function(){this.__axis=S})}var u=[],s=null,c=null,y=6,b=6,g=3;return e.scale=function(t){return arguments.length?(n=t,e):n},e.ticks=function(){return u=f.a.call(arguments),e},e.tickArguments=function(t){return arguments.length?(u=null==t?[]:f.a.call(t),e):u.slice()},e.tickValues=function(t){return arguments.length?(s=null==t?null:f.a.call(t),e):s&&s.slice()},e.tickFormat=function(t){return arguments.length?(c=t,e):c},e.tickSize=function(t){return arguments.length?(y=b=+t,e):y},e.tickSizeInner=function(t){return arguments.length?(y=+t,e):y},e.tickSizeOuter=function(t){return arguments.length?(b=+t,e):b},e.tickPadding=function(t){return arguments.length?(g=+t,e):g},e}function s(t){return u(p,t)}function c(t){return u(_,t)}var f=e(137),h=e(139);n.a=s,n.b=c;var l=1,d=2,p=3,_=4,v=1e-6},function(t,n,e){"use strict";n.a=function(t){return t}},function(t,n,e){"use strict";var i=(e(143),e(144),e(29));e.d(n,"a",function(){return i.a});e(142),e(145),e(141)},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict";e(29)},function(t,n,e){"use strict";function i(){}function r(t,n){var e=new i;if(t instanceof i)t.each(function(t){e.add(t)});else if(t){var r=-1,a=t.length;if(null==n)for(;++r<a;)e.add(t[r]);else for(;++r<a;)e.add(n(t[r],r,t))}return e}var a=e(29),o=a.a.prototype;i.prototype=r.prototype={constructor:i,has:o.has,add:function(t){return t+="",this[a.b+t]=t,this},remove:o.remove,clear:o.clear,values:o.keys,size:o.size,empty:o.empty,each:o.each}},function(t,n,e){"use strict"},function(t,n,e){"use strict";function i(t){if(t instanceof a)return new a(t.h,t.s,t.l,t.opacity);t instanceof u.a||(t=e.i(u.b)(t));var n=t.r/255,i=t.g/255,r=t.b/255,o=(v*r+p*n-_*i)/(v+p-_),c=r-o,f=(d*(i-o)-h*c)/l,y=Math.sqrt(f*f+c*c)/(d*o*(1-o)),b=y?Math.atan2(f,c)*s.a-120:NaN;return new a(b<0?b+360:b,y,o,t.opacity)}function r(t,n,e,r){return 1===arguments.length?i(t):new a(t,n,e,null==r?1:r)}function a(t,n,e,i){this.h=+t,this.s=+n,this.l=+e,this.opacity=+i}var o=e(31),u=e(30),s=e(69);n.a=r;var c=-.14861,f=1.78277,h=-.29227,l=-.90649,d=1.97294,p=d*l,_=d*f,v=f*h-l*c;e.i(o.a)(a,r,e.i(o.b)(u.c,{brighter:function(t){return t=null==t?u.d:Math.pow(u.d,t),new a(this.h,this.s,this.l*t,this.opacity)},darker:function(t){return t=null==t?u.e:Math.pow(u.e,t),new a(this.h,this.s,this.l*t,this.opacity)},rgb:function(){var t=isNaN(this.h)?0:(this.h+120)*s.b,n=+this.l,e=isNaN(this.s)?0:this.s*n*(1-n),i=Math.cos(t),r=Math.sin(t);return new u.a(255*(n+e*(c*i+f*r)),255*(n+e*(h*i+l*r)),255*(n+e*(d*i)),this.opacity)}}))},function(t,n,e){"use strict";function i(t){if(t instanceof a)return new a(t.l,t.a,t.b,t.opacity);if(t instanceof l){var n=t.h*_.b;return new a(t.l,Math.cos(n)*t.c,Math.sin(n)*t.c,t.opacity)}t instanceof p.a||(t=e.i(p.b)(t));var i=c(t.r),r=c(t.g),u=c(t.b),s=o((.4124564*i+.3575761*r+.1804375*u)/y),f=o((.2126729*i+.7151522*r+.072175*u)/b),h=o((.0193339*i+.119192*r+.9503041*u)/g);return new a(116*f-16,500*(s-f),200*(f-h),t.opacity)}function r(t,n,e,r){return 1===arguments.length?i(t):new a(t,n,e,null==r?1:r)}function a(t,n,e,i){this.l=+t,this.a=+n,this.b=+e,this.opacity=+i}function o(t){return t>M?Math.pow(t,1/3):t/w+m}function u(t){return t>x?t*t*t:w*(t-m)}function s(t){return 255*(t<=.0031308?12.92*t:1.055*Math.pow(t,1/2.4)-.055)}function c(t){return(t/=255)<=.04045?t/12.92:Math.pow((t+.055)/1.055,2.4)}function f(t){if(t instanceof l)return new l(t.h,t.c,t.l,t.opacity);t instanceof a||(t=i(t));var n=Math.atan2(t.b,t.a)*_.a;return new l(n<0?n+360:n,Math.sqrt(t.a*t.a+t.b*t.b),t.l,t.opacity)}function h(t,n,e,i){return 1===arguments.length?f(t):new l(t,n,e,null==i?1:i)}function l(t,n,e,i){this.h=+t,this.c=+n,this.l=+e,this.opacity=+i}var d=e(31),p=e(30),_=e(69);n.b=r,n.a=h;var v=18,y=.95047,b=1,g=1.08883,m=4/29,x=6/29,w=3*x*x,M=x*x*x;e.i(d.a)(a,r,e.i(d.b)(p.c,{brighter:function(t){return new a(this.l+v*(null==t?1:t),this.a,this.b,this.opacity)},darker:function(t){return new a(this.l-v*(null==t?1:t),this.a,this.b,this.opacity)},rgb:function(){var t=(this.l+16)/116,n=isNaN(this.a)?t:t+this.a/500,e=isNaN(this.b)?t:t-this.b/200;return t=b*u(t),n=y*u(n),e=g*u(e),new p.a(s(3.2404542*n-1.5371385*t-.4985314*e),s(-.969266*n+1.8760108*t+.041556*e),s(.0556434*n-.2040259*t+1.0572252*e),this.opacity)}})),e.i(d.a)(l,h,e.i(d.b)(p.c,{brighter:function(t){return new l(this.h,this.c,this.l+v*(null==t?1:t),this.opacity)},darker:function(t){return new l(this.h,this.c,this.l-v*(null==t?1:t),this.opacity)},rgb:function(){return i(this).rgb()}}))},function(t,n,e){"use strict";function i(){for(var t,n=0,e=arguments.length,i={};n<e;++n){if(!(t=arguments[n]+"")||t in i)throw new Error("illegal type: "+t);i[t]=[]}return new r(i)}function r(t){this._=t}function a(t,n){return t.trim().split(/^|\s+/).map(function(t){var e="",i=t.indexOf(".");if(i>=0&&(e=t.slice(i+1),t=t.slice(0,i)),t&&!n.hasOwnProperty(t))throw new Error("unknown type: "+t);return{type:t,name:e}})}function o(t,n){for(var e,i=0,r=t.length;i<r;++i)if((e=t[i]).name===n)return e.value}function u(t,n,e){for(var i=0,r=t.length;i<r;++i)if(t[i].name===n){t[i]=s,t=t.slice(0,i).concat(t.slice(i+1));break}return null!=e&&t.push({name:n,value:e}),t}var s={value:function(){}};r.prototype=i.prototype={constructor:r,on:function(t,n){var e,i=this._,r=a(t+"",i),s=-1,c=r.length;{if(!(arguments.length<2)){if(null!=n&&"function"!=typeof n)throw new Error("invalid callback: "+n);for(;++s<c;)if(e=(t=r[s]).type)i[e]=u(i[e],t.name,n);else if(null==n)for(e in i)i[e]=u(i[e],t.name,null);return this}for(;++s<c;)if((e=(t=r[s]).type)&&(e=o(i[e],t.name)))return e}},copy:function(){var t={},n=this._;for(var e in n)t[e]=n[e].slice();return new r(t)},call:function(t,n){if((e=arguments.length-2)>0)for(var e,i,r=new Array(e),a=0;a<e;++a)r[a]=arguments[a+2];if(!this._.hasOwnProperty(t))throw new Error("unknown type: "+t);for(i=this._[t],a=0,e=i.length;a<e;++a)i[a].value.apply(n,r)},apply:function(t,n,e){if(!this._.hasOwnProperty(t))throw new Error("unknown type: "+t);for(var i=this._[t],r=0,a=i.length;r<a;++r)i[r].value.apply(n,e)}},n.a=i},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";function i(){return!u.b.button}function r(){return this.parentNode}function a(t){return null==t?{x:u.b.x,y:u.b.y}:t}var o=e(32),u=e(0),s=e(71),c=e(72),f=e(149),h=e(151);n.a=function(){function t(t){t.on("mousedown.drag",n).on("touchstart.drag",p).on("touchmove.drag",_).on("touchend.drag touchcancel.drag",v).style("-webkit-tap-highlight-color","rgba(0,0,0,0)")}function n(){if(!g&&m.apply(this,arguments)){var t=y("mouse",x.apply(this,arguments),u.c,this,arguments);t&&(e.i(u.a)(u.b.view).on("mousemove.drag",l,!0).on("mouseup.drag",d,!0),e.i(s.a)(u.b.view),e.i(c.b)(),b=!1,t("start"))}}function l(){e.i(c.a)(),b=!0,M.mouse("drag")}function d(){e.i(u.a)(u.b.view).on("mousemove.drag mouseup.drag",null),e.i(s.b)(u.b.view,b),e.i(c.a)(),M.mouse("end")}function p(){if(m.apply(this,arguments)){var t,n,i=u.b.changedTouches,r=x.apply(this,arguments),a=i.length;for(t=0;t<a;++t)(n=y(i[t].identifier,r,u.d,this,arguments))&&(e.i(c.b)(),n("start"))}}function _(){var t,n,i=u.b.changedTouches,r=i.length;for(t=0;t<r;++t)(n=M[i[t].identifier])&&(e.i(c.a)(),n("drag"))}function v(){var t,n,i=u.b.changedTouches,r=i.length;for(g&&clearTimeout(g),g=setTimeout(function(){g=null},500),t=0;t<r;++t)(n=M[i[t].identifier])&&(e.i(c.b)(),n("end"))}function y(n,i,r,a,o){var s,c,f,l=r(i,n),d=T.copy();if(e.i(u.e)(new h.a(t,"beforestart",s,n,E,l[0],l[1],0,0,d),function(){return null!=(u.b.subject=s=w.apply(a,o))&&(c=s.x-l[0]||0,f=s.y-l[1]||0,!0)}))return function p(_){var v,y=l;switch(_){case"start":M[n]=p,v=E++;break;case"end":delete M[n],--E;case"drag":l=r(i,n),v=E}e.i(u.e)(new h.a(t,_,s,n,v,l[0]+c,l[1]+f,l[0]-y[0],l[1]-y[1],d),d.apply,d,[_,a,o])}}var b,g,m=i,x=r,w=a,M={},T=e.i(o.a)("start","drag","end"),E=0;return t.filter=function(n){return arguments.length?(m="function"==typeof n?n:e.i(f.a)(!!n),t):m},t.container=function(n){return arguments.length?(x="function"==typeof n?n:e.i(f.a)(n),t):x},t.subject=function(n){return arguments.length?(w="function"==typeof n?n:e.i(f.a)(n),t):w},t.on=function(){var n=T.on.apply(T,arguments);return n===T?t:n},t}},function(t,n,e){"use strict";function i(t,n,e,i,r,a,o,u,s,c){this.target=t,this.type=n,this.subject=e,this.identifier=i,this.active=r,this.x=a,this.y=o,this.dx=u,this.dy=s,this._=c}n.a=i,i.prototype.on=function(){var t=this._.on.apply(this._,arguments);return t===this._?this:t}},function(t,n,e){"use strict";var i=(e(159),e(161),e(156));e.d(n,"a",function(){return i.a});e(160),e(162),e(158),e(155),e(154),e(153),e(157)},function(t,n,e){"use strict";var i=1.70158;(function t(n){function e(t){return t*t*((n+1)*t-n)}return n=+n,e.overshoot=t,e})(i),function t(n){function e(t){return--t*t*((n+1)*t+n)+1}return n=+n,e.overshoot=t,e}(i),function t(n){function e(t){return((t*=2)<1?t*t*((n+1)*t-n):(t-=2)*t*((n+1)*t+n)+2)/2}return n=+n,e.overshoot=t,e}(i)},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict";function i(t){return((t*=2)<=1?t*t*t:(t-=2)*t*t+2)/2}n.a=i},function(t,n,e){"use strict";var i=2*Math.PI,r=1,a=.3;(function t(n,e){function r(t){return n*Math.pow(2,10*--t)*Math.sin((a-t)/e)}var a=Math.asin(1/(n=Math.max(1,n)))*(e/=i);return r.amplitude=function(n){return t(n,e*i)},r.period=function(e){return t(n,e)},r})(r,a),function t(n,e){function r(t){return 1-n*Math.pow(2,-10*(t=+t))*Math.sin((t+a)/e)}var a=Math.asin(1/(n=Math.max(1,n)))*(e/=i);return r.amplitude=function(n){return t(n,e*i)},r.period=function(e){return t(n,e)},r}(r,a),function t(n,e){function r(t){return((t=2*t-1)<0?n*Math.pow(2,10*t)*Math.sin((a-t)/e):2-n*Math.pow(2,-10*t)*Math.sin((a+t)/e))/2}var a=Math.asin(1/(n=Math.max(1,n)))*(e/=i);return r.amplitude=function(n){return t(n,e*i)},r.period=function(e){return t(n,e)},r}(r,a)},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict";var i=3;(function t(n){function e(t){return Math.pow(t,n)}return n=+n,e.exponent=t,e})(i),function t(n){function e(t){return 1-Math.pow(1-t,n)}return n=+n,e.exponent=t,e}(i),function t(n){function e(t){return((t*=2)<=1?Math.pow(t,n):2-Math.pow(2-t,n))/2}return n=+n,e.exponent=t,e}(i)},function(t,n,e){"use strict"},function(t,n,e){"use strict";Math.PI},function(t,n,e){"use strict";function i(t){return a=e.i(r.a)(t),o=a.format,u=a.formatPrefix,a}var r=e(76);e.d(n,"a",function(){return o}),e.d(n,"b",function(){return u});var a,o,u;i({decimal:".",thousands:",",grouping:[3],currency:["$",""]})},function(t,n,e){"use strict";n.a=function(t,n){t=t.toPrecision(n);t:for(var e,i=t.length,r=1,a=-1;r<i;++r)switch(t[r]){case".":a=e=r;break;case"0":0===a&&(a=r),e=r;break;case"e":break t;default:a>0&&(a=0)}return a>0?t.slice(0,a)+t.slice(e+1):t}},function(t,n,e){"use strict";n.a=function(t,n){return function(e,i){for(var r=e.length,a=[],o=0,u=t[0],s=0;r>0&&u>0&&(s+u+1>i&&(u=Math.max(1,i-s)),a.push(e.substring(r-=u,r+u)),!((s+=u+1)>i));)u=t[o=(o+1)%t.length];return a.reverse().join(n)}}},function(t,n,e){"use strict";var i=e(34);n.a=function(t,n){var r=e.i(i.a)(t,n);if(!r)return t+"";var a=r[0],o=r[1];return o<0?"0."+new Array(-o).join("0")+a:a.length>o+1?a.slice(0,o+1)+"."+a.slice(o+1):a+new Array(o-a.length+2).join("0");
-}},function(t,n,e){"use strict";var i=e(19);n.a=function(t){return Math.max(0,-e.i(i.a)(Math.abs(t)))}},function(t,n,e){"use strict";var i=e(19);n.a=function(t,n){return Math.max(0,3*Math.max(-8,Math.min(8,Math.floor(e.i(i.a)(n)/3)))-e.i(i.a)(Math.abs(t)))}},function(t,n,e){"use strict";var i=e(19);n.a=function(t,n){return t=Math.abs(t),n=Math.abs(n)-t,Math.max(0,e.i(i.a)(n)-e.i(i.a)(t))+1}},function(t,n,e){"use strict";function i(t){return function n(i){function o(n,o){var u=t((n=e.i(r.a)(n)).h,(o=e.i(r.a)(o)).h),s=e.i(a.a)(n.s,o.s),c=e.i(a.a)(n.l,o.l),f=e.i(a.a)(n.opacity,o.opacity);return function(t){return n.h=u(t),n.s=s(t),n.l=c(Math.pow(t,i)),n.opacity=f(t),n+""}}return i=+i,o.gamma=n,o}(1)}var r=e(5),a=e(13);e.d(n,"a",function(){return o});var o=(i(a.b),i(a.a))},function(t,n,e){"use strict";function i(t){return function(n,i){var o=t((n=e.i(r.b)(n)).h,(i=e.i(r.b)(i)).h),u=e.i(a.a)(n.c,i.c),s=e.i(a.a)(n.l,i.l),c=e.i(a.a)(n.opacity,i.opacity);return function(t){return n.h=o(t),n.c=u(t),n.l=s(t),n.opacity=c(t),n+""}}}var r=e(5),a=e(13);i(a.b),i(a.a)},function(t,n,e){"use strict";function i(t){return function(n,i){var o=t((n=e.i(r.d)(n)).h,(i=e.i(r.d)(i)).h),u=e.i(a.a)(n.s,i.s),s=e.i(a.a)(n.l,i.l),c=e.i(a.a)(n.opacity,i.opacity);return function(t){return n.h=o(t),n.s=u(t),n.l=s(t),n.opacity=c(t),n+""}}}var r=e(5),a=e(13);i(a.b),i(a.a)},function(t,n,e){"use strict";e(5),e(13)},function(t,n,e){"use strict"},function(t,n,e){"use strict";n.a=function(t,n){return t=+t,n-=t,function(e){return Math.round(t+n*e)}}},function(t,n,e){"use strict";e.d(n,"a",function(){return r});var i=180/Math.PI,r={translateX:0,translateY:0,rotate:0,skewX:0,scaleX:1,scaleY:1};n.b=function(t,n,e,r,a,o){var u,s,c;return(u=Math.sqrt(t*t+n*n))&&(t/=u,n/=u),(c=t*e+n*r)&&(e-=t*c,r-=n*c),(s=Math.sqrt(e*e+r*r))&&(e/=s,r/=s,c/=s),t*r<n*e&&(t=-t,n=-n,c=-c,u=-u),{translateX:a,translateY:o,rotate:Math.atan2(n,t)*i,skewX:Math.atan(c)*i,scaleX:u,scaleY:s}}},function(t,n,e){"use strict";function i(t,n,i,a){function o(t){return t.length?t.pop()+" ":""}function u(t,a,o,u,s,c){if(t!==o||a!==u){var f=s.push("translate(",null,n,null,i);c.push({i:f-4,x:e.i(r.a)(t,o)},{i:f-2,x:e.i(r.a)(a,u)})}else(o||u)&&s.push("translate("+o+n+u+i)}function s(t,n,i,u){t!==n?(t-n>180?n+=360:n-t>180&&(t+=360),u.push({i:i.push(o(i)+"rotate(",null,a)-2,x:e.i(r.a)(t,n)})):n&&i.push(o(i)+"rotate("+n+a)}function c(t,n,i,u){t!==n?u.push({i:i.push(o(i)+"skewX(",null,a)-2,x:e.i(r.a)(t,n)}):n&&i.push(o(i)+"skewX("+n+a)}function f(t,n,i,a,u,s){if(t!==i||n!==a){var c=u.push(o(u)+"scale(",null,",",null,")");s.push({i:c-4,x:e.i(r.a)(t,i)},{i:c-2,x:e.i(r.a)(n,a)})}else 1===i&&1===a||u.push(o(u)+"scale("+i+","+a+")")}return function(n,e){var i=[],r=[];return n=t(n),e=t(e),u(n.translateX,n.translateY,e.translateX,e.translateY,i,r),s(n.rotate,e.rotate,i,r),c(n.skewX,e.skewX,i,r),f(n.scaleX,n.scaleY,e.scaleX,e.scaleY,i,r),n=e=null,function(t){for(var n,e=-1,a=r.length;++e<a;)i[(n=r[e]).i]=n.x(t);return i.join("")}}}var r=e(20),a=e(178);e.d(n,"a",function(){return o}),e.d(n,"b",function(){return u});var o=i(a.a,"px, ","px)","deg)"),u=i(a.b,", ",")",")")},function(t,n,e){"use strict";function i(t){return"none"===t?a.a:(o||(o=document.createElement("DIV"),u=document.documentElement,s=document.defaultView),o.style.transform=t,t=s.getComputedStyle(u.appendChild(o),null).getPropertyValue("transform"),u.removeChild(o),t=t.slice(7,-1).split(","),e.i(a.b)(+t[0],+t[1],+t[2],+t[3],+t[4],+t[5]))}function r(t){return null==t?a.a:(c||(c=document.createElementNS("http://www.w3.org/2000/svg","g")),c.setAttribute("transform",t),(t=c.transform.baseVal.consolidate())?(t=t.matrix,e.i(a.b)(t.a,t.b,t.c,t.d,t.e,t.f)):a.a)}var a=e(176);n.a=i,n.b=r;var o,u,s,c},function(t,n,e){"use strict";function i(t){return((t=Math.exp(t))+1/t)/2}function r(t){return((t=Math.exp(t))-1/t)/2}function a(t){return((t=Math.exp(2*t))-1)/(t+1)}var o=Math.SQRT2,u=2,s=4,c=1e-12;n.a=function(t,n){var e,f,h=t[0],l=t[1],d=t[2],p=n[0],_=n[1],v=n[2],y=p-h,b=_-l,g=y*y+b*b;if(g<c)f=Math.log(v/d)/o,e=function(t){return[h+t*y,l+t*b,d*Math.exp(o*t*f)]};else{var m=Math.sqrt(g),x=(v*v-d*d+s*g)/(2*d*u*m),w=(v*v-d*d-s*g)/(2*v*u*m),M=Math.log(Math.sqrt(x*x+1)-x),T=Math.log(Math.sqrt(w*w+1)-w);f=(T-M)/o,e=function(t){var n=t*f,e=i(M),s=d/(u*m)*(e*a(o*n+M)-r(M));return[h+s*y,l+s*b,d*e/i(o*n+M)]}}return e.duration=1e3*f,e}},function(t,n,e){"use strict";function i(){this._x0=this._y0=this._x1=this._y1=null,this._=""}function r(){return new i}var a=Math.PI,o=2*a,u=1e-6,s=o-u;i.prototype=r.prototype={constructor:i,moveTo:function(t,n){this._+="M"+(this._x0=this._x1=+t)+","+(this._y0=this._y1=+n)},closePath:function(){null!==this._x1&&(this._x1=this._x0,this._y1=this._y0,this._+="Z")},lineTo:function(t,n){this._+="L"+(this._x1=+t)+","+(this._y1=+n)},quadraticCurveTo:function(t,n,e,i){this._+="Q"+ +t+","+ +n+","+(this._x1=+e)+","+(this._y1=+i)},bezierCurveTo:function(t,n,e,i,r,a){this._+="C"+ +t+","+ +n+","+ +e+","+ +i+","+(this._x1=+r)+","+(this._y1=+a)},arcTo:function(t,n,e,i,r){t=+t,n=+n,e=+e,i=+i,r=+r;var o=this._x1,s=this._y1,c=e-t,f=i-n,h=o-t,l=s-n,d=h*h+l*l;if(r<0)throw new Error("negative radius: "+r);if(null===this._x1)this._+="M"+(this._x1=t)+","+(this._y1=n);else if(d>u)if(Math.abs(l*c-f*h)>u&&r){var p=e-o,_=i-s,v=c*c+f*f,y=p*p+_*_,b=Math.sqrt(v),g=Math.sqrt(d),m=r*Math.tan((a-Math.acos((v+d-y)/(2*b*g)))/2),x=m/g,w=m/b;Math.abs(x-1)>u&&(this._+="L"+(t+x*h)+","+(n+x*l)),this._+="A"+r+","+r+",0,0,"+ +(l*p>h*_)+","+(this._x1=t+w*c)+","+(this._y1=n+w*f)}else this._+="L"+(this._x1=t)+","+(this._y1=n);else;},arc:function(t,n,e,i,r,c){t=+t,n=+n,e=+e;var f=e*Math.cos(i),h=e*Math.sin(i),l=t+f,d=n+h,p=1^c,_=c?i-r:r-i;if(e<0)throw new Error("negative radius: "+e);null===this._x1?this._+="M"+l+","+d:(Math.abs(this._x1-l)>u||Math.abs(this._y1-d)>u)&&(this._+="L"+l+","+d),e&&(_>s?this._+="A"+e+","+e+",0,1,"+p+","+(t-f)+","+(n-h)+"A"+e+","+e+",0,1,"+p+","+(this._x1=l)+","+(this._y1=d):(_<0&&(_=_%o+o),this._+="A"+e+","+e+",0,"+ +(_>=a)+","+p+","+(this._x1=t+e*Math.cos(r))+","+(this._y1=n+e*Math.sin(r))))},rect:function(t,n,e,i){this._+="M"+(this._x0=this._x1=+t)+","+(this._y0=this._y1=+n)+"h"+ +e+"v"+ +i+"h"+-e+"Z"},toString:function(){return this._}},n.a=r},function(t,n,e){"use strict";var i=(e(182),e(183),e(186));e.d(n,"a",function(){return i.a});var r=e(184);e.d(n,"b",function(){return r.a});e(187)},function(t,n,e){"use strict"},function(t,n,e){"use strict"},function(t,n,e){"use strict";n.a=function(t,n){for(var e,i,r=t.length,a=t[r-1],o=n[0],u=n[1],s=a[0],c=a[1],f=!1,h=0;h<r;++h)a=t[h],e=a[0],i=a[1],i>u!=c>u&&o<(s-e)*(u-i)/(c-i)+e&&(f=!f),s=e,c=i;return f}},function(t,n,e){"use strict";n.a=function(t,n,e){return(n[0]-t[0])*(e[1]-t[1])-(n[1]-t[1])*(e[0]-t[0])}},function(t,n,e){"use strict";function i(t,n){return t[0]-n[0]||t[1]-n[1]}function r(t){for(var n=t.length,i=[0,1],r=2,o=2;o<n;++o){for(;r>1&&e.i(a.a)(t[i[r-2]],t[i[r-1]],t[o])<=0;)--r;i[r++]=o}return i.slice(0,r)}var a=e(185);n.a=function(t){if((e=t.length)<3)return null;var n,e,a=new Array(e),o=new Array(e);for(n=0;n<e;++n)a[n]=[+t[n][0],+t[n][1],n];for(a.sort(i),n=0;n<e;++n)o[n]=[a[n][0],-a[n][1]];var u=r(a),s=r(o),c=s[0]===u[0],f=s[s.length-1]===u[u.length-1],h=[];for(n=u.length-1;n>=0;--n)h.push(t[a[u[n]][2]]);for(n=+c;n<s.length-f;++n)h.push(t[a[s[n]][2]]);return h}},function(t,n,e){"use strict"},function(t,n,e){"use strict";var i=e(194);e.d(n,"a",function(){return i.a})},function(t,n,e){"use strict";function i(t,n,e,i){if(isNaN(n)||isNaN(e))return t;var r,a,o,u,s,c,f,h,l,d=t._root,p={data:i},_=t._x0,v=t._y0,y=t._x1,b=t._y1;if(!d)return t._root=p,t;for(;d.length;)if((c=n>=(a=(_+y)/2))?_=a:y=a,(f=e>=(o=(v+b)/2))?v=o:b=o,r=d,!(d=d[h=f<<1|c]))return r[h]=p,t;if(u=+t._x.call(null,d.data),s=+t._y.call(null,d.data),n===u&&e===s)return p.next=d,r?r[h]=p:t._root=p,t;do r=r?r[h]=new Array(4):t._root=new Array(4),(c=n>=(a=(_+y)/2))?_=a:y=a,(f=e>=(o=(v+b)/2))?v=o:b=o;while((h=f<<1|c)===(l=(s>=o)<<1|u>=a));return r[l]=d,r[h]=p,t}function r(t){var n,e,r,a,o=t.length,u=new Array(o),s=new Array(o),c=1/0,f=1/0,h=-(1/0),l=-(1/0);for(e=0;e<o;++e)isNaN(r=+this._x.call(null,n=t[e]))||isNaN(a=+this._y.call(null,n))||(u[e]=r,s[e]=a,r<c&&(c=r),r>h&&(h=r),a<f&&(f=a),a>l&&(l=a));for(h<c&&(c=this._x0,h=this._x1),l<f&&(f=this._y0,l=this._y1),this.cover(c,f).cover(h,l),e=0;e<o;++e)i(this,u[e],s[e],t[e]);return this}n.b=r,n.a=function(t){var n=+this._x.call(null,t),e=+this._y.call(null,t);return i(this.cover(n,e),n,e,t)}},function(t,n,e){"use strict";n.a=function(t,n){if(isNaN(t=+t)||isNaN(n=+n))return this;var e=this._x0,i=this._y0,r=this._x1,a=this._y1;if(isNaN(e))r=(e=Math.floor(t))+1,a=(i=Math.floor(n))+1;else{if(!(e>t||t>r||i>n||n>a))return this;var o,u,s=r-e,c=this._root;switch(u=(n<(i+a)/2)<<1|t<(e+r)/2){case 0:do o=new Array(4),o[u]=c,c=o;while(s*=2,r=e+s,a=i+s,t>r||n>a);break;case 1:do o=new Array(4),o[u]=c,c=o;while(s*=2,e=r-s,a=i+s,e>t||n>a);break;case 2:do o=new Array(4),o[u]=c,c=o;while(s*=2,r=e+s,i=a-s,t>r||i>n);break;case 3:do o=new Array(4),o[u]=c,c=o;while(s*=2,e=r-s,i=a-s,e>t||i>n)}this._root&&this._root.length&&(this._root=c)}return this._x0=e,this._y0=i,this._x1=r,this._y1=a,this}},function(t,n,e){"use strict";n.a=function(){var t=[];return this.visit(function(n){if(!n.length)do t.push(n.data);while(n=n.next)}),t}},function(t,n,e){"use strict";n.a=function(t){return arguments.length?this.cover(+t[0][0],+t[0][1]).cover(+t[1][0],+t[1][1]):isNaN(this._x0)?void 0:[[this._x0,this._y0],[this._x1,this._y1]]}},function(t,n,e){"use strict";var i=e(37);n.a=function(t,n,e){var r,a,o,u,s,c,f,h=this._x0,l=this._y0,d=this._x1,p=this._y1,_=[],v=this._root;for(v&&_.push(new i.a(v,h,l,d,p)),null==e?e=1/0:(h=t-e,l=n-e,d=t+e,p=n+e,e*=e);c=_.pop();)if(!(!(v=c.node)||(a=c.x0)>d||(o=c.y0)>p||(u=c.x1)<h||(s=c.y1)<l))if(v.length){var y=(a+u)/2,b=(o+s)/2;_.push(new i.a(v[3],y,b,u,s),new i.a(v[2],a,b,y,s),new i.a(v[1],y,o,u,b),new i.a(v[0],a,o,y,b)),(f=(n>=b)<<1|t>=y)&&(c=_[_.length-1],_[_.length-1]=_[_.length-1-f],_[_.length-1-f]=c)}else{var g=t-+this._x.call(null,v.data),m=n-+this._y.call(null,v.data),x=g*g+m*m;if(x<e){var w=Math.sqrt(e=x);h=t-w,l=n-w,d=t+w,p=n+w,r=v.data}}return r}},function(t,n,e){"use strict";function i(t,n,e){var i=new r(null==n?v.a:n,null==e?y.a:e,NaN,NaN,NaN,NaN);return null==t?i:i.addAll(t)}function r(t,n,e,i,r,a){this._x=t,this._y=n,this._x0=e,this._y0=i,this._x1=r,this._y1=a,this._root=void 0}function a(t){for(var n={data:t.data},e=n;t=t.next;)e=e.next={data:t.data};return n}var o=e(189),u=e(190),s=e(191),c=e(192),f=e(193),h=e(195),l=e(196),d=e(197),p=e(198),_=e(199),v=e(200),y=e(201);n.a=i;var b=i.prototype=r.prototype;b.copy=function(){var t,n,e=new r(this._x,this._y,this._x0,this._y0,this._x1,this._y1),i=this._root;if(!i)return e;if(!i.length)return e._root=a(i),e;for(t=[{source:i,target:e._root=new Array(4)}];i=t.pop();)for(var o=0;o<4;++o)(n=i.source[o])&&(n.length?t.push({source:n,target:i.target[o]=new Array(4)}):i.target[o]=a(n));return e},b.add=o.a,b.addAll=o.b,b.cover=u.a,b.data=s.a,b.extent=c.a,b.find=f.a,b.remove=h.a,b.removeAll=h.b,b.root=l.a,b.size=d.a,b.visit=p.a,b.visitAfter=_.a,b.x=v.b,b.y=y.b},function(t,n,e){"use strict";function i(t){for(var n=0,e=t.length;n<e;++n)this.remove(t[n]);return this}n.b=i,n.a=function(t){if(isNaN(a=+this._x.call(null,t))||isNaN(o=+this._y.call(null,t)))return this;var n,e,i,r,a,o,u,s,c,f,h,l,d=this._root,p=this._x0,_=this._y0,v=this._x1,y=this._y1;if(!d)return this;if(d.length)for(;;){if((c=a>=(u=(p+v)/2))?p=u:v=u,(f=o>=(s=(_+y)/2))?_=s:y=s,n=d,!(d=d[h=f<<1|c]))return this;if(!d.length)break;(n[h+1&3]||n[h+2&3]||n[h+3&3])&&(e=n,l=h)}for(;d.data!==t;)if(i=d,!(d=d.next))return this;return(r=d.next)&&delete d.next,i?(r?i.next=r:delete i.next,this):n?(r?n[h]=r:delete n[h],(d=n[0]||n[1]||n[2]||n[3])&&d===(n[3]||n[2]||n[1]||n[0])&&!d.length&&(e?e[l]=d:this._root=d),this):(this._root=r,this)}},function(t,n,e){"use strict";n.a=function(){return this._root}},function(t,n,e){"use strict";n.a=function(){var t=0;return this.visit(function(n){if(!n.length)do++t;while(n=n.next)}),t}},function(t,n,e){"use strict";var i=e(37);n.a=function(t){var n,e,r,a,o,u,s=[],c=this._root;for(c&&s.push(new i.a(c,this._x0,this._y0,this._x1,this._y1));n=s.pop();)if(!t(c=n.node,r=n.x0,a=n.y0,o=n.x1,u=n.y1)&&c.length){var f=(r+o)/2,h=(a+u)/2;(e=c[3])&&s.push(new i.a(e,f,h,o,u)),(e=c[2])&&s.push(new i.a(e,r,h,f,u)),(e=c[1])&&s.push(new i.a(e,f,a,o,h)),(e=c[0])&&s.push(new i.a(e,r,a,f,h))}return this}},function(t,n,e){"use strict";var i=e(37);n.a=function(t){var n,e=[],r=[];for(this._root&&e.push(new i.a(this._root,this._x0,this._y0,this._x1,this._y1));n=e.pop();){var a=n.node;if(a.length){var o,u=n.x0,s=n.y0,c=n.x1,f=n.y1,h=(u+c)/2,l=(s+f)/2;(o=a[0])&&e.push(new i.a(o,u,s,h,l)),(o=a[1])&&e.push(new i.a(o,h,s,c,l)),(o=a[2])&&e.push(new i.a(o,u,l,h,f)),(o=a[3])&&e.push(new i.a(o,h,l,c,f))}r.push(n)}for(;n=r.pop();)t(n.node,n.x0,n.y0,n.x1,n.y1);return this}},function(t,n,e){"use strict";function i(t){return t[0]}n.a=i,n.b=function(t){return arguments.length?(this._x=t,this):this._x}},function(t,n,e){"use strict";function i(t){return t[1]}n.a=i,n.b=function(t){return arguments.length?(this._y=t,this):this._y}},function(t,n,e){"use strict";function i(){function t(){var t=s().length,i=f[1]<f[0],a=f[i-0],u=f[1-i];n=(u-a)/Math.max(1,t-l+2*d),h&&(n=Math.floor(n)),a+=(u-a-n*(t-l))*p,r=n*(1-l),h&&(a=Math.round(a),r=Math.round(r));var _=e.i(o.g)(t).map(function(t){return a+n*t});return c(i?_.reverse():_)}var n,r,a=e.i(u.a)().unknown(void 0),s=a.domain,c=a.range,f=[0,1],h=!1,l=0,d=0,p=.5;return delete a.unknown,a.domain=function(n){return arguments.length?(s(n),t()):s()},a.range=function(n){return arguments.length?(f=[+n[0],+n[1]],t()):f.slice()},a.rangeRound=function(n){return f=[+n[0],+n[1]],h=!0,t()},a.bandwidth=function(){return r},a.step=function(){return n},a.round=function(n){return arguments.length?(h=!!n,t()):h},a.padding=function(n){return arguments.length?(l=d=Math.max(0,Math.min(1,n)),t()):l},a.paddingInner=function(n){return arguments.length?(l=Math.max(0,Math.min(1,n)),t()):l},a.paddingOuter=function(n){return arguments.length?(d=Math.max(0,Math.min(1,n)),t()):d},a.align=function(n){return arguments.length?(p=Math.max(0,Math.min(1,n)),t()):p},a.copy=function(){return i().domain(s()).range(f).round(h).paddingInner(l).paddingOuter(d).align(p)},t()}function r(t){var n=t.copy;return t.padding=t.paddingOuter,delete t.paddingInner,delete t.paddingOuter,t.copy=function(){return r(n())},t}function a(){return r(i().paddingInner(1))}var o=e(2),u=e(87);n.a=i,n.b=a},function(t,n,e){"use strict";var i=e(14);n.a=e.i(i.a)("1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf")},function(t,n,e){"use strict";var i=e(14);n.a=e.i(i.a)("1f77b4aec7e8ff7f0effbb782ca02c98df8ad62728ff98969467bdc5b0d58c564bc49c94e377c2f7b6d27f7f7fc7c7c7bcbd22dbdb8d17becf9edae5")},function(t,n,e){"use strict";var i=e(14);n.a=e.i(i.a)("393b795254a36b6ecf9c9ede6379398ca252b5cf6bcedb9c8c6d31bd9e39e7ba52e7cb94843c39ad494ad6616be7969c7b4173a55194ce6dbdde9ed6")},function(t,n,e){"use strict";var i=e(14);n.a=e.i(i.a)("3182bd6baed69ecae1c6dbefe6550dfd8d3cfdae6bfdd0a231a35474c476a1d99bc7e9c0756bb19e9ac8bcbddcdadaeb636363969696bdbdbdd9d9d9")},function(t,n,e){"use strict";var i=e(5),r=e(6);n.a=e.i(r.d)(e.i(i.a)(300,.5,0),e.i(i.a)(-240,.5,1))},function(t,n,e){"use strict";function i(){function t(t){return+t}var n=[0,1];return t.invert=t,t.domain=t.range=function(e){return arguments.length?(n=r.a.call(e,o.a),t):n.slice()},t.copy=function(){return i().domain(n)},e.i(a.b)(t)}var r=e(9),a=e(15),o=e(86);n.a=i},function(t,n,e){"use strict";function i(t,n){return(n=Math.log(n/t))?function(e){return Math.log(e/t)/n}:e.i(l.a)(n)}function r(t,n){return t<0?function(e){return-Math.pow(-n,e)*Math.pow(-t,1-e)}:function(e){return Math.pow(n,e)*Math.pow(t,1-e)}}function a(t){return isFinite(t)?+("1e"+t):t<0?0:t}function o(t){return 10===t?a:t===Math.E?Math.exp:function(n){return Math.pow(t,n)}}function u(t){return t===Math.E?Math.log:10===t&&Math.log10||2===t&&Math.log2||(t=Math.log(t),function(n){return Math.log(n)/t})}function s(t){return function(n){return-t(-n)}}function c(){function t(){return _=u(l),v=o(l),a()[0]<0&&(_=s(_),v=s(v)),n}var n=e.i(p.a)(i,r).domain([1,10]),a=n.domain,l=10,_=u(10),v=o(10);return n.base=function(n){return arguments.length?(l=+n,t()):l},n.domain=function(n){return arguments.length?(a(n),t()):a()},n.ticks=function(t){var n,i=a(),r=i[0],o=i[i.length-1];(n=o<r)&&(h=r,r=o,o=h);var u,s,c,h=_(r),d=_(o),p=null==t?10:+t,y=[];if(!(l%1)&&d-h<p){if(h=Math.round(h)-1,d=Math.round(d)+1,r>0){for(;h<d;++h)for(s=1,u=v(h);s<l;++s)if(c=u*s,!(c<r)){if(c>o)break;y.push(c)}}else for(;h<d;++h)for(s=l-1,u=v(h);s>=1;--s)if(c=u*s,!(c<r)){if(c>o)break;y.push(c)}}else y=e.i(f.a)(h,d,Math.min(d-h,p)).map(v);return n?y.reverse():y},n.tickFormat=function(t,i){if(null==i&&(i=10===l?".0e":","),"function"!=typeof i&&(i=e.i(h.f)(i)),t===1/0)return i;null==t&&(t=10);var r=Math.max(1,l*t/n.ticks().length);return function(t){var n=t/v(Math.round(_(t)));return n*l<l-.5&&(n*=l),n<=r?i(t):""}},n.nice=function(){return a(e.i(d.a)(a(),{floor:function(t){return v(Math.floor(_(t)))},ceil:function(t){return v(Math.ceil(_(t)))}}))},n.copy=function(){return e.i(p.c)(n,c().base(l))},n}var f=e(2),h=e(33),l=e(38),d=e(85),p=e(22);n.a=c},function(t,n,e){"use strict";function i(t,n){return t<0?-Math.pow(-t,n):Math.pow(t,n)}function r(){function t(t,n){return(n=i(n,a)-(t=i(t,a)))?function(e){return(i(e,a)-t)/n}:e.i(o.a)(n)}function n(t,n){return n=i(n,a)-(t=i(t,a)),function(e){return i(t+n*e,1/a)}}var a=1,c=e.i(s.a)(t,n),f=c.domain;return c.exponent=function(t){return arguments.length?(a=+t,f(f())):a},c.copy=function(){return e.i(s.c)(c,r().exponent(a))},e.i(u.b)(c)}function a(){return r().exponent(.5)}var o=e(38),u=e(15),s=e(22);n.a=r,n.b=a},function(t,n,e){"use strict";function i(){function t(){var t=0,i=Math.max(1,u.length);for(s=new Array(i-1);++t<i;)s[t-1]=e.i(r.e)(o,t/i);return n}function n(t){if(!isNaN(t=+t))return u[e.i(r.c)(s,t)]}var o=[],u=[],s=[];return n.invertExtent=function(t){var n=u.indexOf(t);return n<0?[NaN,NaN]:[n>0?s[n-1]:o[0],n<s.length?s[n]:o[o.length-1]]},n.domain=function(n){if(!arguments.length)return o.slice();o=[];for(var e,i=0,a=n.length;i<a;++i)e=n[i],null==e||isNaN(e=+e)||o.push(e);return o.sort(r.f),t()},n.range=function(n){return arguments.length?(u=a.b.call(n),t()):u.slice()},n.quantiles=function(){return s.slice()},n.copy=function(){return i().domain(o).range(u)},n}var r=e(2),a=e(9);n.a=i},function(t,n,e){"use strict";function i(){function t(t){if(t<=t)return h[e.i(r.c)(f,t,0,c)]}function n(){var n=-1;for(f=new Array(c);++n<c;)f[n]=((n+1)*s-(n-c)*u)/(c+1);return t}var u=0,s=1,c=1,f=[.5],h=[0,1];return t.domain=function(t){return arguments.length?(u=+t[0],s=+t[1],n()):[u,s]},t.range=function(t){return arguments.length?(c=(h=a.b.call(t)).length-1,n()):h.slice()},t.invertExtent=function(t){var n=h.indexOf(t);return n<0?[NaN,NaN]:n<1?[u,f[0]]:n>=c?[f[c-1],s]:[f[n-1],f[n]]},t.copy=function(){return i().domain([u,s]).range(h)},e.i(o.b)(t)}var r=e(2),a=e(9),o=e(15);n.a=i},function(t,n,e){"use strict";var i=e(5),r=e(6);e.d(n,"b",function(){return a}),e.d(n,"c",function(){return o});var a=e.i(r.d)(e.i(i.a)(-100,.75,.35),e.i(i.a)(80,1.5,.8)),o=e.i(r.d)(e.i(i.a)(260,.75,.35),e.i(i.a)(80,1.5,.8)),u=e.i(i.a)();n.a=function(t){(t<0||t>1)&&(t-=Math.floor(t));var n=Math.abs(t-.5);return u.h=360*t-100,u.s=1.5-1.5*n,u.l=.8-.9*n,u+""}},function(t,n,e){"use strict";function i(t){function n(n){var e=(n-a)/(o-a);return t(u?Math.max(0,Math.min(1,e)):e)}var a=0,o=1,u=!1;return n.domain=function(t){return arguments.length?(a=+t[0],o=+t[1],n):[a,o]},n.clamp=function(t){return arguments.length?(u=!!t,n):u},n.interpolator=function(e){return arguments.length?(t=e,n):t},n.copy=function(){return i(t).domain([a,o]).clamp(u)},e.i(r.b)(n)}var r=e(15);n.a=i},function(t,n,e){"use strict";function i(){function t(t){if(t<=t)return o[e.i(r.c)(n,t,0,u)]}var n=[.5],o=[0,1],u=1;return t.domain=function(e){return arguments.length?(n=a.b.call(e),u=Math.min(n.length,o.length-1),t):n.slice()},t.range=function(e){return arguments.length?(o=a.b.call(e),u=Math.min(n.length,o.length-1),t):o.slice()},t.invertExtent=function(t){var e=o.indexOf(t);return[n[e-1],n[e]]},t.copy=function(){return i().domain(n).range(o)},t}var r=e(2),a=e(9);n.a=i},function(t,n,e){"use strict";var i=e(2),r=e(33);n.a=function(t,n,a){var o,u=t[0],s=t[t.length-1],c=e.i(i.b)(u,s,null==n?10:n);switch(a=e.i(r.a)(null==a?",f":a),a.type){case"s":var f=Math.max(Math.abs(u),Math.abs(s));return null!=a.precision||isNaN(o=e.i(r.b)(c,f))||(a.precision=o),e.i(r.c)(a,f);case"":case"e":case"g":case"p":case"r":null!=a.precision||isNaN(o=e.i(r.d)(c,Math.max(Math.abs(u),Math.abs(s))))||(a.precision=o-("e"===a.type));break;case"f":case"%":null!=a.precision||isNaN(o=e.i(r.e)(c))||(a.precision=o-2*("%"===a.type))}return e.i(r.f)(a)}},function(t,n,e){"use strict";var i=e(88),r=e(107),a=e(51);n.a=function(){return e.i(i.b)(a.a,a.b,a.c,a.d,a.e,a.f,a.g,a.h,r.a).domain([Date.UTC(2e3,0,1),Date.UTC(2e3,0,2)])}},function(t,n,e){"use strict";function i(t){var n=t.length;return function(e){return t[Math.max(0,Math.min(n-1,Math.floor(e*n)))]}}var r=e(14);e.d(n,"b",function(){return a}),e.d(n,"c",function(){return o}),e.d(n,"d",function(){return u}),n.a=i(e.i(r.a)("44015444025645045745055946075a46085c460a5d460b5e470d60470e6147106347116447136548146748166848176948186a481a6c481b6d481c6e481d6f481f70482071482173482374482475482576482677482878482979472a7a472c7a472d7b472e7c472f7d46307e46327e46337f463480453581453781453882443983443a83443b84433d84433e85423f854240864241864142874144874045884046883f47883f48893e49893e4a893e4c8a3d4d8a3d4e8a3c4f8a3c508b3b518b3b528b3a538b3a548c39558c39568c38588c38598c375a8c375b8d365c8d365d8d355e8d355f8d34608d34618d33628d33638d32648e32658e31668e31678e31688e30698e306a8e2f6b8e2f6c8e2e6d8e2e6e8e2e6f8e2d708e2d718e2c718e2c728e2c738e2b748e2b758e2a768e2a778e2a788e29798e297a8e297b8e287c8e287d8e277e8e277f8e27808e26818e26828e26828e25838e25848e25858e24868e24878e23888e23898e238a8d228b8d228c8d228d8d218e8d218f8d21908d21918c20928c20928c20938c1f948c1f958b1f968b1f978b1f988b1f998a1f9a8a1e9b8a1e9c891e9d891f9e891f9f881fa0881fa1881fa1871fa28720a38620a48621a58521a68522a78522a88423a98324aa8325ab8225ac8226ad8127ad8128ae8029af7f2ab07f2cb17e2db27d2eb37c2fb47c31b57b32b67a34b67935b77937b87838b9773aba763bbb753dbc743fbc7340bd7242be7144bf7046c06f48c16e4ac16d4cc26c4ec36b50c46a52c56954c56856c66758c7655ac8645cc8635ec96260ca6063cb5f65cb5e67cc5c69cd5b6ccd5a6ece5870cf5773d05675d05477d1537ad1517cd2507fd34e81d34d84d44b86d54989d5488bd6468ed64590d74393d74195d84098d83e9bd93c9dd93ba0da39a2da37a5db36a8db34aadc32addc30b0dd2fb2dd2db5de2bb8de29bade28bddf26c0df25c2df23c5e021c8e020cae11fcde11dd0e11cd2e21bd5e21ad8e219dae319dde318dfe318e2e418e5e419e7e419eae51aece51befe51cf1e51df4e61ef6e620f8e621fbe723fde725"));var a=i(e.i(r.a)("00000401000501010601010802010902020b02020d03030f03031204041405041606051806051a07061c08071e0907200a08220b09240c09260d0a290e0b2b100b2d110c2f120d31130d34140e36150e38160f3b180f3d19103f1a10421c10441d11471e114920114b21114e22115024125325125527125829115a2a115c2c115f2d11612f116331116533106734106936106b38106c390f6e3b0f703d0f713f0f72400f74420f75440f764510774710784910784a10794c117a4e117b4f127b51127c52137c54137d56147d57157e59157e5a167e5c167f5d177f5f187f601880621980641a80651a80671b80681c816a1c816b1d816d1d816e1e81701f81721f817320817521817621817822817922827b23827c23827e24828025828125818326818426818627818827818928818b29818c29818e2a81902a81912b81932b80942c80962c80982d80992d809b2e7f9c2e7f9e2f7fa02f7fa1307ea3307ea5317ea6317da8327daa337dab337cad347cae347bb0357bb2357bb3367ab5367ab73779b83779ba3878bc3978bd3977bf3a77c03a76c23b75c43c75c53c74c73d73c83e73ca3e72cc3f71cd4071cf4070d0416fd2426fd3436ed5446dd6456cd8456cd9466bdb476adc4869de4968df4a68e04c67e24d66e34e65e44f64e55064e75263e85362e95462ea5661eb5760ec5860ed5a5fee5b5eef5d5ef05f5ef1605df2625df2645cf3655cf4675cf4695cf56b5cf66c5cf66e5cf7705cf7725cf8745cf8765cf9785df9795df97b5dfa7d5efa7f5efa815ffb835ffb8560fb8761fc8961fc8a62fc8c63fc8e64fc9065fd9266fd9467fd9668fd9869fd9a6afd9b6bfe9d6cfe9f6dfea16efea36ffea571fea772fea973feaa74feac76feae77feb078feb27afeb47bfeb67cfeb77efeb97ffebb81febd82febf84fec185fec287fec488fec68afec88cfeca8dfecc8ffecd90fecf92fed194fed395fed597fed799fed89afdda9cfddc9efddea0fde0a1fde2a3fde3a5fde5a7fde7a9fde9aafdebacfcecaefceeb0fcf0b2fcf2b4fcf4b6fcf6b8fcf7b9fcf9bbfcfbbdfcfdbf")),o=i(e.i(r.a)("00000401000501010601010802010a02020c02020e03021004031204031405041706041907051b08051d09061f0a07220b07240c08260d08290e092b10092d110a30120a32140b34150b37160b39180c3c190c3e1b0c411c0c431e0c451f0c48210c4a230c4c240c4f260c51280b53290b552b0b572d0b592f0a5b310a5c320a5e340a5f3609613809623909633b09643d09653e0966400a67420a68440a68450a69470b6a490b6a4a0c6b4c0c6b4d0d6c4f0d6c510e6c520e6d540f6d550f6d57106e59106e5a116e5c126e5d126e5f136e61136e62146e64156e65156e67166e69166e6a176e6c186e6d186e6f196e71196e721a6e741a6e751b6e771c6d781c6d7a1d6d7c1d6d7d1e6d7f1e6c801f6c82206c84206b85216b87216b88226a8a226a8c23698d23698f24699025689225689326679526679727669827669a28659b29649d29649f2a63a02a63a22b62a32c61a52c60a62d60a82e5fa92e5eab2f5ead305dae305cb0315bb1325ab3325ab43359b63458b73557b93556ba3655bc3754bd3853bf3952c03a51c13a50c33b4fc43c4ec63d4dc73e4cc83f4bca404acb4149cc4248ce4347cf4446d04545d24644d34743d44842d54a41d74b3fd84c3ed94d3dda4e3cdb503bdd513ade5238df5337e05536e15635e25734e35933e45a31e55c30e65d2fe75e2ee8602de9612bea632aeb6429eb6628ec6726ed6925ee6a24ef6c23ef6e21f06f20f1711ff1731df2741cf3761bf37819f47918f57b17f57d15f67e14f68013f78212f78410f8850ff8870ef8890cf98b0bf98c0af98e09fa9008fa9207fa9407fb9606fb9706fb9906fb9b06fb9d07fc9f07fca108fca309fca50afca60cfca80dfcaa0ffcac11fcae12fcb014fcb216fcb418fbb61afbb81dfbba1ffbbc21fbbe23fac026fac228fac42afac62df9c72ff9c932f9cb35f8cd37f8cf3af7d13df7d340f6d543f6d746f5d949f5db4cf4dd4ff4df53f4e156f3e35af3e55df2e661f2e865f2ea69f1ec6df1ed71f1ef75f1f179f2f27df2f482f3f586f3f68af4f88ef5f992f6fa96f8fb9af9fc9dfafda1fcffa4")),u=i(e.i(r.a)("0d088710078813078916078a19068c1b068d1d068e20068f2206902406912605912805922a05932c05942e05952f059631059733059735049837049938049a3a049a3c049b3e049c3f049c41049d43039e44039e46039f48039f4903a04b03a14c02a14e02a25002a25102a35302a35502a45601a45801a45901a55b01a55c01a65e01a66001a66100a76300a76400a76600a76700a86900a86a00a86c00a86e00a86f00a87100a87201a87401a87501a87701a87801a87a02a87b02a87d03a87e03a88004a88104a78305a78405a78606a68707a68808a68a09a58b0aa58d0ba58e0ca48f0da4910ea3920fa39410a29511a19613a19814a099159f9a169f9c179e9d189d9e199da01a9ca11b9ba21d9aa31e9aa51f99a62098a72197a82296aa2395ab2494ac2694ad2793ae2892b02991b12a90b22b8fb32c8eb42e8db52f8cb6308bb7318ab83289ba3388bb3488bc3587bd3786be3885bf3984c03a83c13b82c23c81c33d80c43e7fc5407ec6417dc7427cc8437bc9447aca457acb4679cc4778cc4977cd4a76ce4b75cf4c74d04d73d14e72d24f71d35171d45270d5536fd5546ed6556dd7566cd8576bd9586ada5a6ada5b69db5c68dc5d67dd5e66de5f65de6164df6263e06363e16462e26561e26660e3685fe4695ee56a5de56b5de66c5ce76e5be76f5ae87059e97158e97257ea7457eb7556eb7655ec7754ed7953ed7a52ee7b51ef7c51ef7e50f07f4ff0804ef1814df1834cf2844bf3854bf3874af48849f48948f58b47f58c46f68d45f68f44f79044f79143f79342f89441f89540f9973ff9983ef99a3efa9b3dfa9c3cfa9e3bfb9f3afba139fba238fca338fca537fca636fca835fca934fdab33fdac33fdae32fdaf31fdb130fdb22ffdb42ffdb52efeb72dfeb82cfeba2cfebb2bfebd2afebe2afec029fdc229fdc328fdc527fdc627fdc827fdca26fdcb26fccd25fcce25fcd025fcd225fbd324fbd524fbd724fad824fada24f9dc24f9dd25f8df25f8e125f7e225f7e425f6e626f6e826f5e926f5eb27f4ed27f3ee27f3f027f2f227f1f426f1f525f0f724f0f921"))},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";function i(){return new r}function r(){this._="@"+(++a).toString(36)}var a=0;r.prototype=i.prototype={constructor:r,get:function(t){for(var n=this._;!(n in t);)if(!(t=t.parentNode))return;return t[n]},set:function(t,n){return t[this._]=n},remove:function(t){return this._ in t&&delete t[this._]},toString:function(){return this._}}},function(t,n,e){"use strict";var i=e(45),r=e(42);n.a=function(t){var n=e.i(i.a)();return n.changedTouches&&(n=n.changedTouches[0]),e.i(r.a)(t,n)}},function(t,n,e){"use strict";var i=e(3);n.a=function(t){return"string"==typeof t?new i.a([[document.querySelector(t)]],[document.documentElement]):new i.a([[t]],i.b)}},function(t,n,e){"use strict";e(3)},function(t,n,e){"use strict";var i=e(39);n.a=function(t){var n="function"==typeof t?t:e.i(i.a)(t);return this.select(function(){return this.appendChild(n.apply(this,arguments))})}},function(t,n,e){"use strict";function i(t){return function(){this.removeAttribute(t)}}function r(t){return function(){this.removeAttributeNS(t.space,t.local)}}function a(t,n){return function(){this.setAttribute(t,n)}}function o(t,n){return function(){this.setAttributeNS(t.space,t.local,n)}}function u(t,n){return function(){var e=n.apply(this,arguments);null==e?this.removeAttribute(t):this.setAttribute(t,e)}}function s(t,n){return function(){var e=n.apply(this,arguments);null==e?this.removeAttributeNS(t.space,t.local):this.setAttributeNS(t.space,t.local,e)}}var c=e(40);n.a=function(t,n){var f=e.i(c.a)(t);if(arguments.length<2){var h=this.node();return f.local?h.getAttributeNS(f.space,f.local):h.getAttribute(f)}return this.each((null==n?f.local?r:i:"function"==typeof n?f.local?s:u:f.local?o:a)(f,n))}},function(t,n,e){"use strict";n.a=function(){var t=arguments[0];return arguments[0]=this,t.apply(null,arguments),this}},function(t,n,e){"use strict";function i(t){return t.trim().split(/^|\s+/)}function r(t){return t.classList||new a(t)}function a(t){this._node=t,this._names=i(t.getAttribute("class")||"")}function o(t,n){for(var e=r(t),i=-1,a=n.length;++i<a;)e.add(n[i])}function u(t,n){for(var e=r(t),i=-1,a=n.length;++i<a;)e.remove(n[i])}function s(t){return function(){o(this,t)}}function c(t){return function(){u(this,t)}}function f(t,n){return function(){(n.apply(this,arguments)?o:u)(this,t)}}a.prototype={add:function(t){var n=this._names.indexOf(t);n<0&&(this._names.push(t),this._node.setAttribute("class",this._names.join(" ")))},remove:function(t){var n=this._names.indexOf(t);n>=0&&(this._names.splice(n,1),this._node.setAttribute("class",this._names.join(" ")))},contains:function(t){return this._names.indexOf(t)>=0}},n.a=function(t,n){var e=i(t+"");if(arguments.length<2){for(var a=r(this.node()),o=-1,u=e.length;++o<u;)if(!a.contains(e[o]))return!1;return!0}return this.each(("function"==typeof n?f:n?s:c)(e,n))}},function(t,n,e){"use strict";function i(t,n,e,i,r,a){for(var u,s=0,c=n.length,f=a.length;s<f;++s)(u=n[s])?(u.__data__=a[s],i[s]=u):e[s]=new o.b(t,a[s]);for(;s<c;++s)(u=n[s])&&(r[s]=u)}function r(t,n,e,i,r,a,u){var c,f,h,l={},d=n.length,p=a.length,_=new Array(d);for(c=0;c<d;++c)(f=n[c])&&(_[c]=h=s+u.call(f,f.__data__,c,n),h in l?r[c]=f:l[h]=f);for(c=0;c<p;++c)h=s+u.call(t,a[c],c,a),(f=l[h])?(i[c]=f,f.__data__=a[c],l[h]=null):e[c]=new o.b(t,a[c]);for(c=0;c<d;++c)(f=n[c])&&l[_[c]]===f&&(r[c]=f)}var a=e(3),o=e(90),u=e(219),s="$";n.a=function(t,n){if(!t)return b=new Array(this.size()),p=-1,this.each(function(t){b[++p]=t}),b;var o=n?r:i,s=this._parents,c=this._groups;"function"!=typeof t&&(t=e.i(u.a)(t));for(var f=c.length,h=new Array(f),l=new Array(f),d=new Array(f),p=0;p<f;++p){var _=s[p],v=c[p],y=v.length,b=t.call(_,_&&_.__data__,p,s),g=b.length,m=l[p]=new Array(g),x=h[p]=new Array(g),w=d[p]=new Array(y);o(_,v,m,x,w,b,n);for(var M,T,E=0,N=0;E<g;++E)if(M=m[E]){for(E>=N&&(N=E+1);!(T=x[N])&&++N<g;);M._next=T||null}}return h=new a.a(h,s),h._enter=l,h._exit=d,h}},function(t,n,e){"use strict";n.a=function(t){return arguments.length?this.property("__data__",t):this.node().__data__}},function(t,n,e){"use strict";function i(t,n,i){var r=e.i(o.a)(t),a=r.CustomEvent;a?a=new a(n,i):(a=r.document.createEvent("Event"),i?(a.initEvent(n,i.bubbles,i.cancelable),a.detail=i.detail):a.initEvent(n,!1,!1)),t.dispatchEvent(a)}function r(t,n){return function(){return i(this,t,n)}}function a(t,n){return function(){return i(this,t,n.apply(this,arguments));
-}}var o=e(46);n.a=function(t,n){return this.each(("function"==typeof n?a:r)(t,n))}},function(t,n,e){"use strict";n.a=function(t){for(var n=this._groups,e=0,i=n.length;e<i;++e)for(var r,a=n[e],o=0,u=a.length;o<u;++o)(r=a[o])&&t.call(r,r.__data__,o,a);return this}},function(t,n,e){"use strict";n.a=function(){return!this.node()}},function(t,n,e){"use strict";var i=e(91),r=e(3);n.a=function(){return new r.a(this._exit||this._groups.map(i.a),this._parents)}},function(t,n,e){"use strict";var i=e(3),r=e(89);n.a=function(t){"function"!=typeof t&&(t=e.i(r.a)(t));for(var n=this._groups,a=n.length,o=new Array(a),u=0;u<a;++u)for(var s,c=n[u],f=c.length,h=o[u]=[],l=0;l<f;++l)(s=c[l])&&t.call(s,s.__data__,l,c)&&h.push(s);return new i.a(o,this._parents)}},function(t,n,e){"use strict";function i(){this.innerHTML=""}function r(t){return function(){this.innerHTML=t}}function a(t){return function(){var n=t.apply(this,arguments);this.innerHTML=null==n?"":n}}n.a=function(t){return arguments.length?this.each(null==t?i:("function"==typeof t?a:r)(t)):this.node().innerHTML}},function(t,n,e){"use strict";function i(){return null}var r=e(39),a=e(44);n.a=function(t,n){var o="function"==typeof t?t:e.i(r.a)(t),u=null==n?i:"function"==typeof n?n:e.i(a.a)(n);return this.select(function(){return this.insertBefore(o.apply(this,arguments),u.apply(this,arguments)||null)})}},function(t,n,e){"use strict";function i(){this.previousSibling&&this.parentNode.insertBefore(this,this.parentNode.firstChild)}n.a=function(){return this.each(i)}},function(t,n,e){"use strict";var i=e(3);n.a=function(t){for(var n=this._groups,e=t._groups,r=n.length,a=e.length,o=Math.min(r,a),u=new Array(r),s=0;s<o;++s)for(var c,f=n[s],h=e[s],l=f.length,d=u[s]=new Array(l),p=0;p<l;++p)(c=f[p]||h[p])&&(d[p]=c);for(;s<r;++s)u[s]=n[s];return new i.a(u,this._parents)}},function(t,n,e){"use strict";n.a=function(){for(var t=this._groups,n=0,e=t.length;n<e;++n)for(var i=t[n],r=0,a=i.length;r<a;++r){var o=i[r];if(o)return o}return null}},function(t,n,e){"use strict";n.a=function(){var t=new Array(this.size()),n=-1;return this.each(function(){t[++n]=this}),t}},function(t,n,e){"use strict";n.a=function(){for(var t=this._groups,n=-1,e=t.length;++n<e;)for(var i,r=t[n],a=r.length-1,o=r[a];--a>=0;)(i=r[a])&&(o&&o!==i.nextSibling&&o.parentNode.insertBefore(i,o),o=i);return this}},function(t,n,e){"use strict";function i(t){return function(){delete this[t]}}function r(t,n){return function(){this[t]=n}}function a(t,n){return function(){var e=n.apply(this,arguments);null==e?delete this[t]:this[t]=e}}n.a=function(t,n){return arguments.length>1?this.each((null==n?i:"function"==typeof n?a:r)(t,n)):this.node()[t]}},function(t,n,e){"use strict";function i(){this.nextSibling&&this.parentNode.appendChild(this)}n.a=function(){return this.each(i)}},function(t,n,e){"use strict";function i(){var t=this.parentNode;t&&t.removeChild(this)}n.a=function(){return this.each(i)}},function(t,n,e){"use strict";var i=e(3),r=e(44);n.a=function(t){"function"!=typeof t&&(t=e.i(r.a)(t));for(var n=this._groups,a=n.length,o=new Array(a),u=0;u<a;++u)for(var s,c,f=n[u],h=f.length,l=o[u]=new Array(h),d=0;d<h;++d)(s=f[d])&&(c=t.call(s,s.__data__,d,f))&&("__data__"in s&&(c.__data__=s.__data__),l[d]=c);return new i.a(o,this._parents)}},function(t,n,e){"use strict";var i=e(3),r=e(92);n.a=function(t){"function"!=typeof t&&(t=e.i(r.a)(t));for(var n=this._groups,a=n.length,o=[],u=[],s=0;s<a;++s)for(var c,f=n[s],h=f.length,l=0;l<h;++l)(c=f[l])&&(o.push(t.call(c,c.__data__,l,f)),u.push(c));return new i.a(o,u)}},function(t,n,e){"use strict";n.a=function(){var t=0;return this.each(function(){++t}),t}},function(t,n,e){"use strict";function i(t,n){return t<n?-1:t>n?1:t>=n?0:NaN}var r=e(3);n.a=function(t){function n(n,e){return n&&e?t(n.__data__,e.__data__):!n-!e}t||(t=i);for(var e=this._groups,a=e.length,o=new Array(a),u=0;u<a;++u){for(var s,c=e[u],f=c.length,h=o[u]=new Array(f),l=0;l<f;++l)(s=c[l])&&(h[l]=s);h.sort(n)}return new r.a(o,this._parents).order()}},function(t,n,e){"use strict";function i(t){return function(){this.style.removeProperty(t)}}function r(t,n,e){return function(){this.style.setProperty(t,n,e)}}function a(t,n,e){return function(){var i=n.apply(this,arguments);null==i?this.style.removeProperty(t):this.style.setProperty(t,i,e)}}var o=e(46);n.a=function(t,n,u){var s;return arguments.length>1?this.each((null==n?i:"function"==typeof n?a:r)(t,n,null==u?"":u)):e.i(o.a)(s=this.node()).getComputedStyle(s,null).getPropertyValue(t)}},function(t,n,e){"use strict";function i(){this.textContent=""}function r(t){return function(){this.textContent=t}}function a(t){return function(){var n=t.apply(this,arguments);this.textContent=null==n?"":n}}n.a=function(t){return arguments.length?this.each(null==t?i:("function"==typeof t?a:r)(t)):this.node().textContent}},function(t,n,e){"use strict";var i=e(45),r=e(42);n.a=function(t,n,a){arguments.length<3&&(a=n,n=e.i(i.a)().changedTouches);for(var o,u=0,s=n?n.length:0;u<s;++u)if((o=n[u]).identifier===a)return e.i(r.a)(t,o);return null}},function(t,n,e){"use strict";e(45),e(42)},function(t,n,e){"use strict";e(21),e(11),e(16)},function(t,n,e){"use strict";e.d(n,"a",function(){return i});var i=Array.prototype.slice},function(t,n,e){"use strict";function i(t){this._context=t}var r=e(26),a=e(23);i.prototype={areaStart:r.a,areaEnd:r.a,lineStart:function(){this._x0=this._x1=this._x2=this._x3=this._x4=this._y0=this._y1=this._y2=this._y3=this._y4=NaN,this._point=0},lineEnd:function(){switch(this._point){case 1:this._context.moveTo(this._x2,this._y2),this._context.closePath();break;case 2:this._context.moveTo((this._x2+2*this._x3)/3,(this._y2+2*this._y3)/3),this._context.lineTo((this._x3+2*this._x2)/3,(this._y3+2*this._y2)/3),this._context.closePath();break;case 3:this.point(this._x2,this._y2),this.point(this._x3,this._y3),this.point(this._x4,this._y4)}},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._x2=t,this._y2=n;break;case 1:this._point=2,this._x3=t,this._y3=n;break;case 2:this._point=3,this._x4=t,this._y4=n,this._context.moveTo((this._x0+4*this._x1+t)/6,(this._y0+4*this._y1+n)/6);break;default:e.i(a.b)(this,t,n)}this._x0=this._x1,this._x1=t,this._y0=this._y1,this._y1=n}}},function(t,n,e){"use strict";function i(t){this._context=t}var r=e(23);i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._y0=this._y1=NaN,this._point=0},lineEnd:function(){(this._line||0!==this._line&&3===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1;break;case 1:this._point=2;break;case 2:this._point=3;var i=(this._x0+4*this._x1+t)/6,a=(this._y0+4*this._y1+n)/6;this._line?this._context.lineTo(i,a):this._context.moveTo(i,a);break;case 3:this._point=4;default:e.i(r.b)(this,t,n)}this._x0=this._x1,this._x1=t,this._y0=this._y1,this._y1=n}}},function(t,n,e){"use strict";function i(t,n){this._basis=new r.a(t),this._beta=n}var r=e(23);i.prototype={lineStart:function(){this._x=[],this._y=[],this._basis.lineStart()},lineEnd:function(){var t=this._x,n=this._y,e=t.length-1;if(e>0)for(var i,r=t[0],a=n[0],o=t[e]-r,u=n[e]-a,s=-1;++s<=e;)i=s/e,this._basis.point(this._beta*t[s]+(1-this._beta)*(r+i*o),this._beta*n[s]+(1-this._beta)*(a+i*u));this._x=this._y=null,this._basis.lineEnd()},point:function(t,n){this._x.push(+t),this._y.push(+n)}};(function t(n){function e(t){return 1===n?new r.a(t):new i(t,n)}return e.beta=function(n){return t(+n)},e})(.85)},function(t,n,e){"use strict";function i(t,n){this._context=t,this._alpha=n}var r=e(95),a=e(26),o=e(47);i.prototype={areaStart:a.a,areaEnd:a.a,lineStart:function(){this._x0=this._x1=this._x2=this._x3=this._x4=this._x5=this._y0=this._y1=this._y2=this._y3=this._y4=this._y5=NaN,this._l01_a=this._l12_a=this._l23_a=this._l01_2a=this._l12_2a=this._l23_2a=this._point=0},lineEnd:function(){switch(this._point){case 1:this._context.moveTo(this._x3,this._y3),this._context.closePath();break;case 2:this._context.lineTo(this._x3,this._y3),this._context.closePath();break;case 3:this.point(this._x3,this._y3),this.point(this._x4,this._y4),this.point(this._x5,this._y5)}},point:function(t,n){if(t=+t,n=+n,this._point){var i=this._x2-t,r=this._y2-n;this._l23_a=Math.sqrt(this._l23_2a=Math.pow(i*i+r*r,this._alpha))}switch(this._point){case 0:this._point=1,this._x3=t,this._y3=n;break;case 1:this._point=2,this._context.moveTo(this._x4=t,this._y4=n);break;case 2:this._point=3,this._x5=t,this._y5=n;break;default:e.i(o.a)(this,t,n)}this._l01_a=this._l12_a,this._l12_a=this._l23_a,this._l01_2a=this._l12_2a,this._l12_2a=this._l23_2a,this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return n?new i(t,n):new r.a(t,0)}return e.alpha=function(n){return t(+n)},e})(.5)},function(t,n,e){"use strict";function i(t,n){this._context=t,this._alpha=n}var r=e(96),a=e(47);i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._x2=this._y0=this._y1=this._y2=NaN,this._l01_a=this._l12_a=this._l23_a=this._l01_2a=this._l12_2a=this._l23_2a=this._point=0},lineEnd:function(){(this._line||0!==this._line&&3===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){if(t=+t,n=+n,this._point){var i=this._x2-t,r=this._y2-n;this._l23_a=Math.sqrt(this._l23_2a=Math.pow(i*i+r*r,this._alpha))}switch(this._point){case 0:this._point=1;break;case 1:this._point=2;break;case 2:this._point=3,this._line?this._context.lineTo(this._x2,this._y2):this._context.moveTo(this._x2,this._y2);break;case 3:this._point=4;default:e.i(a.a)(this,t,n)}this._l01_a=this._l12_a,this._l12_a=this._l23_a,this._l01_2a=this._l12_2a,this._l12_2a=this._l23_2a,this._x0=this._x1,this._x1=this._x2,this._x2=t,this._y0=this._y1,this._y1=this._y2,this._y2=n}};(function t(n){function e(t){return n?new i(t,n):new r.a(t,0)}return e.alpha=function(n){return t(+n)},e})(.5)},function(t,n,e){"use strict";function i(t){this._context=t}var r=e(26);i.prototype={areaStart:r.a,areaEnd:r.a,lineStart:function(){this._point=0},lineEnd:function(){this._point&&this._context.closePath()},point:function(t,n){t=+t,n=+n,this._point?this._context.lineTo(t,n):(this._point=1,this._context.moveTo(t,n))}},n.a=function(t){return new i(t)}},function(t,n,e){"use strict";function i(t){return t<0?-1:1}function r(t,n,e){var r=t._x1-t._x0,a=n-t._x1,o=(t._y1-t._y0)/(r||a<0&&-0),u=(e-t._y1)/(a||r<0&&-0),s=(o*a+u*r)/(r+a);return(i(o)+i(u))*Math.min(Math.abs(o),Math.abs(u),.5*Math.abs(s))||0}function a(t,n){var e=t._x1-t._x0;return e?(3*(t._y1-t._y0)/e-n)/2:n}function o(t,n,e){var i=t._x0,r=t._y0,a=t._x1,o=t._y1,u=(a-i)/3;t._context.bezierCurveTo(i+u,r+u*n,a-u,o-u*e,a,o)}function u(t){this._context=t}function s(t){this._context=new c(t)}function c(t){this._context=t}u.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x0=this._x1=this._y0=this._y1=this._t0=NaN,this._point=0},lineEnd:function(){switch(this._point){case 2:this._context.lineTo(this._x1,this._y1);break;case 3:o(this,this._t0,a(this,this._t0))}(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line=1-this._line},point:function(t,n){var e=NaN;if(t=+t,n=+n,t!==this._x1||n!==this._y1){switch(this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2;break;case 2:this._point=3,o(this,a(this,e=r(this,t,n)),e);break;default:o(this,this._t0,e=r(this,t,n))}this._x0=this._x1,this._x1=t,this._y0=this._y1,this._y1=n,this._t0=e}}},(s.prototype=Object.create(u.prototype)).point=function(t,n){u.prototype.point.call(this,n,t)},c.prototype={moveTo:function(t,n){this._context.moveTo(n,t)},closePath:function(){this._context.closePath()},lineTo:function(t,n){this._context.lineTo(n,t)},bezierCurveTo:function(t,n,e,i,r,a){this._context.bezierCurveTo(n,t,i,e,a,r)}}},function(t,n,e){"use strict";function i(t){this._context=t}function r(t){var n,e,i=t.length-1,r=new Array(i),a=new Array(i),o=new Array(i);for(r[0]=0,a[0]=2,o[0]=t[0]+2*t[1],n=1;n<i-1;++n)r[n]=1,a[n]=4,o[n]=4*t[n]+2*t[n+1];for(r[i-1]=2,a[i-1]=7,o[i-1]=8*t[i-1]+t[i],n=1;n<i;++n)e=r[n]/a[n-1],a[n]-=e,o[n]-=e*o[n-1];for(r[i-1]=o[i-1]/a[i-1],n=i-2;n>=0;--n)r[n]=(o[n]-r[n+1])/a[n];for(a[i-1]=(t[i]+r[i-1])/2,n=0;n<i-1;++n)a[n]=2*t[n+1]-r[n+1];return[r,a]}i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x=[],this._y=[]},lineEnd:function(){var t=this._x,n=this._y,e=t.length;if(e)if(this._line?this._context.lineTo(t[0],n[0]):this._context.moveTo(t[0],n[0]),2===e)this._context.lineTo(t[1],n[1]);else for(var i=r(t),a=r(n),o=0,u=1;u<e;++o,++u)this._context.bezierCurveTo(i[0][o],a[0][o],i[1][o],a[1][o],t[u],n[u]);(this._line||0!==this._line&&1===e)&&this._context.closePath(),this._line=1-this._line,this._x=this._y=null},point:function(t,n){this._x.push(+t),this._y.push(+n)}}},function(t,n,e){"use strict";function i(t,n){this._context=t,this._t=n}i.prototype={areaStart:function(){this._line=0},areaEnd:function(){this._line=NaN},lineStart:function(){this._x=this._y=NaN,this._point=0},lineEnd:function(){0<this._t&&this._t<1&&2===this._point&&this._context.lineTo(this._x,this._y),(this._line||0!==this._line&&1===this._point)&&this._context.closePath(),this._line>=0&&(this._t=1-this._t,this._line=1-this._line)},point:function(t,n){switch(t=+t,n=+n,this._point){case 0:this._point=1,this._line?this._context.lineTo(t,n):this._context.moveTo(t,n);break;case 1:this._point=2;default:if(this._t<=0)this._context.lineTo(this._x,n),this._context.lineTo(t,n);else{var e=this._x*(1-this._t)+t*this._t;this._context.lineTo(e,this._y),this._context.lineTo(e,n)}}this._x=t,this._y=n}}},function(t,n,e){"use strict";n.a=function(t,n){return n<t?-1:n>t?1:n>=t?0:NaN}},function(t,n,e){"use strict";n.a=function(t){return t}},function(t,n,e){"use strict";e(17)},function(t,n,e){"use strict";e(17)},function(t,n,e){"use strict";e(17)},function(t,n,e){"use strict";e(49)},function(t,n,e){"use strict";e(18),e(49)},function(t,n,e){"use strict";e(18)},function(t,n,e){"use strict";e(11),e(264),e(265),e(16)},function(t,n,e){"use strict";e(97),e(94),e(99)},function(t,n,e){"use strict";e(254),e(11),e(17),e(18)},function(t,n,e){"use strict";var i=(e(21),e(100)),r=e(101),a=e(102),o=e(104),u=e(103),s=e(105),c=e(106);e(11),[i.a,r.a,a.a,u.a,o.a,s.a,c.a]},function(t,n,e){"use strict";function i(t){var n=new Date(t);return isNaN(n)?null:n}var r=e(108),a=e(50);+new Date("2000-01-01T00:00:00.000Z")?i:e.i(a.b)(r.a)},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setHours(0,0,0,0)},function(t,n){t.setDate(t.getDate()+n)},function(t,n){return(n-t-(n.getTimezoneOffset()-t.getTimezoneOffset())*r.d)/r.b},function(t){return t.getDate()-1});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){var n=t.getTimezoneOffset()*r.d%r.c;n<0&&(n+=r.c),t.setTime(Math.floor((+t-n)/r.c)*r.c+n)},function(t,n){t.setTime(+t+n*r.c)},function(t,n){return(n-t)/r.c},function(t){return t.getHours()});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e.i(i.a)(function(){},function(t,n){t.setTime(+t+n)},function(t,n){return n-t});r.every=function(t){return t=Math.floor(t),isFinite(t)&&t>0?t>1?e.i(i.a)(function(n){n.setTime(Math.floor(n/t)*t)},function(n,e){n.setTime(+n+e*t)},function(n,e){return(e-n)/t}):r:null},n.a=r;r.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setTime(Math.floor(t/r.d)*r.d)},function(t,n){t.setTime(+t+n*r.d)},function(t,n){return(n-t)/r.d},function(t){return t.getMinutes()});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e.i(i.a)(function(t){t.setDate(1),t.setHours(0,0,0,0)},function(t,n){t.setMonth(t.getMonth()+n)},function(t,n){return n.getMonth()-t.getMonth()+12*(n.getFullYear()-t.getFullYear())},function(t){return t.getMonth()});n.a=r;r.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setTime(Math.floor(t/r.e)*r.e)},function(t,n){t.setTime(+t+n*r.e)},function(t,n){return(n-t)/r.e},function(t){return t.getUTCSeconds()});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setUTCHours(0,0,0,0)},function(t,n){t.setUTCDate(t.getUTCDate()+n)},function(t,n){return(n-t)/r.b},function(t){return t.getUTCDate()-1});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setUTCMinutes(0,0,0)},function(t,n){t.setTime(+t+n*r.c)},function(t,n){return(n-t)/r.c},function(t){return t.getUTCHours()});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e(7),a=e.i(i.a)(function(t){t.setUTCSeconds(0,0)},function(t,n){t.setTime(+t+n*r.d)},function(t,n){return(n-t)/r.d},function(t){return t.getUTCMinutes()});n.a=a;a.range},function(t,n,e){"use strict";var i=e(1),r=e.i(i.a)(function(t){t.setUTCDate(1),t.setUTCHours(0,0,0,0)},function(t,n){t.setUTCMonth(t.getUTCMonth()+n)},function(t,n){return n.getUTCMonth()-t.getUTCMonth()+12*(n.getUTCFullYear()-t.getUTCFullYear())},function(t){return t.getUTCMonth()});n.a=r;r.range},function(t,n,e){"use strict";function i(t){return e.i(r.a)(function(n){n.setUTCDate(n.getUTCDate()-(n.getUTCDay()+7-t)%7),n.setUTCHours(0,0,0,0)},function(t,n){t.setUTCDate(t.getUTCDate()+7*n)},function(t,n){return(n-t)/a.a})}var r=e(1),a=e(7);e.d(n,"a",function(){return o}),e.d(n,"b",function(){return u});var o=i(0),u=i(1),s=i(2),c=i(3),f=i(4),h=i(5),l=i(6);o.range,u.range,s.range,c.range,f.range,h.range,l.range},function(t,n,e){"use strict";var i=e(1),r=e.i(i.a)(function(t){t.setUTCMonth(0,1),t.setUTCHours(0,0,0,0)},function(t,n){t.setUTCFullYear(t.getUTCFullYear()+n)},function(t,n){return n.getUTCFullYear()-t.getUTCFullYear()},function(t){return t.getUTCFullYear()});r.every=function(t){return isFinite(t=Math.floor(t))&&t>0?e.i(i.a)(function(n){n.setUTCFullYear(Math.floor(n.getUTCFullYear()/t)*t),n.setUTCMonth(0,1),n.setUTCHours(0,0,0,0)},function(n,e){n.setUTCFullYear(n.getUTCFullYear()+e*t)}):null},n.a=r;r.range},function(t,n,e){"use strict";function i(t){return e.i(r.a)(function(n){n.setDate(n.getDate()-(n.getDay()+7-t)%7),n.setHours(0,0,0,0)},function(t,n){t.setDate(t.getDate()+7*n)},function(t,n){return(n-t-(n.getTimezoneOffset()-t.getTimezoneOffset())*a.d)/a.a})}var r=e(1),a=e(7);e.d(n,"a",function(){return o}),e.d(n,"b",function(){return u});var o=i(0),u=i(1),s=i(2),c=i(3),f=i(4),h=i(5),l=i(6);o.range,u.range,s.range,c.range,f.range,h.range,l.range},function(t,n,e){"use strict";var i=e(1),r=e.i(i.a)(function(t){t.setMonth(0,1),t.setHours(0,0,0,0)},function(t,n){t.setFullYear(t.getFullYear()+n)},function(t,n){return n.getFullYear()-t.getFullYear()},function(t){return t.getFullYear()});r.every=function(t){return isFinite(t=Math.floor(t))&&t>0?e.i(i.a)(function(n){n.setFullYear(Math.floor(n.getFullYear()/t)*t),n.setMonth(0,1),n.setHours(0,0,0,0)},function(n,e){n.setFullYear(n.getFullYear()+e*t)}):null},n.a=r;r.range},function(t,n,e){"use strict";e(52)},function(t,n,e){"use strict";var i=e(52);n.a=function(t,n,e){var r=new i.b;return n=null==n?0:+n,r.restart(function(e){r.stop(),t(e+n)},n,e),r}},function(t,n,e){"use strict";var i=(e(295),e(8),e(294),e(111));e.d(n,"a",function(){return i.a})},function(t,n,e){"use strict";e(8),e(4)},function(t,n,e){"use strict";var i=e(0),r=e(296),a=e(297);i.f.prototype.interrupt=r.a,i.f.prototype.transition=a.a},function(t,n,e){"use strict";var i=e(111);n.a=function(t){return this.each(function(){e.i(i.a)(this,t)})}},function(t,n,e){"use strict";function i(t,n){for(var i;!(i=t.__transition)||!(i=i[n]);)if(!(t=t.parentNode))return s.time=e.i(u.c)(),s;return i}var r=e(8),a=e(4),o=e(152),u=e(110),s={time:null,delay:0,duration:250,ease:o.a};n.a=function(t){var n,o;t instanceof r.a?(n=t._id,t=t._name):(n=e.i(r.b)(),(o=s).time=e.i(u.c)(),t=null==t?null:t+"");for(var c=this._groups,f=c.length,h=0;h<f;++h)for(var l,d=c[h],p=d.length,_=0;_<p;++_)(l=d[_])&&e.i(a.h)(l,t,n,_,d,o||i(l,n));return new r.a(c,this._parents,t,n)}},function(t,n,e){"use strict";function i(t){return function(){this.removeAttribute(t)}}function r(t){return function(){this.removeAttributeNS(t.space,t.local)}}function a(t,n,e){var i,r;return function(){var a=this.getAttribute(t);return a===e?null:a===i?r:r=n(i=a,e)}}function o(t,n,e){var i,r;return function(){var a=this.getAttributeNS(t.space,t.local);return a===e?null:a===i?r:r=n(i=a,e)}}function u(t,n,e){var i,r,a;return function(){var o,u=e(this);return null==u?void this.removeAttribute(t):(o=this.getAttribute(t),o===u?null:o===i&&u===r?a:a=n(i=o,r=u))}}function s(t,n,e){var i,r,a;return function(){var o,u=e(this);return null==u?void this.removeAttributeNS(t.space,t.local):(o=this.getAttributeNS(t.space,t.local),o===u?null:o===i&&u===r?a:a=n(i=o,r=u))}}var c=e(6),f=e(0),h=e(27),l=e(112);n.a=function(t,n){var d=e.i(f.h)(t),p="transform"===d?c.i:l.a;return this.attrTween(t,"function"==typeof n?(d.local?s:u)(d,p,e.i(h.b)(this,"attr."+t,n)):null==n?(d.local?r:i)(d):(d.local?o:a)(d,p,n))}},function(t,n,e){"use strict";function i(t,n){function e(){var e=this,i=n.apply(e,arguments);return i&&function(n){e.setAttributeNS(t.space,t.local,i(n))}}return e._value=n,e}function r(t,n){function e(){var e=this,i=n.apply(e,arguments);return i&&function(n){e.setAttribute(t,i(n))}}return e._value=n,e}var a=e(0);n.a=function(t,n){var o="attr."+t;if(arguments.length<2)return(o=this.tween(o))&&o._value;if(null==n)return this.tween(o,null);if("function"!=typeof n)throw new Error;var u=e.i(a.h)(t);return this.tween(o,(u.local?i:r)(u,n))}},function(t,n,e){"use strict";function i(t,n){return function(){e.i(a.g)(this,t).delay=+n.apply(this,arguments)}}function r(t,n){return n=+n,function(){e.i(a.g)(this,t).delay=n}}var a=e(4);n.a=function(t){var n=this._id;return arguments.length?this.each(("function"==typeof t?i:r)(n,t)):e.i(a.f)(this.node(),n).delay}},function(t,n,e){"use strict";function i(t,n){return function(){e.i(a.e)(this,t).duration=+n.apply(this,arguments)}}function r(t,n){return n=+n,function(){e.i(a.e)(this,t).duration=n}}var a=e(4);n.a=function(t){var n=this._id;return arguments.length?this.each(("function"==typeof t?i:r)(n,t)):e.i(a.f)(this.node(),n).duration}},function(t,n,e){"use strict";function i(t,n){if("function"!=typeof n)throw new Error;return function(){e.i(r.e)(this,t).ease=n}}var r=e(4);n.a=function(t){var n=this._id;return arguments.length?this.each(i(n,t)):e.i(r.f)(this.node(),n).ease}},function(t,n,e){"use strict";var i=e(0),r=e(8);n.a=function(t){"function"!=typeof t&&(t=e.i(i.i)(t));for(var n=this._groups,a=n.length,o=new Array(a),u=0;u<a;++u)for(var s,c=n[u],f=c.length,h=o[u]=[],l=0;l<f;++l)(s=c[l])&&t.call(s,s.__data__,l,c)&&h.push(s);return new r.a(o,this._parents,this._name,this._id)}},function(t,n,e){"use strict";var i=e(8);n.a=function(t){if(t._id!==this._id)throw new Error;for(var n=this._groups,e=t._groups,r=n.length,a=e.length,o=Math.min(r,a),u=new Array(r),s=0;s<o;++s)for(var c,f=n[s],h=e[s],l=f.length,d=u[s]=new Array(l),p=0;p<l;++p)(c=f[p]||h[p])&&(d[p]=c);for(;s<r;++s)u[s]=n[s];return new i.a(u,this._parents,this._name,this._id)}},function(t,n,e){"use strict";function i(t){return(t+"").trim().split(/^|\s+/).every(function(t){var n=t.indexOf(".");return n>=0&&(t=t.slice(0,n)),!t||"start"===t})}function r(t,n,e){var r,o,u=i(n)?a.g:a.e;return function(){var i=u(this,t),a=i.on;a!==r&&(o=(r=a).copy()).on(n,e),i.on=o}}var a=e(4);n.a=function(t,n){var i=this._id;return arguments.length<2?e.i(a.f)(this.node(),i).on.on(t):this.each(r(i,t,n))}},function(t,n,e){"use strict";function i(t){return function(){var n=this.parentNode;for(var e in this.__transition)if(+e!==t)return;n&&n.removeChild(this)}}n.a=function(){return this.on("end.remove",i(this._id))}},function(t,n,e){"use strict";var i=e(0),r=e(8),a=e(4);n.a=function(t){var n=this._name,o=this._id;"function"!=typeof t&&(t=e.i(i.k)(t));for(var u=this._groups,s=u.length,c=new Array(s),f=0;f<s;++f)for(var h,l,d=u[f],p=d.length,_=c[f]=new Array(p),v=0;v<p;++v)(h=d[v])&&(l=t.call(h,h.__data__,v,d))&&("__data__"in h&&(l.__data__=h.__data__),_[v]=l,e.i(a.h)(_[v],n,o,v,_,e.i(a.f)(h,o)));return new r.a(c,this._parents,n,o)}},function(t,n,e){"use strict";var i=e(0),r=e(8),a=e(4);n.a=function(t){var n=this._name,o=this._id;"function"!=typeof t&&(t=e.i(i.j)(t));for(var u=this._groups,s=u.length,c=[],f=[],h=0;h<s;++h)for(var l,d=u[h],p=d.length,_=0;_<p;++_)if(l=d[_]){for(var v,y=t.call(l,l.__data__,_,d),b=e.i(a.f)(l,o),g=0,m=y.length;g<m;++g)(v=y[g])&&e.i(a.h)(v,n,o,g,y,b);c.push(y),f.push(l)}return new r.a(c,f,n,o)}},function(t,n,e){"use strict";var i=e(0),r=i.f.prototype.constructor;n.a=function(){return new r(this._groups,this._parents)}},function(t,n,e){"use strict";function i(t,n){var i,r,a;return function(){var o=e.i(s.g)(this).getComputedStyle(this,null),u=o.getPropertyValue(t),c=(this.style.removeProperty(t),o.getPropertyValue(t));return u===c?null:u===i&&c===r?a:a=n(i=u,r=c)}}function r(t){return function(){this.style.removeProperty(t)}}function a(t,n,i){var r,a;return function(){var o=e.i(s.g)(this).getComputedStyle(this,null).getPropertyValue(t);return o===i?null:o===r?a:a=n(r=o,i)}}function o(t,n,i){var r,a,o;return function(){var u=e.i(s.g)(this).getComputedStyle(this,null),c=u.getPropertyValue(t),f=i(this);return null==f&&(this.style.removeProperty(t),f=u.getPropertyValue(t)),c===f?null:c===r&&f===a?o:o=n(r=c,a=f)}}var u=e(6),s=e(0),c=e(27),f=e(112);n.a=function(t,n,s){var h="transform"==(t+="")?u.f:f.a;return null==n?this.styleTween(t,i(t,h)).on("end.style."+t,r(t)):this.styleTween(t,"function"==typeof n?o(t,h,e.i(c.b)(this,"style."+t,n)):a(t,h,n),s)}},function(t,n,e){"use strict";function i(t,n,e){function i(){var i=this,r=n.apply(i,arguments);return r&&function(n){i.style.setProperty(t,r(n),e)}}return i._value=n,i}n.a=function(t,n,e){var r="style."+(t+="");if(arguments.length<2)return(r=this.tween(r))&&r._value;if(null==n)return this.tween(r,null);if("function"!=typeof n)throw new Error;return this.tween(r,i(t,n,null==e?"":e))}},function(t,n,e){"use strict";function i(t){return function(){this.textContent=t}}function r(t){return function(){var n=t(this);this.textContent=null==n?"":n}}var a=e(27);n.a=function(t){return this.tween("text","function"==typeof t?r(e.i(a.b)(this,"text",t)):i(null==t?"":t+""))}},function(t,n,e){"use strict";var i=e(8),r=e(4);n.a=function(){for(var t=this._name,n=this._id,a=e.i(i.b)(),o=this._groups,u=o.length,s=0;s<u;++s)for(var c,f=o[s],h=f.length,l=0;l<h;++l)if(c=f[l]){var d=e.i(r.f)(c,n);e.i(r.h)(c,t,a,l,f,{time:d.time+d.delay+d.duration,delay:0,duration:d.duration,ease:d.ease})}return new i.a(o,this._parents,t,a)}},function(t,n,e){"use strict";var i=e(318);e.d(n,"b",function(){return i.a});var r=e(113);e.d(n,"a",function(){return r.a})},function(t,n,e){"use strict";n.a=function(t){return function(){return t}}},function(t,n,e){"use strict";function i(t,n,e){this.target=t,this.type=n,this.transform=e}n.a=i},function(t,n,e){"use strict";function i(){r.b.stopImmediatePropagation()}var r=e(0);n.b=i,n.a=function(){r.b.preventDefault(),r.b.stopImmediatePropagation()}},function(t,n,e){"use strict";function i(){return!c.b.button}function r(){var t,n,e=this;return e instanceof SVGElement?(e=e.ownerSVGElement||e,t=e.width.baseVal.value,n=e.height.baseVal.value):(t=e.clientWidth,n=e.clientHeight),[[0,0],[t,n]]}function a(){return this.__zoom||d.a}var o=e(32),u=e(70),s=e(6),c=e(0),f=e(293),h=e(315),l=e(316),d=e(113),p=e(317);n.a=function(){function t(t){t.on("wheel.zoom",x).on("mousedown.zoom",w).on("dblclick.zoom",M).on("touchstart.zoom",T).on("touchmove.zoom",E).on("touchend.zoom touchcancel.zoom",N).style("-webkit-tap-highlight-color","rgba(0,0,0,0)").property("__zoom",a)}function n(t,n){return n=Math.max(L,Math.min(D,n)),n===t.k?t:new d.b(n,t.x,t.y)}function _(t,n,e){var i=n[0]-e[0]*t.k,r=n[1]-e[1]*t.k;return i===t.x&&r===t.y?t:new d.b(t.k,i,r)}function v(t,n){var e=t.invertX(n[0][0])-z,i=t.invertX(n[1][0])-P,r=t.invertY(n[0][1])-R,a=t.invertY(n[1][1])-O;return t.translate(i>e?(e+i)/2:Math.min(0,e)||Math.max(0,i),a>r?(r+a)/2:Math.min(0,r)||Math.max(0,a))}function y(t){return[(+t[0][0]+ +t[1][0])/2,(+t[0][1]+ +t[1][1])/2]}function b(t,n,e){t.on("start.zoom",function(){g(this,arguments).start()}).on("interrupt.zoom end.zoom",function(){g(this,arguments).end()}).tween("zoom",function(){var t=this,i=arguments,r=g(t,i),a=C.apply(t,i),o=e||y(a),u=Math.max(a[1][0]-a[0][0],a[1][1]-a[0][1]),s=t.__zoom,c="function"==typeof n?n.apply(t,i):n,f=H(s.invert(o).concat(u/s.k),c.invert(o).concat(u/c.k));return function(t){if(1===t)t=c;else{var n=f(t),e=u/n[2];t=new d.b(e,o[0]-n[0]*e,o[1]-n[1]*e)}r.zoom(null,t)}})}function g(t,n){for(var e,i=0,r=F.length;i<r;++i)if((e=F[i]).that===t)return e;return new m(t,n)}function m(t,n){this.that=t,this.args=n,this.index=-1,this.active=0,this.extent=C.apply(t,n)}function x(){function t(){i.wheel=null,i.end()}if(k.apply(this,arguments)){var i=g(this,arguments),r=this.__zoom,a=Math.max(L,Math.min(D,r.k*Math.pow(2,-c.b.deltaY*(c.b.deltaMode?120:1)/500))),o=e.i(c.c)(this);if(i.wheel)i.mouse[0][0]===o[0]&&i.mouse[0][1]===o[1]||(i.mouse[1]=r.invert(i.mouse[0]=o)),clearTimeout(i.wheel);else{if(r.k===a)return;i.mouse=[o,r.invert(o)],e.i(f.a)(this),i.start()}e.i(p.a)(),i.wheel=setTimeout(t,j),i.zoom("mouse",v(_(n(r,a),i.mouse[0],i.mouse[1]),i.extent))}}function w(){function t(){e.i(p.a)(),i.moved=!0,i.zoom("mouse",v(_(i.that.__zoom,i.mouse[0]=e.i(c.c)(i.that),i.mouse[1]),i.extent))}function n(){r.on("mousemove.zoom mouseup.zoom",null),e.i(u.c)(c.b.view,i.moved),e.i(p.a)(),i.end()}if(!A&&k.apply(this,arguments)){var i=g(this,arguments),r=e.i(c.a)(c.b.view).on("mousemove.zoom",t,!0).on("mouseup.zoom",n,!0),a=e.i(c.c)(this);e.i(u.b)(c.b.view),e.i(p.b)(),i.mouse=[a,this.__zoom.invert(a)],e.i(f.a)(this),i.start()}}function M(){if(k.apply(this,arguments)){var i=this.__zoom,r=e.i(c.c)(this),a=i.invert(r),o=i.k*(c.b.shiftKey?.5:2),u=v(_(n(i,o),r,a),C.apply(this,arguments));e.i(p.a)(),U>0?e.i(c.a)(this).transition().duration(U).call(b,u,r):e.i(c.a)(this).call(t.transform,u)}}function T(){if(k.apply(this,arguments)){var t,n,i,r,a=g(this,arguments),o=c.b.changedTouches,u=o.length;for(e.i(p.b)(),n=0;n<u;++n)i=o[n],r=e.i(c.d)(this,o,i.identifier),r=[r,this.__zoom.invert(r),i.identifier],a.touch0?a.touch1||(a.touch1=r):(a.touch0=r,t=!0);return S&&(S=clearTimeout(S),!a.touch1)?(a.end(),r=e.i(c.a)(this).on("dblclick.zoom"),void(r&&r.apply(this,arguments))):void(t&&(S=setTimeout(function(){S=null},Y),e.i(f.a)(this),a.start()))}}function E(){var t,i,r,a,o=g(this,arguments),u=c.b.changedTouches,s=u.length;for(e.i(p.a)(),S&&(S=clearTimeout(S)),t=0;t<s;++t)i=u[t],r=e.i(c.d)(this,u,i.identifier),o.touch0&&o.touch0[2]===i.identifier?o.touch0[0]=r:o.touch1&&o.touch1[2]===i.identifier&&(o.touch1[0]=r);if(i=o.that.__zoom,o.touch1){var f=o.touch0[0],h=o.touch0[1],l=o.touch1[0],d=o.touch1[1],y=(y=l[0]-f[0])*y+(y=l[1]-f[1])*y,b=(b=d[0]-h[0])*b+(b=d[1]-h[1])*b;i=n(i,Math.sqrt(y/b)),r=[(f[0]+l[0])/2,(f[1]+l[1])/2],a=[(h[0]+d[0])/2,(h[1]+d[1])/2]}else{if(!o.touch0)return;r=o.touch0[0],a=o.touch0[1]}o.zoom("touch",v(_(i,r,a),o.extent))}function N(){var t,n,i=g(this,arguments),r=c.b.changedTouches,a=r.length;for(e.i(p.b)(),A&&clearTimeout(A),A=setTimeout(function(){A=null},Y),t=0;t<a;++t)n=r[t],i.touch0&&i.touch0[2]===n.identifier?delete i.touch0:i.touch1&&i.touch1[2]===n.identifier&&delete i.touch1;i.touch1&&!i.touch0&&(i.touch0=i.touch1,delete i.touch1),i.touch0||i.end()}var S,A,k=i,C=r,L=0,D=1/0,z=-D,P=D,R=z,O=P,U=250,H=s.e,F=[],I=e.i(o.a)("start","zoom","end"),Y=500,j=150;return t.transform=function(t,n){var e=t.selection?t.selection():t;e.property("__zoom",a),t!==e?b(t,n):e.interrupt().each(function(){g(this,arguments).start().zoom(null,"function"==typeof n?n.apply(this,arguments):n).end()})},t.scaleBy=function(n,e){t.scaleTo(n,function(){var t=this.__zoom.k,n="function"==typeof e?e.apply(this,arguments):e;
-return t*n})},t.scaleTo=function(e,i){t.transform(e,function(){var t=C.apply(this,arguments),e=this.__zoom,r=y(t),a=e.invert(r),o="function"==typeof i?i.apply(this,arguments):i;return v(_(n(e,o),r,a),t)})},t.translateBy=function(n,e,i){t.transform(n,function(){return v(this.__zoom.translate("function"==typeof e?e.apply(this,arguments):e,"function"==typeof i?i.apply(this,arguments):i),C.apply(this,arguments))})},m.prototype={start:function(){return 1===++this.active&&(this.index=F.push(this)-1,this.emit("start")),this},zoom:function(t,n){return this.mouse&&"mouse"!==t&&(this.mouse[1]=n.invert(this.mouse[0])),this.touch0&&"touch"!==t&&(this.touch0[1]=n.invert(this.touch0[0])),this.touch1&&"touch"!==t&&(this.touch1[1]=n.invert(this.touch1[0])),this.that.__zoom=n,this.emit("zoom"),this},end:function(){return 0===--this.active&&(F.splice(this.index,1),this.index=-1,this.emit("end")),this},emit:function(n){e.i(c.e)(new l.a(t,n,this.that.__zoom),I.apply,I,[n,this.that,this.args])}},t.filter=function(n){return arguments.length?(k="function"==typeof n?n:e.i(h.a)(!!n),t):k},t.extent=function(n){return arguments.length?(C="function"==typeof n?n:e.i(h.a)([[+n[0][0],+n[0][1]],[+n[1][0],+n[1][1]]]),t):C},t.scaleExtent=function(n){return arguments.length?(L=+n[0],D=+n[1],t):[L,D]},t.translateExtent=function(n){return arguments.length?(z=+n[0][0],P=+n[1][0],R=+n[0][1],O=+n[1][1],t):[[z,R],[P,O]]},t.duration=function(n){return arguments.length?(U=+n,t):U},t.interpolate=function(n){return arguments.length?(H=n,t):H},t.on=function(){var n=I.on.apply(I,arguments);return n===I?t:n},t}},function(t,n,e){"use strict";function i(){}function r(t,n,e){this.fn=t,this.context=n,this.once=e||!1}function a(){this._events=new i,this._eventsCount=0}var o=Object.prototype.hasOwnProperty,u="~";Object.create&&(i.prototype=Object.create(null),(new i).__proto__||(u=!1)),a.prototype.eventNames=function(){var t,n,e=[];if(0===this._eventsCount)return e;for(n in t=this._events)o.call(t,n)&&e.push(u?n.slice(1):n);return Object.getOwnPropertySymbols?e.concat(Object.getOwnPropertySymbols(t)):e},a.prototype.listeners=function(t,n){var e=u?u+t:t,i=this._events[e];if(n)return!!i;if(!i)return[];if(i.fn)return[i.fn];for(var r=0,a=i.length,o=new Array(a);r<a;r++)o[r]=i[r].fn;return o},a.prototype.emit=function(t,n,e,i,r,a){var o=u?u+t:t;if(!this._events[o])return!1;var s,c,f=this._events[o],h=arguments.length;if(f.fn){switch(f.once&&this.removeListener(t,f.fn,void 0,!0),h){case 1:return f.fn.call(f.context),!0;case 2:return f.fn.call(f.context,n),!0;case 3:return f.fn.call(f.context,n,e),!0;case 4:return f.fn.call(f.context,n,e,i),!0;case 5:return f.fn.call(f.context,n,e,i,r),!0;case 6:return f.fn.call(f.context,n,e,i,r,a),!0}for(c=1,s=new Array(h-1);c<h;c++)s[c-1]=arguments[c];f.fn.apply(f.context,s)}else{var l,d=f.length;for(c=0;c<d;c++)switch(f[c].once&&this.removeListener(t,f[c].fn,void 0,!0),h){case 1:f[c].fn.call(f[c].context);break;case 2:f[c].fn.call(f[c].context,n);break;case 3:f[c].fn.call(f[c].context,n,e);break;case 4:f[c].fn.call(f[c].context,n,e,i);break;default:if(!s)for(l=1,s=new Array(h-1);l<h;l++)s[l-1]=arguments[l];f[c].fn.apply(f[c].context,s)}}return!0},a.prototype.on=function(t,n,e){var i=new r(n,e||this),a=u?u+t:t;return this._events[a]?this._events[a].fn?this._events[a]=[this._events[a],i]:this._events[a].push(i):(this._events[a]=i,this._eventsCount++),this},a.prototype.once=function(t,n,e){var i=new r(n,e||this,!0),a=u?u+t:t;return this._events[a]?this._events[a].fn?this._events[a]=[this._events[a],i]:this._events[a].push(i):(this._events[a]=i,this._eventsCount++),this},a.prototype.removeListener=function(t,n,e,r){var a=u?u+t:t;if(!this._events[a])return this;if(!n)return 0===--this._eventsCount?this._events=new i:delete this._events[a],this;var o=this._events[a];if(o.fn)o.fn!==n||r&&!o.once||e&&o.context!==e||(0===--this._eventsCount?this._events=new i:delete this._events[a]);else{for(var s=0,c=[],f=o.length;s<f;s++)(o[s].fn!==n||r&&!o[s].once||e&&o[s].context!==e)&&c.push(o[s]);c.length?this._events[a]=1===c.length?c[0]:c:0===--this._eventsCount?this._events=new i:delete this._events[a]}return this},a.prototype.removeAllListeners=function(t){var n;return t?(n=u?u+t:t,this._events[n]&&(0===--this._eventsCount?this._events=new i:delete this._events[n])):(this._events=new i,this._eventsCount=0),this},a.prototype.off=a.prototype.removeListener,a.prototype.addListener=a.prototype.on,a.prototype.setMaxListeners=function(){return this},a.prefixed=u,a.EventEmitter=a,t.exports=a},function(t,n){function e(t,n){for(var e=0;e<t.length;e++){var i=t[e],r=l[i.id];if(r){r.refs++;for(var a=0;a<r.parts.length;a++)r.parts[a](i.parts[a]);for(;a<i.parts.length;a++)r.parts.push(s(i.parts[a],n))}else{for(var o=[],a=0;a<i.parts.length;a++)o.push(s(i.parts[a],n));l[i.id]={id:i.id,refs:1,parts:o}}}}function i(t){for(var n=[],e={},i=0;i<t.length;i++){var r=t[i],a=r[0],o=r[1],u=r[2],s=r[3],c={css:o,media:u,sourceMap:s};e[a]?e[a].parts.push(c):n.push(e[a]={id:a,parts:[c]})}return n}function r(t,n){var e=_(),i=b[b.length-1];if("top"===t.insertAt)i?i.nextSibling?e.insertBefore(n,i.nextSibling):e.appendChild(n):e.insertBefore(n,e.firstChild),b.push(n);else{if("bottom"!==t.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");e.appendChild(n)}}function a(t){t.parentNode.removeChild(t);var n=b.indexOf(t);n>=0&&b.splice(n,1)}function o(t){var n=document.createElement("style");return n.type="text/css",r(t,n),n}function u(t){var n=document.createElement("link");return n.rel="stylesheet",r(t,n),n}function s(t,n){var e,i,r;if(n.singleton){var s=y++;e=v||(v=o(n)),i=c.bind(null,e,s,!1),r=c.bind(null,e,s,!0)}else t.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(e=u(n),i=h.bind(null,e),r=function(){a(e),e.href&&URL.revokeObjectURL(e.href)}):(e=o(n),i=f.bind(null,e),r=function(){a(e)});return i(t),function(n){if(n){if(n.css===t.css&&n.media===t.media&&n.sourceMap===t.sourceMap)return;i(t=n)}else r()}}function c(t,n,e,i){var r=e?"":i.css;if(t.styleSheet)t.styleSheet.cssText=g(n,r);else{var a=document.createTextNode(r),o=t.childNodes;o[n]&&t.removeChild(o[n]),o.length?t.insertBefore(a,o[n]):t.appendChild(a)}}function f(t,n){var e=n.css,i=n.media;if(i&&t.setAttribute("media",i),t.styleSheet)t.styleSheet.cssText=e;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(e))}}function h(t,n){var e=n.css,i=n.sourceMap;i&&(e+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */");var r=new Blob([e],{type:"text/css"}),a=t.href;t.href=URL.createObjectURL(r),a&&URL.revokeObjectURL(a)}var l={},d=function(t){var n;return function(){return"undefined"==typeof n&&(n=t.apply(this,arguments)),n}},p=d(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),_=d(function(){return document.head||document.getElementsByTagName("head")[0]}),v=null,y=0,b=[];t.exports=function(t,n){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");n=n||{},"undefined"==typeof n.singleton&&(n.singleton=p()),"undefined"==typeof n.insertAt&&(n.insertAt="bottom");var r=i(t);return e(r,n),function(t){for(var a=[],o=0;o<r.length;o++){var u=r[o],s=l[u.id];s.refs--,a.push(s)}if(t){var c=i(t);e(c,n)}for(var o=0;o<a.length;o++){var s=a[o];if(0===s.refs){for(var f=0;f<s.parts.length;f++)s.parts[f]();delete l[s.id]}}}};var g=function(){var t=[];return function(n,e){return t[n]=e,t.filter(Boolean).join("\n")}}()},function(t,n,e){t.exports=e(115)}])});
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["scatterplot"] = factory();
+	else
+		root["datavisyn"] = root["datavisyn"] || {}, root["datavisyn"]["scatterplot"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 321);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_creator__ = __webpack_require__(39);
+/* unused harmony reexport creator */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_local__ = __webpack_require__(220);
+/* unused harmony reexport local */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_matcher__ = __webpack_require__(89);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_2__src_matcher__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_mouse__ = __webpack_require__(221);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__src_mouse__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_namespace__ = __webpack_require__(40);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_4__src_namespace__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_namespaces__ = __webpack_require__(41);
+/* unused harmony reexport namespaces */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_select__ = __webpack_require__(222);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_6__src_select__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_selectAll__ = __webpack_require__(223);
+/* unused harmony reexport selectAll */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_selection_index__ = __webpack_require__(3);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_8__src_selection_index__["c"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_selector__ = __webpack_require__(44);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_9__src_selector__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_selectorAll__ = __webpack_require__(92);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_10__src_selectorAll__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_touch__ = __webpack_require__(251);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_11__src_touch__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_touches__ = __webpack_require__(252);
+/* unused harmony reexport touches */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_window__ = __webpack_require__(46);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_13__src_window__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_selection_on__ = __webpack_require__(43);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_14__src_selection_on__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_14__src_selection_on__["c"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = newInterval;
+var t0 = new Date,
+    t1 = new Date;
+
+function newInterval(floori, offseti, count, field) {
+
+  function interval(date) {
+    return floori(date = new Date(+date)), date;
+  }
+
+  interval.floor = interval;
+
+  interval.ceil = function(date) {
+    return floori(date = new Date(date - 1)), offseti(date, 1), floori(date), date;
+  };
+
+  interval.round = function(date) {
+    var d0 = interval(date),
+        d1 = interval.ceil(date);
+    return date - d0 < d1 - date ? d0 : d1;
+  };
+
+  interval.offset = function(date, step) {
+    return offseti(date = new Date(+date), step == null ? 1 : Math.floor(step)), date;
+  };
+
+  interval.range = function(start, stop, step) {
+    var range = [];
+    start = interval.ceil(start);
+    step = step == null ? 1 : Math.floor(step);
+    if (!(start < stop) || !(step > 0)) return range; // also handles Invalid Date
+    do range.push(new Date(+start)); while (offseti(start, step), floori(start), start < stop)
+    return range;
+  };
+
+  interval.filter = function(test) {
+    return newInterval(function(date) {
+      if (date >= date) while (floori(date), !test(date)) date.setTime(date - 1);
+    }, function(date, step) {
+      if (date >= date) while (--step >= 0) while (offseti(date, 1), !test(date)) {} // eslint-disable-line no-empty
+    });
+  };
+
+  if (count) {
+    interval.count = function(start, end) {
+      t0.setTime(+start), t1.setTime(+end);
+      floori(t0), floori(t1);
+      return Math.floor(count(t0, t1));
+    };
+
+    interval.every = function(step) {
+      step = Math.floor(step);
+      return !isFinite(step) || !(step > 0) ? null
+          : !(step > 1) ? interval
+          : interval.filter(field
+              ? function(d) { return field(d) % step === 0; }
+              : function(d) { return interval.count(0, d) % step === 0; });
+    };
+  }
+
+  return interval;
+}
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_bisect__ = __webpack_require__(59);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__src_bisect__["a"]; });
+/* unused harmony reexport bisectRight */
+/* unused harmony reexport bisectLeft */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_ascending__ = __webpack_require__(10);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__src_ascending__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_bisector__ = __webpack_require__(60);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__src_bisector__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_descending__ = __webpack_require__(121);
+/* unused harmony reexport descending */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_deviation__ = __webpack_require__(61);
+/* unused harmony reexport deviation */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_extent__ = __webpack_require__(62);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__src_extent__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_histogram__ = __webpack_require__(122);
+/* unused harmony reexport histogram */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_threshold_freedmanDiaconis__ = __webpack_require__(133);
+/* unused harmony reexport thresholdFreedmanDiaconis */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_threshold_scott__ = __webpack_require__(134);
+/* unused harmony reexport thresholdScott */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_threshold_sturges__ = __webpack_require__(65);
+/* unused harmony reexport thresholdSturges */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_max__ = __webpack_require__(124);
+/* unused harmony reexport max */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_mean__ = __webpack_require__(125);
+/* unused harmony reexport mean */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_median__ = __webpack_require__(126);
+/* unused harmony reexport median */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_merge__ = __webpack_require__(127);
+/* unused harmony reexport merge */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_min__ = __webpack_require__(63);
+/* unused harmony reexport min */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_pairs__ = __webpack_require__(128);
+/* unused harmony reexport pairs */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_permute__ = __webpack_require__(129);
+/* unused harmony reexport permute */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_quantile__ = __webpack_require__(28);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_17__src_quantile__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_range__ = __webpack_require__(64);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_18__src_range__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_scan__ = __webpack_require__(130);
+/* unused harmony reexport scan */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_shuffle__ = __webpack_require__(131);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_20__src_shuffle__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__src_sum__ = __webpack_require__(132);
+/* unused harmony reexport sum */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__src_ticks__ = __webpack_require__(66);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_22__src_ticks__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_22__src_ticks__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__src_transpose__ = __webpack_require__(67);
+/* unused harmony reexport transpose */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__src_variance__ = __webpack_require__(68);
+/* unused harmony reexport variance */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_zip__ = __webpack_require__(135);
+/* unused harmony reexport zip */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__select__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selectAll__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enter__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__exit__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__merge__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__order__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sort__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__call__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__nodes__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__node__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__size__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__empty__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__each__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__attr__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__style__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__property__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__classed__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__text__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__html__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__raise__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__lower__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__append__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__insert__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__remove__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__datum__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__on__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__dispatch__ = __webpack_require__(230);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return root; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = Selection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var root = [null];
+
+function Selection(groups, parents) {
+  this._groups = groups;
+  this._parents = parents;
+}
+
+function selection() {
+  return new Selection([[document.documentElement]], root);
+}
+
+Selection.prototype = selection.prototype = {
+  constructor: Selection,
+  select: __WEBPACK_IMPORTED_MODULE_0__select__["a" /* default */],
+  selectAll: __WEBPACK_IMPORTED_MODULE_1__selectAll__["a" /* default */],
+  filter: __WEBPACK_IMPORTED_MODULE_2__filter__["a" /* default */],
+  data: __WEBPACK_IMPORTED_MODULE_3__data__["a" /* default */],
+  enter: __WEBPACK_IMPORTED_MODULE_4__enter__["a" /* default */],
+  exit: __WEBPACK_IMPORTED_MODULE_5__exit__["a" /* default */],
+  merge: __WEBPACK_IMPORTED_MODULE_6__merge__["a" /* default */],
+  order: __WEBPACK_IMPORTED_MODULE_7__order__["a" /* default */],
+  sort: __WEBPACK_IMPORTED_MODULE_8__sort__["a" /* default */],
+  call: __WEBPACK_IMPORTED_MODULE_9__call__["a" /* default */],
+  nodes: __WEBPACK_IMPORTED_MODULE_10__nodes__["a" /* default */],
+  node: __WEBPACK_IMPORTED_MODULE_11__node__["a" /* default */],
+  size: __WEBPACK_IMPORTED_MODULE_12__size__["a" /* default */],
+  empty: __WEBPACK_IMPORTED_MODULE_13__empty__["a" /* default */],
+  each: __WEBPACK_IMPORTED_MODULE_14__each__["a" /* default */],
+  attr: __WEBPACK_IMPORTED_MODULE_15__attr__["a" /* default */],
+  style: __WEBPACK_IMPORTED_MODULE_16__style__["a" /* default */],
+  property: __WEBPACK_IMPORTED_MODULE_17__property__["a" /* default */],
+  classed: __WEBPACK_IMPORTED_MODULE_18__classed__["a" /* default */],
+  text: __WEBPACK_IMPORTED_MODULE_19__text__["a" /* default */],
+  html: __WEBPACK_IMPORTED_MODULE_20__html__["a" /* default */],
+  raise: __WEBPACK_IMPORTED_MODULE_21__raise__["a" /* default */],
+  lower: __WEBPACK_IMPORTED_MODULE_22__lower__["a" /* default */],
+  append: __WEBPACK_IMPORTED_MODULE_23__append__["a" /* default */],
+  insert: __WEBPACK_IMPORTED_MODULE_24__insert__["a" /* default */],
+  remove: __WEBPACK_IMPORTED_MODULE_25__remove__["a" /* default */],
+  datum: __WEBPACK_IMPORTED_MODULE_26__datum__["a" /* default */],
+  on: __WEBPACK_IMPORTED_MODULE_27__on__["b" /* default */],
+  dispatch: __WEBPACK_IMPORTED_MODULE_28__dispatch__["a" /* default */]
+};
+
+/* harmony default export */ __webpack_exports__["c"] = selection;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dispatch__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_timer__ = __webpack_require__(110);
+/* unused harmony export CREATED */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return SCHEDULED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return STARTING; });
+/* unused harmony export STARTED */
+/* unused harmony export RUNNING */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ENDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ENDED; });
+/* harmony export (immutable) */ __webpack_exports__["g"] = init;
+/* harmony export (immutable) */ __webpack_exports__["e"] = set;
+/* harmony export (immutable) */ __webpack_exports__["f"] = get;
+
+
+
+var emptyOn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_dispatch__["a" /* dispatch */])("start", "end", "interrupt");
+var emptyTween = [];
+
+var CREATED = 0;
+var SCHEDULED = 1;
+var STARTING = 2;
+var STARTED = 3;
+var RUNNING = 4;
+var ENDING = 5;
+var ENDED = 6;
+
+/* harmony default export */ __webpack_exports__["h"] = function(node, name, id, index, group, timing) {
+  var schedules = node.__transition;
+  if (!schedules) node.__transition = {};
+  else if (id in schedules) return;
+  create(node, id, {
+    name: name,
+    index: index, // For context during callback.
+    group: group, // For context during callback.
+    on: emptyOn,
+    tween: emptyTween,
+    time: timing.time,
+    delay: timing.delay,
+    duration: timing.duration,
+    ease: timing.ease,
+    timer: null,
+    state: CREATED
+  });
+};
+
+function init(node, id) {
+  var schedule = node.__transition;
+  if (!schedule || !(schedule = schedule[id]) || schedule.state > CREATED) throw new Error("too late");
+  return schedule;
+}
+
+function set(node, id) {
+  var schedule = node.__transition;
+  if (!schedule || !(schedule = schedule[id]) || schedule.state > STARTING) throw new Error("too late");
+  return schedule;
+}
+
+function get(node, id) {
+  var schedule = node.__transition;
+  if (!schedule || !(schedule = schedule[id])) throw new Error("too late");
+  return schedule;
+}
+
+function create(node, id, self) {
+  var schedules = node.__transition,
+      tween;
+
+  // Initialize the self timer when the transition is created.
+  // Note the actual delay is not known until the first callback!
+  schedules[id] = self;
+  self.timer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["a" /* timer */])(schedule, 0, self.time);
+
+  function schedule(elapsed) {
+    self.state = SCHEDULED;
+    self.timer.restart(start, self.delay, self.time);
+
+    // If the elapsed delay is less than our first sleep, start immediately.
+    if (self.delay <= elapsed) start(elapsed - self.delay);
+  }
+
+  function start(elapsed) {
+    var i, j, n, o;
+
+    // If the state is not SCHEDULED, then we previously errored on start.
+    if (self.state !== SCHEDULED) return stop();
+
+    for (i in schedules) {
+      o = schedules[i];
+      if (o.name !== self.name) continue;
+
+      // While this element already has a starting transition during this frame,
+      // defer starting an interrupting transition until that transition has a
+      // chance to tick (and possibly end); see d3/d3-transition#54!
+      if (o.state === STARTED) return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["b" /* timeout */])(start);
+
+      // Interrupt the active transition, if any.
+      // Dispatch the interrupt event.
+      if (o.state === RUNNING) {
+        o.state = ENDED;
+        o.timer.stop();
+        o.on.call("interrupt", node, node.__data__, o.index, o.group);
+        delete schedules[i];
+      }
+
+      // Cancel any pre-empted transitions. No interrupt event is dispatched
+      // because the cancelled transitions never started. Note that this also
+      // removes this transition from the pending list!
+      else if (+i < id) {
+        o.state = ENDED;
+        o.timer.stop();
+        delete schedules[i];
+      }
+    }
+
+    // Defer the first tick to end of the current frame; see d3/d3#1576.
+    // Note the transition may be canceled after start and before the first tick!
+    // Note this must be scheduled before the start event; see d3/d3-transition#16!
+    // Assuming this is successful, subsequent callbacks go straight to tick.
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["b" /* timeout */])(function() {
+      if (self.state === STARTED) {
+        self.state = RUNNING;
+        self.timer.restart(tick, self.delay, self.time);
+        tick(elapsed);
+      }
+    });
+
+    // Dispatch the start event.
+    // Note this must be done before the tween are initialized.
+    self.state = STARTING;
+    self.on.call("start", node, node.__data__, self.index, self.group);
+    if (self.state !== STARTING) return; // interrupted
+    self.state = STARTED;
+
+    // Initialize the tween, deleting null tween.
+    tween = new Array(n = self.tween.length);
+    for (i = 0, j = -1; i < n; ++i) {
+      if (o = self.tween[i].value.call(node, node.__data__, self.index, self.group)) {
+        tween[++j] = o;
+      }
+    }
+    tween.length = j + 1;
+  }
+
+  function tick(elapsed) {
+    var t = elapsed < self.duration ? self.ease.call(null, elapsed / self.duration) : (self.timer.restart(stop), self.state = ENDING, 1),
+        i = -1,
+        n = tween.length;
+
+    while (++i < n) {
+      tween[i].call(null, t);
+    }
+
+    // Dispatch the end event.
+    if (self.state === ENDING) {
+      self.on.call("end", node, node.__data__, self.index, self.group);
+      stop();
+    }
+  }
+
+  function stop() {
+    self.state = ENDED;
+    self.timer.stop();
+    delete schedules[id];
+    for (var i in schedules) return; // eslint-disable-line no-unused-vars
+    delete node.__transition;
+  }
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_color__ = __webpack_require__(30);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["h"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["g"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__src_color__["f"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_lab__ = __webpack_require__(147);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__src_lab__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__src_lab__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_cubehelix__ = __webpack_require__(146);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_cubehelix__["a"]; });
+
+
+
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_value__ = __webpack_require__(36);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_value__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_array__ = __webpack_require__(77);
+/* unused harmony reexport interpolateArray */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_basis__ = __webpack_require__(35);
+/* unused harmony reexport interpolateBasis */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_basisClosed__ = __webpack_require__(78);
+/* unused harmony reexport interpolateBasisClosed */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_date__ = __webpack_require__(80);
+/* unused harmony reexport interpolateDate */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_number__ = __webpack_require__(20);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_5__src_number__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_object__ = __webpack_require__(81);
+/* unused harmony reexport interpolateObject */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_round__ = __webpack_require__(175);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__src_round__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_string__ = __webpack_require__(83);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_8__src_string__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_transform_index__ = __webpack_require__(177);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_zoom__ = __webpack_require__(179);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_10__src_zoom__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_rgb__ = __webpack_require__(82);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["a"]; });
+/* unused harmony reexport interpolateRgbBasis */
+/* unused harmony reexport interpolateRgbBasisClosed */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_hsl__ = __webpack_require__(172);
+/* unused harmony reexport interpolateHsl */
+/* unused harmony reexport interpolateHslLong */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_lab__ = __webpack_require__(173);
+/* unused harmony reexport interpolateLab */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_hcl__ = __webpack_require__(171);
+/* unused harmony reexport interpolateHcl */
+/* unused harmony reexport interpolateHclLong */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__ = __webpack_require__(170);
+/* unused harmony reexport interpolateCubehelix */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_quantize__ = __webpack_require__(174);
+/* unused harmony reexport quantize */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return durationSecond; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return durationMinute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return durationHour; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return durationDay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return durationWeek; });
+var durationSecond = 1e3;
+var durationMinute = 6e4;
+var durationHour = 36e5;
+var durationDay = 864e5;
+var durationWeek = 6048e5;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__attr__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__attrTween__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__delay__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__duration__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ease__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__filter__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__merge__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__on__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__remove__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__select__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__selectAll__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__selection__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__style__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__styleTween__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__text__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__transition__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__tween__ = __webpack_require__(27);
+/* harmony export (immutable) */ __webpack_exports__["a"] = Transition;
+/* unused harmony export default */
+/* harmony export (immutable) */ __webpack_exports__["b"] = newId;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var id = 0;
+
+function Transition(groups, parents, name, id) {
+  this._groups = groups;
+  this._parents = parents;
+  this._name = name;
+  this._id = id;
+}
+
+function transition(name) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["f" /* selection */])().transition(name);
+}
+
+function newId() {
+  return ++id;
+}
+
+var selection_prototype = __WEBPACK_IMPORTED_MODULE_0_d3_selection__["f" /* selection */].prototype;
+
+Transition.prototype = transition.prototype = {
+  constructor: Transition,
+  select: __WEBPACK_IMPORTED_MODULE_10__select__["a" /* default */],
+  selectAll: __WEBPACK_IMPORTED_MODULE_11__selectAll__["a" /* default */],
+  filter: __WEBPACK_IMPORTED_MODULE_6__filter__["a" /* default */],
+  merge: __WEBPACK_IMPORTED_MODULE_7__merge__["a" /* default */],
+  selection: __WEBPACK_IMPORTED_MODULE_12__selection__["a" /* default */],
+  transition: __WEBPACK_IMPORTED_MODULE_16__transition__["a" /* default */],
+  call: selection_prototype.call,
+  nodes: selection_prototype.nodes,
+  node: selection_prototype.node,
+  size: selection_prototype.size,
+  empty: selection_prototype.empty,
+  each: selection_prototype.each,
+  on: __WEBPACK_IMPORTED_MODULE_8__on__["a" /* default */],
+  attr: __WEBPACK_IMPORTED_MODULE_1__attr__["a" /* default */],
+  attrTween: __WEBPACK_IMPORTED_MODULE_2__attrTween__["a" /* default */],
+  style: __WEBPACK_IMPORTED_MODULE_13__style__["a" /* default */],
+  styleTween: __WEBPACK_IMPORTED_MODULE_14__styleTween__["a" /* default */],
+  text: __WEBPACK_IMPORTED_MODULE_15__text__["a" /* default */],
+  remove: __WEBPACK_IMPORTED_MODULE_9__remove__["a" /* default */],
+  tween: __WEBPACK_IMPORTED_MODULE_17__tween__["a" /* default */],
+  delay: __WEBPACK_IMPORTED_MODULE_3__delay__["a" /* default */],
+  duration: __WEBPACK_IMPORTED_MODULE_4__duration__["a" /* default */],
+  ease: __WEBPACK_IMPORTED_MODULE_5__ease__["a" /* default */]
+};
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return map; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return slice; });
+var array = Array.prototype;
+
+var map = array.map;
+var slice = array.slice;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function constant() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return x === null ? NaN : +x;
+};
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(79);
+/* harmony export (immutable) */ __webpack_exports__["b"] = hue;
+/* harmony export (immutable) */ __webpack_exports__["c"] = gamma;
+/* harmony export (immutable) */ __webpack_exports__["a"] = nogamma;
+
+
+function linear(a, d) {
+  return function(t) {
+    return a + t * d;
+  };
+}
+
+function exponential(a, b, y) {
+  return a = Math.pow(a, y), b = Math.pow(b, y) - a, y = 1 / y, function(t) {
+    return Math.pow(a + t * b, y);
+  };
+}
+
+function hue(a, b) {
+  var d = b - a;
+  return d ? linear(a, d > 180 || d < -180 ? d - 360 * Math.round(d / 360) : d) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(isNaN(a) ? b : a);
+}
+
+function gamma(y) {
+  return (y = +y) === 1 ? nogamma : function(a, b) {
+    return b - a ? exponential(a, b, y) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(isNaN(a) ? b : a);
+  };
+}
+
+function nogamma(a, b) {
+  var d = b - a;
+  return d ? linear(a, d) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(isNaN(a) ? b : a);
+}
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(s) {
+  return s.match(/.{6}/g).map(function(x) {
+    return "#" + x;
+  });
+};
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__continuous__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tickFormat__ = __webpack_require__(216);
+/* harmony export (immutable) */ __webpack_exports__["b"] = linearish;
+/* harmony export (immutable) */ __webpack_exports__["a"] = linear;
+
+
+
+
+
+function linearish(scale) {
+  var domain = scale.domain;
+
+  scale.ticks = function(count) {
+    var d = domain();
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["a" /* ticks */])(d[0], d[d.length - 1], count == null ? 10 : count);
+  };
+
+  scale.tickFormat = function(count, specifier) {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__tickFormat__["a" /* default */])(domain(), count, specifier);
+  };
+
+  scale.nice = function(count) {
+    var d = domain(),
+        i = d.length - 1,
+        n = count == null ? 10 : count,
+        start = d[0],
+        stop = d[i],
+        step = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["b" /* tickStep */])(start, stop, n);
+
+    if (step) {
+      step = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["b" /* tickStep */])(Math.floor(start / step) * step, Math.ceil(stop / step) * step, n);
+      d[0] = Math.floor(start / step) * step;
+      d[i] = Math.ceil(stop / step) * step;
+      domain(d);
+    }
+
+    return scale;
+  };
+
+  return scale;
+}
+
+function linear() {
+  var scale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__continuous__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_2__continuous__["b" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["a" /* interpolateNumber */]);
+
+  scale.copy = function() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__continuous__["c" /* copy */])(scale, linear());
+  };
+
+  return linearish(scale);
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return epsilon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return pi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return halfPi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return tau; });
+var epsilon = 1e-12;
+var pi = Math.PI;
+var halfPi = pi / 2;
+var tau = 2 * pi;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(series, order) {
+  if (!((n = series.length) > 1)) return;
+  for (var i = 1, s0, s1 = series[order[0]], n, m = s1.length; i < n; ++i) {
+    s0 = s1, s1 = series[order[i]];
+    for (var j = 0; j < m; ++j) {
+      s1[j][1] += s1[j][0] = isNaN(s0[j][1]) ? s0[j][0] : s0[j][1];
+    }
+  }
+};
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(series) {
+  var n = series.length, o = new Array(n);
+  while (--n >= 0) o[n] = n;
+  return o;
+};
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(34);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return x = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__formatDecimal__["a" /* default */])(Math.abs(x)), x ? x[1] : NaN;
+};
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  return a = +a, b -= a, function(t) {
+    return a + b * t;
+  };
+};
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_path__ = __webpack_require__(180);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_path__["a"]; });
+
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__array__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constant__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__number__ = __webpack_require__(86);
+/* harmony export (immutable) */ __webpack_exports__["b"] = deinterpolateLinear;
+/* harmony export (immutable) */ __webpack_exports__["c"] = copy;
+/* harmony export (immutable) */ __webpack_exports__["a"] = continuous;
+
+
+
+
+
+
+var unit = [0, 1];
+
+function deinterpolateLinear(a, b) {
+  return (b -= (a = +a))
+      ? function(x) { return (x - a) / b; }
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__constant__["a" /* default */])(b);
+}
+
+function deinterpolateClamp(deinterpolate) {
+  return function(a, b) {
+    var d = deinterpolate(a = +a, b = +b);
+    return function(x) { return x <= a ? 0 : x >= b ? 1 : d(x); };
+  };
+}
+
+function reinterpolateClamp(reinterpolate) {
+  return function(a, b) {
+    var r = reinterpolate(a = +a, b = +b);
+    return function(t) { return t <= 0 ? a : t >= 1 ? b : r(t); };
+  };
+}
+
+function bimap(domain, range, deinterpolate, reinterpolate) {
+  var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
+  if (d1 < d0) d0 = deinterpolate(d1, d0), r0 = reinterpolate(r1, r0);
+  else d0 = deinterpolate(d0, d1), r0 = reinterpolate(r0, r1);
+  return function(x) { return r0(d0(x)); };
+}
+
+function polymap(domain, range, deinterpolate, reinterpolate) {
+  var j = Math.min(domain.length, range.length) - 1,
+      d = new Array(j),
+      r = new Array(j),
+      i = -1;
+
+  // Reverse descending domains.
+  if (domain[j] < domain[0]) {
+    domain = domain.slice().reverse();
+    range = range.slice().reverse();
+  }
+
+  while (++i < j) {
+    d[i] = deinterpolate(domain[i], domain[i + 1]);
+    r[i] = reinterpolate(range[i], range[i + 1]);
+  }
+
+  return function(x) {
+    var i = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["c" /* bisect */])(domain, x, 1, j) - 1;
+    return r[i](d[i](x));
+  };
+}
+
+function copy(source, target) {
+  return target
+      .domain(source.domain())
+      .range(source.range())
+      .interpolate(source.interpolate())
+      .clamp(source.clamp());
+}
+
+// deinterpolate(a, b)(x) takes a domain value x in [a,b] and returns the corresponding parameter t in [0,1].
+// reinterpolate(a, b)(t) takes a parameter t in [0,1] and returns the corresponding domain value x in [a,b].
+function continuous(deinterpolate, reinterpolate) {
+  var domain = unit,
+      range = unit,
+      interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["b" /* interpolate */],
+      clamp = false,
+      piecewise,
+      output,
+      input;
+
+  function rescale() {
+    piecewise = Math.min(domain.length, range.length) > 2 ? polymap : bimap;
+    output = input = null;
+    return scale;
+  }
+
+  function scale(x) {
+    return (output || (output = piecewise(domain, range, clamp ? deinterpolateClamp(deinterpolate) : deinterpolate, interpolate)))(+x);
+  }
+
+  scale.invert = function(y) {
+    return (input || (input = piecewise(range, domain, deinterpolateLinear, clamp ? reinterpolateClamp(reinterpolate) : reinterpolate)))(+y);
+  };
+
+  scale.domain = function(_) {
+    return arguments.length ? (domain = __WEBPACK_IMPORTED_MODULE_2__array__["a" /* map */].call(_, __WEBPACK_IMPORTED_MODULE_4__number__["a" /* default */]), rescale()) : domain.slice();
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (range = __WEBPACK_IMPORTED_MODULE_2__array__["b" /* slice */].call(_), rescale()) : range.slice();
+  };
+
+  scale.rangeRound = function(_) {
+    return range = __WEBPACK_IMPORTED_MODULE_2__array__["b" /* slice */].call(_), interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["c" /* interpolateRound */], rescale();
+  };
+
+  scale.clamp = function(_) {
+    return arguments.length ? (clamp = !!_, rescale()) : clamp;
+  };
+
+  scale.interpolate = function(_) {
+    return arguments.length ? (interpolate = _, rescale()) : interpolate;
+  };
+
+  return rescale();
+}
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = point;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Basis;
+function point(that, x, y) {
+  that._context.bezierCurveTo(
+    (2 * that._x0 + that._x1) / 3,
+    (2 * that._y0 + that._y1) / 3,
+    (that._x0 + 2 * that._x1) / 3,
+    (that._y0 + 2 * that._y1) / 3,
+    (that._x0 + 4 * that._x1 + x) / 6,
+    (that._y0 + 4 * that._y1 + y) / 6
+  );
+}
+
+function Basis(context) {
+  this._context = context;
+}
+
+Basis.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 =
+    this._y0 = this._y1 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 3: point(this, this._x1, this._y1); // proceed
+      case 2: this._context.lineTo(this._x1, this._y1); break;
+    }
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; this._context.lineTo((5 * this._x0 + this._x1) / 6, (5 * this._y0 + this._y1) / 6); // proceed
+      default: point(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = x;
+    this._y0 = this._y1, this._y1 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(context) {
+  return new Basis(context);
+};
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = point;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Cardinal;
+function point(that, x, y) {
+  that._context.bezierCurveTo(
+    that._x1 + that._k * (that._x2 - that._x0),
+    that._y1 + that._k * (that._y2 - that._y0),
+    that._x2 + that._k * (that._x1 - x),
+    that._y2 + that._k * (that._y1 - y),
+    that._x2,
+    that._y2
+  );
+}
+
+function Cardinal(context, tension) {
+  this._context = context;
+  this._k = (1 - tension) / 6;
+}
+
+Cardinal.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 =
+    this._y0 = this._y1 = this._y2 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 2: this._context.lineTo(this._x2, this._y2); break;
+      case 3: point(this, this._x1, this._y1); break;
+    }
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; this._x1 = x, this._y1 = y; break;
+      case 2: this._point = 3; // proceed
+      default: point(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(tension) {
+
+  function cardinal(context) {
+    return new Cardinal(context, tension);
+  }
+
+  cardinal.tension = function(tension) {
+    return custom(+tension);
+  };
+
+  return cardinal;
+})(0);
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function Linear(context) {
+  this._context = context;
+}
+
+Linear.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; // proceed
+      default: this._context.lineTo(x, y); break;
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = function(context) {
+  return new Linear(context);
+};
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {};
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__schedule__ = __webpack_require__(4);
+/* harmony export (immutable) */ __webpack_exports__["b"] = tweenValue;
+
+
+function tweenRemove(id, name) {
+  var tween0, tween1;
+  return function() {
+    var schedule = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id),
+        tween = schedule.tween;
+
+    // If this node shared tween with the previous node,
+    // just assign the updated shared tween and we’re done!
+    // Otherwise, copy-on-write.
+    if (tween !== tween0) {
+      tween1 = tween0 = tween;
+      for (var i = 0, n = tween1.length; i < n; ++i) {
+        if (tween1[i].name === name) {
+          tween1 = tween1.slice();
+          tween1.splice(i, 1);
+          break;
+        }
+      }
+    }
+
+    schedule.tween = tween1;
+  };
+}
+
+function tweenFunction(id, name, value) {
+  var tween0, tween1;
+  if (typeof value !== "function") throw new Error;
+  return function() {
+    var schedule = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id),
+        tween = schedule.tween;
+
+    // If this node shared tween with the previous node,
+    // just assign the updated shared tween and we’re done!
+    // Otherwise, copy-on-write.
+    if (tween !== tween0) {
+      tween1 = (tween0 = tween).slice();
+      for (var t = {name: name, value: value}, i = 0, n = tween1.length; i < n; ++i) {
+        if (tween1[i].name === name) {
+          tween1[i] = t;
+          break;
+        }
+      }
+      if (i === n) tween1.push(t);
+    }
+
+    schedule.tween = tween1;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  var id = this._id;
+
+  name += "";
+
+  if (arguments.length < 2) {
+    var tween = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(this.node(), id).tween;
+    for (var i = 0, n = tween.length, t; i < n; ++i) {
+      if ((t = tween[i]).name === name) {
+        return t.value;
+      }
+    }
+    return null;
+  }
+
+  return this.each((value == null ? tweenRemove : tweenFunction)(id, name, value));
+};
+
+function tweenValue(transition, name, value) {
+  var id = transition._id;
+
+  transition.each(function() {
+    var schedule = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id);
+    (schedule.value || (schedule.value = {}))[name] = value.apply(this, arguments);
+  });
+
+  return function(node) {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(node, id).value[name];
+  };
+}
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__number__ = __webpack_require__(12);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(array, p, f) {
+  if (f == null) f = __WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */];
+  if (!(n = array.length)) return;
+  if ((p = +p) <= 0 || n < 2) return +f(array[0], 0, array);
+  if (p >= 1) return +f(array[n - 1], n - 1, array);
+  var n,
+      h = (n - 1) * p,
+      i = Math.floor(h),
+      a = +f(array[i], i, array),
+      b = +f(array[i + 1], i + 1, array);
+  return a + (b - a) * (h - i);
+};
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return prefix; });
+var prefix = "$";
+
+function Map() {}
+
+Map.prototype = map.prototype = {
+  constructor: Map,
+  has: function(key) {
+    return (prefix + key) in this;
+  },
+  get: function(key) {
+    return this[prefix + key];
+  },
+  set: function(key, value) {
+    this[prefix + key] = value;
+    return this;
+  },
+  remove: function(key) {
+    var property = prefix + key;
+    return property in this && delete this[property];
+  },
+  clear: function() {
+    for (var property in this) if (property[0] === prefix) delete this[property];
+  },
+  keys: function() {
+    var keys = [];
+    for (var property in this) if (property[0] === prefix) keys.push(property.slice(1));
+    return keys;
+  },
+  values: function() {
+    var values = [];
+    for (var property in this) if (property[0] === prefix) values.push(this[property]);
+    return values;
+  },
+  entries: function() {
+    var entries = [];
+    for (var property in this) if (property[0] === prefix) entries.push({key: property.slice(1), value: this[property]});
+    return entries;
+  },
+  size: function() {
+    var size = 0;
+    for (var property in this) if (property[0] === prefix) ++size;
+    return size;
+  },
+  empty: function() {
+    for (var property in this) if (property[0] === prefix) return false;
+    return true;
+  },
+  each: function(f) {
+    for (var property in this) if (property[0] === prefix) f(this[property], property.slice(1), this);
+  }
+};
+
+function map(object, f) {
+  var map = new Map;
+
+  // Copy constructor.
+  if (object instanceof Map) object.each(function(value, key) { map.set(key, value); });
+
+  // Index array by numeric index or specified key function.
+  else if (Array.isArray(object)) {
+    var i = -1,
+        n = object.length,
+        o;
+
+    if (f == null) while (++i < n) map.set(i, object[i]);
+    else while (++i < n) map.set(f(o = object[i], i, object), o);
+  }
+
+  // Convert object to map.
+  else if (object) for (var key in object) map.set(key, object[key]);
+
+  return map;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = map;
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(31);
+/* harmony export (immutable) */ __webpack_exports__["c"] = Color;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return darker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return brighter; });
+/* harmony export (immutable) */ __webpack_exports__["h"] = color;
+/* harmony export (immutable) */ __webpack_exports__["b"] = rgbConvert;
+/* harmony export (immutable) */ __webpack_exports__["g"] = rgb;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Rgb;
+/* unused harmony export hslConvert */
+/* harmony export (immutable) */ __webpack_exports__["f"] = hsl;
+
+
+function Color() {}
+
+var darker = 0.7;
+var brighter = 1 / darker;
+
+var reI = "\\s*([+-]?\\d+)\\s*",
+    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
+    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
+    reHex3 = /^#([0-9a-f]{3})$/,
+    reHex6 = /^#([0-9a-f]{6})$/,
+    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
+    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
+    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
+    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
+    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
+    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+
+var named = {
+  aliceblue: 0xf0f8ff,
+  antiquewhite: 0xfaebd7,
+  aqua: 0x00ffff,
+  aquamarine: 0x7fffd4,
+  azure: 0xf0ffff,
+  beige: 0xf5f5dc,
+  bisque: 0xffe4c4,
+  black: 0x000000,
+  blanchedalmond: 0xffebcd,
+  blue: 0x0000ff,
+  blueviolet: 0x8a2be2,
+  brown: 0xa52a2a,
+  burlywood: 0xdeb887,
+  cadetblue: 0x5f9ea0,
+  chartreuse: 0x7fff00,
+  chocolate: 0xd2691e,
+  coral: 0xff7f50,
+  cornflowerblue: 0x6495ed,
+  cornsilk: 0xfff8dc,
+  crimson: 0xdc143c,
+  cyan: 0x00ffff,
+  darkblue: 0x00008b,
+  darkcyan: 0x008b8b,
+  darkgoldenrod: 0xb8860b,
+  darkgray: 0xa9a9a9,
+  darkgreen: 0x006400,
+  darkgrey: 0xa9a9a9,
+  darkkhaki: 0xbdb76b,
+  darkmagenta: 0x8b008b,
+  darkolivegreen: 0x556b2f,
+  darkorange: 0xff8c00,
+  darkorchid: 0x9932cc,
+  darkred: 0x8b0000,
+  darksalmon: 0xe9967a,
+  darkseagreen: 0x8fbc8f,
+  darkslateblue: 0x483d8b,
+  darkslategray: 0x2f4f4f,
+  darkslategrey: 0x2f4f4f,
+  darkturquoise: 0x00ced1,
+  darkviolet: 0x9400d3,
+  deeppink: 0xff1493,
+  deepskyblue: 0x00bfff,
+  dimgray: 0x696969,
+  dimgrey: 0x696969,
+  dodgerblue: 0x1e90ff,
+  firebrick: 0xb22222,
+  floralwhite: 0xfffaf0,
+  forestgreen: 0x228b22,
+  fuchsia: 0xff00ff,
+  gainsboro: 0xdcdcdc,
+  ghostwhite: 0xf8f8ff,
+  gold: 0xffd700,
+  goldenrod: 0xdaa520,
+  gray: 0x808080,
+  green: 0x008000,
+  greenyellow: 0xadff2f,
+  grey: 0x808080,
+  honeydew: 0xf0fff0,
+  hotpink: 0xff69b4,
+  indianred: 0xcd5c5c,
+  indigo: 0x4b0082,
+  ivory: 0xfffff0,
+  khaki: 0xf0e68c,
+  lavender: 0xe6e6fa,
+  lavenderblush: 0xfff0f5,
+  lawngreen: 0x7cfc00,
+  lemonchiffon: 0xfffacd,
+  lightblue: 0xadd8e6,
+  lightcoral: 0xf08080,
+  lightcyan: 0xe0ffff,
+  lightgoldenrodyellow: 0xfafad2,
+  lightgray: 0xd3d3d3,
+  lightgreen: 0x90ee90,
+  lightgrey: 0xd3d3d3,
+  lightpink: 0xffb6c1,
+  lightsalmon: 0xffa07a,
+  lightseagreen: 0x20b2aa,
+  lightskyblue: 0x87cefa,
+  lightslategray: 0x778899,
+  lightslategrey: 0x778899,
+  lightsteelblue: 0xb0c4de,
+  lightyellow: 0xffffe0,
+  lime: 0x00ff00,
+  limegreen: 0x32cd32,
+  linen: 0xfaf0e6,
+  magenta: 0xff00ff,
+  maroon: 0x800000,
+  mediumaquamarine: 0x66cdaa,
+  mediumblue: 0x0000cd,
+  mediumorchid: 0xba55d3,
+  mediumpurple: 0x9370db,
+  mediumseagreen: 0x3cb371,
+  mediumslateblue: 0x7b68ee,
+  mediumspringgreen: 0x00fa9a,
+  mediumturquoise: 0x48d1cc,
+  mediumvioletred: 0xc71585,
+  midnightblue: 0x191970,
+  mintcream: 0xf5fffa,
+  mistyrose: 0xffe4e1,
+  moccasin: 0xffe4b5,
+  navajowhite: 0xffdead,
+  navy: 0x000080,
+  oldlace: 0xfdf5e6,
+  olive: 0x808000,
+  olivedrab: 0x6b8e23,
+  orange: 0xffa500,
+  orangered: 0xff4500,
+  orchid: 0xda70d6,
+  palegoldenrod: 0xeee8aa,
+  palegreen: 0x98fb98,
+  paleturquoise: 0xafeeee,
+  palevioletred: 0xdb7093,
+  papayawhip: 0xffefd5,
+  peachpuff: 0xffdab9,
+  peru: 0xcd853f,
+  pink: 0xffc0cb,
+  plum: 0xdda0dd,
+  powderblue: 0xb0e0e6,
+  purple: 0x800080,
+  rebeccapurple: 0x663399,
+  red: 0xff0000,
+  rosybrown: 0xbc8f8f,
+  royalblue: 0x4169e1,
+  saddlebrown: 0x8b4513,
+  salmon: 0xfa8072,
+  sandybrown: 0xf4a460,
+  seagreen: 0x2e8b57,
+  seashell: 0xfff5ee,
+  sienna: 0xa0522d,
+  silver: 0xc0c0c0,
+  skyblue: 0x87ceeb,
+  slateblue: 0x6a5acd,
+  slategray: 0x708090,
+  slategrey: 0x708090,
+  snow: 0xfffafa,
+  springgreen: 0x00ff7f,
+  steelblue: 0x4682b4,
+  tan: 0xd2b48c,
+  teal: 0x008080,
+  thistle: 0xd8bfd8,
+  tomato: 0xff6347,
+  turquoise: 0x40e0d0,
+  violet: 0xee82ee,
+  wheat: 0xf5deb3,
+  white: 0xffffff,
+  whitesmoke: 0xf5f5f5,
+  yellow: 0xffff00,
+  yellowgreen: 0x9acd32
+};
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Color, color, {
+  displayable: function() {
+    return this.rgb().displayable();
+  },
+  toString: function() {
+    return this.rgb() + "";
+  }
+});
+
+function color(format) {
+  var m;
+  format = (format + "").trim().toLowerCase();
+  return (m = reHex3.exec(format)) ? (m = parseInt(m[1], 16), new Rgb((m >> 8 & 0xf) | (m >> 4 & 0x0f0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1)) // #f00
+      : (m = reHex6.exec(format)) ? rgbn(parseInt(m[1], 16)) // #ff0000
+      : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
+      : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
+      : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
+      : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
+      : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
+      : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
+      : named.hasOwnProperty(format) ? rgbn(named[format])
+      : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
+      : null;
+}
+
+function rgbn(n) {
+  return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
+}
+
+function rgba(r, g, b, a) {
+  if (a <= 0) r = g = b = NaN;
+  return new Rgb(r, g, b, a);
+}
+
+function rgbConvert(o) {
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Rgb;
+  o = o.rgb();
+  return new Rgb(o.r, o.g, o.b, o.opacity);
+}
+
+function rgb(r, g, b, opacity) {
+  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+}
+
+function Rgb(r, g, b, opacity) {
+  this.r = +r;
+  this.g = +g;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Rgb, rgb, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["b" /* extend */])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  rgb: function() {
+    return this;
+  },
+  displayable: function() {
+    return (0 <= this.r && this.r <= 255)
+        && (0 <= this.g && this.g <= 255)
+        && (0 <= this.b && this.b <= 255)
+        && (0 <= this.opacity && this.opacity <= 1);
+  },
+  toString: function() {
+    var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+    return (a === 1 ? "rgb(" : "rgba(")
+        + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
+        + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
+        + Math.max(0, Math.min(255, Math.round(this.b) || 0))
+        + (a === 1 ? ")" : ", " + a + ")");
+  }
+}));
+
+function hsla(h, s, l, a) {
+  if (a <= 0) h = s = l = NaN;
+  else if (l <= 0 || l >= 1) h = s = NaN;
+  else if (s <= 0) h = NaN;
+  return new Hsl(h, s, l, a);
+}
+
+function hslConvert(o) {
+  if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Hsl;
+  if (o instanceof Hsl) return o;
+  o = o.rgb();
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      min = Math.min(r, g, b),
+      max = Math.max(r, g, b),
+      h = NaN,
+      s = max - min,
+      l = (max + min) / 2;
+  if (s) {
+    if (r === max) h = (g - b) / s + (g < b) * 6;
+    else if (g === max) h = (b - r) / s + 2;
+    else h = (r - g) / s + 4;
+    s /= l < 0.5 ? max + min : 2 - max - min;
+    h *= 60;
+  } else {
+    s = l > 0 && l < 1 ? 0 : h;
+  }
+  return new Hsl(h, s, l, o.opacity);
+}
+
+function hsl(h, s, l, opacity) {
+  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Hsl(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Hsl, hsl, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["b" /* extend */])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = this.h % 360 + (this.h < 0) * 360,
+        s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
+        l = this.l,
+        m2 = l + (l < 0.5 ? l : 1 - l) * s,
+        m1 = 2 * l - m2;
+    return new Rgb(
+      hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
+      hsl2rgb(h, m1, m2),
+      hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
+      this.opacity
+    );
+  },
+  displayable: function() {
+    return (0 <= this.s && this.s <= 1 || isNaN(this.s))
+        && (0 <= this.l && this.l <= 1)
+        && (0 <= this.opacity && this.opacity <= 1);
+  }
+}));
+
+/* From FvD 13.37, CSS Color Module Level 3 */
+function hsl2rgb(h, m1, m2) {
+  return (h < 60 ? m1 + (m2 - m1) * h / 60
+      : h < 180 ? m2
+      : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
+      : m1) * 255;
+}
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = extend;
+/* harmony default export */ __webpack_exports__["a"] = function(constructor, factory, prototype) {
+  constructor.prototype = factory.prototype = prototype;
+  prototype.constructor = constructor;
+};
+
+function extend(parent, definition) {
+  var prototype = Object.create(parent.prototype);
+  for (var key in definition) prototype[key] = definition[key];
+  return prototype;
+}
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_dispatch__ = __webpack_require__(148);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_dispatch__["a"]; });
+
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__ = __webpack_require__(163);
+/* unused harmony reexport formatDefaultLocale */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_locale__ = __webpack_require__(76);
+/* unused harmony reexport formatLocale */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_formatSpecifier__ = __webpack_require__(74);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_formatSpecifier__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_precisionFixed__ = __webpack_require__(167);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__src_precisionFixed__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_precisionPrefix__ = __webpack_require__(168);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__src_precisionPrefix__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_precisionRound__ = __webpack_require__(169);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_5__src_precisionRound__["a"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// Computes the decimal coefficient and exponent of the specified number x with
+// significant digits p, where x is positive and p is in [1, 21] or undefined.
+// For example, formatDecimal(1.23) returns ["123", 0].
+/* harmony default export */ __webpack_exports__["a"] = function(x, p) {
+  if ((i = (x = p ? x.toExponential(p - 1) : x.toExponential()).indexOf("e")) < 0) return null; // NaN, ±Infinity
+  var i, coefficient = x.slice(0, i);
+
+  // The string returned by toExponential either has the form \d\.\d+e[-+]\d+
+  // (e.g., 1.2e+3) or the form \de[-+]\d+ (e.g., 1e+3).
+  return [
+    coefficient.length > 1 ? coefficient[0] + coefficient.slice(2) : coefficient,
+    +x.slice(i + 1)
+  ];
+};
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = basis;
+function basis(t1, v0, v1, v2, v3) {
+  var t2 = t1 * t1, t3 = t2 * t1;
+  return ((1 - 3 * t1 + 3 * t2 - t3) * v0
+      + (4 - 6 * t2 + 3 * t3) * v1
+      + (1 + 3 * t1 + 3 * t2 - 3 * t3) * v2
+      + t3 * v3) / 6;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(values) {
+  var n = values.length - 1;
+  return function(t) {
+    var i = t <= 0 ? (t = 0) : t >= 1 ? (t = 1, n - 1) : Math.floor(t * n),
+        v1 = values[i],
+        v2 = values[i + 1],
+        v0 = i > 0 ? values[i - 1] : 2 * v1 - v2,
+        v3 = i < n - 1 ? values[i + 2] : 2 * v2 - v1;
+    return basis((t - i / n) * n, v0, v1, v2, v3);
+  };
+};
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rgb__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__array__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__date__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__number__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__object__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__string__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__constant__ = __webpack_require__(79);
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var t = typeof b, c;
+  return b == null || t === "boolean" ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__constant__["a" /* default */])(b)
+      : (t === "number" ? __WEBPACK_IMPORTED_MODULE_4__number__["a" /* default */]
+      : t === "string" ? ((c = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["f" /* color */])(b)) ? (b = c, __WEBPACK_IMPORTED_MODULE_1__rgb__["a" /* default */]) : __WEBPACK_IMPORTED_MODULE_6__string__["a" /* default */])
+      : b instanceof __WEBPACK_IMPORTED_MODULE_0_d3_color__["f" /* color */] ? __WEBPACK_IMPORTED_MODULE_1__rgb__["a" /* default */]
+      : b instanceof Date ? __WEBPACK_IMPORTED_MODULE_3__date__["a" /* default */]
+      : Array.isArray(b) ? __WEBPACK_IMPORTED_MODULE_2__array__["a" /* default */]
+      : isNaN(b) ? __WEBPACK_IMPORTED_MODULE_5__object__["a" /* default */]
+      : __WEBPACK_IMPORTED_MODULE_4__number__["a" /* default */])(a, b);
+};
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(node, x0, y0, x1, y1) {
+  this.node = node;
+  this.x0 = x0;
+  this.y0 = y0;
+  this.x1 = x1;
+  this.y1 = y1;
+};
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__namespaces__ = __webpack_require__(41);
+
+
+
+function creatorInherit(name) {
+  return function() {
+    var document = this.ownerDocument,
+        uri = this.namespaceURI;
+    return uri === __WEBPACK_IMPORTED_MODULE_1__namespaces__["a" /* xhtml */] && document.documentElement.namespaceURI === __WEBPACK_IMPORTED_MODULE_1__namespaces__["a" /* xhtml */]
+        ? document.createElement(name)
+        : document.createElementNS(uri, name);
+  };
+}
+
+function creatorFixed(fullname) {
+  return function() {
+    return this.ownerDocument.createElementNS(fullname.space, fullname.local);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name) {
+  var fullname = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__namespace__["a" /* default */])(name);
+  return (fullname.local
+      ? creatorFixed
+      : creatorInherit)(fullname);
+};
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespaces__ = __webpack_require__(41);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(name) {
+  var prefix = name += "", i = prefix.indexOf(":");
+  if (i >= 0 && (prefix = name.slice(0, i)) !== "xmlns") name = name.slice(i + 1);
+  return __WEBPACK_IMPORTED_MODULE_0__namespaces__["b" /* default */].hasOwnProperty(prefix) ? {space: __WEBPACK_IMPORTED_MODULE_0__namespaces__["b" /* default */][prefix], local: name} : name;
+};
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return xhtml; });
+var xhtml = "http://www.w3.org/1999/xhtml";
+
+/* harmony default export */ __webpack_exports__["b"] = {
+  svg: "http://www.w3.org/2000/svg",
+  xhtml: xhtml,
+  xlink: "http://www.w3.org/1999/xlink",
+  xml: "http://www.w3.org/XML/1998/namespace",
+  xmlns: "http://www.w3.org/2000/xmlns/"
+};
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(node, event) {
+  var svg = node.ownerSVGElement || node;
+
+  if (svg.createSVGPoint) {
+    var point = svg.createSVGPoint();
+    point.x = event.clientX, point.y = event.clientY;
+    point = point.matrixTransform(node.getScreenCTM().inverse());
+    return [point.x, point.y];
+  }
+
+  var rect = node.getBoundingClientRect();
+  return [event.clientX - rect.left - node.clientLeft, event.clientY - rect.top - node.clientTop];
+};
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return event; });
+/* harmony export (immutable) */ __webpack_exports__["c"] = customEvent;
+var filterEvents = {};
+
+var event = null;
+
+if (typeof document !== "undefined") {
+  var element = document.documentElement;
+  if (!("onmouseenter" in element)) {
+    filterEvents = {mouseenter: "mouseover", mouseleave: "mouseout"};
+  }
+}
+
+function filterContextListener(listener, index, group) {
+  listener = contextListener(listener, index, group);
+  return function(event) {
+    var related = event.relatedTarget;
+    if (!related || (related !== this && !(related.compareDocumentPosition(this) & 8))) {
+      listener.call(this, event);
+    }
+  };
+}
+
+function contextListener(listener, index, group) {
+  return function(event1) {
+    var event0 = event; // Events can be reentrant (e.g., focus).
+    event = event1;
+    try {
+      listener.call(this, this.__data__, index, group);
+    } finally {
+      event = event0;
+    }
+  };
+}
+
+function parseTypenames(typenames) {
+  return typenames.trim().split(/^|\s+/).map(function(t) {
+    var name = "", i = t.indexOf(".");
+    if (i >= 0) name = t.slice(i + 1), t = t.slice(0, i);
+    return {type: t, name: name};
+  });
+}
+
+function onRemove(typename) {
+  return function() {
+    var on = this.__on;
+    if (!on) return;
+    for (var j = 0, i = -1, m = on.length, o; j < m; ++j) {
+      if (o = on[j], (!typename.type || o.type === typename.type) && o.name === typename.name) {
+        this.removeEventListener(o.type, o.listener, o.capture);
+      } else {
+        on[++i] = o;
+      }
+    }
+    if (++i) on.length = i;
+    else delete this.__on;
+  };
+}
+
+function onAdd(typename, value, capture) {
+  var wrap = filterEvents.hasOwnProperty(typename.type) ? filterContextListener : contextListener;
+  return function(d, i, group) {
+    var on = this.__on, o, listener = wrap(value, i, group);
+    if (on) for (var j = 0, m = on.length; j < m; ++j) {
+      if ((o = on[j]).type === typename.type && o.name === typename.name) {
+        this.removeEventListener(o.type, o.listener, o.capture);
+        this.addEventListener(o.type, o.listener = listener, o.capture = capture);
+        o.value = value;
+        return;
+      }
+    }
+    this.addEventListener(typename.type, listener, capture);
+    o = {type: typename.type, name: typename.name, value: value, listener: listener, capture: capture};
+    if (!on) this.__on = [o];
+    else on.push(o);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["b"] = function(typename, value, capture) {
+  var typenames = parseTypenames(typename + ""), i, n = typenames.length, t;
+
+  if (arguments.length < 2) {
+    var on = this.node().__on;
+    if (on) for (var j = 0, m = on.length, o; j < m; ++j) {
+      for (i = 0, o = on[j]; i < n; ++i) {
+        if ((t = typenames[i]).type === o.type && t.name === o.name) {
+          return o.value;
+        }
+      }
+    }
+    return;
+  }
+
+  on = value ? onAdd : onRemove;
+  if (capture == null) capture = false;
+  for (i = 0; i < n; ++i) this.each(on(typenames[i], value, capture));
+  return this;
+};
+
+function customEvent(event1, listener, that, args) {
+  var event0 = event;
+  event1.sourceEvent = event;
+  event = event1;
+  try {
+    return listener.apply(that, args);
+  } finally {
+    event = event0;
+  }
+}
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function none() {}
+
+/* harmony default export */ __webpack_exports__["a"] = function(selector) {
+  return selector == null ? none : function() {
+    return this.querySelector(selector);
+  };
+};
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selection_on__ = __webpack_require__(43);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var current = __WEBPACK_IMPORTED_MODULE_0__selection_on__["a" /* event */], source;
+  while (source = current.sourceEvent) current = source;
+  return current;
+};
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(node) {
+  return (node.ownerDocument && node.ownerDocument.defaultView) // node is a Node
+      || (node.document && node) // node is a Window
+      || node.defaultView; // node is a Document
+};
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cardinal__ = __webpack_require__(24);
+/* harmony export (immutable) */ __webpack_exports__["a"] = point;
+
+
+
+function point(that, x, y) {
+  var x1 = that._x1,
+      y1 = that._y1,
+      x2 = that._x2,
+      y2 = that._y2;
+
+  if (that._l01_a > __WEBPACK_IMPORTED_MODULE_0__math__["a" /* epsilon */]) {
+    var a = 2 * that._l01_2a + 3 * that._l01_a * that._l12_a + that._l12_2a,
+        n = 3 * that._l01_a * (that._l01_a + that._l12_a);
+    x1 = (x1 * a - that._x0 * that._l12_2a + that._x2 * that._l01_2a) / n;
+    y1 = (y1 * a - that._y0 * that._l12_2a + that._y2 * that._l01_2a) / n;
+  }
+
+  if (that._l23_a > __WEBPACK_IMPORTED_MODULE_0__math__["a" /* epsilon */]) {
+    var b = 2 * that._l23_2a + 3 * that._l23_a * that._l12_a + that._l12_2a,
+        m = 3 * that._l23_a * (that._l23_a + that._l12_a);
+    x2 = (x2 * b + that._x1 * that._l23_2a - x * that._l12_2a) / m;
+    y2 = (y2 * b + that._y1 * that._l23_2a - y * that._l12_2a) / m;
+  }
+
+  that._context.bezierCurveTo(x1, y1, x2, y2, that._x2, that._y2);
+}
+
+function CatmullRom(context, alpha) {
+  this._context = context;
+  this._alpha = alpha;
+}
+
+CatmullRom.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 =
+    this._y0 = this._y1 = this._y2 = NaN;
+    this._l01_a = this._l12_a = this._l23_a =
+    this._l01_2a = this._l12_2a = this._l23_2a =
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 2: this._context.lineTo(this._x2, this._y2); break;
+      case 3: this.point(this._x2, this._y2); break;
+    }
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+
+    if (this._point) {
+      var x23 = this._x2 - x,
+          y23 = this._y2 - y;
+      this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
+    }
+
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; // proceed
+      default: point(this, x, y); break;
+    }
+
+    this._l01_a = this._l12_a, this._l12_a = this._l23_a;
+    this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(alpha) {
+
+  function catmullRom(context) {
+    return alpha ? new CatmullRom(context, alpha) : new __WEBPACK_IMPORTED_MODULE_1__cardinal__["a" /* Cardinal */](context, 0);
+  }
+
+  catmullRom.alpha = function(alpha) {
+    return custom(+alpha);
+  };
+
+  return catmullRom;
+})(0.5);
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__curve_linear__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__point__ = __webpack_require__(98);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var x = __WEBPACK_IMPORTED_MODULE_3__point__["a" /* x */],
+      y = __WEBPACK_IMPORTED_MODULE_3__point__["b" /* y */],
+      defined = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(true),
+      context = null,
+      curve = __WEBPACK_IMPORTED_MODULE_2__curve_linear__["a" /* default */],
+      output = null;
+
+  function line(data) {
+    var i,
+        n = data.length,
+        d,
+        defined0 = false,
+        buffer;
+
+    if (context == null) output = curve(buffer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_path__["a" /* path */])());
+
+    for (i = 0; i <= n; ++i) {
+      if (!(i < n && defined(d = data[i], i, data)) === defined0) {
+        if (defined0 = !defined0) output.lineStart();
+        else output.lineEnd();
+      }
+      if (defined0) output.point(+x(d, i, data), +y(d, i, data));
+    }
+
+    if (buffer) return output = null, buffer + "" || null;
+  }
+
+  line.x = function(_) {
+    return arguments.length ? (x = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), line) : x;
+  };
+
+  line.y = function(_) {
+    return arguments.length ? (y = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), line) : y;
+  };
+
+  line.defined = function(_) {
+    return arguments.length ? (defined = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(!!_), line) : defined;
+  };
+
+  line.curve = function(_) {
+    return arguments.length ? (curve = _, context != null && (output = curve(context)), line) : curve;
+  };
+
+  line.context = function(_) {
+    return arguments.length ? (_ == null ? context = output = null : output = curve(context = _), line) : context;
+  };
+
+  return line;
+};
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(18);
+/* harmony export (immutable) */ __webpack_exports__["a"] = sum;
+
+
+/* harmony default export */ __webpack_exports__["b"] = function(series) {
+  var sums = series.map(sum);
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series).sort(function(a, b) { return sums[a] - sums[b]; });
+};
+
+function sum(series) {
+  var s = 0, i = -1, n = series.length, v;
+  while (++i < n) if (v = +series[i][1]) s += v;
+  return s;
+}
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__locale__ = __webpack_require__(109);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return timeFormat; });
+/* unused harmony export timeParse */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return utcFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return utcParse; });
+/* unused harmony export default */
+
+
+var locale;
+var timeFormat;
+var timeParse;
+var utcFormat;
+var utcParse;
+
+defaultLocale({
+  dateTime: "%x, %X",
+  date: "%-m/%-d/%Y",
+  time: "%-I:%M:%S %p",
+  periods: ["AM", "PM"],
+  days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  shortDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+});
+
+function defaultLocale(definition) {
+  locale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__locale__["a" /* default */])(definition);
+  timeFormat = locale.format;
+  timeParse = locale.parse;
+  utcFormat = locale.utcFormat;
+  utcParse = locale.utcParse;
+  return locale;
+}
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_interval__ = __webpack_require__(1);
+/* unused harmony reexport timeInterval */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_millisecond__ = __webpack_require__(279);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_1__src_millisecond__["a"]; });
+/* unused harmony reexport timeMilliseconds */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_1__src_millisecond__["a"]; });
+/* unused harmony reexport utcMilliseconds */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_second__ = __webpack_require__(282);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_2__src_second__["a"]; });
+/* unused harmony reexport timeSeconds */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__src_second__["a"]; });
+/* unused harmony reexport utcSeconds */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_minute__ = __webpack_require__(280);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_3__src_minute__["a"]; });
+/* unused harmony reexport timeMinutes */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_hour__ = __webpack_require__(278);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_4__src_hour__["a"]; });
+/* unused harmony reexport timeHours */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_day__ = __webpack_require__(277);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__src_day__["a"]; });
+/* unused harmony reexport timeDays */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_week__ = __webpack_require__(289);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_6__src_week__["a"]; });
+/* unused harmony reexport timeWeeks */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_6__src_week__["a"]; });
+/* unused harmony reexport timeSundays */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_6__src_week__["b"]; });
+/* unused harmony reexport timeMondays */
+/* unused harmony reexport timeTuesday */
+/* unused harmony reexport timeTuesdays */
+/* unused harmony reexport timeWednesday */
+/* unused harmony reexport timeWednesdays */
+/* unused harmony reexport timeThursday */
+/* unused harmony reexport timeThursdays */
+/* unused harmony reexport timeFriday */
+/* unused harmony reexport timeFridays */
+/* unused harmony reexport timeSaturday */
+/* unused harmony reexport timeSaturdays */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_month__ = __webpack_require__(281);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_7__src_month__["a"]; });
+/* unused harmony reexport timeMonths */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_year__ = __webpack_require__(290);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_8__src_year__["a"]; });
+/* unused harmony reexport timeYears */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_utcMinute__ = __webpack_require__(285);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_9__src_utcMinute__["a"]; });
+/* unused harmony reexport utcMinutes */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_utcHour__ = __webpack_require__(284);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_10__src_utcHour__["a"]; });
+/* unused harmony reexport utcHours */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_utcDay__ = __webpack_require__(283);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_11__src_utcDay__["a"]; });
+/* unused harmony reexport utcDays */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_utcWeek__ = __webpack_require__(287);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_12__src_utcWeek__["a"]; });
+/* unused harmony reexport utcWeeks */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_12__src_utcWeek__["a"]; });
+/* unused harmony reexport utcSundays */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_12__src_utcWeek__["b"]; });
+/* unused harmony reexport utcMondays */
+/* unused harmony reexport utcTuesday */
+/* unused harmony reexport utcTuesdays */
+/* unused harmony reexport utcWednesday */
+/* unused harmony reexport utcWednesdays */
+/* unused harmony reexport utcThursday */
+/* unused harmony reexport utcThursdays */
+/* unused harmony reexport utcFriday */
+/* unused harmony reexport utcFridays */
+/* unused harmony reexport utcSaturday */
+/* unused harmony reexport utcSaturdays */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_utcMonth__ = __webpack_require__(286);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_13__src_utcMonth__["a"]; });
+/* unused harmony reexport utcMonths */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_utcYear__ = __webpack_require__(288);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_14__src_utcYear__["a"]; });
+/* unused harmony reexport utcYears */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["c"] = now;
+/* harmony export (immutable) */ __webpack_exports__["b"] = Timer;
+/* harmony export (immutable) */ __webpack_exports__["a"] = timer;
+/* unused harmony export timerFlush */
+var frame = 0, // is an animation frame pending?
+    timeout = 0, // is a timeout pending?
+    interval = 0, // are any timers active?
+    pokeDelay = 1000, // how frequently we check for clock skew
+    taskHead,
+    taskTail,
+    clockLast = 0,
+    clockNow = 0,
+    clockSkew = 0,
+    clock = typeof performance === "object" && performance.now ? performance : Date,
+    setFrame = typeof requestAnimationFrame === "function" ? requestAnimationFrame : function(f) { setTimeout(f, 17); };
+
+function now() {
+  return clockNow || (setFrame(clearNow), clockNow = clock.now() + clockSkew);
+}
+
+function clearNow() {
+  clockNow = 0;
+}
+
+function Timer() {
+  this._call =
+  this._time =
+  this._next = null;
+}
+
+Timer.prototype = timer.prototype = {
+  constructor: Timer,
+  restart: function(callback, delay, time) {
+    if (typeof callback !== "function") throw new TypeError("callback is not a function");
+    time = (time == null ? now() : +time) + (delay == null ? 0 : +delay);
+    if (!this._next && taskTail !== this) {
+      if (taskTail) taskTail._next = this;
+      else taskHead = this;
+      taskTail = this;
+    }
+    this._call = callback;
+    this._time = time;
+    sleep();
+  },
+  stop: function() {
+    if (this._call) {
+      this._call = null;
+      this._time = Infinity;
+      sleep();
+    }
+  }
+};
+
+function timer(callback, delay, time) {
+  var t = new Timer;
+  t.restart(callback, delay, time);
+  return t;
+}
+
+function timerFlush() {
+  now(); // Get the current time, if not already set.
+  ++frame; // Pretend we’ve set an alarm, if we haven’t already.
+  var t = taskHead, e;
+  while (t) {
+    if ((e = clockNow - t._time) >= 0) t._call.call(null, e);
+    t = t._next;
+  }
+  --frame;
+}
+
+function wake() {
+  clockNow = (clockLast = clock.now()) + clockSkew;
+  frame = timeout = 0;
+  try {
+    timerFlush();
+  } finally {
+    frame = 0;
+    nap();
+    clockNow = 0;
+  }
+}
+
+function poke() {
+  var now = clock.now(), delay = now - clockLast;
+  if (delay > pokeDelay) clockSkew -= delay, clockLast = now;
+}
+
+function nap() {
+  var t0, t1 = taskHead, t2, time = Infinity;
+  while (t1) {
+    if (t1._call) {
+      if (time > t1._time) time = t1._time;
+      t0 = t1, t1 = t1._next;
+    } else {
+      t2 = t1._next, t1._next = null;
+      t1 = t0 ? t0._next = t2 : taskHead = t2;
+    }
+  }
+  taskTail = t0;
+  sleep(time);
+}
+
+function sleep(time) {
+  if (frame) return; // Soonest alarm already set, or will be.
+  if (timeout) timeout = clearTimeout(timeout);
+  var delay = time - clockNow;
+  if (delay > 24) {
+    if (time < Infinity) timeout = setTimeout(wake, delay);
+    if (interval) interval = clearInterval(interval);
+  } else {
+    if (!interval) interval = setInterval(poke, pokeDelay);
+    frame = 1, setFrame(wake);
+  }
+}
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_axis__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_format__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_scale__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_d3_zoom__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_d3_drag__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_d3_quadtree__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__symbol__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__merge__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__quadtree__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__lasso__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__constants__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tooltip__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_eventemitter3__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_eventemitter3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_eventemitter3__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return EScaleAxes; });
+/* unused harmony export ERenderReason */
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var EScaleAxes;
+(function (EScaleAxes) {
+    EScaleAxes[EScaleAxes["x"] = 0] = "x";
+    EScaleAxes[EScaleAxes["y"] = 1] = "y";
+    EScaleAxes[EScaleAxes["xy"] = 2] = "xy";
+})(EScaleAxes || (EScaleAxes = {}));
+//normalized range the quadtree is defined
+var NORMALIZED_RANGE = [0, 100];
+/**
+ * reasons why a new render pass is needed
+ */
+var ERenderReason;
+(function (ERenderReason) {
+    ERenderReason[ERenderReason["DIRTY"] = 0] = "DIRTY";
+    ERenderReason[ERenderReason["SELECTION_CHANGED"] = 1] = "SELECTION_CHANGED";
+    ERenderReason[ERenderReason["ZOOMED"] = 2] = "ZOOMED";
+    ERenderReason[ERenderReason["PERFORM_SCALE_AND_TRANSLATE"] = 3] = "PERFORM_SCALE_AND_TRANSLATE";
+    ERenderReason[ERenderReason["AFTER_SCALE_AND_TRANSLATE"] = 4] = "AFTER_SCALE_AND_TRANSLATE";
+    ERenderReason[ERenderReason["PERFORM_TRANSLATE"] = 5] = "PERFORM_TRANSLATE";
+    ERenderReason[ERenderReason["AFTER_TRANSLATE"] = 6] = "AFTER_TRANSLATE";
+    ERenderReason[ERenderReason["PERFORM_SCALE"] = 7] = "PERFORM_SCALE";
+    ERenderReason[ERenderReason["AFTER_SCALE"] = 8] = "AFTER_SCALE";
+})(ERenderReason || (ERenderReason = {}));
+function fixScale(current, acc, data, given, givenLimits) {
+    if (given) {
+        return given;
+    }
+    if (givenLimits) {
+        return current.domain(givenLimits);
+    }
+    return current.domain(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_array__["h" /* extent */])(data, acc));
+}
+/**
+ * a class for rendering a scatterplot in a canvas
+ */
+var Scatterplot = (function (_super) {
+    __extends(Scatterplot, _super);
+    function Scatterplot(data, root, props) {
+        var _this = _super.call(this) || this;
+        _this.props = {
+            margin: {
+                left: 32,
+                top: 10,
+                bottom: 32,
+                right: 10
+            },
+            clickRadius: 10,
+            zoom: {
+                scale: EScaleAxes.xy,
+                delay: 300,
+                scaleExtent: [1, +Infinity],
+                window: null,
+                scaleTo: 1,
+                translateBy: [0, 0],
+            },
+            format: {},
+            x: function (d) { return d.x; },
+            y: function (d) { return d.y; },
+            xlabel: 'x',
+            ylabel: 'y',
+            xscale: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_scale__["scaleLinear"])().domain([0, 100]),
+            yscale: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_scale__["scaleLinear"])().domain([0, 100]),
+            symbol: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__symbol__["circleSymbol"])(),
+            tooltipDelay: 500,
+            showTooltip: __WEBPACK_IMPORTED_MODULE_13__tooltip__["a" /* default */],
+            isSelectEvent: function (event) { return event.ctrlKey || event.altKey; },
+            lasso: {
+                interval: 100
+            },
+            extras: null
+        };
+        _this.normalized2pixel = {
+            x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_scale__["scaleLinear"])().domain(NORMALIZED_RANGE),
+            y: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_scale__["scaleLinear"])().domain(NORMALIZED_RANGE)
+        };
+        /**
+         * timout handle when the tooltip is shown
+         * @type {number}
+         */
+        _this.showTooltipHandle = -1;
+        _this.lasso = new __WEBPACK_IMPORTED_MODULE_11__lasso__["a" /* default */]();
+        _this.currentTransform = __WEBPACK_IMPORTED_MODULE_5_d3_zoom__["a" /* zoomIdentity */];
+        _this.zommHandle = -1;
+        _this.dragHandle = -1;
+        _this.props = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__merge__["a" /* default */])(_this.props, props);
+        _this.props.xscale = fixScale(_this.props.xscale, _this.props.x, data, props.xscale, props.xlim);
+        _this.props.yscale = fixScale(_this.props.yscale, _this.props.y, data, props.yscale, props.ylim);
+        _this.parent = root.ownerDocument.createElement('div');
+        root.appendChild(_this.parent);
+        //init dom
+        _this.parent.innerHTML = "\n      <canvas class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-data-layer\"></canvas>\n      <canvas class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-selection-layer\" " + (!_this.isSelectAble() && !_this.hasExtras() ? 'style="visibility: hidden"' : '') + "></canvas>\n      <svg class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-axis-left\" style=\"width: " + (_this.props.margin.left + 2) + "px;\">\n        <g transform=\"translate(" + _this.props.margin.left + ",0)\"><g>\n      </svg>\n      <svg class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-axis-bottom\" style=\"height: " + _this.props.margin.bottom + "px;\">\n        <g><g>\n      </svg>\n      <div class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-axis-bottom-label\" style=\"left: " + (_this.props.margin.left + 2) + "px; right: " + _this.props.margin.right + "px\"><div>" + _this.props.xlabel + "</div></div>\n      <div class=\"" + __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-axis-left-label\"  style=\"top: " + (_this.props.margin.top + 2) + "px; bottom: " + _this.props.margin.bottom + "px\"><div>" + _this.props.ylabel + "</div></div>\n    ";
+        _this.parent.classList.add(__WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */]);
+        _this.canvasDataLayer = _this.parent.children[0];
+        _this.canvasSelectionLayer = _this.parent.children[1];
+        //need to use d3 for d3.mouse to work
+        var $parent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["a" /* select */])(_this.parent);
+        if (_this.props.zoom.scale !== null) {
+            var zoom = _this.props.zoom;
+            //register zoom
+            _this.zoomBehavior = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_zoom__["b" /* zoom */])()
+                .on('start', _this.onZoomStart.bind(_this))
+                .on('zoom', _this.onZoom.bind(_this))
+                .on('end', _this.onZoomEnd.bind(_this))
+                .scaleExtent(zoom.scaleExtent)
+                .filter(function () { return __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].button === 0 && (!_this.isSelectAble() || !_this.props.isSelectEvent(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */])); });
+            $parent
+                .call(_this.zoomBehavior)
+                .on('wheel', function () { return __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].preventDefault(); });
+            if (zoom.window != null) {
+                _this.window = zoom.window;
+            }
+            else {
+                _this.zoomBehavior.scaleTo($parent, zoom.scaleTo);
+                _this.zoomBehavior.translateBy($parent, zoom.translateBy[0], zoom.translateBy[1]);
+            }
+        }
+        if (_this.isSelectAble()) {
+            var drag = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_d3_drag__["a" /* drag */])()
+                .on('start', _this.onDragStart.bind(_this))
+                .on('drag', _this.onDrag.bind(_this))
+                .on('end', _this.onDragEnd.bind(_this))
+                .filter(function () { return __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].button === 0 && _this.props.isSelectEvent(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */]); });
+            $parent.call(drag)
+                .on('click', function () { return _this.onClick(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */]); });
+        }
+        if (_this.hasTooltips()) {
+            $parent.on('mouseleave', function () { return _this.onMouseLeave(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */]); })
+                .on('mousemove', function () { return _this.onMouseMove(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */]); });
+        }
+        _this.setDataImpl(data);
+        _this.selectionTree = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_d3_quadtree__["a" /* quadtree */])([], _this.tree.x(), _this.tree.y());
+        return _this;
+    }
+    Object.defineProperty(Scatterplot.prototype, "data", {
+        get: function () {
+            return this.tree.data();
+        },
+        set: function (data) {
+            this.setDataImpl(data);
+            this.selectionTree = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_d3_quadtree__["a" /* quadtree */])([], this.tree.x(), this.tree.y());
+            this.render(ERenderReason.DIRTY);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Scatterplot.prototype.setDataImpl = function (data) {
+        var _this = this;
+        //generate a quad tree out of the data
+        //work on a normalized dimension to avoid hazzling
+        var domain2normalizedX = this.props.xscale.copy().range(NORMALIZED_RANGE);
+        var domain2normalizedY = this.props.yscale.copy().range(NORMALIZED_RANGE);
+        this.tree = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_d3_quadtree__["a" /* quadtree */])(data, function (d) { return domain2normalizedX(_this.props.x(d)); }, function (d) { return domain2normalizedY(_this.props.y(d)); });
+    };
+    Scatterplot.prototype.isSelectAble = function () {
+        return this.props.isSelectEvent != null && this.props.isSelectEvent !== false;
+    };
+    Scatterplot.prototype.hasExtras = function () {
+        return this.props.extras != null;
+    };
+    Scatterplot.prototype.hasTooltips = function () {
+        return this.props.showTooltip != null && this.props.showTooltip !== false;
+    };
+    Object.defineProperty(Scatterplot.prototype, "selection", {
+        /**
+         * returns the current selection
+         */
+        get: function () {
+            if (!this.isSelectAble()) {
+                return [];
+            }
+            return this.selectionTree.data();
+        },
+        /**
+         * sets the current selection
+         * @param selection
+         */
+        set: function (selection) {
+            this.setSelection(selection);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Scatterplot.prototype.setSelection = function (selection) {
+        var _this = this;
+        if (!this.isSelectAble()) {
+            return false;
+        }
+        if (selection == null) {
+            selection = []; //ensure valid value
+        }
+        //this.lasso.clear();
+        if (selection.length === 0) {
+            return this.clearSelection();
+        }
+        //find the delta
+        var changed = false;
+        var s = this.selection.slice();
+        selection.forEach(function (sNew) {
+            var i = s.indexOf(sNew);
+            if (i < 0) {
+                _this.selectionTree.add(sNew);
+                changed = true;
+            }
+            else {
+                s.splice(i, 1); //mark as used
+            }
+        });
+        changed = changed || s.length > 0;
+        //remove removed items
+        this.selectionTree.removeAll(s);
+        if (changed) {
+            this.emit(Scatterplot.EVENT_SELECTION_CHANGED, this);
+            this.render(ERenderReason.SELECTION_CHANGED);
+        }
+        return changed;
+    };
+    /**
+     * clears the selection, same as .selection=[]
+     */
+    Scatterplot.prototype.clearSelection = function () {
+        var changed = this.selectionTree !== null && this.selectionTree.size() > 0;
+        if (changed) {
+            this.selectionTree = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_d3_quadtree__["a" /* quadtree */])([], this.tree.x(), this.tree.y());
+            this.emit(Scatterplot.EVENT_SELECTION_CHANGED, this);
+            this.render(ERenderReason.SELECTION_CHANGED);
+        }
+        return changed;
+    };
+    /**
+     * shortcut to add items to the selection
+     * @param items
+     */
+    Scatterplot.prototype.addToSelection = function (items) {
+        if (items.length === 0 || !this.isSelectAble()) {
+            return false;
+        }
+        this.selectionTree.addAll(items);
+        this.emit(Scatterplot.EVENT_SELECTION_CHANGED, this);
+        this.render(ERenderReason.SELECTION_CHANGED);
+        return true;
+    };
+    /**
+     * shortcut to remove items from the selection
+     * @param items
+     */
+    Scatterplot.prototype.removeFromSelection = function (items) {
+        if (items.length === 0 || !this.isSelectAble()) {
+            return false;
+        }
+        this.selectionTree.removeAll(items);
+        this.emit(Scatterplot.EVENT_SELECTION_CHANGED, this);
+        this.render(ERenderReason.SELECTION_CHANGED);
+        return true;
+    };
+    Scatterplot.prototype.selectWithTester = function (tester) {
+        var selection = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["a" /* findByTester */])(this.tree, tester);
+        return this.setSelection(selection);
+    };
+    Scatterplot.prototype.checkResize = function () {
+        var c = this.canvasDataLayer;
+        if (c.width !== c.clientWidth || c.height !== c.clientHeight) {
+            this.canvasSelectionLayer.width = c.width = c.clientWidth;
+            this.canvasSelectionLayer.height = c.height = c.clientHeight;
+            return true;
+        }
+        return false;
+    };
+    Scatterplot.prototype.resized = function () {
+        this.render(ERenderReason.DIRTY);
+    };
+    Scatterplot.prototype.rescale = function (axis, scale) {
+        var c = this.currentTransform;
+        var p = this.props.zoom.scale;
+        switch (axis) {
+            case EScaleAxes.x:
+                return p === EScaleAxes.x || p === EScaleAxes.xy ? c.rescaleX(scale) : scale;
+            case EScaleAxes.y:
+                return p === EScaleAxes.y || p === EScaleAxes.xy ? c.rescaleY(scale) : scale;
+        }
+        throw new Error('Not Implemented');
+    };
+    Scatterplot.prototype.transformedScales = function () {
+        var xscale = this.rescale(EScaleAxes.x, this.props.xscale);
+        var yscale = this.rescale(EScaleAxes.y, this.props.yscale);
+        return { xscale: xscale, yscale: yscale };
+    };
+    Scatterplot.prototype.getMouseNormalizedPos = function (pixelpos) {
+        var _this = this;
+        if (pixelpos === void 0) { pixelpos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["c" /* mouse */])(this.parent); }
+        var _a = this.transformedNormalized2PixelScales(), n2pX = _a.n2pX, n2pY = _a.n2pY;
+        function rangeRange(s) {
+            var range = s.range();
+            return Math.abs(range[1] - range[0]);
+        }
+        var computeClickRadius = function () {
+            //compute the data domain radius based on xscale and the scaling factor
+            var view = _this.props.clickRadius;
+            var transform = _this.currentTransform;
+            var viewSizeX = transform.k * rangeRange(_this.normalized2pixel.x);
+            var viewSizeY = transform.k * rangeRange(_this.normalized2pixel.y);
+            //tranform from view to data without translation
+            var normalizedRange = (NORMALIZED_RANGE[1] - NORMALIZED_RANGE[0]);
+            var normalizedX = view / viewSizeX * normalizedRange;
+            var normalizedY = view / viewSizeY * normalizedRange;
+            //const view = this.props.xscale(base)*transform.k - this.props.xscale.range()[0]; //skip translation
+            //debuglog(view, viewSize, transform.k, normalizedSize, normalized);
+            return [normalizedX, normalizedY];
+        };
+        var _b = computeClickRadius(), clickRadiusX = _b[0], clickRadiusY = _b[1];
+        return { x: n2pX.invert(pixelpos[0]), y: n2pY.invert(pixelpos[1]), clickRadiusX: clickRadiusX, clickRadiusY: clickRadiusY };
+    };
+    Scatterplot.prototype.transformedNormalized2PixelScales = function () {
+        var n2pX = this.rescale(EScaleAxes.x, this.normalized2pixel.x);
+        var n2pY = this.rescale(EScaleAxes.y, this.normalized2pixel.y);
+        return { n2pX: n2pX, n2pY: n2pY };
+    };
+    Object.defineProperty(Scatterplot.prototype, "window", {
+        /**
+         * returns the current visible window
+         * @returns {{xMinMax: [number,number], yMinMax: [number,number]}}
+         */
+        get: function () {
+            var _a = this.transformedScales(), xscale = _a.xscale, yscale = _a.yscale;
+            return {
+                xMinMax: (xscale.range().map(xscale.invert.bind(xscale))),
+                yMinMax: (yscale.range().map(yscale.invert.bind(yscale)))
+            };
+        },
+        /**
+         * sets the current visible window
+         * @param window
+         */
+        set: function (window) {
+            var _a = this.window2transform(window), k = _a.k, tx = _a.tx, ty = _a.ty;
+            var $zoom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["a" /* select */])(this.parent);
+            this.zoomBehavior.scaleTo($zoom, k);
+            this.zoomBehavior.translateBy($zoom, tx, ty);
+            this.render();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Scatterplot.prototype.window2transform = function (window) {
+        var range2transform = function (minMax, scale) {
+            var pmin = scale(minMax[0]);
+            var pmax = scale(minMax[1]);
+            var k = (scale.range()[1] - scale.range()[0]) / (pmax - pmin);
+            return { k: k, t: (scale.range()[0] - pmin) };
+        };
+        var s = this.props.zoom.scale;
+        var x = (s === EScaleAxes.x || s === EScaleAxes.xy) ? range2transform(window.xMinMax, this.props.xscale) : null;
+        var y = (s === EScaleAxes.y || s === EScaleAxes.xy) ? range2transform(window.yMinMax, this.props.yscale) : null;
+        var k = 1;
+        if (x && y) {
+            k = Math.min(x.k, y.k);
+        }
+        else if (x) {
+            k = x.k;
+        }
+        else if (y) {
+            k = y.k;
+        }
+        return {
+            k: k,
+            tx: x ? x.t : 0,
+            ty: y ? y.t : 0
+        };
+    };
+    Object.defineProperty(Scatterplot.prototype, "domain", {
+        /**
+         * returns the total domain
+         * @returns {{xMinMax: number[], yMinMax: number[]}}
+         */
+        get: function () {
+            return {
+                xMinMax: this.props.xscale.domain(),
+                yMinMax: this.props.yscale.domain(),
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Scatterplot.prototype.onZoomStart = function () {
+        this.zoomStartTransform = this.currentTransform;
+    };
+    Scatterplot.prototype.onZoomEnd = function () {
+        var start = this.zoomStartTransform;
+        var end = this.currentTransform;
+        var tchanged = (start.x !== end.x || start.y !== end.y);
+        var schanged = (start.k !== end.k);
+        if (tchanged && schanged) {
+            this.render(ERenderReason.AFTER_SCALE_AND_TRANSLATE);
+        }
+        else if (schanged) {
+            this.render(ERenderReason.AFTER_SCALE);
+        }
+        else if (tchanged) {
+            this.render(ERenderReason.AFTER_TRANSLATE);
+        }
+    };
+    Scatterplot.prototype.onZoom = function () {
+        var evt = __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */];
+        var newValue = evt.transform;
+        var oldValue = this.currentTransform;
+        this.currentTransform = newValue;
+        var scale = this.props.zoom.scale;
+        var tchanged = ((scale !== EScaleAxes.y && oldValue.x !== newValue.x) || (scale !== EScaleAxes.x && oldValue.y !== newValue.y));
+        var schanged = (oldValue.k !== newValue.k);
+        var delta = {
+            x: (scale === EScaleAxes.x || scale === EScaleAxes.xy) ? newValue.x - oldValue.x : 0,
+            y: (scale === EScaleAxes.y || scale === EScaleAxes.xy) ? newValue.y - oldValue.y : 0,
+            kx: (scale === EScaleAxes.x || scale === EScaleAxes.xy) ? newValue.k / oldValue.k : 1,
+            ky: (scale === EScaleAxes.y || scale === EScaleAxes.xy) ? newValue.k / oldValue.k : 1
+        };
+        if (tchanged && schanged) {
+            this.emit(Scatterplot.EVENT_WINDOW_CHANGED, this.window);
+            this.render(ERenderReason.PERFORM_SCALE_AND_TRANSLATE, delta);
+        }
+        else if (schanged) {
+            this.emit(Scatterplot.EVENT_WINDOW_CHANGED, this.window);
+            this.render(ERenderReason.PERFORM_SCALE, delta);
+        }
+        else if (tchanged) {
+            this.emit(Scatterplot.EVENT_WINDOW_CHANGED, this.window);
+            this.render(ERenderReason.PERFORM_TRANSLATE, delta);
+        }
+        //nothing if no changed
+    };
+    Scatterplot.prototype.onDragStart = function () {
+        this.lasso.start(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].x, __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].y);
+        if (!this.clearSelection()) {
+            this.render(ERenderReason.SELECTION_CHANGED);
+        }
+    };
+    Scatterplot.prototype.onDrag = function () {
+        if (this.dragHandle < 0) {
+            this.dragHandle = setInterval(this.updateDrag.bind(this), this.props.lasso.interval);
+        }
+        this.lasso.setCurrent(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].x, __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].y);
+        this.render(ERenderReason.SELECTION_CHANGED);
+    };
+    Scatterplot.prototype.updateDrag = function () {
+        if (this.lasso.pushCurrent()) {
+            this.retestLasso();
+        }
+    };
+    Scatterplot.prototype.retestLasso = function () {
+        var _a = this.transformedNormalized2PixelScales(), n2pX = _a.n2pX, n2pY = _a.n2pY;
+        var tester = this.lasso.tester(n2pX.invert.bind(n2pX), n2pY.invert.bind(n2pY));
+        return tester && this.selectWithTester(tester);
+    };
+    Scatterplot.prototype.onDragEnd = function () {
+        clearInterval(this.dragHandle);
+        this.dragHandle = -1;
+        this.lasso.end(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].x, __WEBPACK_IMPORTED_MODULE_4_d3_selection__["b" /* event */].y);
+        if (!this.retestLasso()) {
+            this.render(ERenderReason.SELECTION_CHANGED);
+        }
+        this.lasso.clear();
+    };
+    Scatterplot.prototype.onClick = function (event) {
+        if (event.button > 0) {
+            //right button or something like that = reset
+            this.selection = [];
+            return;
+        }
+        var _a = this.getMouseNormalizedPos(), x = _a.x, y = _a.y, clickRadiusX = _a.clickRadiusX, clickRadiusY = _a.clickRadiusY;
+        //find closest data item
+        var tester = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["b" /* ellipseTester */])(x, y, clickRadiusX, clickRadiusY);
+        this.selectWithTester(tester);
+    };
+    Scatterplot.prototype.showTooltip = function (pos) {
+        //highlight selected item
+        var _a = this.getMouseNormalizedPos(pos), x = _a.x, y = _a.y, clickRadiusX = _a.clickRadiusX, clickRadiusY = _a.clickRadiusY;
+        var tester = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["b" /* ellipseTester */])(x, y, clickRadiusX, clickRadiusY);
+        var items = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["a" /* findByTester */])(this.tree, tester);
+        this.props.showTooltip(this.parent, items, pos[0], pos[1]);
+        this.showTooltipHandle = -1;
+    };
+    Scatterplot.prototype.onMouseMove = function (event) {
+        if (this.showTooltipHandle >= 0) {
+            this.onMouseLeave(event);
+        }
+        var pos = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["c" /* mouse */])(this.parent);
+        //TODO find a more efficient way or optimize the timing
+        this.showTooltipHandle = setTimeout(this.showTooltip.bind(this, pos), this.props.tooltipDelay);
+    };
+    Scatterplot.prototype.onMouseLeave = function (event) {
+        clearTimeout(this.showTooltipHandle);
+        this.showTooltipHandle = -1;
+        this.props.showTooltip(this.parent, [], 0, 0);
+    };
+    Scatterplot.prototype.render = function (reason, transformDelta) {
+        var _this = this;
+        if (reason === void 0) { reason = ERenderReason.DIRTY; }
+        if (transformDelta === void 0) { transformDelta = { x: 0, y: 0, kx: 1, ky: 1 }; }
+        if (this.checkResize()) {
+            //check resize
+            return this.resized();
+        }
+        var c = this.canvasDataLayer, margin = this.props.margin, bounds = { x0: margin.left, y0: margin.top, x1: c.clientWidth - margin.right, y1: c.clientHeight - margin.bottom }, boundsWidth = bounds.x1 - bounds.x0, boundsHeight = bounds.y1 - bounds.y0;
+        // emit render reason as string
+        this.emit(Scatterplot.EVENT_RENDER, ERenderReason[reason], transformDelta);
+        if (reason === ERenderReason.DIRTY) {
+            this.props.xscale.range([bounds.x0, bounds.x1]);
+            this.props.yscale.range([bounds.y1, bounds.y0]);
+            this.normalized2pixel.x.range(this.props.xscale.range());
+            this.normalized2pixel.y.range(this.props.yscale.range());
+        }
+        //transform scale
+        var _a = this.transformedScales(), xscale = _a.xscale, yscale = _a.yscale;
+        var _b = this.transformedNormalized2PixelScales(), n2pX = _b.n2pX, n2pY = _b.n2pY;
+        var nx = function (v) { return n2pX.invert(v); }, ny = function (v) { return n2pY.invert(v); };
+        //inverted y scale
+        var isNodeVisible = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["c" /* hasOverlap */])(nx(bounds.x0), ny(bounds.y1), nx(bounds.x1), ny(bounds.y0));
+        function useAggregation(x0, y0, x1, y1) {
+            x0 = n2pX(x0);
+            y0 = n2pY(y0);
+            x1 = n2pX(x1);
+            y1 = n2pY(y1);
+            var minSize = Math.max(Math.abs(x0 - x1), Math.abs(y0 - y1));
+            return minSize < 5; //TODO tune depend on visual impact
+        }
+        var renderInfo = {
+            zoomLevel: this.currentTransform.k
+        };
+        var renderCtx = function (isSelection) {
+            if (isSelection === void 0) { isSelection = false; }
+            var ctx = (isSelection ? _this.canvasSelectionLayer : _this.canvasDataLayer).getContext('2d');
+            ctx.clearRect(0, 0, c.width, c.height);
+            ctx.save();
+            ctx.rect(bounds.x0, bounds.y0, boundsWidth, boundsHeight);
+            ctx.clip();
+            var tree = isSelection ? _this.selectionTree : _this.tree;
+            var renderer = _this.props.symbol(ctx, isSelection ? __WEBPACK_IMPORTED_MODULE_8__symbol__["ERenderMode"].SELECTED : __WEBPACK_IMPORTED_MODULE_8__symbol__["ERenderMode"].NORMAL, renderInfo);
+            var debug = !isSelection && __WEBPACK_IMPORTED_MODULE_12__constants__["b" /* DEBUG */];
+            _this.renderTree(ctx, tree, renderer, xscale, yscale, isNodeVisible, useAggregation, debug);
+            if (isSelection && _this.hasExtras()) {
+                ctx.save();
+                _this.props.extras(ctx, xscale, yscale);
+                ctx.restore();
+            }
+            ctx.restore();
+            return ctx;
+        };
+        var renderSelection = !this.isSelectAble() && !this.hasExtras() ? function () { return undefined; } : function () {
+            var ctx = renderCtx(true);
+            _this.lasso.render(ctx);
+        };
+        var transformData = function (x, y, kx, ky) {
+            //idea copy the data layer to selection layer in a transformed way and swap
+            var ctx = _this.canvasSelectionLayer.getContext('2d');
+            ctx.clearRect(0, 0, c.width, c.height);
+            ctx.save();
+            ctx.rect(bounds.x0, bounds.y0, boundsWidth, boundsHeight);
+            ctx.clip();
+            //ctx.translate(bounds.x0, bounds.y0+bounds_height); //move to visible area
+            //debuglog(x,y,k, bounds.x0, bounds.y0, n2pX(0), n2pY(100), this.currentTransform.x, this.currentTransform.y);
+            //ctx.scale(k,k);
+            //ctx.translate(0, -bounds_height); //move to visible area
+            ctx.translate(x, y);
+            //copy just the visible area
+            //canvas, clip area, target area
+            //see http://www.w3schools.com/tags/canvas_drawimage.asp
+            ctx.drawImage(_this.canvasDataLayer, bounds.x0, bounds.y0, boundsWidth, boundsHeight, bounds.x0, bounds.y0, boundsWidth * kx, boundsHeight * ky);
+            ctx.restore();
+            //swap and update class names
+            _a = [_this.canvasSelectionLayer, _this.canvasDataLayer], _this.canvasDataLayer = _a[0], _this.canvasSelectionLayer = _a[1];
+            _this.canvasDataLayer.className = __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-data-layer";
+            _this.canvasSelectionLayer.className = __WEBPACK_IMPORTED_MODULE_12__constants__["a" /* cssprefix */] + "-selection-layer";
+            var _a;
+        };
+        var renderAxes = this.renderAxes.bind(this, xscale, yscale);
+        var renderData = renderCtx.bind(this, false);
+        var clearAutoZoomRedraw = function () {
+            if (_this.zommHandle >= 0) {
+                //delete auto redraw timer
+                clearTimeout(_this.zommHandle);
+                _this.zommHandle = -1;
+            }
+        };
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12__constants__["c" /* debuglog */])(ERenderReason[reason]);
+        //render logic
+        switch (reason) {
+            case ERenderReason.PERFORM_TRANSLATE:
+                clearAutoZoomRedraw();
+                transformData(transformDelta.x, transformDelta.y, transformDelta.kx, transformDelta.ky);
+                renderSelection();
+                renderAxes();
+                //redraw everything after a while, i.e stopped moving
+                this.zommHandle = setTimeout(this.render.bind(this, ERenderReason.AFTER_TRANSLATE), this.props.zoom.delay);
+                break;
+            case ERenderReason.SELECTION_CHANGED:
+                renderSelection();
+                break;
+            case ERenderReason.AFTER_TRANSLATE:
+                //just data needed after translation
+                clearAutoZoomRedraw();
+                renderData();
+                break;
+            case ERenderReason.AFTER_SCALE_AND_TRANSLATE:
+            case ERenderReason.AFTER_SCALE:
+                //nothing current approach is to draw all
+                break;
+            //case ERenderReason.PERFORM_SCALE:
+            //case ERenderReason.PERFORM_SCALE_AND_TRANSLATE:
+            default:
+                clearAutoZoomRedraw();
+                renderData();
+                renderAxes();
+                renderSelection();
+        }
+    };
+    Scatterplot.prototype.renderAxes = function (xscale, yscale) {
+        var _this = this;
+        var left = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_axis__["a" /* axisLeft */])(yscale), bottom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_axis__["b" /* axisBottom */])(xscale), $parent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_selection__["a" /* select */])(this.parent);
+        var setFormat = function (axis, key) {
+            var p = _this.props.format[key];
+            if (p == null) {
+                return;
+            }
+            axis.tickFormat(typeof p === 'string' ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_d3_format__["f" /* format */])(p) : p);
+        };
+        setFormat(left, 'y');
+        setFormat(bottom, 'x');
+        $parent.select('svg > g').call(left);
+        $parent.select('svg:last-of-type > g').call(bottom);
+    };
+    Scatterplot.prototype.renderTree = function (ctx, tree, renderer, xscale, yscale, isNodeVisible, useAggregation, debug) {
+        if (debug === void 0) { debug = false; }
+        var _a = this.props, x = _a.x, y = _a.y;
+        //function debugNode(color:string, x0:number, y0:number, x1:number, y1:number) {
+        //  ctx.closePath();
+        //  ctx.fillStyle = 'steelblue';
+        //  ctx.fill();
+        //  ctx.fillStyle = color;
+        //  x0 = xscale(x0);
+        //  y0 = yscale(y0);
+        //  x1 = xscale(x1);
+        //  y1 = yscale(y1);
+        //  ctx.fillRect(Math.min(x0, x1), Math.min(y0, y1), Math.abs(x0 - x1), Math.abs(y0 - y1));
+        //  ctx.beginPath();
+        //
+        //}
+        //debug stats
+        var rendered = 0, aggregated = 0, hidden = 0;
+        function visitTree(node, x0, y0, x1, y1) {
+            if (!isNodeVisible(x0, y0, x1, y1)) {
+                hidden += debug ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["d" /* getTreeSize */])(node) : 0;
+                return __WEBPACK_IMPORTED_MODULE_10__quadtree__["e" /* ABORT_TRAVERSAL */];
+            }
+            if (useAggregation(x0, y0, x1, y1)) {
+                var d = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["f" /* getFirstLeaf */])(node);
+                //debuglog('aggregate', getTreeSize(node));
+                rendered++;
+                aggregated += debug ? (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["d" /* getTreeSize */])(node) - 1) : 0;
+                renderer.render(xscale(x(d)), yscale(y(d)), d);
+                return __WEBPACK_IMPORTED_MODULE_10__quadtree__["e" /* ABORT_TRAVERSAL */];
+            }
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["g" /* isLeafNode */])(node)) {
+                rendered += __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__quadtree__["h" /* forEachLeaf */])(node, function (d) { return renderer.render(xscale(x(d)), yscale(y(d)), d); });
+            }
+            return __WEBPACK_IMPORTED_MODULE_10__quadtree__["i" /* CONTINUE_TRAVERSAL */];
+        }
+        ctx.save();
+        tree.visit(visitTree);
+        renderer.done();
+        if (debug) {
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12__constants__["c" /* debuglog */])('rendered', rendered, 'aggregated', aggregated, 'hidden', hidden, 'total', this.tree.size());
+        }
+        //a dummy path to clear the 'to draw' state
+        ctx.beginPath();
+        ctx.closePath();
+        ctx.restore();
+    };
+    return Scatterplot;
+}(__WEBPACK_IMPORTED_MODULE_14_eventemitter3__["EventEmitter"]));
+/* harmony default export */ __webpack_exports__["a"] = Scatterplot;
+Scatterplot.EVENT_SELECTION_CHANGED = 'selectionChanged';
+Scatterplot.EVENT_RENDER = 'render';
+Scatterplot.EVENT_WINDOW_CHANGED = 'windowChanged';
+//# sourceMappingURL=Scatterplot.js.map
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssprefix; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DEBUG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return debuglog; });
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+/**
+ * css prefix and class of the root element
+ * @type {string}
+ */
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */ var cssprefix = 'datavisyn-scatterplot';
+var DEBUG = false;
+var debuglog = DEBUG ? console.log : function () { return undefined; };
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = merge;
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+/**
+ * merges the second object into the first one
+ * @param target
+ * @param others
+ * @returns {T}
+ */
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */ function merge(target) {
+    var others = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        others[_i - 1] = arguments[_i];
+    }
+    others = others.filter(function (o) { return !!o; }); //is defined
+    if (others.length === 0) {
+        return target;
+    }
+    others.forEach(function (other) { return Object.keys(other).forEach(function (key) {
+        var v = other[key];
+        if (Object.prototype.toString.call(v) === '[object Object]') {
+            //nested
+            target[key] = (target[key] != null) ? merge(target[key], v) : v;
+        }
+        else {
+            target[key] = v;
+        }
+    }); });
+    return target;
+}
+//# sourceMappingURL=merge.js.map
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return ABORT_TRAVERSAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return CONTINUE_TRAVERSAL; });
+/* harmony export (immutable) */ __webpack_exports__["b"] = ellipseTester;
+/* harmony export (immutable) */ __webpack_exports__["a"] = findByTester;
+/* harmony export (immutable) */ __webpack_exports__["h"] = forEachLeaf;
+/* unused harmony export forEach */
+/* harmony export (immutable) */ __webpack_exports__["c"] = hasOverlap;
+/* unused harmony export getTreeData */
+/* harmony export (immutable) */ __webpack_exports__["d"] = getTreeSize;
+/* harmony export (immutable) */ __webpack_exports__["f"] = getFirstLeaf;
+/* unused harmony export getRandomLeaf */
+/* harmony export (immutable) */ __webpack_exports__["g"] = isLeafNode;
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+
+var ABORT_TRAVERSAL = true;
+var CONTINUE_TRAVERSAL = false;
+function ellipseTester(cx, cy, radiusX, radiusY) {
+    var radiusX2 = radiusX * radiusX;
+    var radiusY2 = radiusY * radiusY;
+    var overlapping = hasOverlap(cx - radiusX, cy - radiusY, cx + radiusX, cy + radiusY);
+    return {
+        test: function (x, y) {
+            // http://math.stackexchange.com/questions/76457/check-if-a-point-is-within-an-ellipse#76463
+            // \frac{(x-h)^2}{r_x^2} + \frac{(y-k)^2}{r_y^2} \leq 1
+            // (x-cx)^2/radiusX^2 + (y-cy)^2/(radiusY^2) <= 1
+            return ((x - cx) * (x - cx) / radiusX2 + (y - cy) * (y - cy) / radiusY2) <= 1;
+        },
+        testArea: overlapping
+    };
+}
+/**
+ * finds all items using a tester
+ * @param tree
+ * @param tester
+ * @returns {Array}
+ */
+function findByTester(tree, tester) {
+    var r = [];
+    var adder = r.push.bind(r);
+    function testAdder(d) {
+        var x1 = tree.x()(d);
+        var y1 = tree.y()(d);
+        if (tester.test(x1, y1)) {
+            adder(d);
+        }
+    }
+    function findItems(node, x0, y0, x1, y1) {
+        var xy00In = tester.test(x0, y0);
+        var xy01In = tester.test(x0, y1);
+        var xy10In = tester.test(x1, y0);
+        var xy11In = tester.test(x1, y1);
+        if (xy00In && xy01In && xy10In && xy11In) {
+            //all points in radius -> add all
+            forEach(node, adder);
+            return ABORT_TRAVERSAL;
+        }
+        if (tester.testArea(x0, y0, x1, y1)) {
+            //continue search
+            if (isLeafNode(node)) {
+                forEachLeaf(node, testAdder);
+            }
+            return CONTINUE_TRAVERSAL;
+        }
+        return ABORT_TRAVERSAL;
+    }
+    tree.visit(findItems);
+    return r;
+}
+/**
+ * execute the callback for each item in the leaf
+ * @param node
+ * @param callback
+ * @returns {number}
+ */
+function forEachLeaf(node, callback) {
+    if (!node || !isLeafNode(node)) {
+        return 0;
+    }
+    var i = 0;
+    var leaf = node;
+    //see https://github.com/d3/d3-quadtree
+    do {
+        var d = leaf.data;
+        i++;
+        callback(d);
+    } while ((leaf = leaf.next) != null);
+    return i;
+}
+/**
+ * for each data item in the subtree execute the callback
+ * @param node
+ * @param callback
+ */
+function forEach(node, callback) {
+    if (!node) {
+        return;
+    }
+    if (isLeafNode(node)) {
+        forEachLeaf(node, callback);
+    }
+    else {
+        //manually visit the children
+        var inner = node;
+        inner.forEach(function (i) { return forEach(i, callback); });
+    }
+}
+function hasOverlap(ox0, oy0, ox1, oy1) {
+    return function (x0, y0, x1, y1) {
+        //if the 1er points are small than 0er or 0er bigger than 1er than outside
+        if (x1 < ox0 || y1 < oy0 || x0 > ox1 || y0 > oy1) {
+            return false;
+        }
+        //inside or partial overlap
+        return true;
+    };
+}
+/**
+ * returns the data in the sub tree
+ * @param node
+ * @returns {Array}
+ */
+function getTreeData(node) {
+    var r = [];
+    forEach(node, r.push.bind(r));
+    return r;
+}
+function getTreeSize(node) {
+    var count = 0;
+    forEach(node, function () { return count++; });
+    return count;
+}
+/**
+ *
+ * @see http://stackoverflow.com/questions/10134237/javascript-random-integer-between-two-numbers
+ * @param min
+ * @param max
+ * @returns {number}
+ */
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+/**
+ * returns the first leaf node in the subtree
+ * @param node
+ * @returns {any}
+ */
+function getFirstLeaf(node) {
+    if (isLeafNode(node)) {
+        return node.data;
+    }
+    else {
+        //manually visit the children
+        var inner = node;
+        return inner.reduce(function (f, act) { return f ? f : getFirstLeaf(act); }, null);
+    }
+}
+/**
+ * returns a random leaf node in the subtree
+ * @param node
+ * @returns {any}
+ */
+function getRandomLeaf(node) {
+    if (isLeafNode(node)) {
+        var sub = getTreeData(node);
+        return sub[getRandomInt(0, sub.length)];
+    }
+    else {
+        //manually visit the children
+        //shuffle the sub tree
+        var inner = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["i" /* shuffle */])(node.slice());
+        return inner.reduce(function (f, act) { return f || !act ? f : getRandomLeaf(act); }, null);
+    }
+}
+/**
+ * checks whether the given node is a leaf node, as described in d3.quadtree docu
+ * @param node
+ * @returns {boolean}
+ */
+function isLeafNode(node) {
+    return !node.length;
+}
+//# sourceMappingURL=quadtree.js.map
+
+/***/ }),
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_shape__ = __webpack_require__(93);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERenderMode", function() { return ERenderMode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolCircle", function() { return d3SymbolCircle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolCross", function() { return d3SymbolCross; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolDiamond", function() { return d3SymbolDiamond; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolSquare", function() { return d3SymbolSquare; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolStar", function() { return d3SymbolStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolTriangle", function() { return d3SymbolTriangle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d3SymbolWye", function() { return d3SymbolWye; });
+/* harmony export (immutable) */ __webpack_exports__["d3Symbol"] = d3Symbol;
+/* harmony export (immutable) */ __webpack_exports__["circleSymbol"] = circleSymbol;
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+
+/**
+ * rendering mode for different kind of renderings
+ */
+var ERenderMode;
+(function (ERenderMode) {
+    ERenderMode[ERenderMode["NORMAL"] = 0] = "NORMAL";
+    ERenderMode[ERenderMode["SELECTED"] = 1] = "SELECTED";
+    ERenderMode[ERenderMode["HOVER"] = 2] = "HOVER";
+})(ERenderMode || (ERenderMode = {}));
+var d3SymbolCircle = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["a" /* symbolCircle */];
+var d3SymbolCross = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["b" /* symbolCross */];
+var d3SymbolDiamond = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["c" /* symbolDiamond */];
+var d3SymbolSquare = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["d" /* symbolSquare */];
+var d3SymbolStar = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["e" /* symbolStar */];
+var d3SymbolTriangle = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["f" /* symbolTriangle */];
+var d3SymbolWye = __WEBPACK_IMPORTED_MODULE_0_d3_shape__["g" /* symbolWye */];
+/**
+ * generic wrapper around d3 symbols for rendering
+ * @param symbol the symbol to render
+ * @param fillStyle the style applied
+ * @param size the size of the symbol
+ * @returns {function(CanvasRenderingContext2D): undefined}
+ */
+function d3Symbol(symbol, fillStyle, size) {
+    if (symbol === void 0) { symbol = d3SymbolCircle; }
+    if (fillStyle === void 0) { fillStyle = 'steelblue'; }
+    if (size === void 0) { size = 5; }
+    return function (ctx) {
+        //before
+        ctx.beginPath();
+        return {
+            //during
+            render: function (x, y) {
+                ctx.translate(x, y);
+                symbol.draw(ctx, size);
+                ctx.translate(-x, -y);
+            },
+            //after
+            done: function () {
+                ctx.closePath();
+                ctx.fillStyle = fillStyle;
+                ctx.fill();
+            }
+        };
+    };
+}
+/**
+ * circle symbol renderer (way faster than d3Symbol(d3symbolCircle)
+ * @param fillStyle
+ * @param size
+ * @returns {function(CanvasRenderingContext2D): undefined}
+ */
+function circleSymbol(fillStyle, size) {
+    if (fillStyle === void 0) { fillStyle = 'steelblue'; }
+    if (size === void 0) { size = 20; }
+    var r = Math.sqrt(size / Math.PI);
+    var tau = 2 * Math.PI;
+    var styles = (_a = {},
+        _a[ERenderMode.NORMAL] = fillStyle,
+        _a[ERenderMode.HOVER] = 'orange',
+        _a[ERenderMode.SELECTED] = 'red',
+        _a);
+    return function (ctx, mode) {
+        //before
+        ctx.beginPath();
+        return {
+            //during
+            render: function (x, y) {
+                ctx.moveTo(x + r, y);
+                ctx.arc(x, y, r, 0, tau);
+            },
+            //after
+            done: function () {
+                ctx.closePath();
+                ctx.fillStyle = styles[mode];
+                ctx.fill();
+            }
+        };
+    };
+    var _a;
+}
+//# sourceMappingURL=symbol.js.map
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return slice; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return map; });
+var array = Array.prototype;
+
+var slice = array.slice;
+var map = array.map;
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bisector__ = __webpack_require__(60);
+/* unused harmony export bisectRight */
+/* unused harmony export bisectLeft */
+
+
+
+var ascendingBisect = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__bisector__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__ascending__["a" /* default */]);
+var bisectRight = ascendingBisect.right;
+var bisectLeft = ascendingBisect.left;
+/* harmony default export */ __webpack_exports__["a"] = bisectRight;
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(10);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(compare) {
+  if (compare.length === 1) compare = ascendingComparator(compare);
+  return {
+    left: function(a, x, lo, hi) {
+      if (lo == null) lo = 0;
+      if (hi == null) hi = a.length;
+      while (lo < hi) {
+        var mid = lo + hi >>> 1;
+        if (compare(a[mid], x) < 0) lo = mid + 1;
+        else hi = mid;
+      }
+      return lo;
+    },
+    right: function(a, x, lo, hi) {
+      if (lo == null) lo = 0;
+      if (hi == null) hi = a.length;
+      while (lo < hi) {
+        var mid = lo + hi >>> 1;
+        if (compare(a[mid], x) > 0) hi = mid;
+        else lo = mid + 1;
+      }
+      return lo;
+    }
+  };
+};
+
+function ascendingComparator(f) {
+  return function(d, x) {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ascending__["a" /* default */])(f(d), x);
+  };
+}
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__variance__ = __webpack_require__(68);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(array, f) {
+  var v = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__variance__["a" /* default */])(array, f);
+  return v ? Math.sqrt(v) : v;
+};
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(array, f) {
+  var i = -1,
+      n = array.length,
+      a,
+      b,
+      c;
+
+  if (f == null) {
+    while (++i < n) if ((b = array[i]) != null && b >= b) { a = c = b; break; }
+    while (++i < n) if ((b = array[i]) != null) {
+      if (a > b) a = b;
+      if (c < b) c = b;
+    }
+  }
+
+  else {
+    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = c = b; break; }
+    while (++i < n) if ((b = f(array[i], i, array)) != null) {
+      if (a > b) a = b;
+      if (c < b) c = b;
+    }
+  }
+
+  return [a, c];
+};
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(array, f) {
+  var i = -1,
+      n = array.length,
+      a,
+      b;
+
+  if (f == null) {
+    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
+    while (++i < n) if ((b = array[i]) != null && a > b) a = b;
+  }
+
+  else {
+    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
+    while (++i < n) if ((b = f(array[i], i, array)) != null && a > b) a = b;
+  }
+
+  return a;
+};
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(start, stop, step) {
+  start = +start, stop = +stop, step = (n = arguments.length) < 2 ? (stop = start, start = 0, 1) : n < 3 ? 1 : +step;
+
+  var i = -1,
+      n = Math.max(0, Math.ceil((stop - start) / step)) | 0,
+      range = new Array(n);
+
+  while (++i < n) {
+    range[i] = start + i * step;
+  }
+
+  return range;
+};
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(values) {
+  return Math.ceil(Math.log(values.length) / Math.LN2) + 1;
+};
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__range__ = __webpack_require__(64);
+/* harmony export (immutable) */ __webpack_exports__["b"] = tickStep;
+
+
+var e10 = Math.sqrt(50),
+    e5 = Math.sqrt(10),
+    e2 = Math.sqrt(2);
+
+/* harmony default export */ __webpack_exports__["a"] = function(start, stop, count) {
+  var step = tickStep(start, stop, count);
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__range__["a" /* default */])(
+    Math.ceil(start / step) * step,
+    Math.floor(stop / step) * step + step / 2, // inclusive
+    step
+  );
+};
+
+function tickStep(start, stop, count) {
+  var step0 = Math.abs(stop - start) / Math.max(0, count),
+      step1 = Math.pow(10, Math.floor(Math.log(step0) / Math.LN10)),
+      error = step0 / step1;
+  if (error >= e10) step1 *= 10;
+  else if (error >= e5) step1 *= 5;
+  else if (error >= e2) step1 *= 2;
+  return stop < start ? -step1 : step1;
+}
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__min__ = __webpack_require__(63);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(matrix) {
+  if (!(n = matrix.length)) return [];
+  for (var i = -1, m = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__min__["a" /* default */])(matrix, length), transpose = new Array(m); ++i < m;) {
+    for (var j = -1, n, row = transpose[i] = new Array(n); ++j < n;) {
+      row[j] = matrix[j][i];
+    }
+  }
+  return transpose;
+};
+
+function length(d) {
+  return d.length;
+}
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__number__ = __webpack_require__(12);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(array, f) {
+  var n = array.length,
+      m = 0,
+      a,
+      d,
+      s = 0,
+      i = -1,
+      j = 0;
+
+  if (f == null) {
+    while (++i < n) {
+      if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(array[i]))) {
+        d = a - m;
+        m += d / ++j;
+        s += d * (a - m);
+      }
+    }
+  }
+
+  else {
+    while (++i < n) {
+      if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(f(array[i], i, array)))) {
+        d = a - m;
+        m += d / ++j;
+        s += d * (a - m);
+      }
+    }
+  }
+
+  if (j > 1) return s / (j - 1);
+};
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return deg2rad; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rad2deg; });
+var deg2rad = Math.PI / 180;
+var rad2deg = 180 / Math.PI;
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_drag__ = __webpack_require__(150);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_drag__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_nodrag__ = __webpack_require__(71);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__src_nodrag__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__src_nodrag__["b"]; });
+
+
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__noevent__ = __webpack_require__(72);
+/* harmony export (immutable) */ __webpack_exports__["b"] = yesdrag;
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(view) {
+  var root = view.document.documentElement,
+      selection = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["a" /* select */])(view).on("dragstart.drag", __WEBPACK_IMPORTED_MODULE_1__noevent__["a" /* default */], true);
+  if ("onselectstart" in root) {
+    selection.on("selectstart.drag", __WEBPACK_IMPORTED_MODULE_1__noevent__["a" /* default */], true);
+  } else {
+    root.__noselect = root.style.MozUserSelect;
+    root.style.MozUserSelect = "none";
+  }
+};
+
+function yesdrag(view, noclick) {
+  var root = view.document.documentElement,
+      selection = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["a" /* select */])(view).on("dragstart.drag", null);
+  if (noclick) {
+    selection.on("click.drag", __WEBPACK_IMPORTED_MODULE_1__noevent__["a" /* default */], true);
+    setTimeout(function() { selection.on("click.drag", null); }, 0);
+  }
+  if ("onselectstart" in root) {
+    selection.on("selectstart.drag", null);
+  } else {
+    root.style.MozUserSelect = root.__noselect;
+    delete root.__noselect;
+  }
+}
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["b"] = nopropagation;
+
+
+function nopropagation() {
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].stopImmediatePropagation();
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].preventDefault();
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].stopImmediatePropagation();
+};
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(34);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return prefixExponent; });
+
+
+var prefixExponent;
+
+/* harmony default export */ __webpack_exports__["a"] = function(x, p) {
+  var d = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__formatDecimal__["a" /* default */])(x, p);
+  if (!d) return x + "";
+  var coefficient = d[0],
+      exponent = d[1],
+      i = exponent - (prefixExponent = Math.max(-8, Math.min(8, Math.floor(exponent / 3))) * 3) + 1,
+      n = coefficient.length;
+  return i === n ? coefficient
+      : i > n ? coefficient + new Array(i - n + 1).join("0")
+      : i > 0 ? coefficient.slice(0, i) + "." + coefficient.slice(i)
+      : "0." + new Array(1 - i).join("0") + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__formatDecimal__["a" /* default */])(x, Math.max(0, p + i - 1))[0]; // less than 1y!
+};
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatTypes__ = __webpack_require__(75);
+
+
+// [[fill]align][sign][symbol][0][width][,][.precision][type]
+var re = /^(?:(.)?([<>=^]))?([+\-\( ])?([$#])?(0)?(\d+)?(,)?(\.\d+)?([a-z%])?$/i;
+
+/* harmony default export */ __webpack_exports__["a"] = function(specifier) {
+  return new FormatSpecifier(specifier);
+};
+
+function FormatSpecifier(specifier) {
+  if (!(match = re.exec(specifier))) throw new Error("invalid format: " + specifier);
+
+  var match,
+      fill = match[1] || " ",
+      align = match[2] || ">",
+      sign = match[3] || "-",
+      symbol = match[4] || "",
+      zero = !!match[5],
+      width = match[6] && +match[6],
+      comma = !!match[7],
+      precision = match[8] && +match[8].slice(1),
+      type = match[9] || "";
+
+  // The "n" type is an alias for ",g".
+  if (type === "n") comma = true, type = "g";
+
+  // Map invalid types to the default format.
+  else if (!__WEBPACK_IMPORTED_MODULE_0__formatTypes__["a" /* default */][type]) type = "";
+
+  // If zero fill is specified, padding goes after sign and before digits.
+  if (zero || (fill === "0" && align === "=")) zero = true, fill = "0", align = "=";
+
+  this.fill = fill;
+  this.align = align;
+  this.sign = sign;
+  this.symbol = symbol;
+  this.zero = zero;
+  this.width = width;
+  this.comma = comma;
+  this.precision = precision;
+  this.type = type;
+}
+
+FormatSpecifier.prototype.toString = function() {
+  return this.fill
+      + this.align
+      + this.sign
+      + this.symbol
+      + (this.zero ? "0" : "")
+      + (this.width == null ? "" : Math.max(1, this.width | 0))
+      + (this.comma ? "," : "")
+      + (this.precision == null ? "" : "." + Math.max(0, this.precision | 0))
+      + this.type;
+};
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDefault__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__formatPrefixAuto__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formatRounded__ = __webpack_require__(166);
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  "": __WEBPACK_IMPORTED_MODULE_0__formatDefault__["a" /* default */],
+  "%": function(x, p) { return (x * 100).toFixed(p); },
+  "b": function(x) { return Math.round(x).toString(2); },
+  "c": function(x) { return x + ""; },
+  "d": function(x) { return Math.round(x).toString(10); },
+  "e": function(x, p) { return x.toExponential(p); },
+  "f": function(x, p) { return x.toFixed(p); },
+  "g": function(x, p) { return x.toPrecision(p); },
+  "o": function(x) { return Math.round(x).toString(8); },
+  "p": function(x, p) { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__formatRounded__["a" /* default */])(x * 100, p); },
+  "r": __WEBPACK_IMPORTED_MODULE_2__formatRounded__["a" /* default */],
+  "s": __WEBPACK_IMPORTED_MODULE_1__formatPrefixAuto__["a" /* default */],
+  "X": function(x) { return Math.round(x).toString(16).toUpperCase(); },
+  "x": function(x) { return Math.round(x).toString(16); }
+};
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exponent__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__formatGroup__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formatSpecifier__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__formatTypes__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__formatPrefixAuto__ = __webpack_require__(73);
+
+
+
+
+
+
+var prefixes = ["y","z","a","f","p","n","µ","m","","k","M","G","T","P","E","Z","Y"];
+
+function identity(x) {
+  return x;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(locale) {
+  var group = locale.grouping && locale.thousands ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__formatGroup__["a" /* default */])(locale.grouping, locale.thousands) : identity,
+      currency = locale.currency,
+      decimal = locale.decimal;
+
+  function newFormat(specifier) {
+    specifier = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__formatSpecifier__["a" /* default */])(specifier);
+
+    var fill = specifier.fill,
+        align = specifier.align,
+        sign = specifier.sign,
+        symbol = specifier.symbol,
+        zero = specifier.zero,
+        width = specifier.width,
+        comma = specifier.comma,
+        precision = specifier.precision,
+        type = specifier.type;
+
+    // Compute the prefix and suffix.
+    // For SI-prefix, the suffix is lazily computed.
+    var prefix = symbol === "$" ? currency[0] : symbol === "#" && /[boxX]/.test(type) ? "0" + type.toLowerCase() : "",
+        suffix = symbol === "$" ? currency[1] : /[%p]/.test(type) ? "%" : "";
+
+    // What format function should we use?
+    // Is this an integer type?
+    // Can this type generate exponential notation?
+    var formatType = __WEBPACK_IMPORTED_MODULE_3__formatTypes__["a" /* default */][type],
+        maybeSuffix = !type || /[defgprs%]/.test(type);
+
+    // Set the default precision if not specified,
+    // or clamp the specified precision to the supported range.
+    // For significant precision, it must be in [1, 21].
+    // For fixed precision, it must be in [0, 20].
+    precision = precision == null ? (type ? 6 : 12)
+        : /[gprs]/.test(type) ? Math.max(1, Math.min(21, precision))
+        : Math.max(0, Math.min(20, precision));
+
+    function format(value) {
+      var valuePrefix = prefix,
+          valueSuffix = suffix,
+          i, n, c;
+
+      if (type === "c") {
+        valueSuffix = formatType(value) + valueSuffix;
+        value = "";
+      } else {
+        value = +value;
+
+        // Convert negative to positive, and compute the prefix.
+        // Note that -0 is not less than 0, but 1 / -0 is!
+        var valueNegative = (value < 0 || 1 / value < 0) && (value *= -1, true);
+
+        // Perform the initial formatting.
+        value = formatType(value, precision);
+
+        // If the original value was negative, it may be rounded to zero during
+        // formatting; treat this as (positive) zero.
+        if (valueNegative) {
+          i = -1, n = value.length;
+          valueNegative = false;
+          while (++i < n) {
+            if (c = value.charCodeAt(i), (48 < c && c < 58)
+                || (type === "x" && 96 < c && c < 103)
+                || (type === "X" && 64 < c && c < 71)) {
+              valueNegative = true;
+              break;
+            }
+          }
+        }
+
+        // Compute the prefix and suffix.
+        valuePrefix = (valueNegative ? (sign === "(" ? sign : "-") : sign === "-" || sign === "(" ? "" : sign) + valuePrefix;
+        valueSuffix = valueSuffix + (type === "s" ? prefixes[8 + __WEBPACK_IMPORTED_MODULE_4__formatPrefixAuto__["b" /* prefixExponent */] / 3] : "") + (valueNegative && sign === "(" ? ")" : "");
+
+        // Break the formatted value into the integer “value” part that can be
+        // grouped, and fractional or exponential “suffix” part that is not.
+        if (maybeSuffix) {
+          i = -1, n = value.length;
+          while (++i < n) {
+            if (c = value.charCodeAt(i), 48 > c || c > 57) {
+              valueSuffix = (c === 46 ? decimal + value.slice(i + 1) : value.slice(i)) + valueSuffix;
+              value = value.slice(0, i);
+              break;
+            }
+          }
+        }
+      }
+
+      // If the fill character is not "0", grouping is applied before padding.
+      if (comma && !zero) value = group(value, Infinity);
+
+      // Compute the padding.
+      var length = valuePrefix.length + value.length + valueSuffix.length,
+          padding = length < width ? new Array(width - length + 1).join(fill) : "";
+
+      // If the fill character is "0", grouping is applied after padding.
+      if (comma && zero) value = group(padding + value, padding.length ? width - valueSuffix.length : Infinity), padding = "";
+
+      // Reconstruct the final output based on the desired alignment.
+      switch (align) {
+        case "<": return valuePrefix + value + valueSuffix + padding;
+        case "=": return valuePrefix + padding + value + valueSuffix;
+        case "^": return padding.slice(0, length = padding.length >> 1) + valuePrefix + value + valueSuffix + padding.slice(length);
+      }
+      return padding + valuePrefix + value + valueSuffix;
+    }
+
+    format.toString = function() {
+      return specifier + "";
+    };
+
+    return format;
+  }
+
+  function formatPrefix(specifier, value) {
+    var f = newFormat((specifier = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__formatSpecifier__["a" /* default */])(specifier), specifier.type = "f", specifier)),
+        e = Math.max(-8, Math.min(8, Math.floor(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(value) / 3))) * 3,
+        k = Math.pow(10, -e),
+        prefix = prefixes[8 + e / 3];
+    return function(value) {
+      return f(k * value) + prefix;
+    };
+  }
+
+  return {
+    format: newFormat,
+    formatPrefix: formatPrefix
+  };
+};
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(36);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var nb = b ? b.length : 0,
+      na = a ? Math.min(nb, a.length) : 0,
+      x = new Array(nb),
+      c = new Array(nb),
+      i;
+
+  for (i = 0; i < na; ++i) x[i] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__value__["a" /* default */])(a[i], b[i]);
+  for (; i < nb; ++i) c[i] = b[i];
+
+  return function(t) {
+    for (i = 0; i < na; ++i) c[i] = x[i](t);
+    return c;
+  };
+};
+
+
+/***/ }),
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basis__ = __webpack_require__(35);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(values) {
+  var n = values.length;
+  return function(t) {
+    var i = Math.floor(((t %= 1) < 0 ? ++t : t) * n),
+        v0 = values[(i + n - 1) % n],
+        v1 = values[i % n],
+        v2 = values[(i + 1) % n],
+        v3 = values[(i + 2) % n];
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__basis__["b" /* basis */])((t - i / n) * n, v0, v1, v2, v3);
+  };
+};
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var d = new Date;
+  return a = +a, b -= a, function(t) {
+    return d.setTime(a + b * t), d;
+  };
+};
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value__ = __webpack_require__(36);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var i = {},
+      c = {},
+      k;
+
+  if (a === null || typeof a !== "object") a = {};
+  if (b === null || typeof b !== "object") b = {};
+
+  for (k in b) {
+    if (k in a) {
+      i[k] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__value__["a" /* default */])(a[k], b[k]);
+    } else {
+      c[k] = b[k];
+    }
+  }
+
+  return function(t) {
+    for (k in i) c[k] = i[k](t);
+    return c;
+  };
+};
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basis__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__basisClosed__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__color__ = __webpack_require__(13);
+/* unused harmony export rgbBasis */
+/* unused harmony export rgbBasisClosed */
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function rgbGamma(y) {
+  var color = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__color__["c" /* gamma */])(y);
+
+  function rgb(start, end) {
+    var r = color((start = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["e" /* rgb */])(start)).r, (end = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["e" /* rgb */])(end)).r),
+        g = color(start.g, end.g),
+        b = color(start.b, end.b),
+        opacity = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__color__["a" /* default */])(start.opacity, end.opacity);
+    return function(t) {
+      start.r = r(t);
+      start.g = g(t);
+      start.b = b(t);
+      start.opacity = opacity(t);
+      return start + "";
+    };
+  }
+
+  rgb.gamma = rgbGamma;
+
+  return rgb;
+})(1);
+
+function rgbSpline(spline) {
+  return function(colors) {
+    var n = colors.length,
+        r = new Array(n),
+        g = new Array(n),
+        b = new Array(n),
+        i, color;
+    for (i = 0; i < n; ++i) {
+      color = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["e" /* rgb */])(colors[i]);
+      r[i] = color.r || 0;
+      g[i] = color.g || 0;
+      b[i] = color.b || 0;
+    }
+    r = spline(r);
+    g = spline(g);
+    b = spline(b);
+    color.opacity = 1;
+    return function(t) {
+      color.r = r(t);
+      color.g = g(t);
+      color.b = b(t);
+      return color + "";
+    };
+  };
+}
+
+var rgbBasis = rgbSpline(__WEBPACK_IMPORTED_MODULE_1__basis__["a" /* default */]);
+var rgbBasisClosed = rgbSpline(__WEBPACK_IMPORTED_MODULE_2__basisClosed__["a" /* default */]);
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__number__ = __webpack_require__(20);
+
+
+var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,
+    reB = new RegExp(reA.source, "g");
+
+function zero(b) {
+  return function() {
+    return b;
+  };
+}
+
+function one(b) {
+  return function(t) {
+    return b(t) + "";
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var bi = reA.lastIndex = reB.lastIndex = 0, // scan index for next number in b
+      am, // current match in a
+      bm, // current match in b
+      bs, // string preceding current number in b, if any
+      i = -1, // index in s
+      s = [], // string constants and placeholders
+      q = []; // number interpolators
+
+  // Coerce inputs to strings.
+  a = a + "", b = b + "";
+
+  // Interpolate pairs of numbers in a & b.
+  while ((am = reA.exec(a))
+      && (bm = reB.exec(b))) {
+    if ((bs = bm.index) > bi) { // a string precedes the next number in b
+      bs = b.slice(bi, bs);
+      if (s[i]) s[i] += bs; // coalesce with previous string
+      else s[++i] = bs;
+    }
+    if ((am = am[0]) === (bm = bm[0])) { // numbers in a & b match
+      if (s[i]) s[i] += bm; // coalesce with previous string
+      else s[++i] = bm;
+    } else { // interpolate non-matching numbers
+      s[++i] = null;
+      q.push({i: i, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(am, bm)});
+    }
+    bi = reB.lastIndex;
+  }
+
+  // Add remains of b.
+  if (bi < b.length) {
+    bs = b.slice(bi);
+    if (s[i]) s[i] += bs; // coalesce with previous string
+    else s[++i] = bs;
+  }
+
+  // Special optimization for only a single match.
+  // Otherwise, interpolate each of the numbers and rejoin the string.
+  return s.length < 2 ? (q[0]
+      ? one(q[0].x)
+      : zero(b))
+      : (b = q.length, function(t) {
+          for (var i = 0, o; i < b; ++i) s[(o = q[i]).i] = o.x(t);
+          return s.join("");
+        });
+};
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_band__ = __webpack_require__(202);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleBand", function() { return __WEBPACK_IMPORTED_MODULE_0__src_band__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scalePoint", function() { return __WEBPACK_IMPORTED_MODULE_0__src_band__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_identity__ = __webpack_require__(208);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleIdentity", function() { return __WEBPACK_IMPORTED_MODULE_1__src_identity__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_linear__ = __webpack_require__(15);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleLinear", function() { return __WEBPACK_IMPORTED_MODULE_2__src_linear__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_log__ = __webpack_require__(209);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleLog", function() { return __WEBPACK_IMPORTED_MODULE_3__src_log__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ordinal__ = __webpack_require__(87);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleOrdinal", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ordinal__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleImplicit", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ordinal__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_pow__ = __webpack_require__(210);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scalePow", function() { return __WEBPACK_IMPORTED_MODULE_5__src_pow__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleSqrt", function() { return __WEBPACK_IMPORTED_MODULE_5__src_pow__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_quantile__ = __webpack_require__(211);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleQuantile", function() { return __WEBPACK_IMPORTED_MODULE_6__src_quantile__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_quantize__ = __webpack_require__(212);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleQuantize", function() { return __WEBPACK_IMPORTED_MODULE_7__src_quantize__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_threshold__ = __webpack_require__(215);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleThreshold", function() { return __WEBPACK_IMPORTED_MODULE_8__src_threshold__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_time__ = __webpack_require__(88);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleTime", function() { return __WEBPACK_IMPORTED_MODULE_9__src_time__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_utcTime__ = __webpack_require__(217);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleUtc", function() { return __WEBPACK_IMPORTED_MODULE_10__src_utcTime__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_category10__ = __webpack_require__(203);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "schemeCategory10", function() { return __WEBPACK_IMPORTED_MODULE_11__src_category10__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_category20b__ = __webpack_require__(205);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "schemeCategory20b", function() { return __WEBPACK_IMPORTED_MODULE_12__src_category20b__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_category20c__ = __webpack_require__(206);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "schemeCategory20c", function() { return __WEBPACK_IMPORTED_MODULE_13__src_category20c__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_category20__ = __webpack_require__(204);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "schemeCategory20", function() { return __WEBPACK_IMPORTED_MODULE_14__src_category20__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__ = __webpack_require__(207);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelixDefault", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_rainbow__ = __webpack_require__(213);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateRainbow", function() { return __WEBPACK_IMPORTED_MODULE_16__src_rainbow__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateWarm", function() { return __WEBPACK_IMPORTED_MODULE_16__src_rainbow__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateCool", function() { return __WEBPACK_IMPORTED_MODULE_16__src_rainbow__["c"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_viridis__ = __webpack_require__(218);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateViridis", function() { return __WEBPACK_IMPORTED_MODULE_17__src_viridis__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateMagma", function() { return __WEBPACK_IMPORTED_MODULE_17__src_viridis__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateInferno", function() { return __WEBPACK_IMPORTED_MODULE_17__src_viridis__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolatePlasma", function() { return __WEBPACK_IMPORTED_MODULE_17__src_viridis__["d"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_sequential__ = __webpack_require__(214);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "scaleSequential", function() { return __WEBPACK_IMPORTED_MODULE_18__src_sequential__["a"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(domain, interval) {
+  domain = domain.slice();
+
+  var i0 = 0,
+      i1 = domain.length - 1,
+      x0 = domain[i0],
+      x1 = domain[i1],
+      t;
+
+  if (x1 < x0) {
+    t = i0, i0 = i1, i1 = t;
+    t = x0, x0 = x1, x1 = t;
+  }
+
+  domain[i0] = interval.floor(x0);
+  domain[i1] = interval.ceil(x1);
+  return domain;
+};
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return +x;
+};
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_collection__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(9);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return implicit; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = ordinal;
+
+
+
+var implicit = {name: "implicit"};
+
+function ordinal(range) {
+  var index = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_collection__["a" /* map */])(),
+      domain = [],
+      unknown = implicit;
+
+  range = range == null ? [] : __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(range);
+
+  function scale(d) {
+    var key = d + "", i = index.get(key);
+    if (!i) {
+      if (unknown !== implicit) return unknown;
+      index.set(key, i = domain.push(d));
+    }
+    return range[(i - 1) % range.length];
+  }
+
+  scale.domain = function(_) {
+    if (!arguments.length) return domain.slice();
+    domain = [], index = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_collection__["a" /* map */])();
+    var i = -1, n = _.length, d, key;
+    while (++i < n) if (!index.has(key = (d = _[i]) + "")) index.set(key, domain.push(d));
+    return scale;
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (range = __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(_), scale) : range.slice();
+  };
+
+  scale.unknown = function(_) {
+    return arguments.length ? (unknown = _, scale) : unknown;
+  };
+
+  scale.copy = function() {
+    return ordinal()
+        .domain(domain)
+        .range(range)
+        .unknown(unknown);
+  };
+
+  return scale;
+}
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_time__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_time_format__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__array__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__continuous__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__nice__ = __webpack_require__(85);
+/* harmony export (immutable) */ __webpack_exports__["b"] = calendar;
+
+
+
+
+
+
+
+
+var durationSecond = 1000,
+    durationMinute = durationSecond * 60,
+    durationHour = durationMinute * 60,
+    durationDay = durationHour * 24,
+    durationWeek = durationDay * 7,
+    durationMonth = durationDay * 30,
+    durationYear = durationDay * 365;
+
+function date(t) {
+  return new Date(t);
+}
+
+function number(t) {
+  return t instanceof Date ? +t : +new Date(+t);
+}
+
+function calendar(year, month, week, day, hour, minute, second, millisecond, format) {
+  var scale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__continuous__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_5__continuous__["b" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["a" /* interpolateNumber */]),
+      invert = scale.invert,
+      domain = scale.domain;
+
+  var formatMillisecond = format(".%L"),
+      formatSecond = format(":%S"),
+      formatMinute = format("%I:%M"),
+      formatHour = format("%I %p"),
+      formatDay = format("%a %d"),
+      formatWeek = format("%b %d"),
+      formatMonth = format("%B"),
+      formatYear = format("%Y");
+
+  var tickIntervals = [
+    [second,  1,      durationSecond],
+    [second,  5,  5 * durationSecond],
+    [second, 15, 15 * durationSecond],
+    [second, 30, 30 * durationSecond],
+    [minute,  1,      durationMinute],
+    [minute,  5,  5 * durationMinute],
+    [minute, 15, 15 * durationMinute],
+    [minute, 30, 30 * durationMinute],
+    [  hour,  1,      durationHour  ],
+    [  hour,  3,  3 * durationHour  ],
+    [  hour,  6,  6 * durationHour  ],
+    [  hour, 12, 12 * durationHour  ],
+    [   day,  1,      durationDay   ],
+    [   day,  2,  2 * durationDay   ],
+    [  week,  1,      durationWeek  ],
+    [ month,  1,      durationMonth ],
+    [ month,  3,  3 * durationMonth ],
+    [  year,  1,      durationYear  ]
+  ];
+
+  function tickFormat(date) {
+    return (second(date) < date ? formatMillisecond
+        : minute(date) < date ? formatSecond
+        : hour(date) < date ? formatMinute
+        : day(date) < date ? formatHour
+        : month(date) < date ? (week(date) < date ? formatDay : formatWeek)
+        : year(date) < date ? formatMonth
+        : formatYear)(date);
+  }
+
+  function tickInterval(interval, start, stop, step) {
+    if (interval == null) interval = 10;
+
+    // If a desired tick count is specified, pick a reasonable tick interval
+    // based on the extent of the domain and a rough estimate of tick size.
+    // Otherwise, assume interval is already a time interval and use it.
+    if (typeof interval === "number") {
+      var target = Math.abs(stop - start) / interval,
+          i = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["d" /* bisector */])(function(i) { return i[2]; }).right(tickIntervals, target);
+      if (i === tickIntervals.length) {
+        step = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["b" /* tickStep */])(start / durationYear, stop / durationYear, interval);
+        interval = year;
+      } else if (i) {
+        i = tickIntervals[target / tickIntervals[i - 1][2] < tickIntervals[i][2] / target ? i - 1 : i];
+        step = i[1];
+        interval = i[0];
+      } else {
+        step = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["b" /* tickStep */])(start, stop, interval);
+        interval = millisecond;
+      }
+    }
+
+    return step == null ? interval : interval.every(step);
+  }
+
+  scale.invert = function(y) {
+    return new Date(invert(y));
+  };
+
+  scale.domain = function(_) {
+    return arguments.length ? domain(__WEBPACK_IMPORTED_MODULE_4__array__["a" /* map */].call(_, number)) : domain().map(date);
+  };
+
+  scale.ticks = function(interval, step) {
+    var d = domain(),
+        t0 = d[0],
+        t1 = d[d.length - 1],
+        r = t1 < t0,
+        t;
+    if (r) t = t0, t0 = t1, t1 = t;
+    t = tickInterval(interval, t0, t1, step);
+    t = t ? t.range(t0, t1 + 1) : []; // inclusive stop
+    return r ? t.reverse() : t;
+  };
+
+  scale.tickFormat = function(count, specifier) {
+    return specifier == null ? tickFormat : format(specifier);
+  };
+
+  scale.nice = function(interval, step) {
+    var d = domain();
+    return (interval = tickInterval(interval, d[0], d[d.length - 1], step))
+        ? domain(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__nice__["a" /* default */])(d, interval))
+        : scale;
+  };
+
+  scale.copy = function() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__continuous__["c" /* copy */])(scale, calendar(year, month, week, day, hour, minute, second, millisecond, format));
+  };
+
+  return scale;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return calendar(__WEBPACK_IMPORTED_MODULE_2_d3_time__["j" /* timeYear */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["o" /* timeMonth */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["p" /* timeWeek */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["i" /* timeDay */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["q" /* timeHour */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["r" /* timeMinute */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["s" /* timeSecond */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["t" /* timeMillisecond */], __WEBPACK_IMPORTED_MODULE_3_d3_time_format__["b" /* timeFormat */]).domain([new Date(2000, 0, 1), new Date(2000, 0, 2)]);
+};
+
+
+/***/ }),
+/* 89 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var matcher = function(selector) {
+  return function() {
+    return this.matches(selector);
+  };
+};
+
+if (typeof document !== "undefined") {
+  var element = document.documentElement;
+  if (!element.matches) {
+    var vendorMatches = element.webkitMatchesSelector
+        || element.msMatchesSelector
+        || element.mozMatchesSelector
+        || element.oMatchesSelector;
+    matcher = function(selector) {
+      return function() {
+        return vendorMatches.call(this, selector);
+      };
+    };
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = matcher;
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sparse__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(3);
+/* harmony export (immutable) */ __webpack_exports__["b"] = EnterNode;
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return new __WEBPACK_IMPORTED_MODULE_1__index__["a" /* Selection */](this._enter || this._groups.map(__WEBPACK_IMPORTED_MODULE_0__sparse__["a" /* default */]), this._parents);
+};
+
+function EnterNode(parent, datum) {
+  this.ownerDocument = parent.ownerDocument;
+  this.namespaceURI = parent.namespaceURI;
+  this._next = null;
+  this._parent = parent;
+  this.__data__ = datum;
+}
+
+EnterNode.prototype = {
+  constructor: EnterNode,
+  appendChild: function(child) { return this._parent.insertBefore(child, this._next); },
+  insertBefore: function(child, next) { return this._parent.insertBefore(child, next); },
+  querySelector: function(selector) { return this._parent.querySelector(selector); },
+  querySelectorAll: function(selector) { return this._parent.querySelectorAll(selector); }
+};
+
+
+/***/ }),
+/* 91 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(update) {
+  return new Array(update.length);
+};
+
+
+/***/ }),
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function empty() {
+  return [];
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(selector) {
+  return selector == null ? empty : function() {
+    return this.querySelectorAll(selector);
+  };
+};
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_arc__ = __webpack_require__(253);
+/* unused harmony reexport arc */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_area__ = __webpack_require__(94);
+/* unused harmony reexport area */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_line__ = __webpack_require__(48);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_2__src_line__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_pie__ = __webpack_require__(272);
+/* unused harmony reexport pie */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_radialArea__ = __webpack_require__(273);
+/* unused harmony reexport radialArea */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_radialLine__ = __webpack_require__(99);
+/* unused harmony reexport radialLine */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_symbol__ = __webpack_require__(275);
+/* unused harmony reexport symbol */
+/* unused harmony reexport symbols */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_symbol_circle__ = __webpack_require__(100);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_7__src_symbol_circle__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_symbol_cross__ = __webpack_require__(101);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_8__src_symbol_cross__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_symbol_diamond__ = __webpack_require__(102);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_9__src_symbol_diamond__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_symbol_square__ = __webpack_require__(103);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_10__src_symbol_square__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_symbol_star__ = __webpack_require__(104);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_11__src_symbol_star__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_symbol_triangle__ = __webpack_require__(105);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_12__src_symbol_triangle__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_symbol_wye__ = __webpack_require__(106);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_13__src_symbol_wye__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_curve_basisClosed__ = __webpack_require__(255);
+/* unused harmony reexport curveBasisClosed */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_curve_basisOpen__ = __webpack_require__(256);
+/* unused harmony reexport curveBasisOpen */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_curve_basis__ = __webpack_require__(23);
+/* unused harmony reexport curveBasis */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__src_curve_bundle__ = __webpack_require__(257);
+/* unused harmony reexport curveBundle */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__src_curve_cardinalClosed__ = __webpack_require__(95);
+/* unused harmony reexport curveCardinalClosed */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__src_curve_cardinalOpen__ = __webpack_require__(96);
+/* unused harmony reexport curveCardinalOpen */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__src_curve_cardinal__ = __webpack_require__(24);
+/* unused harmony reexport curveCardinal */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__src_curve_catmullRomClosed__ = __webpack_require__(258);
+/* unused harmony reexport curveCatmullRomClosed */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__src_curve_catmullRomOpen__ = __webpack_require__(259);
+/* unused harmony reexport curveCatmullRomOpen */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__src_curve_catmullRom__ = __webpack_require__(47);
+/* unused harmony reexport curveCatmullRom */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__src_curve_linearClosed__ = __webpack_require__(260);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_24__src_curve_linearClosed__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__src_curve_linear__ = __webpack_require__(25);
+/* unused harmony reexport curveLinear */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__src_curve_monotone__ = __webpack_require__(261);
+/* unused harmony reexport curveMonotoneX */
+/* unused harmony reexport curveMonotoneY */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__src_curve_natural__ = __webpack_require__(262);
+/* unused harmony reexport curveNatural */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__src_curve_step__ = __webpack_require__(263);
+/* unused harmony reexport curveStep */
+/* unused harmony reexport curveStepAfter */
+/* unused harmony reexport curveStepBefore */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__src_stack__ = __webpack_require__(274);
+/* unused harmony reexport stack */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__src_offset_expand__ = __webpack_require__(266);
+/* unused harmony reexport stackOffsetExpand */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__src_offset_none__ = __webpack_require__(17);
+/* unused harmony reexport stackOffsetNone */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__src_offset_silhouette__ = __webpack_require__(267);
+/* unused harmony reexport stackOffsetSilhouette */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__src_offset_wiggle__ = __webpack_require__(268);
+/* unused harmony reexport stackOffsetWiggle */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__src_order_ascending__ = __webpack_require__(49);
+/* unused harmony reexport stackOrderAscending */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__src_order_descending__ = __webpack_require__(269);
+/* unused harmony reexport stackOrderDescending */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__src_order_insideOut__ = __webpack_require__(270);
+/* unused harmony reexport stackOrderInsideOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__src_order_none__ = __webpack_require__(18);
+/* unused harmony reexport stackOrderNone */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__src_order_reverse__ = __webpack_require__(271);
+/* unused harmony reexport stackOrderReverse */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__curve_linear__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__line__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__point__ = __webpack_require__(98);
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var x0 = __WEBPACK_IMPORTED_MODULE_4__point__["a" /* x */],
+      x1 = null,
+      y0 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(0),
+      y1 = __WEBPACK_IMPORTED_MODULE_4__point__["b" /* y */],
+      defined = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(true),
+      context = null,
+      curve = __WEBPACK_IMPORTED_MODULE_2__curve_linear__["a" /* default */],
+      output = null;
+
+  function area(data) {
+    var i,
+        j,
+        k,
+        n = data.length,
+        d,
+        defined0 = false,
+        buffer,
+        x0z = new Array(n),
+        y0z = new Array(n);
+
+    if (context == null) output = curve(buffer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_path__["a" /* path */])());
+
+    for (i = 0; i <= n; ++i) {
+      if (!(i < n && defined(d = data[i], i, data)) === defined0) {
+        if (defined0 = !defined0) {
+          j = i;
+          output.areaStart();
+          output.lineStart();
+        } else {
+          output.lineEnd();
+          output.lineStart();
+          for (k = i - 1; k >= j; --k) {
+            output.point(x0z[k], y0z[k]);
+          }
+          output.lineEnd();
+          output.areaEnd();
+        }
+      }
+      if (defined0) {
+        x0z[i] = +x0(d, i, data), y0z[i] = +y0(d, i, data);
+        output.point(x1 ? +x1(d, i, data) : x0z[i], y1 ? +y1(d, i, data) : y0z[i]);
+      }
+    }
+
+    if (buffer) return output = null, buffer + "" || null;
+  }
+
+  function arealine() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__line__["a" /* default */])().defined(defined).curve(curve).context(context);
+  }
+
+  area.x = function(_) {
+    return arguments.length ? (x0 = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), x1 = null, area) : x0;
+  };
+
+  area.x0 = function(_) {
+    return arguments.length ? (x0 = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), area) : x0;
+  };
+
+  area.x1 = function(_) {
+    return arguments.length ? (x1 = _ == null ? null : typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), area) : x1;
+  };
+
+  area.y = function(_) {
+    return arguments.length ? (y0 = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), y1 = null, area) : y0;
+  };
+
+  area.y0 = function(_) {
+    return arguments.length ? (y0 = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), area) : y0;
+  };
+
+  area.y1 = function(_) {
+    return arguments.length ? (y1 = _ == null ? null : typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), area) : y1;
+  };
+
+  area.lineX0 =
+  area.lineY0 = function() {
+    return arealine().x(x0).y(y0);
+  };
+
+  area.lineY1 = function() {
+    return arealine().x(x0).y(y1);
+  };
+
+  area.lineX1 = function() {
+    return arealine().x(x1).y(y0);
+  };
+
+  area.defined = function(_) {
+    return arguments.length ? (defined = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(!!_), area) : defined;
+  };
+
+  area.curve = function(_) {
+    return arguments.length ? (curve = _, context != null && (output = curve(context)), area) : curve;
+  };
+
+  area.context = function(_) {
+    return arguments.length ? (_ == null ? context = output = null : output = curve(context = _), area) : context;
+  };
+
+  return area;
+};
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__noop__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cardinal__ = __webpack_require__(24);
+/* harmony export (immutable) */ __webpack_exports__["a"] = CardinalClosed;
+
+
+
+function CardinalClosed(context, tension) {
+  this._context = context;
+  this._k = (1 - tension) / 6;
+}
+
+CardinalClosed.prototype = {
+  areaStart: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  areaEnd: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 = this._x3 = this._x4 = this._x5 =
+    this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = this._y5 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 1: {
+        this._context.moveTo(this._x3, this._y3);
+        this._context.closePath();
+        break;
+      }
+      case 2: {
+        this._context.lineTo(this._x3, this._y3);
+        this._context.closePath();
+        break;
+      }
+      case 3: {
+        this.point(this._x3, this._y3);
+        this.point(this._x4, this._y4);
+        this.point(this._x5, this._y5);
+        break;
+      }
+    }
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._x3 = x, this._y3 = y; break;
+      case 1: this._point = 2; this._context.moveTo(this._x4 = x, this._y4 = y); break;
+      case 2: this._point = 3; this._x5 = x, this._y5 = y; break;
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__cardinal__["b" /* point */])(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(tension) {
+
+  function cardinal(context) {
+    return new CardinalClosed(context, tension);
+  }
+
+  cardinal.tension = function(tension) {
+    return custom(+tension);
+  };
+
+  return cardinal;
+})(0);
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cardinal__ = __webpack_require__(24);
+/* harmony export (immutable) */ __webpack_exports__["a"] = CardinalOpen;
+
+
+function CardinalOpen(context, tension) {
+  this._context = context;
+  this._k = (1 - tension) / 6;
+}
+
+CardinalOpen.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 =
+    this._y0 = this._y1 = this._y2 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (this._line || (this._line !== 0 && this._point === 3)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; this._line ? this._context.lineTo(this._x2, this._y2) : this._context.moveTo(this._x2, this._y2); break;
+      case 3: this._point = 4; // proceed
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__cardinal__["b" /* point */])(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(tension) {
+
+  function cardinal(context) {
+    return new CardinalOpen(context, tension);
+  }
+
+  cardinal.tension = function(tension) {
+    return custom(+tension);
+  };
+
+  return cardinal;
+})(0);
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__linear__ = __webpack_require__(25);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return curveRadialLinear; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = curveRadial;
+
+
+var curveRadialLinear = curveRadial(__WEBPACK_IMPORTED_MODULE_0__linear__["a" /* default */]);
+
+function Radial(curve) {
+  this._curve = curve;
+}
+
+Radial.prototype = {
+  areaStart: function() {
+    this._curve.areaStart();
+  },
+  areaEnd: function() {
+    this._curve.areaEnd();
+  },
+  lineStart: function() {
+    this._curve.lineStart();
+  },
+  lineEnd: function() {
+    this._curve.lineEnd();
+  },
+  point: function(a, r) {
+    this._curve.point(r * Math.sin(a), r * -Math.cos(a));
+  }
+};
+
+function curveRadial(curve) {
+
+  function radial(context) {
+    return new Radial(curve(context));
+  }
+
+  radial._curve = curve;
+
+  return radial;
+}
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = x;
+/* harmony export (immutable) */ __webpack_exports__["b"] = y;
+function x(p) {
+  return p[0];
+}
+
+function y(p) {
+  return p[1];
+}
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__curve_radial__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__line__ = __webpack_require__(48);
+/* harmony export (immutable) */ __webpack_exports__["a"] = radialLine;
+
+
+
+function radialLine(l) {
+  var c = l.curve;
+
+  l.angle = l.x, delete l.x;
+  l.radius = l.y, delete l.y;
+
+  l.curve = function(_) {
+    return arguments.length ? c(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__curve_radial__["a" /* default */])(_)) : c()._curve;
+  };
+
+  return l;
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  return radialLine(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__line__["a" /* default */])().curve(__WEBPACK_IMPORTED_MODULE_0__curve_radial__["b" /* curveRadialLinear */]));
+};
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(16);
+
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var r = Math.sqrt(size / __WEBPACK_IMPORTED_MODULE_0__math__["b" /* pi */]);
+    context.moveTo(r, 0);
+    context.arc(0, 0, r, 0, __WEBPACK_IMPORTED_MODULE_0__math__["c" /* tau */]);
+  }
+};
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var r = Math.sqrt(size / 5) / 2;
+    context.moveTo(-3 * r, -r);
+    context.lineTo(-r, -r);
+    context.lineTo(-r, -3 * r);
+    context.lineTo(r, -3 * r);
+    context.lineTo(r, -r);
+    context.lineTo(3 * r, -r);
+    context.lineTo(3 * r, r);
+    context.lineTo(r, r);
+    context.lineTo(r, 3 * r);
+    context.lineTo(-r, 3 * r);
+    context.lineTo(-r, r);
+    context.lineTo(-3 * r, r);
+    context.closePath();
+  }
+};
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var tan30 = Math.sqrt(1 / 3),
+    tan30_2 = tan30 * 2;
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var y = Math.sqrt(size / tan30_2),
+        x = y * tan30;
+    context.moveTo(0, -y);
+    context.lineTo(x, 0);
+    context.lineTo(0, y);
+    context.lineTo(-x, 0);
+    context.closePath();
+  }
+};
+
+
+/***/ }),
+/* 103 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var w = Math.sqrt(size),
+        x = -w / 2;
+    context.rect(x, x, w, w);
+  }
+};
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__math__ = __webpack_require__(16);
+
+
+var ka = 0.89081309152928522810,
+    kr = Math.sin(__WEBPACK_IMPORTED_MODULE_0__math__["b" /* pi */] / 10) / Math.sin(7 * __WEBPACK_IMPORTED_MODULE_0__math__["b" /* pi */] / 10),
+    kx = Math.sin(__WEBPACK_IMPORTED_MODULE_0__math__["c" /* tau */] / 10) * kr,
+    ky = -Math.cos(__WEBPACK_IMPORTED_MODULE_0__math__["c" /* tau */] / 10) * kr;
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var r = Math.sqrt(size * ka),
+        x = kx * r,
+        y = ky * r;
+    context.moveTo(0, -r);
+    context.lineTo(x, y);
+    for (var i = 1; i < 5; ++i) {
+      var a = __WEBPACK_IMPORTED_MODULE_0__math__["c" /* tau */] * i / 5,
+          c = Math.cos(a),
+          s = Math.sin(a);
+      context.lineTo(s * r, -c * r);
+      context.lineTo(c * x - s * y, s * x + c * y);
+    }
+    context.closePath();
+  }
+};
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var sqrt3 = Math.sqrt(3);
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var y = -Math.sqrt(size / (sqrt3 * 3));
+    context.moveTo(0, y * 2);
+    context.lineTo(-sqrt3 * y, -y);
+    context.lineTo(sqrt3 * y, -y);
+    context.closePath();
+  }
+};
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var c = -0.5,
+    s = Math.sqrt(3) / 2,
+    k = 1 / Math.sqrt(12),
+    a = (k / 2 + 1) * 3;
+
+/* harmony default export */ __webpack_exports__["a"] = {
+  draw: function(context, size) {
+    var r = Math.sqrt(size / a),
+        x0 = r / 2,
+        y0 = r * k,
+        x1 = x0,
+        y1 = r * k + r,
+        x2 = -x1,
+        y2 = y1;
+    context.moveTo(x0, y0);
+    context.lineTo(x1, y1);
+    context.lineTo(x2, y2);
+    context.lineTo(c * x0 - s * y0, s * x0 + c * y0);
+    context.lineTo(c * x1 - s * y1, s * x1 + c * y1);
+    context.lineTo(c * x2 - s * y2, s * x2 + c * y2);
+    context.lineTo(c * x0 + s * y0, c * y0 - s * x0);
+    context.lineTo(c * x1 + s * y1, c * y1 - s * x1);
+    context.lineTo(c * x2 + s * y2, c * y2 - s * x2);
+    context.closePath();
+  }
+};
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__ = __webpack_require__(50);
+/* unused harmony reexport timeFormatDefaultLocale */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__["c"]; });
+/* unused harmony reexport timeParse */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_defaultLocale__["a"]; });
+/* unused harmony reexport utcParse */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_locale__ = __webpack_require__(109);
+/* unused harmony reexport timeFormatLocale */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_isoFormat__ = __webpack_require__(108);
+/* unused harmony reexport isoFormat */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_isoParse__ = __webpack_require__(276);
+/* unused harmony reexport isoParse */
+
+
+
+
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaultLocale__ = __webpack_require__(50);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isoSpecifier; });
+
+
+var isoSpecifier = "%Y-%m-%dT%H:%M:%S.%LZ";
+
+function formatIsoNative(date) {
+  return date.toISOString();
+}
+
+var formatIso = Date.prototype.toISOString
+    ? formatIsoNative
+    : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__defaultLocale__["a" /* utcFormat */])(isoSpecifier);
+
+/* unused harmony default export */ var _unused_webpack_default_export = formatIso;
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_time__ = __webpack_require__(51);
+/* harmony export (immutable) */ __webpack_exports__["a"] = formatLocale;
+
+
+function localDate(d) {
+  if (0 <= d.y && d.y < 100) {
+    var date = new Date(-1, d.m, d.d, d.H, d.M, d.S, d.L);
+    date.setFullYear(d.y);
+    return date;
+  }
+  return new Date(d.y, d.m, d.d, d.H, d.M, d.S, d.L);
+}
+
+function utcDate(d) {
+  if (0 <= d.y && d.y < 100) {
+    var date = new Date(Date.UTC(-1, d.m, d.d, d.H, d.M, d.S, d.L));
+    date.setUTCFullYear(d.y);
+    return date;
+  }
+  return new Date(Date.UTC(d.y, d.m, d.d, d.H, d.M, d.S, d.L));
+}
+
+function newYear(y) {
+  return {y: y, m: 0, d: 1, H: 0, M: 0, S: 0, L: 0};
+}
+
+function formatLocale(locale) {
+  var locale_dateTime = locale.dateTime,
+      locale_date = locale.date,
+      locale_time = locale.time,
+      locale_periods = locale.periods,
+      locale_weekdays = locale.days,
+      locale_shortWeekdays = locale.shortDays,
+      locale_months = locale.months,
+      locale_shortMonths = locale.shortMonths;
+
+  var periodRe = formatRe(locale_periods),
+      periodLookup = formatLookup(locale_periods),
+      weekdayRe = formatRe(locale_weekdays),
+      weekdayLookup = formatLookup(locale_weekdays),
+      shortWeekdayRe = formatRe(locale_shortWeekdays),
+      shortWeekdayLookup = formatLookup(locale_shortWeekdays),
+      monthRe = formatRe(locale_months),
+      monthLookup = formatLookup(locale_months),
+      shortMonthRe = formatRe(locale_shortMonths),
+      shortMonthLookup = formatLookup(locale_shortMonths);
+
+  var formats = {
+    "a": formatShortWeekday,
+    "A": formatWeekday,
+    "b": formatShortMonth,
+    "B": formatMonth,
+    "c": null,
+    "d": formatDayOfMonth,
+    "e": formatDayOfMonth,
+    "H": formatHour24,
+    "I": formatHour12,
+    "j": formatDayOfYear,
+    "L": formatMilliseconds,
+    "m": formatMonthNumber,
+    "M": formatMinutes,
+    "p": formatPeriod,
+    "S": formatSeconds,
+    "U": formatWeekNumberSunday,
+    "w": formatWeekdayNumber,
+    "W": formatWeekNumberMonday,
+    "x": null,
+    "X": null,
+    "y": formatYear,
+    "Y": formatFullYear,
+    "Z": formatZone,
+    "%": formatLiteralPercent
+  };
+
+  var utcFormats = {
+    "a": formatUTCShortWeekday,
+    "A": formatUTCWeekday,
+    "b": formatUTCShortMonth,
+    "B": formatUTCMonth,
+    "c": null,
+    "d": formatUTCDayOfMonth,
+    "e": formatUTCDayOfMonth,
+    "H": formatUTCHour24,
+    "I": formatUTCHour12,
+    "j": formatUTCDayOfYear,
+    "L": formatUTCMilliseconds,
+    "m": formatUTCMonthNumber,
+    "M": formatUTCMinutes,
+    "p": formatUTCPeriod,
+    "S": formatUTCSeconds,
+    "U": formatUTCWeekNumberSunday,
+    "w": formatUTCWeekdayNumber,
+    "W": formatUTCWeekNumberMonday,
+    "x": null,
+    "X": null,
+    "y": formatUTCYear,
+    "Y": formatUTCFullYear,
+    "Z": formatUTCZone,
+    "%": formatLiteralPercent
+  };
+
+  var parses = {
+    "a": parseShortWeekday,
+    "A": parseWeekday,
+    "b": parseShortMonth,
+    "B": parseMonth,
+    "c": parseLocaleDateTime,
+    "d": parseDayOfMonth,
+    "e": parseDayOfMonth,
+    "H": parseHour24,
+    "I": parseHour24,
+    "j": parseDayOfYear,
+    "L": parseMilliseconds,
+    "m": parseMonthNumber,
+    "M": parseMinutes,
+    "p": parsePeriod,
+    "S": parseSeconds,
+    "U": parseWeekNumberSunday,
+    "w": parseWeekdayNumber,
+    "W": parseWeekNumberMonday,
+    "x": parseLocaleDate,
+    "X": parseLocaleTime,
+    "y": parseYear,
+    "Y": parseFullYear,
+    "Z": parseZone,
+    "%": parseLiteralPercent
+  };
+
+  // These recursive directive definitions must be deferred.
+  formats.x = newFormat(locale_date, formats);
+  formats.X = newFormat(locale_time, formats);
+  formats.c = newFormat(locale_dateTime, formats);
+  utcFormats.x = newFormat(locale_date, utcFormats);
+  utcFormats.X = newFormat(locale_time, utcFormats);
+  utcFormats.c = newFormat(locale_dateTime, utcFormats);
+
+  function newFormat(specifier, formats) {
+    return function(date) {
+      var string = [],
+          i = -1,
+          j = 0,
+          n = specifier.length,
+          c,
+          pad,
+          format;
+
+      if (!(date instanceof Date)) date = new Date(+date);
+
+      while (++i < n) {
+        if (specifier.charCodeAt(i) === 37) {
+          string.push(specifier.slice(j, i));
+          if ((pad = pads[c = specifier.charAt(++i)]) != null) c = specifier.charAt(++i);
+          else pad = c === "e" ? " " : "0";
+          if (format = formats[c]) c = format(date, pad);
+          string.push(c);
+          j = i + 1;
+        }
+      }
+
+      string.push(specifier.slice(j, i));
+      return string.join("");
+    };
+  }
+
+  function newParse(specifier, newDate) {
+    return function(string) {
+      var d = newYear(1900),
+          i = parseSpecifier(d, specifier, string += "", 0);
+      if (i != string.length) return null;
+
+      // The am-pm flag is 0 for AM, and 1 for PM.
+      if ("p" in d) d.H = d.H % 12 + d.p * 12;
+
+      // Convert day-of-week and week-of-year to day-of-year.
+      if ("W" in d || "U" in d) {
+        if (!("w" in d)) d.w = "W" in d ? 1 : 0;
+        var day = "Z" in d ? utcDate(newYear(d.y)).getUTCDay() : newDate(newYear(d.y)).getDay();
+        d.m = 0;
+        d.d = "W" in d ? (d.w + 6) % 7 + d.W * 7 - (day + 5) % 7 : d.w + d.U * 7 - (day + 6) % 7;
+      }
+
+      // If a time zone is specified, all fields are interpreted as UTC and then
+      // offset according to the specified time zone.
+      if ("Z" in d) {
+        d.H += d.Z / 100 | 0;
+        d.M += d.Z % 100;
+        return utcDate(d);
+      }
+
+      // Otherwise, all fields are in local time.
+      return newDate(d);
+    };
+  }
+
+  function parseSpecifier(d, specifier, string, j) {
+    var i = 0,
+        n = specifier.length,
+        m = string.length,
+        c,
+        parse;
+
+    while (i < n) {
+      if (j >= m) return -1;
+      c = specifier.charCodeAt(i++);
+      if (c === 37) {
+        c = specifier.charAt(i++);
+        parse = parses[c in pads ? specifier.charAt(i++) : c];
+        if (!parse || ((j = parse(d, string, j)) < 0)) return -1;
+      } else if (c != string.charCodeAt(j++)) {
+        return -1;
+      }
+    }
+
+    return j;
+  }
+
+  function parsePeriod(d, string, i) {
+    var n = periodRe.exec(string.slice(i));
+    return n ? (d.p = periodLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+  }
+
+  function parseShortWeekday(d, string, i) {
+    var n = shortWeekdayRe.exec(string.slice(i));
+    return n ? (d.w = shortWeekdayLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+  }
+
+  function parseWeekday(d, string, i) {
+    var n = weekdayRe.exec(string.slice(i));
+    return n ? (d.w = weekdayLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+  }
+
+  function parseShortMonth(d, string, i) {
+    var n = shortMonthRe.exec(string.slice(i));
+    return n ? (d.m = shortMonthLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+  }
+
+  function parseMonth(d, string, i) {
+    var n = monthRe.exec(string.slice(i));
+    return n ? (d.m = monthLookup[n[0].toLowerCase()], i + n[0].length) : -1;
+  }
+
+  function parseLocaleDateTime(d, string, i) {
+    return parseSpecifier(d, locale_dateTime, string, i);
+  }
+
+  function parseLocaleDate(d, string, i) {
+    return parseSpecifier(d, locale_date, string, i);
+  }
+
+  function parseLocaleTime(d, string, i) {
+    return parseSpecifier(d, locale_time, string, i);
+  }
+
+  function formatShortWeekday(d) {
+    return locale_shortWeekdays[d.getDay()];
+  }
+
+  function formatWeekday(d) {
+    return locale_weekdays[d.getDay()];
+  }
+
+  function formatShortMonth(d) {
+    return locale_shortMonths[d.getMonth()];
+  }
+
+  function formatMonth(d) {
+    return locale_months[d.getMonth()];
+  }
+
+  function formatPeriod(d) {
+    return locale_periods[+(d.getHours() >= 12)];
+  }
+
+  function formatUTCShortWeekday(d) {
+    return locale_shortWeekdays[d.getUTCDay()];
+  }
+
+  function formatUTCWeekday(d) {
+    return locale_weekdays[d.getUTCDay()];
+  }
+
+  function formatUTCShortMonth(d) {
+    return locale_shortMonths[d.getUTCMonth()];
+  }
+
+  function formatUTCMonth(d) {
+    return locale_months[d.getUTCMonth()];
+  }
+
+  function formatUTCPeriod(d) {
+    return locale_periods[+(d.getUTCHours() >= 12)];
+  }
+
+  return {
+    format: function(specifier) {
+      var f = newFormat(specifier += "", formats);
+      f.toString = function() { return specifier; };
+      return f;
+    },
+    parse: function(specifier) {
+      var p = newParse(specifier += "", localDate);
+      p.toString = function() { return specifier; };
+      return p;
+    },
+    utcFormat: function(specifier) {
+      var f = newFormat(specifier += "", utcFormats);
+      f.toString = function() { return specifier; };
+      return f;
+    },
+    utcParse: function(specifier) {
+      var p = newParse(specifier, utcDate);
+      p.toString = function() { return specifier; };
+      return p;
+    }
+  };
+}
+
+var pads = {"-": "", "_": " ", "0": "0"},
+    numberRe = /^\s*\d+/, // note: ignores next directive
+    percentRe = /^%/,
+    requoteRe = /[\\\^\$\*\+\?\|\[\]\(\)\.\{\}]/g;
+
+function pad(value, fill, width) {
+  var sign = value < 0 ? "-" : "",
+      string = (sign ? -value : value) + "",
+      length = string.length;
+  return sign + (length < width ? new Array(width - length + 1).join(fill) + string : string);
+}
+
+function requote(s) {
+  return s.replace(requoteRe, "\\$&");
+}
+
+function formatRe(names) {
+  return new RegExp("^(?:" + names.map(requote).join("|") + ")", "i");
+}
+
+function formatLookup(names) {
+  var map = {}, i = -1, n = names.length;
+  while (++i < n) map[names[i].toLowerCase()] = i;
+  return map;
+}
+
+function parseWeekdayNumber(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 1));
+  return n ? (d.w = +n[0], i + n[0].length) : -1;
+}
+
+function parseWeekNumberSunday(d, string, i) {
+  var n = numberRe.exec(string.slice(i));
+  return n ? (d.U = +n[0], i + n[0].length) : -1;
+}
+
+function parseWeekNumberMonday(d, string, i) {
+  var n = numberRe.exec(string.slice(i));
+  return n ? (d.W = +n[0], i + n[0].length) : -1;
+}
+
+function parseFullYear(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 4));
+  return n ? (d.y = +n[0], i + n[0].length) : -1;
+}
+
+function parseYear(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.y = +n[0] + (+n[0] > 68 ? 1900 : 2000), i + n[0].length) : -1;
+}
+
+function parseZone(d, string, i) {
+  var n = /^(Z)|([+-]\d\d)(?:\:?(\d\d))?/.exec(string.slice(i, i + 6));
+  return n ? (d.Z = n[1] ? 0 : -(n[2] + (n[3] || "00")), i + n[0].length) : -1;
+}
+
+function parseMonthNumber(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.m = n[0] - 1, i + n[0].length) : -1;
+}
+
+function parseDayOfMonth(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.d = +n[0], i + n[0].length) : -1;
+}
+
+function parseDayOfYear(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 3));
+  return n ? (d.m = 0, d.d = +n[0], i + n[0].length) : -1;
+}
+
+function parseHour24(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.H = +n[0], i + n[0].length) : -1;
+}
+
+function parseMinutes(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.M = +n[0], i + n[0].length) : -1;
+}
+
+function parseSeconds(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 2));
+  return n ? (d.S = +n[0], i + n[0].length) : -1;
+}
+
+function parseMilliseconds(d, string, i) {
+  var n = numberRe.exec(string.slice(i, i + 3));
+  return n ? (d.L = +n[0], i + n[0].length) : -1;
+}
+
+function parseLiteralPercent(d, string, i) {
+  var n = percentRe.exec(string.slice(i, i + 1));
+  return n ? i + n[0].length : -1;
+}
+
+function formatDayOfMonth(d, p) {
+  return pad(d.getDate(), p, 2);
+}
+
+function formatHour24(d, p) {
+  return pad(d.getHours(), p, 2);
+}
+
+function formatHour12(d, p) {
+  return pad(d.getHours() % 12 || 12, p, 2);
+}
+
+function formatDayOfYear(d, p) {
+  return pad(1 + __WEBPACK_IMPORTED_MODULE_0_d3_time__["i" /* timeDay */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["j" /* timeYear */])(d), d), p, 3);
+}
+
+function formatMilliseconds(d, p) {
+  return pad(d.getMilliseconds(), p, 3);
+}
+
+function formatMonthNumber(d, p) {
+  return pad(d.getMonth() + 1, p, 2);
+}
+
+function formatMinutes(d, p) {
+  return pad(d.getMinutes(), p, 2);
+}
+
+function formatSeconds(d, p) {
+  return pad(d.getSeconds(), p, 2);
+}
+
+function formatWeekNumberSunday(d, p) {
+  return pad(__WEBPACK_IMPORTED_MODULE_0_d3_time__["k" /* timeSunday */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["j" /* timeYear */])(d), d), p, 2);
+}
+
+function formatWeekdayNumber(d) {
+  return d.getDay();
+}
+
+function formatWeekNumberMonday(d, p) {
+  return pad(__WEBPACK_IMPORTED_MODULE_0_d3_time__["l" /* timeMonday */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["j" /* timeYear */])(d), d), p, 2);
+}
+
+function formatYear(d, p) {
+  return pad(d.getFullYear() % 100, p, 2);
+}
+
+function formatFullYear(d, p) {
+  return pad(d.getFullYear() % 10000, p, 4);
+}
+
+function formatZone(d) {
+  var z = d.getTimezoneOffset();
+  return (z > 0 ? "-" : (z *= -1, "+"))
+      + pad(z / 60 | 0, "0", 2)
+      + pad(z % 60, "0", 2);
+}
+
+function formatUTCDayOfMonth(d, p) {
+  return pad(d.getUTCDate(), p, 2);
+}
+
+function formatUTCHour24(d, p) {
+  return pad(d.getUTCHours(), p, 2);
+}
+
+function formatUTCHour12(d, p) {
+  return pad(d.getUTCHours() % 12 || 12, p, 2);
+}
+
+function formatUTCDayOfYear(d, p) {
+  return pad(1 + __WEBPACK_IMPORTED_MODULE_0_d3_time__["d" /* utcDay */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["a" /* utcYear */])(d), d), p, 3);
+}
+
+function formatUTCMilliseconds(d, p) {
+  return pad(d.getUTCMilliseconds(), p, 3);
+}
+
+function formatUTCMonthNumber(d, p) {
+  return pad(d.getUTCMonth() + 1, p, 2);
+}
+
+function formatUTCMinutes(d, p) {
+  return pad(d.getUTCMinutes(), p, 2);
+}
+
+function formatUTCSeconds(d, p) {
+  return pad(d.getUTCSeconds(), p, 2);
+}
+
+function formatUTCWeekNumberSunday(d, p) {
+  return pad(__WEBPACK_IMPORTED_MODULE_0_d3_time__["m" /* utcSunday */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["a" /* utcYear */])(d), d), p, 2);
+}
+
+function formatUTCWeekdayNumber(d) {
+  return d.getUTCDay();
+}
+
+function formatUTCWeekNumberMonday(d, p) {
+  return pad(__WEBPACK_IMPORTED_MODULE_0_d3_time__["n" /* utcMonday */].count(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_time__["a" /* utcYear */])(d), d), p, 2);
+}
+
+function formatUTCYear(d, p) {
+  return pad(d.getUTCFullYear() % 100, p, 2);
+}
+
+function formatUTCFullYear(d, p) {
+  return pad(d.getUTCFullYear() % 10000, p, 4);
+}
+
+function formatUTCZone() {
+  return "+0000";
+}
+
+function formatLiteralPercent() {
+  return "%";
+}
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_timer__ = __webpack_require__(52);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["a"]; });
+/* unused harmony reexport timerFlush */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_timeout__ = __webpack_require__(292);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__src_timeout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_interval__ = __webpack_require__(291);
+/* unused harmony reexport interval */
+
+
+
+
+
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transition_schedule__ = __webpack_require__(4);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(node, name) {
+  var schedules = node.__transition,
+      schedule,
+      active,
+      empty = true,
+      i;
+
+  if (!schedules) return;
+
+  name = name == null ? null : name + "";
+
+  for (i in schedules) {
+    if ((schedule = schedules[i]).name !== name) { empty = false; continue; }
+    active = schedule.state > __WEBPACK_IMPORTED_MODULE_0__transition_schedule__["a" /* STARTING */] && schedule.state < __WEBPACK_IMPORTED_MODULE_0__transition_schedule__["b" /* ENDING */];
+    schedule.state = __WEBPACK_IMPORTED_MODULE_0__transition_schedule__["c" /* ENDED */];
+    schedule.timer.stop();
+    if (active) schedule.on.call("interrupt", node, node.__data__, schedule.index, schedule.group);
+    delete schedules[i];
+  }
+
+  if (empty) delete node.__transition;
+};
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  var c;
+  return (typeof b === "number" ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["a" /* interpolateNumber */]
+      : b instanceof __WEBPACK_IMPORTED_MODULE_0_d3_color__["f" /* color */] ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["g" /* interpolateRgb */]
+      : (c = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["f" /* color */])(b)) ? (b = c, __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["g" /* interpolateRgb */])
+      : __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["h" /* interpolateString */])(a, b);
+};
+
+
+/***/ }),
+/* 113 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = Transform;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return identity; });
+/* unused harmony export default */
+function Transform(k, x, y) {
+  this.k = k;
+  this.x = x;
+  this.y = y;
+}
+
+Transform.prototype = {
+  constructor: Transform,
+  scale: function(k) {
+    return k === 1 ? this : new Transform(this.k * k, this.x, this.y);
+  },
+  translate: function(x, y) {
+    return x === 0 & y === 0 ? this : new Transform(this.k, this.x + this.k * x, this.y + this.k * y);
+  },
+  apply: function(point) {
+    return [point[0] * this.k + this.x, point[1] * this.k + this.y];
+  },
+  applyX: function(x) {
+    return x * this.k + this.x;
+  },
+  applyY: function(y) {
+    return y * this.k + this.y;
+  },
+  invert: function(location) {
+    return [(location[0] - this.x) / this.k, (location[1] - this.y) / this.k];
+  },
+  invertX: function(x) {
+    return (x - this.x) / this.k;
+  },
+  invertY: function(y) {
+    return (y - this.y) / this.k;
+  },
+  rescaleX: function(x) {
+    return x.copy().domain(x.range().map(this.invertX, this).map(x.invert, x));
+  },
+  rescaleY: function(y) {
+    return y.copy().domain(y.range().map(this.invertY, this).map(y.invert, y));
+  },
+  toString: function() {
+    return "translate(" + this.x + "," + this.y + ") scale(" + this.k + ")";
+  }
+};
+
+var identity = new Transform(1, 0, 0);
+
+transform.prototype = Transform.prototype;
+
+function transform(node) {
+  return node.__zoom || identity;
+}
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(118);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(320)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss", function() {
+			var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 115 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Scatterplot__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__symbol__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_scale__ = __webpack_require__(84);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Scatterplot", function() { return __WEBPACK_IMPORTED_MODULE_1__Scatterplot__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "EScaleAxes", function() { return __WEBPACK_IMPORTED_MODULE_1__Scatterplot__["b"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scale", function() { return scale; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "symbol", function() { return symbol; });
+/* harmony export (immutable) */ __webpack_exports__["create"] = create;
+/**
+ * Created by sam on 19.12.2016.
+ */
+
+
+
+
+
+//export {default as MiniMap} from './MiniMap';
+/**
+ * reexport d3 scale
+ */
+var scale = __WEBPACK_IMPORTED_MODULE_3_d3_scale__;
+var symbol = __WEBPACK_IMPORTED_MODULE_2__symbol__;
+/* harmony default export */ __webpack_exports__["default"] = __WEBPACK_IMPORTED_MODULE_1__Scatterplot__["a" /* default */];
+function create(data, canvas) {
+    return new __WEBPACK_IMPORTED_MODULE_1__Scatterplot__["a" /* default */](data, canvas);
+}
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_shape__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_polygon__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__quadtree__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__merge__ = __webpack_require__(55);
+/**
+ * author:  Samuel Gratzl
+ * email:   samuel_gratzl@gmx.at
+ * created: 2016-10-28T11:19:52.797Z
+ */
+
+
+
+
+
+var MIN_POINT_DISTANCE2 = 10 * 10;
+function distance2(a, b) {
+    var x = a[0] - b[0];
+    var y = a[1] - b[1];
+    return x * x + y * y;
+}
+var Lasso = (function () {
+    function Lasso(options) {
+        this.props = {
+            lineWidth: 5,
+            strokeStyle: 'rgba(0,0,0,1)',
+            fillStyle: 'rgba(0,0,0,0.2)'
+        };
+        this.line = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_shape__["h" /* line */])().curve(__WEBPACK_IMPORTED_MODULE_0_d3_shape__["i" /* curveLinearClosed */]);
+        this.points = [];
+        this.current = null;
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__merge__["a" /* default */])(this.props, options);
+    }
+    Lasso.prototype.start = function (x, y) {
+        this.clear();
+        this.current = [x, y];
+        this.points.push(this.current);
+    };
+    Lasso.prototype.setCurrent = function (x, y) {
+        this.current = [x, y];
+    };
+    Lasso.prototype.pushCurrent = function () {
+        var p = this.points, pl = p.length, c = this.current;
+        if (!c || (pl > 0 && distance2(p[pl - 1], c) < MIN_POINT_DISTANCE2)) {
+            return false;
+        }
+        p.push(this.current);
+        return true;
+    };
+    Lasso.prototype.end = function (x, y) {
+        this.setCurrent(x, y);
+        this.pushCurrent();
+        this.current = null;
+    };
+    Lasso.prototype.clear = function () {
+        this.points = [];
+        this.current = null;
+    };
+    Lasso.prototype.tester = function (p2nX, p2nY) {
+        if (this.points.length < 3) {
+            return null;
+        }
+        var polygon = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_polygon__["a" /* polygonHull */])(this.points.map(function (_a) {
+            var x = _a[0], y = _a[1];
+            return [p2nX(x), p2nY(y)];
+        }));
+        var _a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_d3_array__["h" /* extent */])(polygon, function (d) { return d[0]; }), x0 = _a[0], x1 = _a[1];
+        var _b = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_d3_array__["h" /* extent */])(polygon, function (d) { return d[1]; }), y0 = _b[0], y1 = _b[1];
+        return {
+            test: function (x, y) { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_polygon__["b" /* polygonContains */])(polygon, [x, y]); },
+            testArea: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__quadtree__["c" /* hasOverlap */])(x0, y0, x1, y1)
+        };
+    };
+    Lasso.prototype.render = function (ctx) {
+        var p = this.points;
+        ctx.save();
+        ctx.lineWidth = this.props.lineWidth;
+        ctx.strokeStyle = this.props.strokeStyle;
+        if (p.length > 0) {
+            this.line.context(ctx)(p);
+            ctx.fillStyle = this.props.fillStyle;
+            ctx.fill();
+            ctx.stroke();
+        }
+        function renderPoint(p) {
+            if (!p) {
+                return;
+            }
+            ctx.moveTo(p[0], p[1]);
+            ctx.arc(p[0], p[1], 3, 0, Math.PI * 2);
+        }
+        ctx.beginPath();
+        renderPoint(p[0]);
+        renderPoint(this.current);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+    };
+    return Lasso;
+}());
+/* harmony default export */ __webpack_exports__["a"] = Lasso;
+//# sourceMappingURL=lasso.js.map
+
+/***/ }),
+/* 117 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(54);
+/* harmony export (immutable) */ __webpack_exports__["a"] = showTooltip;
+/**
+ * Created by sam on 28.10.2016.
+ */
+
+
+//based on bootstrap tooltips
+var template = "<div class=\"" + __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssprefix */] + "-tooltip\" role=\"tooltip\">\n  <div></div>\n  <div></div>\n</div>";
+function findTooltip(parent, ensureExists) {
+    if (ensureExists === void 0) { ensureExists = true; }
+    var tooltip = parent.querySelector("div." + __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* cssprefix */] + "-tooltip");
+    if (!tooltip && ensureExists) {
+        tooltip = document.createElement('div'); //helper
+        tooltip.innerHTML = template;
+        tooltip = tooltip.childNodes[0];
+        parent.appendChild(tooltip);
+    }
+    return tooltip;
+}
+function showTooltipAt(tooltip, x, y) {
+    tooltip.style.display = 'block';
+    tooltip.style.left = (x - tooltip.clientWidth / 2) + 'px';
+    tooltip.style.top = (y - tooltip.clientHeight) + 'px';
+}
+function toString(d) {
+    if (typeof d.toString === 'function') {
+        var s = d.toString();
+        if (s !== '[object Object]') {
+            return s;
+        }
+    }
+    return JSON.stringify(d);
+}
+function showTooltip(parent, items, x, y) {
+    var tooltip = findTooltip(parent, items.length > 0);
+    if (items.length === 0) {
+        if (tooltip) {
+            //hide tooltip
+            tooltip.style.display = null;
+        }
+        return;
+    }
+    var content = tooltip.querySelector('div');
+    content.innerHTML = "<pre>" + items.map(toString).join('\n') + "</pre>";
+    showTooltipAt(tooltip, x, y);
+}
+//# sourceMappingURL=tooltip.js.map
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(119)();
+// imports
+
+
+// module
+exports.push([module.i, "/**\r\n * Created by sam on 28.10.2016.\r\n */\n.datavisyn-scatterplot {\n  position: relative; }\n  .datavisyn-scatterplot canvas {\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n    .datavisyn-scatterplot canvas.datavisyn-scatterplot-data-layer {\n      pointer-events: none;\n      z-index: 1; }\n    .datavisyn-scatterplot canvas.datavisyn-scatterplot-selection-layer {\n      z-index: 2; }\n  .datavisyn-scatterplot svg {\n    pointer-events: none;\n    position: absolute;\n    width: 100%;\n    height: 100%; }\n    .datavisyn-scatterplot svg.datavisyn-scatterplot-axis-left {\n      z-index: 2; }\n    .datavisyn-scatterplot svg.datavisyn-scatterplot-axis-bottom {\n      bottom: 0;\n      z-index: 3; }\n  .datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label, .datavisyn-scatterplot div.datavisyn-scatterplot-axis-bottom-label {\n    pointer-events: none;\n    user-select: none;\n    text-align: center;\n    position: absolute; }\n  .datavisyn-scatterplot div.datavisyn-scatterplot-axis-bottom-label {\n    bottom: 0; }\n  .datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 1em;\n    white-space: nowrap; }\n    .datavisyn-scatterplot div.datavisyn-scatterplot-axis-left-label > div {\n      transform: rotate(270deg);\n      transform-origin: center center; }\n  .datavisyn-scatterplot .datavisyn-scatterplot-tooltip {\n    display: none;\n    position: absolute;\n    width: auto;\n    height: auto;\n    z-index: 4;\n    padding: 5px 0; }\n    .datavisyn-scatterplot .datavisyn-scatterplot-tooltip > :first-child {\n      padding: 3px 8px;\n      color: #fff;\n      text-align: center;\n      background-color: #000;\n      border-radius: 4px; }\n    .datavisyn-scatterplot .datavisyn-scatterplot-tooltip > :last-child {\n      margin-left: -5px;\n      border-width: 5px 5px 0;\n      border-style: solid;\n      border-color: transparent;\n      border-top-color: #000;\n      position: absolute;\n      bottom: 0;\n      left: 50%;\n      width: 0;\n      height: 0; }\n\n.datavisyn-scatterplot-minimap {\n  position: relative;\n  background-color: gray; }\n  .datavisyn-scatterplot-minimap svg {\n    width: 100%;\n    height: 100%; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function() {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			var item = this[i];
+			if(item[2]) {
+				result.push("@media " + item[2] + "{" + item[1] + "}");
+			} else {
+				result.push(item[1]);
+			}
+		}
+		return result.join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 121 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(a, b) {
+  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+};
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bisect__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__extent__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__identity__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ticks__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__threshold_sturges__ = __webpack_require__(65);
+
+
+
+
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var value = __WEBPACK_IMPORTED_MODULE_4__identity__["a" /* default */],
+      domain = __WEBPACK_IMPORTED_MODULE_3__extent__["a" /* default */],
+      threshold = __WEBPACK_IMPORTED_MODULE_6__threshold_sturges__["a" /* default */];
+
+  function histogram(data) {
+    var i,
+        n = data.length,
+        x,
+        values = new Array(n);
+
+    for (i = 0; i < n; ++i) {
+      values[i] = value(data[i], i, data);
+    }
+
+    var xz = domain(values),
+        x0 = xz[0],
+        x1 = xz[1],
+        tz = threshold(values, x0, x1);
+
+    // Convert number of thresholds into uniform thresholds.
+    if (!Array.isArray(tz)) tz = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__ticks__["a" /* default */])(x0, x1, tz);
+
+    // Remove any thresholds outside the domain.
+    var m = tz.length;
+    while (tz[0] <= x0) tz.shift(), --m;
+    while (tz[m - 1] >= x1) tz.pop(), --m;
+
+    var bins = new Array(m + 1),
+        bin;
+
+    // Initialize bins.
+    for (i = 0; i <= m; ++i) {
+      bin = bins[i] = [];
+      bin.x0 = i > 0 ? tz[i - 1] : x0;
+      bin.x1 = i < m ? tz[i] : x1;
+    }
+
+    // Assign data to bins by value, ignoring any outside the domain.
+    for (i = 0; i < n; ++i) {
+      x = values[i];
+      if (x0 <= x && x <= x1) {
+        bins[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__bisect__["a" /* default */])(tz, x, 0, m)].push(data[i]);
+      }
+    }
+
+    return bins;
+  }
+
+  histogram.value = function(_) {
+    return arguments.length ? (value = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])(_), histogram) : value;
+  };
+
+  histogram.domain = function(_) {
+    return arguments.length ? (domain = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])([_[0], _[1]]), histogram) : domain;
+  };
+
+  histogram.thresholds = function(_) {
+    return arguments.length ? (threshold = typeof _ === "function" ? _ : Array.isArray(_) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__array__["b" /* slice */].call(_)) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])(_), histogram) : threshold;
+  };
+
+  return histogram;
+};
+
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return x;
+};
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, f) {
+  var i = -1,
+      n = array.length,
+      a,
+      b;
+
+  if (f == null) {
+    while (++i < n) if ((b = array[i]) != null && b >= b) { a = b; break; }
+    while (++i < n) if ((b = array[i]) != null && b > a) a = b;
+  }
+
+  else {
+    while (++i < n) if ((b = f(array[i], i, array)) != null && b >= b) { a = b; break; }
+    while (++i < n) if ((b = f(array[i], i, array)) != null && b > a) a = b;
+  }
+
+  return a;
+};
+
+
+/***/ }),
+/* 125 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__number__ = __webpack_require__(12);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, f) {
+  var s = 0,
+      n = array.length,
+      a,
+      i = -1,
+      j = n;
+
+  if (f == null) {
+    while (++i < n) if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(array[i]))) s += a; else --j;
+  }
+
+  else {
+    while (++i < n) if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(f(array[i], i, array)))) s += a; else --j;
+  }
+
+  if (j) return s / j;
+};
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__number__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__quantile__ = __webpack_require__(28);
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, f) {
+  var numbers = [],
+      n = array.length,
+      a,
+      i = -1;
+
+  if (f == null) {
+    while (++i < n) if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__number__["a" /* default */])(array[i]))) numbers.push(a);
+  }
+
+  else {
+    while (++i < n) if (!isNaN(a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__number__["a" /* default */])(f(array[i], i, array)))) numbers.push(a);
+  }
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__quantile__["a" /* default */])(numbers.sort(__WEBPACK_IMPORTED_MODULE_0__ascending__["a" /* default */]), 0.5);
+};
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(arrays) {
+  var n = arrays.length,
+      m,
+      i = -1,
+      j = 0,
+      merged,
+      array;
+
+  while (++i < n) j += arrays[i].length;
+  merged = new Array(j);
+
+  while (--n >= 0) {
+    array = arrays[n];
+    m = array.length;
+    while (--m >= 0) {
+      merged[--j] = array[m];
+    }
+  }
+
+  return merged;
+};
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(array) {
+  var i = 0, n = array.length - 1, p = array[0], pairs = new Array(n < 0 ? 0 : n);
+  while (i < n) pairs[i] = [p, p = array[++i]];
+  return pairs;
+};
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, indexes) {
+  var i = indexes.length, permutes = new Array(i);
+  while (i--) permutes[i] = array[indexes[i]];
+  return permutes;
+};
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(10);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, compare) {
+  if (!(n = array.length)) return;
+  var i = 0,
+      n,
+      j = 0,
+      xi,
+      xj = array[j];
+
+  if (!compare) compare = __WEBPACK_IMPORTED_MODULE_0__ascending__["a" /* default */];
+
+  while (++i < n) if (compare(xi = array[i], xj) < 0 || compare(xj, xj) !== 0) xj = xi, j = i;
+
+  if (compare(xj, xj) === 0) return j;
+};
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(array, i0, i1) {
+  var m = (i1 == null ? array.length : i1) - (i0 = i0 == null ? 0 : +i0),
+      t,
+      i;
+
+  while (m) {
+    i = Math.random() * m-- | 0;
+    t = array[m + i0];
+    array[m + i0] = array[i + i0];
+    array[i + i0] = t;
+  }
+
+  return array;
+};
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(array, f) {
+  var s = 0,
+      n = array.length,
+      a,
+      i = -1;
+
+  if (f == null) {
+    while (++i < n) if (a = +array[i]) s += a; // Note: zero and null are equivalent.
+  }
+
+  else {
+    while (++i < n) if (a = +f(array[i], i, array)) s += a;
+  }
+
+  return s;
+};
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ascending__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__quantile__ = __webpack_require__(28);
+
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(values, min, max) {
+  values = __WEBPACK_IMPORTED_MODULE_0__array__["a" /* map */].call(values, __WEBPACK_IMPORTED_MODULE_2__number__["a" /* default */]).sort(__WEBPACK_IMPORTED_MODULE_1__ascending__["a" /* default */]);
+  return Math.ceil((max - min) / (2 * (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__quantile__["a" /* default */])(values, 0.75) - __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__quantile__["a" /* default */])(values, 0.25)) * Math.pow(values.length, -1 / 3)));
+};
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__deviation__ = __webpack_require__(61);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(values, min, max) {
+  return Math.ceil((max - min) / (3.5 * __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__deviation__["a" /* default */])(values) * Math.pow(values.length, -1 / 3)));
+};
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transpose__ = __webpack_require__(67);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__transpose__["a" /* default */])(arguments);
+};
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_axis__ = __webpack_require__(138);
+/* unused harmony reexport axisTop */
+/* unused harmony reexport axisRight */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_axis__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_axis__["b"]; });
+
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return slice; });
+var slice = Array.prototype.slice;
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__identity__ = __webpack_require__(139);
+/* unused harmony export axisTop */
+/* unused harmony export axisRight */
+/* harmony export (immutable) */ __webpack_exports__["a"] = axisBottom;
+/* harmony export (immutable) */ __webpack_exports__["b"] = axisLeft;
+
+
+
+var top = 1,
+    right = 2,
+    bottom = 3,
+    left = 4,
+    epsilon = 1e-6;
+
+function translateX(scale0, scale1, d) {
+  var x = scale0(d);
+  return "translate(" + (isFinite(x) ? x : scale1(d)) + ",0)";
+}
+
+function translateY(scale0, scale1, d) {
+  var y = scale0(d);
+  return "translate(0," + (isFinite(y) ? y : scale1(d)) + ")";
+}
+
+function center(scale) {
+  var offset = scale.bandwidth() / 2;
+  if (scale.round()) offset = Math.round(offset);
+  return function(d) {
+    return scale(d) + offset;
+  };
+}
+
+function entering() {
+  return !this.__axis;
+}
+
+function axis(orient, scale) {
+  var tickArguments = [],
+      tickValues = null,
+      tickFormat = null,
+      tickSizeInner = 6,
+      tickSizeOuter = 6,
+      tickPadding = 3;
+
+  function axis(context) {
+    var values = tickValues == null ? (scale.ticks ? scale.ticks.apply(scale, tickArguments) : scale.domain()) : tickValues,
+        format = tickFormat == null ? (scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments) : __WEBPACK_IMPORTED_MODULE_1__identity__["a" /* default */]) : tickFormat,
+        spacing = Math.max(tickSizeInner, 0) + tickPadding,
+        transform = orient === top || orient === bottom ? translateX : translateY,
+        range = scale.range(),
+        range0 = range[0] + 0.5,
+        range1 = range[range.length - 1] + 0.5,
+        position = (scale.bandwidth ? center : __WEBPACK_IMPORTED_MODULE_1__identity__["a" /* default */])(scale.copy()),
+        selection = context.selection ? context.selection() : context,
+        path = selection.selectAll(".domain").data([null]),
+        tick = selection.selectAll(".tick").data(values, scale).order(),
+        tickExit = tick.exit(),
+        tickEnter = tick.enter().append("g").attr("class", "tick"),
+        line = tick.select("line"),
+        text = tick.select("text"),
+        k = orient === top || orient === left ? -1 : 1,
+        x, y = orient === left || orient === right ? (x = "x", "y") : (x = "y", "x");
+
+    path = path.merge(path.enter().insert("path", ".tick")
+        .attr("class", "domain")
+        .attr("stroke", "#000"));
+
+    tick = tick.merge(tickEnter);
+
+    line = line.merge(tickEnter.append("line")
+        .attr("stroke", "#000")
+        .attr(x + "2", k * tickSizeInner)
+        .attr(y + "1", 0.5)
+        .attr(y + "2", 0.5));
+
+    text = text.merge(tickEnter.append("text")
+        .attr("fill", "#000")
+        .attr(x, k * spacing)
+        .attr(y, 0.5)
+        .attr("dy", orient === top ? "0em" : orient === bottom ? "0.71em" : "0.32em"));
+
+    if (context !== selection) {
+      path = path.transition(context);
+      tick = tick.transition(context);
+      line = line.transition(context);
+      text = text.transition(context);
+
+      tickExit = tickExit.transition(context)
+          .attr("opacity", epsilon)
+          .attr("transform", function(d) { return transform(position, this.parentNode.__axis || position, d); });
+
+      tickEnter
+          .attr("opacity", epsilon)
+          .attr("transform", function(d) { return transform(this.parentNode.__axis || position, position, d); });
+    }
+
+    tickExit.remove();
+
+    path
+        .attr("d", orient === left || orient == right
+            ? "M" + k * tickSizeOuter + "," + range0 + "H0.5V" + range1 + "H" + k * tickSizeOuter
+            : "M" + range0 + "," + k * tickSizeOuter + "V0.5H" + range1 + "V" + k * tickSizeOuter);
+
+    tick
+        .attr("opacity", 1)
+        .attr("transform", function(d) { return transform(position, position, d); });
+
+    line
+        .attr(x + "2", k * tickSizeInner);
+
+    text
+        .attr(x, k * spacing)
+        .text(format);
+
+    selection.filter(entering)
+        .attr("fill", "none")
+        .attr("font-size", 10)
+        .attr("font-family", "sans-serif")
+        .attr("text-anchor", orient === right ? "start" : orient === left ? "end" : "middle");
+
+    selection
+        .each(function() { this.__axis = position; });
+  }
+
+  axis.scale = function(_) {
+    return arguments.length ? (scale = _, axis) : scale;
+  };
+
+  axis.ticks = function() {
+    return tickArguments = __WEBPACK_IMPORTED_MODULE_0__array__["a" /* slice */].call(arguments), axis;
+  };
+
+  axis.tickArguments = function(_) {
+    return arguments.length ? (tickArguments = _ == null ? [] : __WEBPACK_IMPORTED_MODULE_0__array__["a" /* slice */].call(_), axis) : tickArguments.slice();
+  };
+
+  axis.tickValues = function(_) {
+    return arguments.length ? (tickValues = _ == null ? null : __WEBPACK_IMPORTED_MODULE_0__array__["a" /* slice */].call(_), axis) : tickValues && tickValues.slice();
+  };
+
+  axis.tickFormat = function(_) {
+    return arguments.length ? (tickFormat = _, axis) : tickFormat;
+  };
+
+  axis.tickSize = function(_) {
+    return arguments.length ? (tickSizeInner = tickSizeOuter = +_, axis) : tickSizeInner;
+  };
+
+  axis.tickSizeInner = function(_) {
+    return arguments.length ? (tickSizeInner = +_, axis) : tickSizeInner;
+  };
+
+  axis.tickSizeOuter = function(_) {
+    return arguments.length ? (tickSizeOuter = +_, axis) : tickSizeOuter;
+  };
+
+  axis.tickPadding = function(_) {
+    return arguments.length ? (tickPadding = +_, axis) : tickPadding;
+  };
+
+  return axis;
+}
+
+function axisTop(scale) {
+  return axis(top, scale);
+}
+
+function axisRight(scale) {
+  return axis(right, scale);
+}
+
+function axisBottom(scale) {
+  return axis(bottom, scale);
+}
+
+function axisLeft(scale) {
+  return axis(left, scale);
+}
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return x;
+};
+
+
+/***/ }),
+/* 140 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_nest__ = __webpack_require__(143);
+/* unused harmony reexport nest */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_set__ = __webpack_require__(144);
+/* unused harmony reexport set */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_map__ = __webpack_require__(29);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_map__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_keys__ = __webpack_require__(142);
+/* unused harmony reexport keys */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_values__ = __webpack_require__(145);
+/* unused harmony reexport values */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_entries__ = __webpack_require__(141);
+/* unused harmony reexport entries */
+
+
+
+
+
+
+
+
+/***/ }),
+/* 141 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(map) {
+  var entries = [];
+  for (var key in map) entries.push({key: key, value: map[key]});
+  return entries;
+};
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(map) {
+  var keys = [];
+  for (var key in map) keys.push(key);
+  return keys;
+};
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(29);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var keys = [],
+      sortKeys = [],
+      sortValues,
+      rollup,
+      nest;
+
+  function apply(array, depth, createResult, setResult) {
+    if (depth >= keys.length) return rollup != null
+        ? rollup(array) : (sortValues != null
+        ? array.sort(sortValues)
+        : array);
+
+    var i = -1,
+        n = array.length,
+        key = keys[depth++],
+        keyValue,
+        value,
+        valuesByKey = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__map__["a" /* default */])(),
+        values,
+        result = createResult();
+
+    while (++i < n) {
+      if (values = valuesByKey.get(keyValue = key(value = array[i]) + "")) {
+        values.push(value);
+      } else {
+        valuesByKey.set(keyValue, [value]);
+      }
+    }
+
+    valuesByKey.each(function(values, key) {
+      setResult(result, key, apply(values, depth, createResult, setResult));
+    });
+
+    return result;
+  }
+
+  function entries(map, depth) {
+    if (++depth > keys.length) return map;
+    var array, sortKey = sortKeys[depth - 1];
+    if (rollup != null && depth >= keys.length) array = map.entries();
+    else array = [], map.each(function(v, k) { array.push({key: k, values: entries(v, depth)}); });
+    return sortKey != null ? array.sort(function(a, b) { return sortKey(a.key, b.key); }) : array;
+  }
+
+  return nest = {
+    object: function(array) { return apply(array, 0, createObject, setObject); },
+    map: function(array) { return apply(array, 0, createMap, setMap); },
+    entries: function(array) { return entries(apply(array, 0, createMap, setMap), 0); },
+    key: function(d) { keys.push(d); return nest; },
+    sortKeys: function(order) { sortKeys[keys.length - 1] = order; return nest; },
+    sortValues: function(order) { sortValues = order; return nest; },
+    rollup: function(f) { rollup = f; return nest; }
+  };
+};
+
+function createObject() {
+  return {};
+}
+
+function setObject(object, key, value) {
+  object[key] = value;
+}
+
+function createMap() {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__map__["a" /* default */])();
+}
+
+function setMap(map, key, value) {
+  map.set(key, value);
+}
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__(29);
+
+
+function Set() {}
+
+var proto = __WEBPACK_IMPORTED_MODULE_0__map__["a" /* default */].prototype;
+
+Set.prototype = set.prototype = {
+  constructor: Set,
+  has: proto.has,
+  add: function(value) {
+    value += "";
+    this[__WEBPACK_IMPORTED_MODULE_0__map__["b" /* prefix */] + value] = value;
+    return this;
+  },
+  remove: proto.remove,
+  clear: proto.clear,
+  values: proto.keys,
+  size: proto.size,
+  empty: proto.empty,
+  each: proto.each
+};
+
+function set(object, f) {
+  var set = new Set;
+
+  // Copy constructor.
+  if (object instanceof Set) object.each(function(value) { set.add(value); });
+
+  // Otherwise, assume it’s an array.
+  else if (object) {
+    var i = -1, n = object.length;
+    if (f == null) while (++i < n) set.add(object[i]);
+    else while (++i < n) set.add(f(object[i], i, object));
+  }
+
+  return set;
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = set;
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(map) {
+  var values = [];
+  for (var key in map) values.push(map[key]);
+  return values;
+};
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__math__ = __webpack_require__(69);
+/* harmony export (immutable) */ __webpack_exports__["a"] = cubehelix;
+/* unused harmony export Cubehelix */
+
+
+
+
+var A = -0.14861,
+    B = +1.78277,
+    C = -0.29227,
+    D = -0.90649,
+    E = +1.97294,
+    ED = E * D,
+    EB = E * B,
+    BC_DA = B * C - D * A;
+
+function cubehelixConvert(o) {
+  if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof __WEBPACK_IMPORTED_MODULE_1__color__["a" /* Rgb */])) o = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["b" /* rgbConvert */])(o);
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
+      bl = b - l,
+      k = (E * (g - l) - C * bl) / D,
+      s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
+      h = s ? Math.atan2(k, bl) * __WEBPACK_IMPORTED_MODULE_2__math__["a" /* rad2deg */] - 120 : NaN;
+  return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
+}
+
+function cubehelix(h, s, l, opacity) {
+  return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Cubehelix(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Cubehelix, cubehelix, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["b" /* extend */])(__WEBPACK_IMPORTED_MODULE_1__color__["c" /* Color */], {
+  brighter: function(k) {
+    k = k == null ? __WEBPACK_IMPORTED_MODULE_1__color__["d" /* brighter */] : Math.pow(__WEBPACK_IMPORTED_MODULE_1__color__["d" /* brighter */], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? __WEBPACK_IMPORTED_MODULE_1__color__["e" /* darker */] : Math.pow(__WEBPACK_IMPORTED_MODULE_1__color__["e" /* darker */], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = isNaN(this.h) ? 0 : (this.h + 120) * __WEBPACK_IMPORTED_MODULE_2__math__["b" /* deg2rad */],
+        l = +this.l,
+        a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
+        cosh = Math.cos(h),
+        sinh = Math.sin(h);
+    return new __WEBPACK_IMPORTED_MODULE_1__color__["a" /* Rgb */](
+      255 * (l + a * (A * cosh + B * sinh)),
+      255 * (l + a * (C * cosh + D * sinh)),
+      255 * (l + a * (E * cosh)),
+      this.opacity
+    );
+  }
+}));
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__define__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__math__ = __webpack_require__(69);
+/* harmony export (immutable) */ __webpack_exports__["b"] = lab;
+/* unused harmony export Lab */
+/* harmony export (immutable) */ __webpack_exports__["a"] = hcl;
+/* unused harmony export Hcl */
+
+
+
+
+var Kn = 18,
+    Xn = 0.950470, // D65 standard referent
+    Yn = 1,
+    Zn = 1.088830,
+    t0 = 4 / 29,
+    t1 = 6 / 29,
+    t2 = 3 * t1 * t1,
+    t3 = t1 * t1 * t1;
+
+function labConvert(o) {
+  if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
+  if (o instanceof Hcl) {
+    var h = o.h * __WEBPACK_IMPORTED_MODULE_2__math__["b" /* deg2rad */];
+    return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
+  }
+  if (!(o instanceof __WEBPACK_IMPORTED_MODULE_1__color__["a" /* Rgb */])) o = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["b" /* rgbConvert */])(o);
+  var b = rgb2xyz(o.r),
+      a = rgb2xyz(o.g),
+      l = rgb2xyz(o.b),
+      x = xyz2lab((0.4124564 * b + 0.3575761 * a + 0.1804375 * l) / Xn),
+      y = xyz2lab((0.2126729 * b + 0.7151522 * a + 0.0721750 * l) / Yn),
+      z = xyz2lab((0.0193339 * b + 0.1191920 * a + 0.9503041 * l) / Zn);
+  return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
+}
+
+function lab(l, a, b, opacity) {
+  return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+}
+
+function Lab(l, a, b, opacity) {
+  this.l = +l;
+  this.a = +a;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Lab, lab, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["b" /* extend */])(__WEBPACK_IMPORTED_MODULE_1__color__["c" /* Color */], {
+  brighter: function(k) {
+    return new Lab(this.l + Kn * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  darker: function(k) {
+    return new Lab(this.l - Kn * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  rgb: function() {
+    var y = (this.l + 16) / 116,
+        x = isNaN(this.a) ? y : y + this.a / 500,
+        z = isNaN(this.b) ? y : y - this.b / 200;
+    y = Yn * lab2xyz(y);
+    x = Xn * lab2xyz(x);
+    z = Zn * lab2xyz(z);
+    return new __WEBPACK_IMPORTED_MODULE_1__color__["a" /* Rgb */](
+      xyz2rgb( 3.2404542 * x - 1.5371385 * y - 0.4985314 * z), // D65 -> sRGB
+      xyz2rgb(-0.9692660 * x + 1.8760108 * y + 0.0415560 * z),
+      xyz2rgb( 0.0556434 * x - 0.2040259 * y + 1.0572252 * z),
+      this.opacity
+    );
+  }
+}));
+
+function xyz2lab(t) {
+  return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
+}
+
+function lab2xyz(t) {
+  return t > t1 ? t * t * t : t2 * (t - t0);
+}
+
+function xyz2rgb(x) {
+  return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+}
+
+function rgb2xyz(x) {
+  return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+}
+
+function hclConvert(o) {
+  if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
+  if (!(o instanceof Lab)) o = labConvert(o);
+  var h = Math.atan2(o.b, o.a) * __WEBPACK_IMPORTED_MODULE_2__math__["a" /* rad2deg */];
+  return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
+}
+
+function hcl(h, c, l, opacity) {
+  return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+}
+
+function Hcl(h, c, l, opacity) {
+  this.h = +h;
+  this.c = +c;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["a" /* default */])(Hcl, hcl, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__define__["b" /* extend */])(__WEBPACK_IMPORTED_MODULE_1__color__["c" /* Color */], {
+  brighter: function(k) {
+    return new Hcl(this.h, this.c, this.l + Kn * (k == null ? 1 : k), this.opacity);
+  },
+  darker: function(k) {
+    return new Hcl(this.h, this.c, this.l - Kn * (k == null ? 1 : k), this.opacity);
+  },
+  rgb: function() {
+    return labConvert(this).rgb();
+  }
+}));
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var noop = {value: function() {}};
+
+function dispatch() {
+  for (var i = 0, n = arguments.length, _ = {}, t; i < n; ++i) {
+    if (!(t = arguments[i] + "") || (t in _)) throw new Error("illegal type: " + t);
+    _[t] = [];
+  }
+  return new Dispatch(_);
+}
+
+function Dispatch(_) {
+  this._ = _;
+}
+
+function parseTypenames(typenames, types) {
+  return typenames.trim().split(/^|\s+/).map(function(t) {
+    var name = "", i = t.indexOf(".");
+    if (i >= 0) name = t.slice(i + 1), t = t.slice(0, i);
+    if (t && !types.hasOwnProperty(t)) throw new Error("unknown type: " + t);
+    return {type: t, name: name};
+  });
+}
+
+Dispatch.prototype = dispatch.prototype = {
+  constructor: Dispatch,
+  on: function(typename, callback) {
+    var _ = this._,
+        T = parseTypenames(typename + "", _),
+        t,
+        i = -1,
+        n = T.length;
+
+    // If no callback was specified, return the callback of the given type and name.
+    if (arguments.length < 2) {
+      while (++i < n) if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name))) return t;
+      return;
+    }
+
+    // If a type was specified, set the callback for the given type and name.
+    // Otherwise, if a null callback was specified, remove callbacks of the given name.
+    if (callback != null && typeof callback !== "function") throw new Error("invalid callback: " + callback);
+    while (++i < n) {
+      if (t = (typename = T[i]).type) _[t] = set(_[t], typename.name, callback);
+      else if (callback == null) for (t in _) _[t] = set(_[t], typename.name, null);
+    }
+
+    return this;
+  },
+  copy: function() {
+    var copy = {}, _ = this._;
+    for (var t in _) copy[t] = _[t].slice();
+    return new Dispatch(copy);
+  },
+  call: function(type, that) {
+    if ((n = arguments.length - 2) > 0) for (var args = new Array(n), i = 0, n, t; i < n; ++i) args[i] = arguments[i + 2];
+    if (!this._.hasOwnProperty(type)) throw new Error("unknown type: " + type);
+    for (t = this._[type], i = 0, n = t.length; i < n; ++i) t[i].value.apply(that, args);
+  },
+  apply: function(type, that, args) {
+    if (!this._.hasOwnProperty(type)) throw new Error("unknown type: " + type);
+    for (var t = this._[type], i = 0, n = t.length; i < n; ++i) t[i].value.apply(that, args);
+  }
+};
+
+function get(type, name) {
+  for (var i = 0, n = type.length, c; i < n; ++i) {
+    if ((c = type[i]).name === name) {
+      return c.value;
+    }
+  }
+}
+
+function set(type, name, callback) {
+  for (var i = 0, n = type.length; i < n; ++i) {
+    if (type[i].name === name) {
+      type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
+      break;
+    }
+  }
+  if (callback != null) type.push({name: name, value: callback});
+  return type;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = dispatch;
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dispatch__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__nodrag__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__noevent__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constant__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__event__ = __webpack_require__(151);
+
+
+
+
+
+
+
+// Ignore right-click, since that should open the context menu.
+function defaultFilter() {
+  return !__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].button;
+}
+
+function defaultContainer() {
+  return this.parentNode;
+}
+
+function defaultSubject(d) {
+  return d == null ? {x: __WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].x, y: __WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].y} : d;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var filter = defaultFilter,
+      container = defaultContainer,
+      subject = defaultSubject,
+      gestures = {},
+      listeners = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_dispatch__["a" /* dispatch */])("start", "drag", "end"),
+      active = 0,
+      mousemoving,
+      touchending;
+
+  function drag(selection) {
+    selection
+        .on("mousedown.drag", mousedowned)
+        .on("touchstart.drag", touchstarted)
+        .on("touchmove.drag", touchmoved)
+        .on("touchend.drag touchcancel.drag", touchended)
+        .style("-webkit-tap-highlight-color", "rgba(0,0,0,0)");
+  }
+
+  function mousedowned() {
+    if (touchending || !filter.apply(this, arguments)) return;
+    var gesture = beforestart("mouse", container.apply(this, arguments), __WEBPACK_IMPORTED_MODULE_1_d3_selection__["c" /* mouse */], this, arguments);
+    if (!gesture) return;
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["a" /* select */])(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].view).on("mousemove.drag", mousemoved, true).on("mouseup.drag", mouseupped, true);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__nodrag__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].view);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["b" /* nopropagation */])();
+    mousemoving = false;
+    gesture("start");
+  }
+
+  function mousemoved() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["a" /* default */])();
+    mousemoving = true;
+    gestures.mouse("drag");
+  }
+
+  function mouseupped() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["a" /* select */])(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].view).on("mousemove.drag mouseup.drag", null);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__nodrag__["b" /* yesdrag */])(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].view, mousemoving);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["a" /* default */])();
+    gestures.mouse("end");
+  }
+
+  function touchstarted() {
+    if (!filter.apply(this, arguments)) return;
+    var touches = __WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].changedTouches,
+        c = container.apply(this, arguments),
+        n = touches.length, i, gesture;
+
+    for (i = 0; i < n; ++i) {
+      if (gesture = beforestart(touches[i].identifier, c, __WEBPACK_IMPORTED_MODULE_1_d3_selection__["d" /* touch */], this, arguments)) {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["b" /* nopropagation */])();
+        gesture("start");
+      }
+    }
+  }
+
+  function touchmoved() {
+    var touches = __WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].changedTouches,
+        n = touches.length, i, gesture;
+
+    for (i = 0; i < n; ++i) {
+      if (gesture = gestures[touches[i].identifier]) {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["a" /* default */])();
+        gesture("drag");
+      }
+    }
+  }
+
+  function touchended() {
+    var touches = __WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].changedTouches,
+        n = touches.length, i, gesture;
+
+    if (touchending) clearTimeout(touchending);
+    touchending = setTimeout(function() { touchending = null; }, 500); // Ghost clicks are delayed!
+    for (i = 0; i < n; ++i) {
+      if (gesture = gestures[touches[i].identifier]) {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__noevent__["b" /* nopropagation */])();
+        gesture("end");
+      }
+    }
+  }
+
+  function beforestart(id, container, point, that, args) {
+    var p = point(container, id), s, dx, dy,
+        sublisteners = listeners.copy();
+
+    if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["e" /* customEvent */])(new __WEBPACK_IMPORTED_MODULE_5__event__["a" /* default */](drag, "beforestart", s, id, active, p[0], p[1], 0, 0, sublisteners), function() {
+      if ((__WEBPACK_IMPORTED_MODULE_1_d3_selection__["b" /* event */].subject = s = subject.apply(that, args)) == null) return false;
+      dx = s.x - p[0] || 0;
+      dy = s.y - p[1] || 0;
+      return true;
+    })) return;
+
+    return function gesture(type) {
+      var p0 = p, n;
+      switch (type) {
+        case "start": gestures[id] = gesture, n = active++; break;
+        case "end": delete gestures[id], --active; // nobreak
+        case "drag": p = point(container, id), n = active; break;
+      }
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["e" /* customEvent */])(new __WEBPACK_IMPORTED_MODULE_5__event__["a" /* default */](drag, type, s, id, n, p[0] + dx, p[1] + dy, p[0] - p0[0], p[1] - p0[1], sublisteners), sublisteners.apply, sublisteners, [type, that, args]);
+    };
+  }
+
+  drag.filter = function(_) {
+    return arguments.length ? (filter = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__constant__["a" /* default */])(!!_), drag) : filter;
+  };
+
+  drag.container = function(_) {
+    return arguments.length ? (container = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__constant__["a" /* default */])(_), drag) : container;
+  };
+
+  drag.subject = function(_) {
+    return arguments.length ? (subject = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__constant__["a" /* default */])(_), drag) : subject;
+  };
+
+  drag.on = function() {
+    var value = listeners.on.apply(listeners, arguments);
+    return value === listeners ? drag : value;
+  };
+
+  return drag;
+};
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = DragEvent;
+function DragEvent(target, type, subject, id, active, x, y, dx, dy, dispatch) {
+  this.target = target;
+  this.type = type;
+  this.subject = subject;
+  this.identifier = id;
+  this.active = active;
+  this.x = x;
+  this.y = y;
+  this.dx = dx;
+  this.dy = dy;
+  this._ = dispatch;
+}
+
+DragEvent.prototype.on = function() {
+  var value = this._.on.apply(this._, arguments);
+  return value === this._ ? this : value;
+};
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_linear__ = __webpack_require__(159);
+/* unused harmony reexport easeLinear */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_quad__ = __webpack_require__(161);
+/* unused harmony reexport easeQuad */
+/* unused harmony reexport easeQuadIn */
+/* unused harmony reexport easeQuadOut */
+/* unused harmony reexport easeQuadInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_cubic__ = __webpack_require__(156);
+/* unused harmony reexport easeCubic */
+/* unused harmony reexport easeCubicIn */
+/* unused harmony reexport easeCubicOut */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_cubic__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_poly__ = __webpack_require__(160);
+/* unused harmony reexport easePoly */
+/* unused harmony reexport easePolyIn */
+/* unused harmony reexport easePolyOut */
+/* unused harmony reexport easePolyInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_sin__ = __webpack_require__(162);
+/* unused harmony reexport easeSin */
+/* unused harmony reexport easeSinIn */
+/* unused harmony reexport easeSinOut */
+/* unused harmony reexport easeSinInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_exp__ = __webpack_require__(158);
+/* unused harmony reexport easeExp */
+/* unused harmony reexport easeExpIn */
+/* unused harmony reexport easeExpOut */
+/* unused harmony reexport easeExpInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_circle__ = __webpack_require__(155);
+/* unused harmony reexport easeCircle */
+/* unused harmony reexport easeCircleIn */
+/* unused harmony reexport easeCircleOut */
+/* unused harmony reexport easeCircleInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_bounce__ = __webpack_require__(154);
+/* unused harmony reexport easeBounce */
+/* unused harmony reexport easeBounceIn */
+/* unused harmony reexport easeBounceOut */
+/* unused harmony reexport easeBounceInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_back__ = __webpack_require__(153);
+/* unused harmony reexport easeBack */
+/* unused harmony reexport easeBackIn */
+/* unused harmony reexport easeBackOut */
+/* unused harmony reexport easeBackInOut */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_elastic__ = __webpack_require__(157);
+/* unused harmony reexport easeElastic */
+/* unused harmony reexport easeElasticIn */
+/* unused harmony reexport easeElasticOut */
+/* unused harmony reexport easeElasticInOut */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 153 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export backIn */
+/* unused harmony export backOut */
+/* unused harmony export backInOut */
+var overshoot = 1.70158;
+
+var backIn = (function custom(s) {
+  s = +s;
+
+  function backIn(t) {
+    return t * t * ((s + 1) * t - s);
+  }
+
+  backIn.overshoot = custom;
+
+  return backIn;
+})(overshoot);
+
+var backOut = (function custom(s) {
+  s = +s;
+
+  function backOut(t) {
+    return --t * t * ((s + 1) * t + s) + 1;
+  }
+
+  backOut.overshoot = custom;
+
+  return backOut;
+})(overshoot);
+
+var backInOut = (function custom(s) {
+  s = +s;
+
+  function backInOut(t) {
+    return ((t *= 2) < 1 ? t * t * ((s + 1) * t - s) : (t -= 2) * t * ((s + 1) * t + s) + 2) / 2;
+  }
+
+  backInOut.overshoot = custom;
+
+  return backInOut;
+})(overshoot);
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export bounceIn */
+/* unused harmony export bounceOut */
+/* unused harmony export bounceInOut */
+var b1 = 4 / 11,
+    b2 = 6 / 11,
+    b3 = 8 / 11,
+    b4 = 3 / 4,
+    b5 = 9 / 11,
+    b6 = 10 / 11,
+    b7 = 15 / 16,
+    b8 = 21 / 22,
+    b9 = 63 / 64,
+    b0 = 1 / b1 / b1;
+
+function bounceIn(t) {
+  return 1 - bounceOut(1 - t);
+}
+
+function bounceOut(t) {
+  return (t = +t) < b1 ? b0 * t * t : t < b3 ? b0 * (t -= b2) * t + b4 : t < b6 ? b0 * (t -= b5) * t + b7 : b0 * (t -= b8) * t + b9;
+}
+
+function bounceInOut(t) {
+  return ((t *= 2) <= 1 ? 1 - bounceOut(1 - t) : bounceOut(t - 1) + 1) / 2;
+}
+
+
+/***/ }),
+/* 155 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export circleIn */
+/* unused harmony export circleOut */
+/* unused harmony export circleInOut */
+function circleIn(t) {
+  return 1 - Math.sqrt(1 - t * t);
+}
+
+function circleOut(t) {
+  return Math.sqrt(1 - --t * t);
+}
+
+function circleInOut(t) {
+  return ((t *= 2) <= 1 ? 1 - Math.sqrt(1 - t * t) : Math.sqrt(1 - (t -= 2) * t) + 1) / 2;
+}
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export cubicIn */
+/* unused harmony export cubicOut */
+/* harmony export (immutable) */ __webpack_exports__["a"] = cubicInOut;
+function cubicIn(t) {
+  return t * t * t;
+}
+
+function cubicOut(t) {
+  return --t * t * t + 1;
+}
+
+function cubicInOut(t) {
+  return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
+}
+
+
+/***/ }),
+/* 157 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export elasticIn */
+/* unused harmony export elasticOut */
+/* unused harmony export elasticInOut */
+var tau = 2 * Math.PI,
+    amplitude = 1,
+    period = 0.3;
+
+var elasticIn = (function custom(a, p) {
+  var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau);
+
+  function elasticIn(t) {
+    return a * Math.pow(2, 10 * --t) * Math.sin((s - t) / p);
+  }
+
+  elasticIn.amplitude = function(a) { return custom(a, p * tau); };
+  elasticIn.period = function(p) { return custom(a, p); };
+
+  return elasticIn;
+})(amplitude, period);
+
+var elasticOut = (function custom(a, p) {
+  var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau);
+
+  function elasticOut(t) {
+    return 1 - a * Math.pow(2, -10 * (t = +t)) * Math.sin((t + s) / p);
+  }
+
+  elasticOut.amplitude = function(a) { return custom(a, p * tau); };
+  elasticOut.period = function(p) { return custom(a, p); };
+
+  return elasticOut;
+})(amplitude, period);
+
+var elasticInOut = (function custom(a, p) {
+  var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau);
+
+  function elasticInOut(t) {
+    return ((t = t * 2 - 1) < 0
+        ? a * Math.pow(2, 10 * t) * Math.sin((s - t) / p)
+        : 2 - a * Math.pow(2, -10 * t) * Math.sin((s + t) / p)) / 2;
+  }
+
+  elasticInOut.amplitude = function(a) { return custom(a, p * tau); };
+  elasticInOut.period = function(p) { return custom(a, p); };
+
+  return elasticInOut;
+})(amplitude, period);
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export expIn */
+/* unused harmony export expOut */
+/* unused harmony export expInOut */
+function expIn(t) {
+  return Math.pow(2, 10 * t - 10);
+}
+
+function expOut(t) {
+  return 1 - Math.pow(2, -10 * t);
+}
+
+function expInOut(t) {
+  return ((t *= 2) <= 1 ? Math.pow(2, 10 * t - 10) : 2 - Math.pow(2, 10 - 10 * t)) / 2;
+}
+
+
+/***/ }),
+/* 159 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export linear */
+function linear(t) {
+  return +t;
+}
+
+
+/***/ }),
+/* 160 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export polyIn */
+/* unused harmony export polyOut */
+/* unused harmony export polyInOut */
+var exponent = 3;
+
+var polyIn = (function custom(e) {
+  e = +e;
+
+  function polyIn(t) {
+    return Math.pow(t, e);
+  }
+
+  polyIn.exponent = custom;
+
+  return polyIn;
+})(exponent);
+
+var polyOut = (function custom(e) {
+  e = +e;
+
+  function polyOut(t) {
+    return 1 - Math.pow(1 - t, e);
+  }
+
+  polyOut.exponent = custom;
+
+  return polyOut;
+})(exponent);
+
+var polyInOut = (function custom(e) {
+  e = +e;
+
+  function polyInOut(t) {
+    return ((t *= 2) <= 1 ? Math.pow(t, e) : 2 - Math.pow(2 - t, e)) / 2;
+  }
+
+  polyInOut.exponent = custom;
+
+  return polyInOut;
+})(exponent);
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export quadIn */
+/* unused harmony export quadOut */
+/* unused harmony export quadInOut */
+function quadIn(t) {
+  return t * t;
+}
+
+function quadOut(t) {
+  return t * (2 - t);
+}
+
+function quadInOut(t) {
+  return ((t *= 2) <= 1 ? t * t : --t * (2 - t) + 1) / 2;
+}
+
+
+/***/ }),
+/* 162 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export sinIn */
+/* unused harmony export sinOut */
+/* unused harmony export sinInOut */
+var pi = Math.PI,
+    halfPi = pi / 2;
+
+function sinIn(t) {
+  return 1 - Math.cos(t * halfPi);
+}
+
+function sinOut(t) {
+  return Math.sin(t * halfPi);
+}
+
+function sinInOut(t) {
+  return (1 - Math.cos(pi * t)) / 2;
+}
+
+
+/***/ }),
+/* 163 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__locale__ = __webpack_require__(76);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return format; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return formatPrefix; });
+/* unused harmony export default */
+
+
+var locale;
+var format;
+var formatPrefix;
+
+defaultLocale({
+  decimal: ".",
+  thousands: ",",
+  grouping: [3],
+  currency: ["$", ""]
+});
+
+function defaultLocale(definition) {
+  locale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__locale__["a" /* default */])(definition);
+  format = locale.format;
+  formatPrefix = locale.formatPrefix;
+  return locale;
+}
+
+
+/***/ }),
+/* 164 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x, p) {
+  x = x.toPrecision(p);
+
+  out: for (var n = x.length, i = 1, i0 = -1, i1; i < n; ++i) {
+    switch (x[i]) {
+      case ".": i0 = i1 = i; break;
+      case "0": if (i0 === 0) i0 = i; i1 = i; break;
+      case "e": break out;
+      default: if (i0 > 0) i0 = 0; break;
+    }
+  }
+
+  return i0 > 0 ? x.slice(0, i0) + x.slice(i1 + 1) : x;
+};
+
+
+/***/ }),
+/* 165 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(grouping, thousands) {
+  return function(value, width) {
+    var i = value.length,
+        t = [],
+        j = 0,
+        g = grouping[0],
+        length = 0;
+
+    while (i > 0 && g > 0) {
+      if (length + g + 1 > width) g = Math.max(1, width - length);
+      t.push(value.substring(i -= g, i + g));
+      if ((length += g + 1) > width) break;
+      g = grouping[j = (j + 1) % grouping.length];
+    }
+
+    return t.reverse().join(thousands);
+  };
+};
+
+
+/***/ }),
+/* 166 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__formatDecimal__ = __webpack_require__(34);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(x, p) {
+  var d = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__formatDecimal__["a" /* default */])(x, p);
+  if (!d) return x + "";
+  var coefficient = d[0],
+      exponent = d[1];
+  return exponent < 0 ? "0." + new Array(-exponent).join("0") + coefficient
+      : coefficient.length > exponent + 1 ? coefficient.slice(0, exponent + 1) + "." + coefficient.slice(exponent + 1)
+      : coefficient + new Array(exponent - coefficient.length + 2).join("0");
+};
+
+
+/***/ }),
+/* 167 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exponent__ = __webpack_require__(19);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(step) {
+  return Math.max(0, -__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(Math.abs(step)));
+};
+
+
+/***/ }),
+/* 168 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exponent__ = __webpack_require__(19);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(step, value) {
+  return Math.max(0, Math.max(-8, Math.min(8, Math.floor(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(value) / 3))) * 3 - __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(Math.abs(step)));
+};
+
+
+/***/ }),
+/* 169 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__exponent__ = __webpack_require__(19);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(step, max) {
+  step = Math.abs(step), max = Math.abs(max) - step;
+  return Math.max(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(max) - __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__exponent__["a" /* default */])(step)) + 1;
+};
+
+
+/***/ }),
+/* 170 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cubehelixLong; });
+
+
+
+function cubehelix(hue) {
+  return (function cubehelixGamma(y) {
+    y = +y;
+
+    function cubehelix(start, end) {
+      var h = hue((start = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(start)).h, (end = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(end)).h),
+          s = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.s, end.s),
+          l = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.l, end.l),
+          opacity = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.opacity, end.opacity);
+      return function(t) {
+        start.h = h(t);
+        start.s = s(t);
+        start.l = l(Math.pow(t, y));
+        start.opacity = opacity(t);
+        return start + "";
+      };
+    }
+
+    cubehelix.gamma = cubehelixGamma;
+
+    return cubehelix;
+  })(1);
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = cubehelix(__WEBPACK_IMPORTED_MODULE_1__color__["b" /* hue */]);
+var cubehelixLong = cubehelix(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */]);
+
+
+/***/ }),
+/* 171 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(13);
+/* unused harmony export hclLong */
+
+
+
+function hcl(hue) {
+  return function(start, end) {
+    var h = hue((start = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["b" /* hcl */])(start)).h, (end = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["b" /* hcl */])(end)).h),
+        c = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.c, end.c),
+        l = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.l, end.l),
+        opacity = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.opacity, end.opacity);
+    return function(t) {
+      start.h = h(t);
+      start.c = c(t);
+      start.l = l(t);
+      start.opacity = opacity(t);
+      return start + "";
+    };
+  }
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = hcl(__WEBPACK_IMPORTED_MODULE_1__color__["b" /* hue */]);
+var hclLong = hcl(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */]);
+
+
+/***/ }),
+/* 172 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(13);
+/* unused harmony export hslLong */
+
+
+
+function hsl(hue) {
+  return function(start, end) {
+    var h = hue((start = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["d" /* hsl */])(start)).h, (end = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["d" /* hsl */])(end)).h),
+        s = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.s, end.s),
+        l = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.l, end.l),
+        opacity = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.opacity, end.opacity);
+    return function(t) {
+      start.h = h(t);
+      start.s = s(t);
+      start.l = l(t);
+      start.opacity = opacity(t);
+      return start + "";
+    };
+  }
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = hsl(__WEBPACK_IMPORTED_MODULE_1__color__["b" /* hue */]);
+var hslLong = hsl(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */]);
+
+
+/***/ }),
+/* 173 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__color__ = __webpack_require__(13);
+/* unused harmony export default */
+
+
+
+function lab(start, end) {
+  var l = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])((start = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["c" /* lab */])(start)).l, (end = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["c" /* lab */])(end)).l),
+      a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.a, end.a),
+      b = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.b, end.b),
+      opacity = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__color__["a" /* default */])(start.opacity, end.opacity);
+  return function(t) {
+    start.l = l(t);
+    start.a = a(t);
+    start.b = b(t);
+    start.opacity = opacity(t);
+    return start + "";
+  };
+}
+
+
+/***/ }),
+/* 174 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(interpolator, n) {
+  var samples = new Array(n);
+  for (var i = 0; i < n; ++i) samples[i] = interpolator(i / (n - 1));
+  return samples;
+};
+
+
+/***/ }),
+/* 175 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  return a = +a, b -= a, function(t) {
+    return Math.round(a + b * t);
+  };
+};
+
+
+/***/ }),
+/* 176 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return identity; });
+var degrees = 180 / Math.PI;
+
+var identity = {
+  translateX: 0,
+  translateY: 0,
+  rotate: 0,
+  skewX: 0,
+  scaleX: 1,
+  scaleY: 1
+};
+
+/* harmony default export */ __webpack_exports__["b"] = function(a, b, c, d, e, f) {
+  var scaleX, scaleY, skewX;
+  if (scaleX = Math.sqrt(a * a + b * b)) a /= scaleX, b /= scaleX;
+  if (skewX = a * c + b * d) c -= a * skewX, d -= b * skewX;
+  if (scaleY = Math.sqrt(c * c + d * d)) c /= scaleY, d /= scaleY, skewX /= scaleY;
+  if (a * d < b * c) a = -a, b = -b, skewX = -skewX, scaleX = -scaleX;
+  return {
+    translateX: e,
+    translateY: f,
+    rotate: Math.atan2(b, a) * degrees,
+    skewX: Math.atan(skewX) * degrees,
+    scaleX: scaleX,
+    scaleY: scaleY
+  };
+};
+
+
+/***/ }),
+/* 177 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__number__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__parse__ = __webpack_require__(178);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return interpolateTransformCss; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return interpolateTransformSvg; });
+
+
+
+function interpolateTransform(parse, pxComma, pxParen, degParen) {
+
+  function pop(s) {
+    return s.length ? s.pop() + " " : "";
+  }
+
+  function translate(xa, ya, xb, yb, s, q) {
+    if (xa !== xb || ya !== yb) {
+      var i = s.push("translate(", null, pxComma, null, pxParen);
+      q.push({i: i - 4, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(xa, xb)}, {i: i - 2, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(ya, yb)});
+    } else if (xb || yb) {
+      s.push("translate(" + xb + pxComma + yb + pxParen);
+    }
+  }
+
+  function rotate(a, b, s, q) {
+    if (a !== b) {
+      if (a - b > 180) b += 360; else if (b - a > 180) a += 360; // shortest path
+      q.push({i: s.push(pop(s) + "rotate(", null, degParen) - 2, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(a, b)});
+    } else if (b) {
+      s.push(pop(s) + "rotate(" + b + degParen);
+    }
+  }
+
+  function skewX(a, b, s, q) {
+    if (a !== b) {
+      q.push({i: s.push(pop(s) + "skewX(", null, degParen) - 2, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(a, b)});
+    } else if (b) {
+      s.push(pop(s) + "skewX(" + b + degParen);
+    }
+  }
+
+  function scale(xa, ya, xb, yb, s, q) {
+    if (xa !== xb || ya !== yb) {
+      var i = s.push(pop(s) + "scale(", null, ",", null, ")");
+      q.push({i: i - 4, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(xa, xb)}, {i: i - 2, x: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__number__["a" /* default */])(ya, yb)});
+    } else if (xb !== 1 || yb !== 1) {
+      s.push(pop(s) + "scale(" + xb + "," + yb + ")");
+    }
+  }
+
+  return function(a, b) {
+    var s = [], // string constants and placeholders
+        q = []; // number interpolators
+    a = parse(a), b = parse(b);
+    translate(a.translateX, a.translateY, b.translateX, b.translateY, s, q);
+    rotate(a.rotate, b.rotate, s, q);
+    skewX(a.skewX, b.skewX, s, q);
+    scale(a.scaleX, a.scaleY, b.scaleX, b.scaleY, s, q);
+    a = b = null; // gc
+    return function(t) {
+      var i = -1, n = q.length, o;
+      while (++i < n) s[(o = q[i]).i] = o.x(t);
+      return s.join("");
+    };
+  };
+}
+
+var interpolateTransformCss = interpolateTransform(__WEBPACK_IMPORTED_MODULE_1__parse__["a" /* parseCss */], "px, ", "px)", "deg)");
+var interpolateTransformSvg = interpolateTransform(__WEBPACK_IMPORTED_MODULE_1__parse__["b" /* parseSvg */], ", ", ")", ")");
+
+
+/***/ }),
+/* 178 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__decompose__ = __webpack_require__(176);
+/* harmony export (immutable) */ __webpack_exports__["a"] = parseCss;
+/* harmony export (immutable) */ __webpack_exports__["b"] = parseSvg;
+
+
+var cssNode,
+    cssRoot,
+    cssView,
+    svgNode;
+
+function parseCss(value) {
+  if (value === "none") return __WEBPACK_IMPORTED_MODULE_0__decompose__["a" /* identity */];
+  if (!cssNode) cssNode = document.createElement("DIV"), cssRoot = document.documentElement, cssView = document.defaultView;
+  cssNode.style.transform = value;
+  value = cssView.getComputedStyle(cssRoot.appendChild(cssNode), null).getPropertyValue("transform");
+  cssRoot.removeChild(cssNode);
+  value = value.slice(7, -1).split(",");
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__decompose__["b" /* default */])(+value[0], +value[1], +value[2], +value[3], +value[4], +value[5]);
+}
+
+function parseSvg(value) {
+  if (value == null) return __WEBPACK_IMPORTED_MODULE_0__decompose__["a" /* identity */];
+  if (!svgNode) svgNode = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  svgNode.setAttribute("transform", value);
+  if (!(value = svgNode.transform.baseVal.consolidate())) return __WEBPACK_IMPORTED_MODULE_0__decompose__["a" /* identity */];
+  value = value.matrix;
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__decompose__["b" /* default */])(value.a, value.b, value.c, value.d, value.e, value.f);
+}
+
+
+/***/ }),
+/* 179 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var rho = Math.SQRT2,
+    rho2 = 2,
+    rho4 = 4,
+    epsilon2 = 1e-12;
+
+function cosh(x) {
+  return ((x = Math.exp(x)) + 1 / x) / 2;
+}
+
+function sinh(x) {
+  return ((x = Math.exp(x)) - 1 / x) / 2;
+}
+
+function tanh(x) {
+  return ((x = Math.exp(2 * x)) - 1) / (x + 1);
+}
+
+// p0 = [ux0, uy0, w0]
+// p1 = [ux1, uy1, w1]
+/* harmony default export */ __webpack_exports__["a"] = function(p0, p1) {
+  var ux0 = p0[0], uy0 = p0[1], w0 = p0[2],
+      ux1 = p1[0], uy1 = p1[1], w1 = p1[2],
+      dx = ux1 - ux0,
+      dy = uy1 - uy0,
+      d2 = dx * dx + dy * dy,
+      i,
+      S;
+
+  // Special case for u0 ≅ u1.
+  if (d2 < epsilon2) {
+    S = Math.log(w1 / w0) / rho;
+    i = function(t) {
+      return [
+        ux0 + t * dx,
+        uy0 + t * dy,
+        w0 * Math.exp(rho * t * S)
+      ];
+    }
+  }
+
+  // General case.
+  else {
+    var d1 = Math.sqrt(d2),
+        b0 = (w1 * w1 - w0 * w0 + rho4 * d2) / (2 * w0 * rho2 * d1),
+        b1 = (w1 * w1 - w0 * w0 - rho4 * d2) / (2 * w1 * rho2 * d1),
+        r0 = Math.log(Math.sqrt(b0 * b0 + 1) - b0),
+        r1 = Math.log(Math.sqrt(b1 * b1 + 1) - b1);
+    S = (r1 - r0) / rho;
+    i = function(t) {
+      var s = t * S,
+          coshr0 = cosh(r0),
+          u = w0 / (rho2 * d1) * (coshr0 * tanh(rho * s + r0) - sinh(r0));
+      return [
+        ux0 + u * dx,
+        uy0 + u * dy,
+        w0 * coshr0 / cosh(rho * s + r0)
+      ];
+    }
+  }
+
+  i.duration = S * 1000;
+
+  return i;
+};
+
+
+/***/ }),
+/* 180 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var pi = Math.PI,
+    tau = 2 * pi,
+    epsilon = 1e-6,
+    tauEpsilon = tau - epsilon;
+
+function Path() {
+  this._x0 = this._y0 = // start of current subpath
+  this._x1 = this._y1 = null; // end of current subpath
+  this._ = "";
+}
+
+function path() {
+  return new Path;
+}
+
+Path.prototype = path.prototype = {
+  constructor: Path,
+  moveTo: function(x, y) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y);
+  },
+  closePath: function() {
+    if (this._x1 !== null) {
+      this._x1 = this._x0, this._y1 = this._y0;
+      this._ += "Z";
+    }
+  },
+  lineTo: function(x, y) {
+    this._ += "L" + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  quadraticCurveTo: function(x1, y1, x, y) {
+    this._ += "Q" + (+x1) + "," + (+y1) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  bezierCurveTo: function(x1, y1, x2, y2, x, y) {
+    this._ += "C" + (+x1) + "," + (+y1) + "," + (+x2) + "," + (+y2) + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  arcTo: function(x1, y1, x2, y2, r) {
+    x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
+    var x0 = this._x1,
+        y0 = this._y1,
+        x21 = x2 - x1,
+        y21 = y2 - y1,
+        x01 = x0 - x1,
+        y01 = y0 - y1,
+        l01_2 = x01 * x01 + y01 * y01;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x1,y1).
+    if (this._x1 === null) {
+      this._ += "M" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Or, is (x1,y1) coincident with (x0,y0)? Do nothing.
+    else if (!(l01_2 > epsilon)) {}
+
+    // Or, are (x0,y0), (x1,y1) and (x2,y2) collinear?
+    // Equivalently, is (x1,y1) coincident with (x2,y2)?
+    // Or, is the radius zero? Line to (x1,y1).
+    else if (!(Math.abs(y01 * x21 - y21 * x01) > epsilon) || !r) {
+      this._ += "L" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Otherwise, draw an arc!
+    else {
+      var x20 = x2 - x0,
+          y20 = y2 - y0,
+          l21_2 = x21 * x21 + y21 * y21,
+          l20_2 = x20 * x20 + y20 * y20,
+          l21 = Math.sqrt(l21_2),
+          l01 = Math.sqrt(l01_2),
+          l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
+          t01 = l / l01,
+          t21 = l / l21;
+
+      // If the start tangent is not coincident with (x0,y0), line to.
+      if (Math.abs(t01 - 1) > epsilon) {
+        this._ += "L" + (x1 + t01 * x01) + "," + (y1 + t01 * y01);
+      }
+
+      this._ += "A" + r + "," + r + ",0,0," + (+(y01 * x20 > x01 * y20)) + "," + (this._x1 = x1 + t21 * x21) + "," + (this._y1 = y1 + t21 * y21);
+    }
+  },
+  arc: function(x, y, r, a0, a1, ccw) {
+    x = +x, y = +y, r = +r;
+    var dx = r * Math.cos(a0),
+        dy = r * Math.sin(a0),
+        x0 = x + dx,
+        y0 = y + dy,
+        cw = 1 ^ ccw,
+        da = ccw ? a0 - a1 : a1 - a0;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x0,y0).
+    if (this._x1 === null) {
+      this._ += "M" + x0 + "," + y0;
+    }
+
+    // Or, is (x0,y0) not coincident with the previous point? Line to (x0,y0).
+    else if (Math.abs(this._x1 - x0) > epsilon || Math.abs(this._y1 - y0) > epsilon) {
+      this._ += "L" + x0 + "," + y0;
+    }
+
+    // Is this arc empty? We’re done.
+    if (!r) return;
+
+    // Is this a complete circle? Draw two arcs to complete the circle.
+    if (da > tauEpsilon) {
+      this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
+    }
+
+    // Otherwise, draw an arc!
+    else {
+      if (da < 0) da = da % tau + tau;
+      this._ += "A" + r + "," + r + ",0," + (+(da >= pi)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
+    }
+  },
+  rect: function(x, y, w, h) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y) + "h" + (+w) + "v" + (+h) + "h" + (-w) + "Z";
+  },
+  toString: function() {
+    return this._;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = path;
+
+
+/***/ }),
+/* 181 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_area__ = __webpack_require__(182);
+/* unused harmony reexport polygonArea */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_centroid__ = __webpack_require__(183);
+/* unused harmony reexport polygonCentroid */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_hull__ = __webpack_require__(186);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_hull__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_contains__ = __webpack_require__(184);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__src_contains__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_length__ = __webpack_require__(187);
+/* unused harmony reexport polygonLength */
+
+
+
+
+
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(polygon) {
+  var i = -1,
+      n = polygon.length,
+      a,
+      b = polygon[n - 1],
+      area = 0;
+
+  while (++i < n) {
+    a = b;
+    b = polygon[i];
+    area += a[1] * b[0] - a[0] * b[1];
+  }
+
+  return area / 2;
+};
+
+
+/***/ }),
+/* 183 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(polygon) {
+  var i = -1,
+      n = polygon.length,
+      x = 0,
+      y = 0,
+      a,
+      b = polygon[n - 1],
+      c,
+      k = 0;
+
+  while (++i < n) {
+    a = b;
+    b = polygon[i];
+    k += c = a[0] * b[1] - b[0] * a[1];
+    x += (a[0] + b[0]) * c;
+    y += (a[1] + b[1]) * c;
+  }
+
+  return k *= 3, [x / k, y / k];
+};
+
+
+/***/ }),
+/* 184 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(polygon, point) {
+  var n = polygon.length,
+      p = polygon[n - 1],
+      x = point[0], y = point[1],
+      x0 = p[0], y0 = p[1],
+      x1, y1,
+      inside = false;
+
+  for (var i = 0; i < n; ++i) {
+    p = polygon[i], x1 = p[0], y1 = p[1];
+    if (((y1 > y) !== (y0 > y)) && (x < (x0 - x1) * (y - y1) / (y0 - y1) + x1)) inside = !inside;
+    x0 = x1, y0 = y1;
+  }
+
+  return inside;
+};
+
+
+/***/ }),
+/* 185 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// Returns the 2D cross product of AB and AC vectors, i.e., the z-component of
+// the 3D cross product in a quadrant I Cartesian coordinate system (+x is
+// right, +y is up). Returns a positive value if ABC is counter-clockwise,
+// negative if clockwise, and zero if the points are collinear.
+/* harmony default export */ __webpack_exports__["a"] = function(a, b, c) {
+  return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
+};
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cross__ = __webpack_require__(185);
+
+
+function lexicographicOrder(a, b) {
+  return a[0] - b[0] || a[1] - b[1];
+}
+
+// Computes the upper convex hull per the monotone chain algorithm.
+// Assumes points.length >= 3, is sorted by x, unique in y.
+// Returns an array of indices into points in left-to-right order.
+function computeUpperHullIndexes(points) {
+  var n = points.length,
+      indexes = [0, 1],
+      size = 2;
+
+  for (var i = 2; i < n; ++i) {
+    while (size > 1 && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__cross__["a" /* default */])(points[indexes[size - 2]], points[indexes[size - 1]], points[i]) <= 0) --size;
+    indexes[size++] = i;
+  }
+
+  return indexes.slice(0, size); // remove popped points
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(points) {
+  if ((n = points.length) < 3) return null;
+
+  var i,
+      n,
+      sortedPoints = new Array(n),
+      flippedPoints = new Array(n);
+
+  for (i = 0; i < n; ++i) sortedPoints[i] = [+points[i][0], +points[i][1], i];
+  sortedPoints.sort(lexicographicOrder);
+  for (i = 0; i < n; ++i) flippedPoints[i] = [sortedPoints[i][0], -sortedPoints[i][1]];
+
+  var upperIndexes = computeUpperHullIndexes(sortedPoints),
+      lowerIndexes = computeUpperHullIndexes(flippedPoints);
+
+  // Construct the hull polygon, removing possible duplicate endpoints.
+  var skipLeft = lowerIndexes[0] === upperIndexes[0],
+      skipRight = lowerIndexes[lowerIndexes.length - 1] === upperIndexes[upperIndexes.length - 1],
+      hull = [];
+
+  // Add upper hull in right-to-l order.
+  // Then add lower hull in left-to-right order.
+  for (i = upperIndexes.length - 1; i >= 0; --i) hull.push(points[sortedPoints[upperIndexes[i]][2]]);
+  for (i = +skipLeft; i < lowerIndexes.length - skipRight; ++i) hull.push(points[sortedPoints[lowerIndexes[i]][2]]);
+
+  return hull;
+};
+
+
+/***/ }),
+/* 187 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = function(polygon) {
+  var i = -1,
+      n = polygon.length,
+      b = polygon[n - 1],
+      xa,
+      ya,
+      xb = b[0],
+      yb = b[1],
+      perimeter = 0;
+
+  while (++i < n) {
+    xa = xb;
+    ya = yb;
+    b = polygon[i];
+    xb = b[0];
+    yb = b[1];
+    xa -= xb;
+    ya -= yb;
+    perimeter += Math.sqrt(xa * xa + ya * ya);
+  }
+
+  return perimeter;
+};
+
+
+/***/ }),
+/* 188 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_quadtree__ = __webpack_require__(194);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_quadtree__["a"]; });
+
+
+
+/***/ }),
+/* 189 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = addAll;
+/* harmony default export */ __webpack_exports__["a"] = function(d) {
+  var x = +this._x.call(null, d),
+      y = +this._y.call(null, d);
+  return add(this.cover(x, y), x, y, d);
+};
+
+function add(tree, x, y, d) {
+  if (isNaN(x) || isNaN(y)) return tree; // ignore invalid points
+
+  var parent,
+      node = tree._root,
+      leaf = {data: d},
+      x0 = tree._x0,
+      y0 = tree._y0,
+      x1 = tree._x1,
+      y1 = tree._y1,
+      xm,
+      ym,
+      xp,
+      yp,
+      right,
+      bottom,
+      i,
+      j;
+
+  // If the tree is empty, initialize the root as a leaf.
+  if (!node) return tree._root = leaf, tree;
+
+  // Find the existing leaf for the new point, or add it.
+  while (node.length) {
+    if (right = x >= (xm = (x0 + x1) / 2)) x0 = xm; else x1 = xm;
+    if (bottom = y >= (ym = (y0 + y1) / 2)) y0 = ym; else y1 = ym;
+    if (parent = node, !(node = node[i = bottom << 1 | right])) return parent[i] = leaf, tree;
+  }
+
+  // Is the new point is exactly coincident with the existing point?
+  xp = +tree._x.call(null, node.data);
+  yp = +tree._y.call(null, node.data);
+  if (x === xp && y === yp) return leaf.next = node, parent ? parent[i] = leaf : tree._root = leaf, tree;
+
+  // Otherwise, split the leaf node until the old and new point are separated.
+  do {
+    parent = parent ? parent[i] = new Array(4) : tree._root = new Array(4);
+    if (right = x >= (xm = (x0 + x1) / 2)) x0 = xm; else x1 = xm;
+    if (bottom = y >= (ym = (y0 + y1) / 2)) y0 = ym; else y1 = ym;
+  } while ((i = bottom << 1 | right) === (j = (yp >= ym) << 1 | (xp >= xm)));
+  return parent[j] = node, parent[i] = leaf, tree;
+}
+
+function addAll(data) {
+  var d, i, n = data.length,
+      x,
+      y,
+      xz = new Array(n),
+      yz = new Array(n),
+      x0 = Infinity,
+      y0 = Infinity,
+      x1 = -Infinity,
+      y1 = -Infinity;
+
+  // Compute the points and their extent.
+  for (i = 0; i < n; ++i) {
+    if (isNaN(x = +this._x.call(null, d = data[i])) || isNaN(y = +this._y.call(null, d))) continue;
+    xz[i] = x;
+    yz[i] = y;
+    if (x < x0) x0 = x;
+    if (x > x1) x1 = x;
+    if (y < y0) y0 = y;
+    if (y > y1) y1 = y;
+  }
+
+  // If there were no (valid) points, inherit the existing extent.
+  if (x1 < x0) x0 = this._x0, x1 = this._x1;
+  if (y1 < y0) y0 = this._y0, y1 = this._y1;
+
+  // Expand the tree to cover the new points.
+  this.cover(x0, y0).cover(x1, y1);
+
+  // Add the new points.
+  for (i = 0; i < n; ++i) {
+    add(this, xz[i], yz[i], data[i]);
+  }
+
+  return this;
+}
+
+
+/***/ }),
+/* 190 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x, y) {
+  if (isNaN(x = +x) || isNaN(y = +y)) return this; // ignore invalid points
+
+  var x0 = this._x0,
+      y0 = this._y0,
+      x1 = this._x1,
+      y1 = this._y1;
+
+  // If the quadtree has no extent, initialize them.
+  // Integer extent are necessary so that if we later double the extent,
+  // the existing quadrant boundaries don’t change due to floating point error!
+  if (isNaN(x0)) {
+    x1 = (x0 = Math.floor(x)) + 1;
+    y1 = (y0 = Math.floor(y)) + 1;
+  }
+
+  // Otherwise, double repeatedly to cover.
+  else if (x0 > x || x > x1 || y0 > y || y > y1) {
+    var z = x1 - x0,
+        node = this._root,
+        parent,
+        i;
+
+    switch (i = (y < (y0 + y1) / 2) << 1 | (x < (x0 + x1) / 2)) {
+      case 0: {
+        do parent = new Array(4), parent[i] = node, node = parent;
+        while (z *= 2, x1 = x0 + z, y1 = y0 + z, x > x1 || y > y1);
+        break;
+      }
+      case 1: {
+        do parent = new Array(4), parent[i] = node, node = parent;
+        while (z *= 2, x0 = x1 - z, y1 = y0 + z, x0 > x || y > y1);
+        break;
+      }
+      case 2: {
+        do parent = new Array(4), parent[i] = node, node = parent;
+        while (z *= 2, x1 = x0 + z, y0 = y1 - z, x > x1 || y0 > y);
+        break;
+      }
+      case 3: {
+        do parent = new Array(4), parent[i] = node, node = parent;
+        while (z *= 2, x0 = x1 - z, y0 = y1 - z, x0 > x || y0 > y);
+        break;
+      }
+    }
+
+    if (this._root && this._root.length) this._root = node;
+  }
+
+  // If the quadtree covers the point already, just return.
+  else return this;
+
+  this._x0 = x0;
+  this._y0 = y0;
+  this._x1 = x1;
+  this._y1 = y1;
+  return this;
+};
+
+
+/***/ }),
+/* 191 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var data = [];
+  this.visit(function(node) {
+    if (!node.length) do data.push(node.data); while (node = node.next)
+  });
+  return data;
+};
+
+
+/***/ }),
+/* 192 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(_) {
+  return arguments.length
+      ? this.cover(+_[0][0], +_[0][1]).cover(+_[1][0], +_[1][1])
+      : isNaN(this._x0) ? undefined : [[this._x0, this._y0], [this._x1, this._y1]];
+};
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(37);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(x, y, radius) {
+  var data,
+      x0 = this._x0,
+      y0 = this._y0,
+      x1,
+      y1,
+      x2,
+      y2,
+      x3 = this._x1,
+      y3 = this._y1,
+      quads = [],
+      node = this._root,
+      q,
+      i;
+
+  if (node) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node, x0, y0, x3, y3));
+  if (radius == null) radius = Infinity;
+  else {
+    x0 = x - radius, y0 = y - radius;
+    x3 = x + radius, y3 = y + radius;
+    radius *= radius;
+  }
+
+  while (q = quads.pop()) {
+
+    // Stop searching if this quadrant can’t contain a closer node.
+    if (!(node = q.node)
+        || (x1 = q.x0) > x3
+        || (y1 = q.y0) > y3
+        || (x2 = q.x1) < x0
+        || (y2 = q.y1) < y0) continue;
+
+    // Bisect the current quadrant.
+    if (node.length) {
+      var xm = (x1 + x2) / 2,
+          ym = (y1 + y2) / 2;
+
+      quads.push(
+        new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node[3], xm, ym, x2, y2),
+        new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node[2], x1, ym, xm, y2),
+        new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node[1], xm, y1, x2, ym),
+        new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node[0], x1, y1, xm, ym)
+      );
+
+      // Visit the closest quadrant first.
+      if (i = (y >= ym) << 1 | (x >= xm)) {
+        q = quads[quads.length - 1];
+        quads[quads.length - 1] = quads[quads.length - 1 - i];
+        quads[quads.length - 1 - i] = q;
+      }
+    }
+
+    // Visit this point. (Visiting coincident points isn’t necessary!)
+    else {
+      var dx = x - +this._x.call(null, node.data),
+          dy = y - +this._y.call(null, node.data),
+          d2 = dx * dx + dy * dy;
+      if (d2 < radius) {
+        var d = Math.sqrt(radius = d2);
+        x0 = x - d, y0 = y - d;
+        x3 = x + d, y3 = y + d;
+        data = node.data;
+      }
+    }
+  }
+
+  return data;
+};
+
+
+/***/ }),
+/* 194 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cover__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__extent__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__find__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__remove__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__root__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__size__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__visit__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__visitAfter__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__x__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__y__ = __webpack_require__(201);
+/* harmony export (immutable) */ __webpack_exports__["a"] = quadtree;
+
+
+
+
+
+
+
+
+
+
+
+
+
+function quadtree(nodes, x, y) {
+  var tree = new Quadtree(x == null ? __WEBPACK_IMPORTED_MODULE_10__x__["a" /* defaultX */] : x, y == null ? __WEBPACK_IMPORTED_MODULE_11__y__["a" /* defaultY */] : y, NaN, NaN, NaN, NaN);
+  return nodes == null ? tree : tree.addAll(nodes);
+}
+
+function Quadtree(x, y, x0, y0, x1, y1) {
+  this._x = x;
+  this._y = y;
+  this._x0 = x0;
+  this._y0 = y0;
+  this._x1 = x1;
+  this._y1 = y1;
+  this._root = undefined;
+}
+
+function leaf_copy(leaf) {
+  var copy = {data: leaf.data}, next = copy;
+  while (leaf = leaf.next) next = next.next = {data: leaf.data};
+  return copy;
+}
+
+var treeProto = quadtree.prototype = Quadtree.prototype;
+
+treeProto.copy = function() {
+  var copy = new Quadtree(this._x, this._y, this._x0, this._y0, this._x1, this._y1),
+      node = this._root,
+      nodes,
+      child;
+
+  if (!node) return copy;
+
+  if (!node.length) return copy._root = leaf_copy(node), copy;
+
+  nodes = [{source: node, target: copy._root = new Array(4)}];
+  while (node = nodes.pop()) {
+    for (var i = 0; i < 4; ++i) {
+      if (child = node.source[i]) {
+        if (child.length) nodes.push({source: child, target: node.target[i] = new Array(4)});
+        else node.target[i] = leaf_copy(child);
+      }
+    }
+  }
+
+  return copy;
+};
+
+treeProto.add = __WEBPACK_IMPORTED_MODULE_0__add__["a" /* default */];
+treeProto.addAll = __WEBPACK_IMPORTED_MODULE_0__add__["b" /* addAll */];
+treeProto.cover = __WEBPACK_IMPORTED_MODULE_1__cover__["a" /* default */];
+treeProto.data = __WEBPACK_IMPORTED_MODULE_2__data__["a" /* default */];
+treeProto.extent = __WEBPACK_IMPORTED_MODULE_3__extent__["a" /* default */];
+treeProto.find = __WEBPACK_IMPORTED_MODULE_4__find__["a" /* default */];
+treeProto.remove = __WEBPACK_IMPORTED_MODULE_5__remove__["a" /* default */];
+treeProto.removeAll = __WEBPACK_IMPORTED_MODULE_5__remove__["b" /* removeAll */];
+treeProto.root = __WEBPACK_IMPORTED_MODULE_6__root__["a" /* default */];
+treeProto.size = __WEBPACK_IMPORTED_MODULE_7__size__["a" /* default */];
+treeProto.visit = __WEBPACK_IMPORTED_MODULE_8__visit__["a" /* default */];
+treeProto.visitAfter = __WEBPACK_IMPORTED_MODULE_9__visitAfter__["a" /* default */];
+treeProto.x = __WEBPACK_IMPORTED_MODULE_10__x__["b" /* default */];
+treeProto.y = __WEBPACK_IMPORTED_MODULE_11__y__["b" /* default */];
+
+
+/***/ }),
+/* 195 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = removeAll;
+/* harmony default export */ __webpack_exports__["a"] = function(d) {
+  if (isNaN(x = +this._x.call(null, d)) || isNaN(y = +this._y.call(null, d))) return this; // ignore invalid points
+
+  var parent,
+      node = this._root,
+      retainer,
+      previous,
+      next,
+      x0 = this._x0,
+      y0 = this._y0,
+      x1 = this._x1,
+      y1 = this._y1,
+      x,
+      y,
+      xm,
+      ym,
+      right,
+      bottom,
+      i,
+      j;
+
+  // If the tree is empty, initialize the root as a leaf.
+  if (!node) return this;
+
+  // Find the leaf node for the point.
+  // While descending, also retain the deepest parent with a non-removed sibling.
+  if (node.length) while (true) {
+    if (right = x >= (xm = (x0 + x1) / 2)) x0 = xm; else x1 = xm;
+    if (bottom = y >= (ym = (y0 + y1) / 2)) y0 = ym; else y1 = ym;
+    if (!(parent = node, node = node[i = bottom << 1 | right])) return this;
+    if (!node.length) break;
+    if (parent[(i + 1) & 3] || parent[(i + 2) & 3] || parent[(i + 3) & 3]) retainer = parent, j = i;
+  }
+
+  // Find the point to remove.
+  while (node.data !== d) if (!(previous = node, node = node.next)) return this;
+  if (next = node.next) delete node.next;
+
+  // If there are multiple coincident points, remove just the point.
+  if (previous) return (next ? previous.next = next : delete previous.next), this;
+
+  // If this is the root point, remove it.
+  if (!parent) return this._root = next, this;
+
+  // Remove this leaf.
+  next ? parent[i] = next : delete parent[i];
+
+  // If the parent now contains exactly one leaf, collapse superfluous parents.
+  if ((node = parent[0] || parent[1] || parent[2] || parent[3])
+      && node === (parent[3] || parent[2] || parent[1] || parent[0])
+      && !node.length) {
+    if (retainer) retainer[j] = node;
+    else this._root = node;
+  }
+
+  return this;
+};
+
+function removeAll(data) {
+  for (var i = 0, n = data.length; i < n; ++i) this.remove(data[i]);
+  return this;
+}
+
+
+/***/ }),
+/* 196 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return this._root;
+};
+
+
+/***/ }),
+/* 197 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var size = 0;
+  this.visit(function(node) {
+    if (!node.length) do ++size; while (node = node.next)
+  });
+  return size;
+};
+
+
+/***/ }),
+/* 198 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(37);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(callback) {
+  var quads = [], q, node = this._root, child, x0, y0, x1, y1;
+  if (node) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](node, this._x0, this._y0, this._x1, this._y1));
+  while (q = quads.pop()) {
+    if (!callback(node = q.node, x0 = q.x0, y0 = q.y0, x1 = q.x1, y1 = q.y1) && node.length) {
+      var xm = (x0 + x1) / 2, ym = (y0 + y1) / 2;
+      if (child = node[3]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, xm, ym, x1, y1));
+      if (child = node[2]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, x0, ym, xm, y1));
+      if (child = node[1]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, xm, y0, x1, ym));
+      if (child = node[0]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, x0, y0, xm, ym));
+    }
+  }
+  return this;
+};
+
+
+/***/ }),
+/* 199 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__quad__ = __webpack_require__(37);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(callback) {
+  var quads = [], next = [], q;
+  if (this._root) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](this._root, this._x0, this._y0, this._x1, this._y1));
+  while (q = quads.pop()) {
+    var node = q.node;
+    if (node.length) {
+      var child, x0 = q.x0, y0 = q.y0, x1 = q.x1, y1 = q.y1, xm = (x0 + x1) / 2, ym = (y0 + y1) / 2;
+      if (child = node[0]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, x0, y0, xm, ym));
+      if (child = node[1]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, xm, y0, x1, ym));
+      if (child = node[2]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, x0, ym, xm, y1));
+      if (child = node[3]) quads.push(new __WEBPACK_IMPORTED_MODULE_0__quad__["a" /* default */](child, xm, ym, x1, y1));
+    }
+    next.push(q);
+  }
+  while (q = next.pop()) {
+    callback(q.node, q.x0, q.y0, q.x1, q.y1);
+  }
+  return this;
+};
+
+
+/***/ }),
+/* 200 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = defaultX;
+function defaultX(d) {
+  return d[0];
+}
+
+/* harmony default export */ __webpack_exports__["b"] = function(_) {
+  return arguments.length ? (this._x = _, this) : this._x;
+};
+
+
+/***/ }),
+/* 201 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = defaultY;
+function defaultY(d) {
+  return d[1];
+}
+
+/* harmony default export */ __webpack_exports__["b"] = function(_) {
+  return arguments.length ? (this._y = _, this) : this._y;
+};
+
+
+/***/ }),
+/* 202 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ordinal__ = __webpack_require__(87);
+/* harmony export (immutable) */ __webpack_exports__["a"] = band;
+/* harmony export (immutable) */ __webpack_exports__["b"] = point;
+
+
+
+function band() {
+  var scale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ordinal__["a" /* default */])().unknown(undefined),
+      domain = scale.domain,
+      ordinalRange = scale.range,
+      range = [0, 1],
+      step,
+      bandwidth,
+      round = false,
+      paddingInner = 0,
+      paddingOuter = 0,
+      align = 0.5;
+
+  delete scale.unknown;
+
+  function rescale() {
+    var n = domain().length,
+        reverse = range[1] < range[0],
+        start = range[reverse - 0],
+        stop = range[1 - reverse];
+    step = (stop - start) / Math.max(1, n - paddingInner + paddingOuter * 2);
+    if (round) step = Math.floor(step);
+    start += (stop - start - step * (n - paddingInner)) * align;
+    bandwidth = step * (1 - paddingInner);
+    if (round) start = Math.round(start), bandwidth = Math.round(bandwidth);
+    var values = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["g" /* range */])(n).map(function(i) { return start + step * i; });
+    return ordinalRange(reverse ? values.reverse() : values);
+  }
+
+  scale.domain = function(_) {
+    return arguments.length ? (domain(_), rescale()) : domain();
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (range = [+_[0], +_[1]], rescale()) : range.slice();
+  };
+
+  scale.rangeRound = function(_) {
+    return range = [+_[0], +_[1]], round = true, rescale();
+  };
+
+  scale.bandwidth = function() {
+    return bandwidth;
+  };
+
+  scale.step = function() {
+    return step;
+  };
+
+  scale.round = function(_) {
+    return arguments.length ? (round = !!_, rescale()) : round;
+  };
+
+  scale.padding = function(_) {
+    return arguments.length ? (paddingInner = paddingOuter = Math.max(0, Math.min(1, _)), rescale()) : paddingInner;
+  };
+
+  scale.paddingInner = function(_) {
+    return arguments.length ? (paddingInner = Math.max(0, Math.min(1, _)), rescale()) : paddingInner;
+  };
+
+  scale.paddingOuter = function(_) {
+    return arguments.length ? (paddingOuter = Math.max(0, Math.min(1, _)), rescale()) : paddingOuter;
+  };
+
+  scale.align = function(_) {
+    return arguments.length ? (align = Math.max(0, Math.min(1, _)), rescale()) : align;
+  };
+
+  scale.copy = function() {
+    return band()
+        .domain(domain())
+        .range(range)
+        .round(round)
+        .paddingInner(paddingInner)
+        .paddingOuter(paddingOuter)
+        .align(align);
+  };
+
+  return rescale();
+}
+
+function pointish(scale) {
+  var copy = scale.copy;
+
+  scale.padding = scale.paddingOuter;
+  delete scale.paddingInner;
+  delete scale.paddingOuter;
+
+  scale.copy = function() {
+    return pointish(copy());
+  };
+
+  return scale;
+}
+
+function point() {
+  return pointish(band().paddingInner(1));
+}
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__(14);
+
+
+/* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf");
+
+
+/***/ }),
+/* 204 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__(14);
+
+
+/* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("1f77b4aec7e8ff7f0effbb782ca02c98df8ad62728ff98969467bdc5b0d58c564bc49c94e377c2f7b6d27f7f7fc7c7c7bcbd22dbdb8d17becf9edae5");
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__(14);
+
+
+/* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("393b795254a36b6ecf9c9ede6379398ca252b5cf6bcedb9c8c6d31bd9e39e7ba52e7cb94843c39ad494ad6616be7969c7b4173a55194ce6dbdde9ed6");
+
+
+/***/ }),
+/* 206 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__(14);
+
+
+/* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("3182bd6baed69ecae1c6dbefe6550dfd8d3cfdae6bfdd0a231a35474c476a1d99bc7e9c0756bb19e9ac8bcbddcdadaeb636363969696bdbdbdd9d9d9");
+
+
+/***/ }),
+/* 207 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["d" /* interpolateCubehelixLong */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(300, 0.5, 0.0), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(-240, 0.5, 1.0));
+
+
+/***/ }),
+/* 208 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linear__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__number__ = __webpack_require__(86);
+/* harmony export (immutable) */ __webpack_exports__["a"] = identity;
+
+
+
+
+function identity() {
+  var domain = [0, 1];
+
+  function scale(x) {
+    return +x;
+  }
+
+  scale.invert = scale;
+
+  scale.domain = scale.range = function(_) {
+    return arguments.length ? (domain = __WEBPACK_IMPORTED_MODULE_0__array__["a" /* map */].call(_, __WEBPACK_IMPORTED_MODULE_2__number__["a" /* default */]), scale) : domain.slice();
+  };
+
+  scale.copy = function() {
+    return identity().domain(domain);
+  };
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__linear__["b" /* linearish */])(scale);
+}
+
+
+/***/ }),
+/* 209 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__nice__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__continuous__ = __webpack_require__(22);
+/* harmony export (immutable) */ __webpack_exports__["a"] = log;
+
+
+
+
+
+
+function deinterpolate(a, b) {
+  return (b = Math.log(b / a))
+      ? function(x) { return Math.log(x / a) / b; }
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])(b);
+}
+
+function reinterpolate(a, b) {
+  return a < 0
+      ? function(t) { return -Math.pow(-b, t) * Math.pow(-a, 1 - t); }
+      : function(t) { return Math.pow(b, t) * Math.pow(a, 1 - t); };
+}
+
+function pow10(x) {
+  return isFinite(x) ? +("1e" + x) : x < 0 ? 0 : x;
+}
+
+function powp(base) {
+  return base === 10 ? pow10
+      : base === Math.E ? Math.exp
+      : function(x) { return Math.pow(base, x); };
+}
+
+function logp(base) {
+  return base === Math.E ? Math.log
+      : base === 10 && Math.log10
+      || base === 2 && Math.log2
+      || (base = Math.log(base), function(x) { return Math.log(x) / base; });
+}
+
+function reflect(f) {
+  return function(x) {
+    return -f(-x);
+  };
+}
+
+function log() {
+  var scale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__continuous__["a" /* default */])(deinterpolate, reinterpolate).domain([1, 10]),
+      domain = scale.domain,
+      base = 10,
+      logs = logp(10),
+      pows = powp(10);
+
+  function rescale() {
+    logs = logp(base), pows = powp(base);
+    if (domain()[0] < 0) logs = reflect(logs), pows = reflect(pows);
+    return scale;
+  }
+
+  scale.base = function(_) {
+    return arguments.length ? (base = +_, rescale()) : base;
+  };
+
+  scale.domain = function(_) {
+    return arguments.length ? (domain(_), rescale()) : domain();
+  };
+
+  scale.ticks = function(count) {
+    var d = domain(),
+        u = d[0],
+        v = d[d.length - 1],
+        r;
+
+    if (r = v < u) i = u, u = v, v = i;
+
+    var i = logs(u),
+        j = logs(v),
+        p,
+        k,
+        t,
+        n = count == null ? 10 : +count,
+        z = [];
+
+    if (!(base % 1) && j - i < n) {
+      i = Math.round(i) - 1, j = Math.round(j) + 1;
+      if (u > 0) for (; i < j; ++i) {
+        for (k = 1, p = pows(i); k < base; ++k) {
+          t = p * k;
+          if (t < u) continue;
+          if (t > v) break;
+          z.push(t);
+        }
+      } else for (; i < j; ++i) {
+        for (k = base - 1, p = pows(i); k >= 1; --k) {
+          t = p * k;
+          if (t < u) continue;
+          if (t > v) break;
+          z.push(t);
+        }
+      }
+    } else {
+      z = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["a" /* ticks */])(i, j, Math.min(j - i, n)).map(pows);
+    }
+
+    return r ? z.reverse() : z;
+  };
+
+  scale.tickFormat = function(count, specifier) {
+    if (specifier == null) specifier = base === 10 ? ".0e" : ",";
+    if (typeof specifier !== "function") specifier = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["f" /* format */])(specifier);
+    if (count === Infinity) return specifier;
+    if (count == null) count = 10;
+    var k = Math.max(1, base * count / scale.ticks().length); // TODO fast estimate?
+    return function(d) {
+      var i = d / pows(Math.round(logs(d)));
+      if (i * base < base - 0.5) i *= base;
+      return i <= k ? specifier(d) : "";
+    };
+  };
+
+  scale.nice = function() {
+    return domain(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__nice__["a" /* default */])(domain(), {
+      floor: function(x) { return pows(Math.floor(logs(x))); },
+      ceil: function(x) { return pows(Math.ceil(logs(x))); }
+    }));
+  };
+
+  scale.copy = function() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__continuous__["c" /* copy */])(scale, log().base(base));
+  };
+
+  return scale;
+}
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linear__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__continuous__ = __webpack_require__(22);
+/* harmony export (immutable) */ __webpack_exports__["a"] = pow;
+/* harmony export (immutable) */ __webpack_exports__["b"] = sqrt;
+
+
+
+
+function raise(x, exponent) {
+  return x < 0 ? -Math.pow(-x, exponent) : Math.pow(x, exponent);
+}
+
+function pow() {
+  var exponent = 1,
+      scale = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__continuous__["a" /* default */])(deinterpolate, reinterpolate),
+      domain = scale.domain;
+
+  function deinterpolate(a, b) {
+    return (b = raise(b, exponent) - (a = raise(a, exponent)))
+        ? function(x) { return (raise(x, exponent) - a) / b; }
+        : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(b);
+  }
+
+  function reinterpolate(a, b) {
+    b = raise(b, exponent) - (a = raise(a, exponent));
+    return function(t) { return raise(a + b * t, 1 / exponent); };
+  }
+
+  scale.exponent = function(_) {
+    return arguments.length ? (exponent = +_, domain(domain())) : exponent;
+  };
+
+  scale.copy = function() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__continuous__["c" /* copy */])(scale, pow().exponent(exponent));
+  };
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__linear__["b" /* linearish */])(scale);
+}
+
+function sqrt() {
+  return pow().exponent(0.5);
+}
+
+
+/***/ }),
+/* 211 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(9);
+/* harmony export (immutable) */ __webpack_exports__["a"] = quantile;
+
+
+
+function quantile() {
+  var domain = [],
+      range = [],
+      thresholds = [];
+
+  function rescale() {
+    var i = 0, n = Math.max(1, range.length);
+    thresholds = new Array(n - 1);
+    while (++i < n) thresholds[i - 1] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["e" /* quantile */])(domain, i / n);
+    return scale;
+  }
+
+  function scale(x) {
+    if (!isNaN(x = +x)) return range[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["c" /* bisect */])(thresholds, x)];
+  }
+
+  scale.invertExtent = function(y) {
+    var i = range.indexOf(y);
+    return i < 0 ? [NaN, NaN] : [
+      i > 0 ? thresholds[i - 1] : domain[0],
+      i < thresholds.length ? thresholds[i] : domain[domain.length - 1]
+    ];
+  };
+
+  scale.domain = function(_) {
+    if (!arguments.length) return domain.slice();
+    domain = [];
+    for (var i = 0, n = _.length, d; i < n; ++i) if (d = _[i], d != null && !isNaN(d = +d)) domain.push(d);
+    domain.sort(__WEBPACK_IMPORTED_MODULE_0_d3_array__["f" /* ascending */]);
+    return rescale();
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (range = __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(_), rescale()) : range.slice();
+  };
+
+  scale.quantiles = function() {
+    return thresholds.slice();
+  };
+
+  scale.copy = function() {
+    return quantile()
+        .domain(domain)
+        .range(range);
+  };
+
+  return scale;
+}
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__linear__ = __webpack_require__(15);
+/* harmony export (immutable) */ __webpack_exports__["a"] = quantize;
+
+
+
+
+function quantize() {
+  var x0 = 0,
+      x1 = 1,
+      n = 1,
+      domain = [0.5],
+      range = [0, 1];
+
+  function scale(x) {
+    if (x <= x) return range[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["c" /* bisect */])(domain, x, 0, n)];
+  }
+
+  function rescale() {
+    var i = -1;
+    domain = new Array(n);
+    while (++i < n) domain[i] = ((i + 1) * x1 - (i - n) * x0) / (n + 1);
+    return scale;
+  }
+
+  scale.domain = function(_) {
+    return arguments.length ? (x0 = +_[0], x1 = +_[1], rescale()) : [x0, x1];
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (n = (range = __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(_)).length - 1, rescale()) : range.slice();
+  };
+
+  scale.invertExtent = function(y) {
+    var i = range.indexOf(y);
+    return i < 0 ? [NaN, NaN]
+        : i < 1 ? [x0, domain[0]]
+        : i >= n ? [domain[n - 1], x1]
+        : [domain[i - 1], domain[i]];
+  };
+
+  scale.copy = function() {
+    return quantize()
+        .domain([x0, x1])
+        .range(range);
+  };
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__linear__["b" /* linearish */])(scale);
+}
+
+
+/***/ }),
+/* 213 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__ = __webpack_require__(6);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return warm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return cool; });
+
+
+
+var warm = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["d" /* interpolateCubehelixLong */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(-100, 0.75, 0.35), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(80, 1.50, 0.8));
+
+var cool = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["d" /* interpolateCubehelixLong */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(260, 0.75, 0.35), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])(80, 1.50, 0.8));
+
+var rainbow = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_color__["a" /* cubehelix */])();
+
+/* harmony default export */ __webpack_exports__["a"] = function(t) {
+  if (t < 0 || t > 1) t -= Math.floor(t);
+  var ts = Math.abs(t - 0.5);
+  rainbow.h = 360 * t - 100;
+  rainbow.s = 1.5 - 1.5 * ts;
+  rainbow.l = 0.8 - 0.9 * ts;
+  return rainbow + "";
+};
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__linear__ = __webpack_require__(15);
+/* harmony export (immutable) */ __webpack_exports__["a"] = sequential;
+
+
+function sequential(interpolator) {
+  var x0 = 0,
+      x1 = 1,
+      clamp = false;
+
+  function scale(x) {
+    var t = (x - x0) / (x1 - x0);
+    return interpolator(clamp ? Math.max(0, Math.min(1, t)) : t);
+  }
+
+  scale.domain = function(_) {
+    return arguments.length ? (x0 = +_[0], x1 = +_[1], scale) : [x0, x1];
+  };
+
+  scale.clamp = function(_) {
+    return arguments.length ? (clamp = !!_, scale) : clamp;
+  };
+
+  scale.interpolator = function(_) {
+    return arguments.length ? (interpolator = _, scale) : interpolator;
+  };
+
+  scale.copy = function() {
+    return sequential(interpolator).domain([x0, x1]).clamp(clamp);
+  };
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__linear__["b" /* linearish */])(scale);
+}
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(9);
+/* harmony export (immutable) */ __webpack_exports__["a"] = threshold;
+
+
+
+function threshold() {
+  var domain = [0.5],
+      range = [0, 1],
+      n = 1;
+
+  function scale(x) {
+    if (x <= x) return range[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["c" /* bisect */])(domain, x, 0, n)];
+  }
+
+  scale.domain = function(_) {
+    return arguments.length ? (domain = __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(_), n = Math.min(domain.length, range.length - 1), scale) : domain.slice();
+  };
+
+  scale.range = function(_) {
+    return arguments.length ? (range = __WEBPACK_IMPORTED_MODULE_1__array__["b" /* slice */].call(_), n = Math.min(domain.length, range.length - 1), scale) : range.slice();
+  };
+
+  scale.invertExtent = function(y) {
+    var i = range.indexOf(y);
+    return [domain[i - 1], domain[i]];
+  };
+
+  scale.copy = function() {
+    return threshold()
+        .domain(domain)
+        .range(range);
+  };
+
+  return scale;
+}
+
+
+/***/ }),
+/* 216 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_array__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_format__ = __webpack_require__(33);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(domain, count, specifier) {
+  var start = domain[0],
+      stop = domain[domain.length - 1],
+      step = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_array__["b" /* tickStep */])(start, stop, count == null ? 10 : count),
+      precision;
+  specifier = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["a" /* formatSpecifier */])(specifier == null ? ",f" : specifier);
+  switch (specifier.type) {
+    case "s": {
+      var value = Math.max(Math.abs(start), Math.abs(stop));
+      if (specifier.precision == null && !isNaN(precision = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["b" /* precisionPrefix */])(step, value))) specifier.precision = precision;
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["c" /* formatPrefix */])(specifier, value);
+    }
+    case "":
+    case "e":
+    case "g":
+    case "p":
+    case "r": {
+      if (specifier.precision == null && !isNaN(precision = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["d" /* precisionRound */])(step, Math.max(Math.abs(start), Math.abs(stop))))) specifier.precision = precision - (specifier.type === "e");
+      break;
+    }
+    case "f":
+    case "%": {
+      if (specifier.precision == null && !isNaN(precision = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["e" /* precisionFixed */])(step))) specifier.precision = precision - (specifier.type === "%") * 2;
+      break;
+    }
+  }
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_format__["f" /* format */])(specifier);
+};
+
+
+/***/ }),
+/* 217 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__time__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_time_format__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_time__ = __webpack_require__(51);
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__time__["b" /* calendar */])(__WEBPACK_IMPORTED_MODULE_2_d3_time__["a" /* utcYear */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["b" /* utcMonth */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["c" /* utcWeek */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["d" /* utcDay */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["e" /* utcHour */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["f" /* utcMinute */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["g" /* utcSecond */], __WEBPACK_IMPORTED_MODULE_2_d3_time__["h" /* utcMillisecond */], __WEBPACK_IMPORTED_MODULE_1_d3_time_format__["a" /* utcFormat */]).domain([Date.UTC(2000, 0, 1), Date.UTC(2000, 0, 2)]);
+};
+
+
+/***/ }),
+/* 218 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__colors__ = __webpack_require__(14);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return magma; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return inferno; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return plasma; });
+
+
+function ramp(range) {
+  var n = range.length;
+  return function(t) {
+    return range[Math.max(0, Math.min(n - 1, Math.floor(t * n)))];
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = ramp(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("44015444025645045745055946075a46085c460a5d460b5e470d60470e6147106347116447136548146748166848176948186a481a6c481b6d481c6e481d6f481f70482071482173482374482475482576482677482878482979472a7a472c7a472d7b472e7c472f7d46307e46327e46337f463480453581453781453882443983443a83443b84433d84433e85423f854240864241864142874144874045884046883f47883f48893e49893e4a893e4c8a3d4d8a3d4e8a3c4f8a3c508b3b518b3b528b3a538b3a548c39558c39568c38588c38598c375a8c375b8d365c8d365d8d355e8d355f8d34608d34618d33628d33638d32648e32658e31668e31678e31688e30698e306a8e2f6b8e2f6c8e2e6d8e2e6e8e2e6f8e2d708e2d718e2c718e2c728e2c738e2b748e2b758e2a768e2a778e2a788e29798e297a8e297b8e287c8e287d8e277e8e277f8e27808e26818e26828e26828e25838e25848e25858e24868e24878e23888e23898e238a8d228b8d228c8d228d8d218e8d218f8d21908d21918c20928c20928c20938c1f948c1f958b1f968b1f978b1f988b1f998a1f9a8a1e9b8a1e9c891e9d891f9e891f9f881fa0881fa1881fa1871fa28720a38620a48621a58521a68522a78522a88423a98324aa8325ab8225ac8226ad8127ad8128ae8029af7f2ab07f2cb17e2db27d2eb37c2fb47c31b57b32b67a34b67935b77937b87838b9773aba763bbb753dbc743fbc7340bd7242be7144bf7046c06f48c16e4ac16d4cc26c4ec36b50c46a52c56954c56856c66758c7655ac8645cc8635ec96260ca6063cb5f65cb5e67cc5c69cd5b6ccd5a6ece5870cf5773d05675d05477d1537ad1517cd2507fd34e81d34d84d44b86d54989d5488bd6468ed64590d74393d74195d84098d83e9bd93c9dd93ba0da39a2da37a5db36a8db34aadc32addc30b0dd2fb2dd2db5de2bb8de29bade28bddf26c0df25c2df23c5e021c8e020cae11fcde11dd0e11cd2e21bd5e21ad8e219dae319dde318dfe318e2e418e5e419e7e419eae51aece51befe51cf1e51df4e61ef6e620f8e621fbe723fde725"));
+
+var magma = ramp(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("00000401000501010601010802010902020b02020d03030f03031204041405041606051806051a07061c08071e0907200a08220b09240c09260d0a290e0b2b100b2d110c2f120d31130d34140e36150e38160f3b180f3d19103f1a10421c10441d11471e114920114b21114e22115024125325125527125829115a2a115c2c115f2d11612f116331116533106734106936106b38106c390f6e3b0f703d0f713f0f72400f74420f75440f764510774710784910784a10794c117a4e117b4f127b51127c52137c54137d56147d57157e59157e5a167e5c167f5d177f5f187f601880621980641a80651a80671b80681c816a1c816b1d816d1d816e1e81701f81721f817320817521817621817822817922827b23827c23827e24828025828125818326818426818627818827818928818b29818c29818e2a81902a81912b81932b80942c80962c80982d80992d809b2e7f9c2e7f9e2f7fa02f7fa1307ea3307ea5317ea6317da8327daa337dab337cad347cae347bb0357bb2357bb3367ab5367ab73779b83779ba3878bc3978bd3977bf3a77c03a76c23b75c43c75c53c74c73d73c83e73ca3e72cc3f71cd4071cf4070d0416fd2426fd3436ed5446dd6456cd8456cd9466bdb476adc4869de4968df4a68e04c67e24d66e34e65e44f64e55064e75263e85362e95462ea5661eb5760ec5860ed5a5fee5b5eef5d5ef05f5ef1605df2625df2645cf3655cf4675cf4695cf56b5cf66c5cf66e5cf7705cf7725cf8745cf8765cf9785df9795df97b5dfa7d5efa7f5efa815ffb835ffb8560fb8761fc8961fc8a62fc8c63fc8e64fc9065fd9266fd9467fd9668fd9869fd9a6afd9b6bfe9d6cfe9f6dfea16efea36ffea571fea772fea973feaa74feac76feae77feb078feb27afeb47bfeb67cfeb77efeb97ffebb81febd82febf84fec185fec287fec488fec68afec88cfeca8dfecc8ffecd90fecf92fed194fed395fed597fed799fed89afdda9cfddc9efddea0fde0a1fde2a3fde3a5fde5a7fde7a9fde9aafdebacfcecaefceeb0fcf0b2fcf2b4fcf4b6fcf6b8fcf7b9fcf9bbfcfbbdfcfdbf"));
+
+var inferno = ramp(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("00000401000501010601010802010a02020c02020e03021004031204031405041706041907051b08051d09061f0a07220b07240c08260d08290e092b10092d110a30120a32140b34150b37160b39180c3c190c3e1b0c411c0c431e0c451f0c48210c4a230c4c240c4f260c51280b53290b552b0b572d0b592f0a5b310a5c320a5e340a5f3609613809623909633b09643d09653e0966400a67420a68440a68450a69470b6a490b6a4a0c6b4c0c6b4d0d6c4f0d6c510e6c520e6d540f6d550f6d57106e59106e5a116e5c126e5d126e5f136e61136e62146e64156e65156e67166e69166e6a176e6c186e6d186e6f196e71196e721a6e741a6e751b6e771c6d781c6d7a1d6d7c1d6d7d1e6d7f1e6c801f6c82206c84206b85216b87216b88226a8a226a8c23698d23698f24699025689225689326679526679727669827669a28659b29649d29649f2a63a02a63a22b62a32c61a52c60a62d60a82e5fa92e5eab2f5ead305dae305cb0315bb1325ab3325ab43359b63458b73557b93556ba3655bc3754bd3853bf3952c03a51c13a50c33b4fc43c4ec63d4dc73e4cc83f4bca404acb4149cc4248ce4347cf4446d04545d24644d34743d44842d54a41d74b3fd84c3ed94d3dda4e3cdb503bdd513ade5238df5337e05536e15635e25734e35933e45a31e55c30e65d2fe75e2ee8602de9612bea632aeb6429eb6628ec6726ed6925ee6a24ef6c23ef6e21f06f20f1711ff1731df2741cf3761bf37819f47918f57b17f57d15f67e14f68013f78212f78410f8850ff8870ef8890cf98b0bf98c0af98e09fa9008fa9207fa9407fb9606fb9706fb9906fb9b06fb9d07fc9f07fca108fca309fca50afca60cfca80dfcaa0ffcac11fcae12fcb014fcb216fcb418fbb61afbb81dfbba1ffbbc21fbbe23fac026fac228fac42afac62df9c72ff9c932f9cb35f8cd37f8cf3af7d13df7d340f6d543f6d746f5d949f5db4cf4dd4ff4df53f4e156f3e35af3e55df2e661f2e865f2ea69f1ec6df1ed71f1ef75f1f179f2f27df2f482f3f586f3f68af4f88ef5f992f6fa96f8fb9af9fc9dfafda1fcffa4"));
+
+var plasma = ramp(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__colors__["a" /* default */])("0d088710078813078916078a19068c1b068d1d068e20068f2206902406912605912805922a05932c05942e05952f059631059733059735049837049938049a3a049a3c049b3e049c3f049c41049d43039e44039e46039f48039f4903a04b03a14c02a14e02a25002a25102a35302a35502a45601a45801a45901a55b01a55c01a65e01a66001a66100a76300a76400a76600a76700a86900a86a00a86c00a86e00a86f00a87100a87201a87401a87501a87701a87801a87a02a87b02a87d03a87e03a88004a88104a78305a78405a78606a68707a68808a68a09a58b0aa58d0ba58e0ca48f0da4910ea3920fa39410a29511a19613a19814a099159f9a169f9c179e9d189d9e199da01a9ca11b9ba21d9aa31e9aa51f99a62098a72197a82296aa2395ab2494ac2694ad2793ae2892b02991b12a90b22b8fb32c8eb42e8db52f8cb6308bb7318ab83289ba3388bb3488bc3587bd3786be3885bf3984c03a83c13b82c23c81c33d80c43e7fc5407ec6417dc7427cc8437bc9447aca457acb4679cc4778cc4977cd4a76ce4b75cf4c74d04d73d14e72d24f71d35171d45270d5536fd5546ed6556dd7566cd8576bd9586ada5a6ada5b69db5c68dc5d67dd5e66de5f65de6164df6263e06363e16462e26561e26660e3685fe4695ee56a5de56b5de66c5ce76e5be76f5ae87059e97158e97257ea7457eb7556eb7655ec7754ed7953ed7a52ee7b51ef7c51ef7e50f07f4ff0804ef1814df1834cf2844bf3854bf3874af48849f48948f58b47f58c46f68d45f68f44f79044f79143f79342f89441f89540f9973ff9983ef99a3efa9b3dfa9c3cfa9e3bfb9f3afba139fba238fca338fca537fca636fca835fca934fdab33fdac33fdae32fdaf31fdb130fdb22ffdb42ffdb52efeb72dfeb82cfeba2cfebb2bfebd2afebe2afec029fdc229fdc328fdc527fdc627fdc827fdca26fdcb26fccd25fcce25fcd025fcd225fbd324fbd524fbd724fad824fada24f9dc24f9dd25f8df25f8e125f7e225f7e425f6e626f6e826f5e926f5eb27f4ed27f3ee27f3f027f2f227f1f426f1f525f0f724f0f921"));
+
+
+/***/ }),
+/* 219 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 220 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export default */
+var nextId = 0;
+
+function local() {
+  return new Local;
+}
+
+function Local() {
+  this._ = "@" + (++nextId).toString(36);
+}
+
+Local.prototype = local.prototype = {
+  constructor: Local,
+  get: function(node) {
+    var id = this._;
+    while (!(id in node)) if (!(node = node.parentNode)) return;
+    return node[id];
+  },
+  set: function(node, value) {
+    return node[this._] = value;
+  },
+  remove: function(node) {
+    return this._ in node && delete node[this._];
+  },
+  toString: function() {
+    return this._;
+  }
+};
+
+
+/***/ }),
+/* 221 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(42);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(node) {
+  var event = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__sourceEvent__["a" /* default */])();
+  if (event.changedTouches) event = event.changedTouches[0];
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__point__["a" /* default */])(node, event);
+};
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selection_index__ = __webpack_require__(3);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(selector) {
+  return typeof selector === "string"
+      ? new __WEBPACK_IMPORTED_MODULE_0__selection_index__["a" /* Selection */]([[document.querySelector(selector)]], [document.documentElement])
+      : new __WEBPACK_IMPORTED_MODULE_0__selection_index__["a" /* Selection */]([[selector]], __WEBPACK_IMPORTED_MODULE_0__selection_index__["b" /* root */]);
+};
+
+
+/***/ }),
+/* 223 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__selection_index__ = __webpack_require__(3);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(selector) {
+  return typeof selector === "string"
+      ? new __WEBPACK_IMPORTED_MODULE_0__selection_index__["a" /* Selection */]([document.querySelectorAll(selector)], [document.documentElement])
+      : new __WEBPACK_IMPORTED_MODULE_0__selection_index__["a" /* Selection */]([selector == null ? [] : selector], __WEBPACK_IMPORTED_MODULE_0__selection_index__["b" /* root */]);
+};
+
+
+/***/ }),
+/* 224 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(39);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(name) {
+  var create = typeof name === "function" ? name : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__creator__["a" /* default */])(name);
+  return this.select(function() {
+    return this.appendChild(create.apply(this, arguments));
+  });
+};
+
+
+/***/ }),
+/* 225 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__namespace__ = __webpack_require__(40);
+
+
+function attrRemove(name) {
+  return function() {
+    this.removeAttribute(name);
+  };
+}
+
+function attrRemoveNS(fullname) {
+  return function() {
+    this.removeAttributeNS(fullname.space, fullname.local);
+  };
+}
+
+function attrConstant(name, value) {
+  return function() {
+    this.setAttribute(name, value);
+  };
+}
+
+function attrConstantNS(fullname, value) {
+  return function() {
+    this.setAttributeNS(fullname.space, fullname.local, value);
+  };
+}
+
+function attrFunction(name, value) {
+  return function() {
+    var v = value.apply(this, arguments);
+    if (v == null) this.removeAttribute(name);
+    else this.setAttribute(name, v);
+  };
+}
+
+function attrFunctionNS(fullname, value) {
+  return function() {
+    var v = value.apply(this, arguments);
+    if (v == null) this.removeAttributeNS(fullname.space, fullname.local);
+    else this.setAttributeNS(fullname.space, fullname.local, v);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  var fullname = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__namespace__["a" /* default */])(name);
+
+  if (arguments.length < 2) {
+    var node = this.node();
+    return fullname.local
+        ? node.getAttributeNS(fullname.space, fullname.local)
+        : node.getAttribute(fullname);
+  }
+
+  return this.each((value == null
+      ? (fullname.local ? attrRemoveNS : attrRemove) : (typeof value === "function"
+      ? (fullname.local ? attrFunctionNS : attrFunction)
+      : (fullname.local ? attrConstantNS : attrConstant)))(fullname, value));
+};
+
+
+/***/ }),
+/* 226 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var callback = arguments[0];
+  arguments[0] = this;
+  callback.apply(null, arguments);
+  return this;
+};
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function classArray(string) {
+  return string.trim().split(/^|\s+/);
+}
+
+function classList(node) {
+  return node.classList || new ClassList(node);
+}
+
+function ClassList(node) {
+  this._node = node;
+  this._names = classArray(node.getAttribute("class") || "");
+}
+
+ClassList.prototype = {
+  add: function(name) {
+    var i = this._names.indexOf(name);
+    if (i < 0) {
+      this._names.push(name);
+      this._node.setAttribute("class", this._names.join(" "));
+    }
+  },
+  remove: function(name) {
+    var i = this._names.indexOf(name);
+    if (i >= 0) {
+      this._names.splice(i, 1);
+      this._node.setAttribute("class", this._names.join(" "));
+    }
+  },
+  contains: function(name) {
+    return this._names.indexOf(name) >= 0;
+  }
+};
+
+function classedAdd(node, names) {
+  var list = classList(node), i = -1, n = names.length;
+  while (++i < n) list.add(names[i]);
+}
+
+function classedRemove(node, names) {
+  var list = classList(node), i = -1, n = names.length;
+  while (++i < n) list.remove(names[i]);
+}
+
+function classedTrue(names) {
+  return function() {
+    classedAdd(this, names);
+  };
+}
+
+function classedFalse(names) {
+  return function() {
+    classedRemove(this, names);
+  };
+}
+
+function classedFunction(names, value) {
+  return function() {
+    (value.apply(this, arguments) ? classedAdd : classedRemove)(this, names);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  var names = classArray(name + "");
+
+  if (arguments.length < 2) {
+    var list = classList(this.node()), i = -1, n = names.length;
+    while (++i < n) if (!list.contains(names[i])) return false;
+    return true;
+  }
+
+  return this.each((typeof value === "function"
+      ? classedFunction : value
+      ? classedTrue
+      : classedFalse)(names, value));
+};
+
+
+/***/ }),
+/* 228 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__enter__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constant__ = __webpack_require__(219);
+
+
+
+
+var keyPrefix = "$"; // Protect against keys like “__proto__”.
+
+function bindIndex(parent, group, enter, update, exit, data) {
+  var i = 0,
+      node,
+      groupLength = group.length,
+      dataLength = data.length;
+
+  // Put any non-null nodes that fit into update.
+  // Put any null nodes into enter.
+  // Put any remaining data into enter.
+  for (; i < dataLength; ++i) {
+    if (node = group[i]) {
+      node.__data__ = data[i];
+      update[i] = node;
+    } else {
+      enter[i] = new __WEBPACK_IMPORTED_MODULE_1__enter__["b" /* EnterNode */](parent, data[i]);
+    }
+  }
+
+  // Put any non-null nodes that don’t fit into exit.
+  for (; i < groupLength; ++i) {
+    if (node = group[i]) {
+      exit[i] = node;
+    }
+  }
+}
+
+function bindKey(parent, group, enter, update, exit, data, key) {
+  var i,
+      node,
+      nodeByKeyValue = {},
+      groupLength = group.length,
+      dataLength = data.length,
+      keyValues = new Array(groupLength),
+      keyValue;
+
+  // Compute the key for each node.
+  // If multiple nodes have the same key, the duplicates are added to exit.
+  for (i = 0; i < groupLength; ++i) {
+    if (node = group[i]) {
+      keyValues[i] = keyValue = keyPrefix + key.call(node, node.__data__, i, group);
+      if (keyValue in nodeByKeyValue) {
+        exit[i] = node;
+      } else {
+        nodeByKeyValue[keyValue] = node;
+      }
+    }
+  }
+
+  // Compute the key for each datum.
+  // If there a node associated with this key, join and add it to update.
+  // If there is not (or the key is a duplicate), add it to enter.
+  for (i = 0; i < dataLength; ++i) {
+    keyValue = keyPrefix + key.call(parent, data[i], i, data);
+    if (node = nodeByKeyValue[keyValue]) {
+      update[i] = node;
+      node.__data__ = data[i];
+      nodeByKeyValue[keyValue] = null;
+    } else {
+      enter[i] = new __WEBPACK_IMPORTED_MODULE_1__enter__["b" /* EnterNode */](parent, data[i]);
+    }
+  }
+
+  // Add any remaining nodes that were not bound to data to exit.
+  for (i = 0; i < groupLength; ++i) {
+    if ((node = group[i]) && (nodeByKeyValue[keyValues[i]] === node)) {
+      exit[i] = node;
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value, key) {
+  if (!value) {
+    data = new Array(this.size()), j = -1;
+    this.each(function(d) { data[++j] = d; });
+    return data;
+  }
+
+  var bind = key ? bindKey : bindIndex,
+      parents = this._parents,
+      groups = this._groups;
+
+  if (typeof value !== "function") value = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__constant__["a" /* default */])(value);
+
+  for (var m = groups.length, update = new Array(m), enter = new Array(m), exit = new Array(m), j = 0; j < m; ++j) {
+    var parent = parents[j],
+        group = groups[j],
+        groupLength = group.length,
+        data = value.call(parent, parent && parent.__data__, j, parents),
+        dataLength = data.length,
+        enterGroup = enter[j] = new Array(dataLength),
+        updateGroup = update[j] = new Array(dataLength),
+        exitGroup = exit[j] = new Array(groupLength);
+
+    bind(parent, group, enterGroup, updateGroup, exitGroup, data, key);
+
+    // Now connect the enter nodes to their following update node, such that
+    // appendChild can insert the materialized enter node before this node,
+    // rather than at the end of the parent node.
+    for (var i0 = 0, i1 = 0, previous, next; i0 < dataLength; ++i0) {
+      if (previous = enterGroup[i0]) {
+        if (i0 >= i1) i1 = i0 + 1;
+        while (!(next = updateGroup[i1]) && ++i1 < dataLength);
+        previous._next = next || null;
+      }
+    }
+  }
+
+  update = new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](update, parents);
+  update._enter = enter;
+  update._exit = exit;
+  return update;
+};
+
+
+/***/ }),
+/* 229 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  return arguments.length
+      ? this.property("__data__", value)
+      : this.node().__data__;
+};
+
+
+/***/ }),
+/* 230 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(46);
+
+
+function dispatchEvent(node, type, params) {
+  var window = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__window__["a" /* default */])(node),
+      event = window.CustomEvent;
+
+  if (event) {
+    event = new event(type, params);
+  } else {
+    event = window.document.createEvent("Event");
+    if (params) event.initEvent(type, params.bubbles, params.cancelable), event.detail = params.detail;
+    else event.initEvent(type, false, false);
+  }
+
+  node.dispatchEvent(event);
+}
+
+function dispatchConstant(type, params) {
+  return function() {
+    return dispatchEvent(this, type, params);
+  };
+}
+
+function dispatchFunction(type, params) {
+  return function() {
+    return dispatchEvent(this, type, params.apply(this, arguments));
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(type, params) {
+  return this.each((typeof params === "function"
+      ? dispatchFunction
+      : dispatchConstant)(type, params));
+};
+
+
+/***/ }),
+/* 231 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(callback) {
+
+  for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
+    for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
+      if (node = group[i]) callback.call(node, node.__data__, i, group);
+    }
+  }
+
+  return this;
+};
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return !this.node();
+};
+
+
+/***/ }),
+/* 233 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sparse__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(3);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return new __WEBPACK_IMPORTED_MODULE_1__index__["a" /* Selection */](this._exit || this._groups.map(__WEBPACK_IMPORTED_MODULE_0__sparse__["a" /* default */]), this._parents);
+};
+
+
+/***/ }),
+/* 234 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__matcher__ = __webpack_require__(89);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(match) {
+  if (typeof match !== "function") match = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__matcher__["a" /* default */])(match);
+
+  for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0; i < n; ++i) {
+      if ((node = group[i]) && match.call(node, node.__data__, i, group)) {
+        subgroup.push(node);
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](subgroups, this._parents);
+};
+
+
+/***/ }),
+/* 235 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function htmlRemove() {
+  this.innerHTML = "";
+}
+
+function htmlConstant(value) {
+  return function() {
+    this.innerHTML = value;
+  };
+}
+
+function htmlFunction(value) {
+  return function() {
+    var v = value.apply(this, arguments);
+    this.innerHTML = v == null ? "" : v;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  return arguments.length
+      ? this.each(value == null
+          ? htmlRemove : (typeof value === "function"
+          ? htmlFunction
+          : htmlConstant)(value))
+      : this.node().innerHTML;
+};
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__creator__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(44);
+
+
+
+function constantNull() {
+  return null;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, before) {
+  var create = typeof name === "function" ? name : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__creator__["a" /* default */])(name),
+      select = before == null ? constantNull : typeof before === "function" ? before : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__selector__["a" /* default */])(before);
+  return this.select(function() {
+    return this.insertBefore(create.apply(this, arguments), select.apply(this, arguments) || null);
+  });
+};
+
+
+/***/ }),
+/* 237 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function lower() {
+  if (this.previousSibling) this.parentNode.insertBefore(this, this.parentNode.firstChild);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return this.each(lower);
+};
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(selection) {
+
+  for (var groups0 = this._groups, groups1 = selection._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
+    for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i = 0; i < n; ++i) {
+      if (node = group0[i] || group1[i]) {
+        merge[i] = node;
+      }
+    }
+  }
+
+  for (; j < m0; ++j) {
+    merges[j] = groups0[j];
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](merges, this._parents);
+};
+
+
+/***/ }),
+/* 239 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+
+  for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
+    for (var group = groups[j], i = 0, n = group.length; i < n; ++i) {
+      var node = group[i];
+      if (node) return node;
+    }
+  }
+
+  return null;
+};
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var nodes = new Array(this.size()), i = -1;
+  this.each(function() { nodes[++i] = this; });
+  return nodes;
+};
+
+
+/***/ }),
+/* 241 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+
+  for (var groups = this._groups, j = -1, m = groups.length; ++j < m;) {
+    for (var group = groups[j], i = group.length - 1, next = group[i], node; --i >= 0;) {
+      if (node = group[i]) {
+        if (next && next !== node.nextSibling) next.parentNode.insertBefore(node, next);
+        next = node;
+      }
+    }
+  }
+
+  return this;
+};
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function propertyRemove(name) {
+  return function() {
+    delete this[name];
+  };
+}
+
+function propertyConstant(name, value) {
+  return function() {
+    this[name] = value;
+  };
+}
+
+function propertyFunction(name, value) {
+  return function() {
+    var v = value.apply(this, arguments);
+    if (v == null) delete this[name];
+    else this[name] = v;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  return arguments.length > 1
+      ? this.each((value == null
+          ? propertyRemove : typeof value === "function"
+          ? propertyFunction
+          : propertyConstant)(name, value))
+      : this.node()[name];
+};
+
+
+/***/ }),
+/* 243 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function raise() {
+  if (this.nextSibling) this.parentNode.appendChild(this);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return this.each(raise);
+};
+
+
+/***/ }),
+/* 244 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function remove() {
+  var parent = this.parentNode;
+  if (parent) parent.removeChild(this);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return this.each(remove);
+};
+
+
+/***/ }),
+/* 245 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selector__ = __webpack_require__(44);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(select) {
+  if (typeof select !== "function") select = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__selector__["a" /* default */])(select);
+
+  for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0; i < n; ++i) {
+      if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
+        if ("__data__" in node) subnode.__data__ = node.__data__;
+        subgroup[i] = subnode;
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](subgroups, this._parents);
+};
+
+
+/***/ }),
+/* 246 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selectorAll__ = __webpack_require__(92);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(select) {
+  if (typeof select !== "function") select = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__selectorAll__["a" /* default */])(select);
+
+  for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
+      if (node = group[i]) {
+        subgroups.push(select.call(node, node.__data__, i, group));
+        parents.push(node);
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](subgroups, parents);
+};
+
+
+/***/ }),
+/* 247 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var size = 0;
+  this.each(function() { ++size; });
+  return size;
+};
+
+
+/***/ }),
+/* 248 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(3);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(compare) {
+  if (!compare) compare = ascending;
+
+  function compareNode(a, b) {
+    return a && b ? compare(a.__data__, b.__data__) : !a - !b;
+  }
+
+  for (var groups = this._groups, m = groups.length, sortgroups = new Array(m), j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, sortgroup = sortgroups[j] = new Array(n), node, i = 0; i < n; ++i) {
+      if (node = group[i]) {
+        sortgroup[i] = node;
+      }
+    }
+    sortgroup.sort(compareNode);
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Selection */](sortgroups, this._parents).order();
+};
+
+function ascending(a, b) {
+  return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
+}
+
+
+/***/ }),
+/* 249 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__window__ = __webpack_require__(46);
+
+
+function styleRemove(name) {
+  return function() {
+    this.style.removeProperty(name);
+  };
+}
+
+function styleConstant(name, value, priority) {
+  return function() {
+    this.style.setProperty(name, value, priority);
+  };
+}
+
+function styleFunction(name, value, priority) {
+  return function() {
+    var v = value.apply(this, arguments);
+    if (v == null) this.style.removeProperty(name);
+    else this.style.setProperty(name, v, priority);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value, priority) {
+  var node;
+  return arguments.length > 1
+      ? this.each((value == null
+            ? styleRemove : typeof value === "function"
+            ? styleFunction
+            : styleConstant)(name, value, priority == null ? "" : priority))
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__window__["a" /* default */])(node = this.node())
+          .getComputedStyle(node, null)
+          .getPropertyValue(name);
+};
+
+
+/***/ }),
+/* 250 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function textRemove() {
+  this.textContent = "";
+}
+
+function textConstant(value) {
+  return function() {
+    this.textContent = value;
+  };
+}
+
+function textFunction(value) {
+  return function() {
+    var v = value.apply(this, arguments);
+    this.textContent = v == null ? "" : v;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  return arguments.length
+      ? this.each(value == null
+          ? textRemove : (typeof value === "function"
+          ? textFunction
+          : textConstant)(value))
+      : this.node().textContent;
+};
+
+
+/***/ }),
+/* 251 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(42);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(node, touches, identifier) {
+  if (arguments.length < 3) identifier = touches, touches = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__sourceEvent__["a" /* default */])().changedTouches;
+
+  for (var i = 0, n = touches ? touches.length : 0, touch; i < n; ++i) {
+    if ((touch = touches[i]).identifier === identifier) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__point__["a" /* default */])(node, touch);
+    }
+  }
+
+  return null;
+};
+
+
+/***/ }),
+/* 252 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sourceEvent__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__point__ = __webpack_require__(42);
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(node, touches) {
+  if (touches == null) touches = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__sourceEvent__["a" /* default */])().touches;
+
+  for (var i = 0, n = touches ? touches.length : 0, points = new Array(n); i < n; ++i) {
+    points[i] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__point__["a" /* default */])(node, touches[i]);
+  }
+
+  return points;
+};
+
+
+/***/ }),
+/* 253 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__math__ = __webpack_require__(16);
+
+
+
+
+function arcInnerRadius(d) {
+  return d.innerRadius;
+}
+
+function arcOuterRadius(d) {
+  return d.outerRadius;
+}
+
+function arcStartAngle(d) {
+  return d.startAngle;
+}
+
+function arcEndAngle(d) {
+  return d.endAngle;
+}
+
+function arcPadAngle(d) {
+  return d && d.padAngle; // Note: optional!
+}
+
+function asin(x) {
+  return x >= 1 ? __WEBPACK_IMPORTED_MODULE_2__math__["d" /* halfPi */] : x <= -1 ? -__WEBPACK_IMPORTED_MODULE_2__math__["d" /* halfPi */] : Math.asin(x);
+}
+
+function intersect(x0, y0, x1, y1, x2, y2, x3, y3) {
+  var x10 = x1 - x0, y10 = y1 - y0,
+      x32 = x3 - x2, y32 = y3 - y2,
+      t = (x32 * (y0 - y2) - y32 * (x0 - x2)) / (y32 * x10 - x32 * y10);
+  return [x0 + t * x10, y0 + t * y10];
+}
+
+// Compute perpendicular offset line of length rc.
+// http://mathworld.wolfram.com/Circle-LineIntersection.html
+function cornerTangents(x0, y0, x1, y1, r1, rc, cw) {
+  var x01 = x0 - x1,
+      y01 = y0 - y1,
+      lo = (cw ? rc : -rc) / Math.sqrt(x01 * x01 + y01 * y01),
+      ox = lo * y01,
+      oy = -lo * x01,
+      x11 = x0 + ox,
+      y11 = y0 + oy,
+      x10 = x1 + ox,
+      y10 = y1 + oy,
+      x00 = (x11 + x10) / 2,
+      y00 = (y11 + y10) / 2,
+      dx = x10 - x11,
+      dy = y10 - y11,
+      d2 = dx * dx + dy * dy,
+      r = r1 - rc,
+      D = x11 * y10 - x10 * y11,
+      d = (dy < 0 ? -1 : 1) * Math.sqrt(Math.max(0, r * r * d2 - D * D)),
+      cx0 = (D * dy - dx * d) / d2,
+      cy0 = (-D * dx - dy * d) / d2,
+      cx1 = (D * dy + dx * d) / d2,
+      cy1 = (-D * dx + dy * d) / d2,
+      dx0 = cx0 - x00,
+      dy0 = cy0 - y00,
+      dx1 = cx1 - x00,
+      dy1 = cy1 - y00;
+
+  // Pick the closer of the two intersection points.
+  // TODO Is there a faster way to determine which intersection to use?
+  if (dx0 * dx0 + dy0 * dy0 > dx1 * dx1 + dy1 * dy1) cx0 = cx1, cy0 = cy1;
+
+  return {
+    cx: cx0,
+    cy: cy0,
+    x01: -ox,
+    y01: -oy,
+    x11: cx0 * (r1 / r - 1),
+    y11: cy0 * (r1 / r - 1)
+  };
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var innerRadius = arcInnerRadius,
+      outerRadius = arcOuterRadius,
+      cornerRadius = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(0),
+      padRadius = null,
+      startAngle = arcStartAngle,
+      endAngle = arcEndAngle,
+      padAngle = arcPadAngle,
+      context = null;
+
+  function arc() {
+    var buffer,
+        r,
+        r0 = +innerRadius.apply(this, arguments),
+        r1 = +outerRadius.apply(this, arguments),
+        a0 = startAngle.apply(this, arguments) - __WEBPACK_IMPORTED_MODULE_2__math__["d" /* halfPi */],
+        a1 = endAngle.apply(this, arguments) - __WEBPACK_IMPORTED_MODULE_2__math__["d" /* halfPi */],
+        da = Math.abs(a1 - a0),
+        cw = a1 > a0;
+
+    if (!context) context = buffer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_path__["a" /* path */])();
+
+    // Ensure that the outer radius is always larger than the inner radius.
+    if (r1 < r0) r = r1, r1 = r0, r0 = r;
+
+    // Is it a point?
+    if (!(r1 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */])) context.moveTo(0, 0);
+
+    // Or is it a circle or annulus?
+    else if (da > __WEBPACK_IMPORTED_MODULE_2__math__["c" /* tau */] - __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+      context.moveTo(r1 * Math.cos(a0), r1 * Math.sin(a0));
+      context.arc(0, 0, r1, a0, a1, !cw);
+      if (r0 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+        context.moveTo(r0 * Math.cos(a1), r0 * Math.sin(a1));
+        context.arc(0, 0, r0, a1, a0, cw);
+      }
+    }
+
+    // Or is it a circular or annular sector?
+    else {
+      var a01 = a0,
+          a11 = a1,
+          a00 = a0,
+          a10 = a1,
+          da0 = da,
+          da1 = da,
+          ap = padAngle.apply(this, arguments) / 2,
+          rp = (ap > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) && (padRadius ? +padRadius.apply(this, arguments) : Math.sqrt(r0 * r0 + r1 * r1)),
+          rc = Math.min(Math.abs(r1 - r0) / 2, +cornerRadius.apply(this, arguments)),
+          rc0 = rc,
+          rc1 = rc,
+          t0,
+          t1;
+
+      // Apply padding? Note that since r1 ≥ r0, da1 ≥ da0.
+      if (rp > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+        var p0 = asin(rp / r0 * Math.sin(ap)),
+            p1 = asin(rp / r1 * Math.sin(ap));
+        if ((da0 -= p0 * 2) > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) p0 *= (cw ? 1 : -1), a00 += p0, a10 -= p0;
+        else da0 = 0, a00 = a10 = (a0 + a1) / 2;
+        if ((da1 -= p1 * 2) > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) p1 *= (cw ? 1 : -1), a01 += p1, a11 -= p1;
+        else da1 = 0, a01 = a11 = (a0 + a1) / 2;
+      }
+
+      var x01 = r1 * Math.cos(a01),
+          y01 = r1 * Math.sin(a01),
+          x10 = r0 * Math.cos(a10),
+          y10 = r0 * Math.sin(a10);
+
+      // Apply rounded corners?
+      if (rc > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+        var x11 = r1 * Math.cos(a11),
+            y11 = r1 * Math.sin(a11),
+            x00 = r0 * Math.cos(a00),
+            y00 = r0 * Math.sin(a00);
+
+        // Restrict the corner radius according to the sector angle.
+        if (da < __WEBPACK_IMPORTED_MODULE_2__math__["b" /* pi */]) {
+          var oc = da0 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */] ? intersect(x01, y01, x00, y00, x11, y11, x10, y10) : [x10, y10],
+              ax = x01 - oc[0],
+              ay = y01 - oc[1],
+              bx = x11 - oc[0],
+              by = y11 - oc[1],
+              kc = 1 / Math.sin(Math.acos((ax * bx + ay * by) / (Math.sqrt(ax * ax + ay * ay) * Math.sqrt(bx * bx + by * by))) / 2),
+              lc = Math.sqrt(oc[0] * oc[0] + oc[1] * oc[1]);
+          rc0 = Math.min(rc, (r0 - lc) / (kc - 1));
+          rc1 = Math.min(rc, (r1 - lc) / (kc + 1));
+        }
+      }
+
+      // Is the sector collapsed to a line?
+      if (!(da1 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */])) context.moveTo(x01, y01);
+
+      // Does the sector’s outer ring have rounded corners?
+      else if (rc1 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+        t0 = cornerTangents(x00, y00, x01, y01, r1, rc1, cw);
+        t1 = cornerTangents(x11, y11, x10, y10, r1, rc1, cw);
+
+        context.moveTo(t0.cx + t0.x01, t0.cy + t0.y01);
+
+        // Have the corners merged?
+        if (rc1 < rc) context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
+
+        // Otherwise, draw the two corners and the ring.
+        else {
+          context.arc(t0.cx, t0.cy, rc1, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
+          context.arc(0, 0, r1, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), !cw);
+          context.arc(t1.cx, t1.cy, rc1, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
+        }
+      }
+
+      // Or is the outer ring just a circular arc?
+      else context.moveTo(x01, y01), context.arc(0, 0, r1, a01, a11, !cw);
+
+      // Is there no inner ring, and it’s a circular sector?
+      // Or perhaps it’s an annular sector collapsed due to padding?
+      if (!(r0 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) || !(da0 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */])) context.lineTo(x10, y10);
+
+      // Does the sector’s inner ring (or point) have rounded corners?
+      else if (rc0 > __WEBPACK_IMPORTED_MODULE_2__math__["a" /* epsilon */]) {
+        t0 = cornerTangents(x10, y10, x11, y11, r0, -rc0, cw);
+        t1 = cornerTangents(x01, y01, x00, y00, r0, -rc0, cw);
+
+        context.lineTo(t0.cx + t0.x01, t0.cy + t0.y01);
+
+        // Have the corners merged?
+        if (rc0 < rc) context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t1.y01, t1.x01), !cw);
+
+        // Otherwise, draw the two corners and the ring.
+        else {
+          context.arc(t0.cx, t0.cy, rc0, Math.atan2(t0.y01, t0.x01), Math.atan2(t0.y11, t0.x11), !cw);
+          context.arc(0, 0, r0, Math.atan2(t0.cy + t0.y11, t0.cx + t0.x11), Math.atan2(t1.cy + t1.y11, t1.cx + t1.x11), cw);
+          context.arc(t1.cx, t1.cy, rc0, Math.atan2(t1.y11, t1.x11), Math.atan2(t1.y01, t1.x01), !cw);
+        }
+      }
+
+      // Or is the inner ring just a circular arc?
+      else context.arc(0, 0, r0, a10, a00, cw);
+    }
+
+    context.closePath();
+
+    if (buffer) return context = null, buffer + "" || null;
+  }
+
+  arc.centroid = function() {
+    var r = (+innerRadius.apply(this, arguments) + +outerRadius.apply(this, arguments)) / 2,
+        a = (+startAngle.apply(this, arguments) + +endAngle.apply(this, arguments)) / 2 - __WEBPACK_IMPORTED_MODULE_2__math__["b" /* pi */] / 2;
+    return [Math.cos(a) * r, Math.sin(a) * r];
+  };
+
+  arc.innerRadius = function(_) {
+    return arguments.length ? (innerRadius = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : innerRadius;
+  };
+
+  arc.outerRadius = function(_) {
+    return arguments.length ? (outerRadius = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : outerRadius;
+  };
+
+  arc.cornerRadius = function(_) {
+    return arguments.length ? (cornerRadius = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : cornerRadius;
+  };
+
+  arc.padRadius = function(_) {
+    return arguments.length ? (padRadius = _ == null ? null : typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : padRadius;
+  };
+
+  arc.startAngle = function(_) {
+    return arguments.length ? (startAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : startAngle;
+  };
+
+  arc.endAngle = function(_) {
+    return arguments.length ? (endAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : endAngle;
+  };
+
+  arc.padAngle = function(_) {
+    return arguments.length ? (padAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), arc) : padAngle;
+  };
+
+  arc.context = function(_) {
+    return arguments.length ? ((context = _ == null ? null : _), arc) : context;
+  };
+
+  return arc;
+};
+
+
+/***/ }),
+/* 254 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return slice; });
+var slice = Array.prototype.slice;
+
+
+/***/ }),
+/* 255 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__noop__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basis__ = __webpack_require__(23);
+
+
+
+function BasisClosed(context) {
+  this._context = context;
+}
+
+BasisClosed.prototype = {
+  areaStart: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  areaEnd: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 = this._x3 = this._x4 =
+    this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 1: {
+        this._context.moveTo(this._x2, this._y2);
+        this._context.closePath();
+        break;
+      }
+      case 2: {
+        this._context.moveTo((this._x2 + 2 * this._x3) / 3, (this._y2 + 2 * this._y3) / 3);
+        this._context.lineTo((this._x3 + 2 * this._x2) / 3, (this._y3 + 2 * this._y2) / 3);
+        this._context.closePath();
+        break;
+      }
+      case 3: {
+        this.point(this._x2, this._y2);
+        this.point(this._x3, this._y3);
+        this.point(this._x4, this._y4);
+        break;
+      }
+    }
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._x2 = x, this._y2 = y; break;
+      case 1: this._point = 2; this._x3 = x, this._y3 = y; break;
+      case 2: this._point = 3; this._x4 = x, this._y4 = y; this._context.moveTo((this._x0 + 4 * this._x1 + x) / 6, (this._y0 + 4 * this._y1 + y) / 6); break;
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__basis__["b" /* point */])(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = x;
+    this._y0 = this._y1, this._y1 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(context) {
+  return new BasisClosed(context);
+};
+
+
+/***/ }),
+/* 256 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basis__ = __webpack_require__(23);
+
+
+function BasisOpen(context) {
+  this._context = context;
+}
+
+BasisOpen.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 =
+    this._y0 = this._y1 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (this._line || (this._line !== 0 && this._point === 3)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; var x0 = (this._x0 + 4 * this._x1 + x) / 6, y0 = (this._y0 + 4 * this._y1 + y) / 6; this._line ? this._context.lineTo(x0, y0) : this._context.moveTo(x0, y0); break;
+      case 3: this._point = 4; // proceed
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__basis__["b" /* point */])(this, x, y); break;
+    }
+    this._x0 = this._x1, this._x1 = x;
+    this._y0 = this._y1, this._y1 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(context) {
+  return new BasisOpen(context);
+};
+
+
+/***/ }),
+/* 257 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__basis__ = __webpack_require__(23);
+
+
+function Bundle(context, beta) {
+  this._basis = new __WEBPACK_IMPORTED_MODULE_0__basis__["a" /* Basis */](context);
+  this._beta = beta;
+}
+
+Bundle.prototype = {
+  lineStart: function() {
+    this._x = [];
+    this._y = [];
+    this._basis.lineStart();
+  },
+  lineEnd: function() {
+    var x = this._x,
+        y = this._y,
+        j = x.length - 1;
+
+    if (j > 0) {
+      var x0 = x[0],
+          y0 = y[0],
+          dx = x[j] - x0,
+          dy = y[j] - y0,
+          i = -1,
+          t;
+
+      while (++i <= j) {
+        t = i / j;
+        this._basis.point(
+          this._beta * x[i] + (1 - this._beta) * (x0 + t * dx),
+          this._beta * y[i] + (1 - this._beta) * (y0 + t * dy)
+        );
+      }
+    }
+
+    this._x = this._y = null;
+    this._basis.lineEnd();
+  },
+  point: function(x, y) {
+    this._x.push(+x);
+    this._y.push(+y);
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(beta) {
+
+  function bundle(context) {
+    return beta === 1 ? new __WEBPACK_IMPORTED_MODULE_0__basis__["a" /* Basis */](context) : new Bundle(context, beta);
+  }
+
+  bundle.beta = function(beta) {
+    return custom(+beta);
+  };
+
+  return bundle;
+})(0.85);
+
+
+/***/ }),
+/* 258 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cardinalClosed__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__noop__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__catmullRom__ = __webpack_require__(47);
+
+
+
+
+function CatmullRomClosed(context, alpha) {
+  this._context = context;
+  this._alpha = alpha;
+}
+
+CatmullRomClosed.prototype = {
+  areaStart: __WEBPACK_IMPORTED_MODULE_1__noop__["a" /* default */],
+  areaEnd: __WEBPACK_IMPORTED_MODULE_1__noop__["a" /* default */],
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 = this._x3 = this._x4 = this._x5 =
+    this._y0 = this._y1 = this._y2 = this._y3 = this._y4 = this._y5 = NaN;
+    this._l01_a = this._l12_a = this._l23_a =
+    this._l01_2a = this._l12_2a = this._l23_2a =
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 1: {
+        this._context.moveTo(this._x3, this._y3);
+        this._context.closePath();
+        break;
+      }
+      case 2: {
+        this._context.lineTo(this._x3, this._y3);
+        this._context.closePath();
+        break;
+      }
+      case 3: {
+        this.point(this._x3, this._y3);
+        this.point(this._x4, this._y4);
+        this.point(this._x5, this._y5);
+        break;
+      }
+    }
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+
+    if (this._point) {
+      var x23 = this._x2 - x,
+          y23 = this._y2 - y;
+      this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
+    }
+
+    switch (this._point) {
+      case 0: this._point = 1; this._x3 = x, this._y3 = y; break;
+      case 1: this._point = 2; this._context.moveTo(this._x4 = x, this._y4 = y); break;
+      case 2: this._point = 3; this._x5 = x, this._y5 = y; break;
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__catmullRom__["a" /* point */])(this, x, y); break;
+    }
+
+    this._l01_a = this._l12_a, this._l12_a = this._l23_a;
+    this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(alpha) {
+
+  function catmullRom(context) {
+    return alpha ? new CatmullRomClosed(context, alpha) : new __WEBPACK_IMPORTED_MODULE_0__cardinalClosed__["a" /* CardinalClosed */](context, 0);
+  }
+
+  catmullRom.alpha = function(alpha) {
+    return custom(+alpha);
+  };
+
+  return catmullRom;
+})(0.5);
+
+
+/***/ }),
+/* 259 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cardinalOpen__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__catmullRom__ = __webpack_require__(47);
+
+
+
+function CatmullRomOpen(context, alpha) {
+  this._context = context;
+  this._alpha = alpha;
+}
+
+CatmullRomOpen.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 = this._x2 =
+    this._y0 = this._y1 = this._y2 = NaN;
+    this._l01_a = this._l12_a = this._l23_a =
+    this._l01_2a = this._l12_2a = this._l23_2a =
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (this._line || (this._line !== 0 && this._point === 3)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+
+    if (this._point) {
+      var x23 = this._x2 - x,
+          y23 = this._y2 - y;
+      this._l23_a = Math.sqrt(this._l23_2a = Math.pow(x23 * x23 + y23 * y23, this._alpha));
+    }
+
+    switch (this._point) {
+      case 0: this._point = 1; break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; this._line ? this._context.lineTo(this._x2, this._y2) : this._context.moveTo(this._x2, this._y2); break;
+      case 3: this._point = 4; // proceed
+      default: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__catmullRom__["a" /* point */])(this, x, y); break;
+    }
+
+    this._l01_a = this._l12_a, this._l12_a = this._l23_a;
+    this._l01_2a = this._l12_2a, this._l12_2a = this._l23_2a;
+    this._x0 = this._x1, this._x1 = this._x2, this._x2 = x;
+    this._y0 = this._y1, this._y1 = this._y2, this._y2 = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (function custom(alpha) {
+
+  function catmullRom(context) {
+    return alpha ? new CatmullRomOpen(context, alpha) : new __WEBPACK_IMPORTED_MODULE_0__cardinalOpen__["a" /* CardinalOpen */](context, 0);
+  }
+
+  catmullRom.alpha = function(alpha) {
+    return custom(+alpha);
+  };
+
+  return catmullRom;
+})(0.5);
+
+
+/***/ }),
+/* 260 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__noop__ = __webpack_require__(26);
+
+
+function LinearClosed(context) {
+  this._context = context;
+}
+
+LinearClosed.prototype = {
+  areaStart: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  areaEnd: __WEBPACK_IMPORTED_MODULE_0__noop__["a" /* default */],
+  lineStart: function() {
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (this._point) this._context.closePath();
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    if (this._point) this._context.lineTo(x, y);
+    else this._point = 1, this._context.moveTo(x, y);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = function(context) {
+  return new LinearClosed(context);
+};
+
+
+/***/ }),
+/* 261 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export monotoneX */
+/* unused harmony export monotoneY */
+function sign(x) {
+  return x < 0 ? -1 : 1;
+}
+
+// Calculate the slopes of the tangents (Hermite-type interpolation) based on
+// the following paper: Steffen, M. 1990. A Simple Method for Monotonic
+// Interpolation in One Dimension. Astronomy and Astrophysics, Vol. 239, NO.
+// NOV(II), P. 443, 1990.
+function slope3(that, x2, y2) {
+  var h0 = that._x1 - that._x0,
+      h1 = x2 - that._x1,
+      s0 = (that._y1 - that._y0) / (h0 || h1 < 0 && -0),
+      s1 = (y2 - that._y1) / (h1 || h0 < 0 && -0),
+      p = (s0 * h1 + s1 * h0) / (h0 + h1);
+  return (sign(s0) + sign(s1)) * Math.min(Math.abs(s0), Math.abs(s1), 0.5 * Math.abs(p)) || 0;
+}
+
+// Calculate a one-sided slope.
+function slope2(that, t) {
+  var h = that._x1 - that._x0;
+  return h ? (3 * (that._y1 - that._y0) / h - t) / 2 : t;
+}
+
+// According to https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Representations
+// "you can express cubic Hermite interpolation in terms of cubic Bézier curves
+// with respect to the four values p0, p0 + m0 / 3, p1 - m1 / 3, p1".
+function point(that, t0, t1) {
+  var x0 = that._x0,
+      y0 = that._y0,
+      x1 = that._x1,
+      y1 = that._y1,
+      dx = (x1 - x0) / 3;
+  that._context.bezierCurveTo(x0 + dx, y0 + dx * t0, x1 - dx, y1 - dx * t1, x1, y1);
+}
+
+function MonotoneX(context) {
+  this._context = context;
+}
+
+MonotoneX.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x0 = this._x1 =
+    this._y0 = this._y1 =
+    this._t0 = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    switch (this._point) {
+      case 2: this._context.lineTo(this._x1, this._y1); break;
+      case 3: point(this, this._t0, slope2(this, this._t0)); break;
+    }
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    var t1 = NaN;
+
+    x = +x, y = +y;
+    if (x === this._x1 && y === this._y1) return; // Ignore coincident points.
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; break;
+      case 2: this._point = 3; point(this, slope2(this, t1 = slope3(this, x, y)), t1); break;
+      default: point(this, this._t0, t1 = slope3(this, x, y)); break;
+    }
+
+    this._x0 = this._x1, this._x1 = x;
+    this._y0 = this._y1, this._y1 = y;
+    this._t0 = t1;
+  }
+}
+
+function MonotoneY(context) {
+  this._context = new ReflectContext(context);
+}
+
+(MonotoneY.prototype = Object.create(MonotoneX.prototype)).point = function(x, y) {
+  MonotoneX.prototype.point.call(this, y, x);
+};
+
+function ReflectContext(context) {
+  this._context = context;
+}
+
+ReflectContext.prototype = {
+  moveTo: function(x, y) { this._context.moveTo(y, x); },
+  closePath: function() { this._context.closePath(); },
+  lineTo: function(x, y) { this._context.lineTo(y, x); },
+  bezierCurveTo: function(x1, y1, x2, y2, x, y) { this._context.bezierCurveTo(y1, x1, y2, x2, y, x); }
+};
+
+function monotoneX(context) {
+  return new MonotoneX(context);
+}
+
+function monotoneY(context) {
+  return new MonotoneY(context);
+}
+
+
+/***/ }),
+/* 262 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function Natural(context) {
+  this._context = context;
+}
+
+Natural.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x = [];
+    this._y = [];
+  },
+  lineEnd: function() {
+    var x = this._x,
+        y = this._y,
+        n = x.length;
+
+    if (n) {
+      this._line ? this._context.lineTo(x[0], y[0]) : this._context.moveTo(x[0], y[0]);
+      if (n === 2) {
+        this._context.lineTo(x[1], y[1]);
+      } else {
+        var px = controlPoints(x),
+            py = controlPoints(y);
+        for (var i0 = 0, i1 = 1; i1 < n; ++i0, ++i1) {
+          this._context.bezierCurveTo(px[0][i0], py[0][i0], px[1][i0], py[1][i0], x[i1], y[i1]);
+        }
+      }
+    }
+
+    if (this._line || (this._line !== 0 && n === 1)) this._context.closePath();
+    this._line = 1 - this._line;
+    this._x = this._y = null;
+  },
+  point: function(x, y) {
+    this._x.push(+x);
+    this._y.push(+y);
+  }
+};
+
+// See https://www.particleincell.com/2012/bezier-splines/ for derivation.
+function controlPoints(x) {
+  var i,
+      n = x.length - 1,
+      m,
+      a = new Array(n),
+      b = new Array(n),
+      r = new Array(n);
+  a[0] = 0, b[0] = 2, r[0] = x[0] + 2 * x[1];
+  for (i = 1; i < n - 1; ++i) a[i] = 1, b[i] = 4, r[i] = 4 * x[i] + 2 * x[i + 1];
+  a[n - 1] = 2, b[n - 1] = 7, r[n - 1] = 8 * x[n - 1] + x[n];
+  for (i = 1; i < n; ++i) m = a[i] / b[i - 1], b[i] -= m, r[i] -= m * r[i - 1];
+  a[n - 1] = r[n - 1] / b[n - 1];
+  for (i = n - 2; i >= 0; --i) a[i] = (r[i] - a[i + 1]) / b[i];
+  b[n - 1] = (x[n] + a[n - 1]) / 2;
+  for (i = 0; i < n - 1; ++i) b[i] = 2 * x[i + 1] - a[i + 1];
+  return [a, b];
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(context) {
+  return new Natural(context);
+};
+
+
+/***/ }),
+/* 263 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export stepBefore */
+/* unused harmony export stepAfter */
+function Step(context, t) {
+  this._context = context;
+  this._t = t;
+}
+
+Step.prototype = {
+  areaStart: function() {
+    this._line = 0;
+  },
+  areaEnd: function() {
+    this._line = NaN;
+  },
+  lineStart: function() {
+    this._x = this._y = NaN;
+    this._point = 0;
+  },
+  lineEnd: function() {
+    if (0 < this._t && this._t < 1 && this._point === 2) this._context.lineTo(this._x, this._y);
+    if (this._line || (this._line !== 0 && this._point === 1)) this._context.closePath();
+    if (this._line >= 0) this._t = 1 - this._t, this._line = 1 - this._line;
+  },
+  point: function(x, y) {
+    x = +x, y = +y;
+    switch (this._point) {
+      case 0: this._point = 1; this._line ? this._context.lineTo(x, y) : this._context.moveTo(x, y); break;
+      case 1: this._point = 2; // proceed
+      default: {
+        if (this._t <= 0) {
+          this._context.lineTo(this._x, y);
+          this._context.lineTo(x, y);
+        } else {
+          var x1 = this._x * (1 - this._t) + x * this._t;
+          this._context.lineTo(x1, this._y);
+          this._context.lineTo(x1, y);
+        }
+        break;
+      }
+    }
+    this._x = x, this._y = y;
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(context) {
+  return new Step(context, 0.5);
+};
+
+function stepBefore(context) {
+  return new Step(context, 0);
+}
+
+function stepAfter(context) {
+  return new Step(context, 1);
+}
+
+
+/***/ }),
+/* 264 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(a, b) {
+  return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
+};
+
+
+/***/ }),
+/* 265 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(d) {
+  return d;
+};
+
+
+/***/ }),
+/* 266 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(17);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series, order) {
+  if (!((n = series.length) > 0)) return;
+  for (var i, n, j = 0, m = series[0].length, y; j < m; ++j) {
+    for (y = i = 0; i < n; ++i) y += series[i][j][1] || 0;
+    if (y) for (i = 0; i < n; ++i) series[i][j][1] /= y;
+  }
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series, order);
+};
+
+
+/***/ }),
+/* 267 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(17);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series, order) {
+  if (!((n = series.length) > 0)) return;
+  for (var j = 0, s0 = series[order[0]], n, m = s0.length; j < m; ++j) {
+    for (var i = 0, y = 0; i < n; ++i) y += series[i][j][1] || 0;
+    s0[j][1] += s0[j][0] = -y / 2;
+  }
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series, order);
+};
+
+
+/***/ }),
+/* 268 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(17);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series, order) {
+  if (!((n = series.length) > 0) || !((m = (s0 = series[order[0]]).length) > 0)) return;
+  for (var y = 0, j = 1, s0, m, n; j < m; ++j) {
+    for (var i = 0, s1 = 0, s2 = 0; i < n; ++i) {
+      var si = series[order[i]],
+          sij0 = si[j][1] || 0,
+          sij1 = si[j - 1][1] || 0,
+          s3 = (sij0 - sij1) / 2;
+      for (var k = 0; k < i; ++k) {
+        var sk = series[order[k]],
+            skj0 = sk[j][1] || 0,
+            skj1 = sk[j - 1][1] || 0;
+        s3 += skj0 - skj1;
+      }
+      s1 += sij0, s2 += s3 * sij0;
+    }
+    s0[j - 1][1] += s0[j - 1][0] = y;
+    if (s1) y -= s2 / s1;
+  }
+  s0[j - 1][1] += s0[j - 1][0] = y;
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series, order);
+};
+
+
+/***/ }),
+/* 269 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ascending__ = __webpack_require__(49);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ascending__["b" /* default */])(series).reverse();
+};
+
+
+/***/ }),
+/* 270 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ascending__ = __webpack_require__(49);
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series) {
+  var n = series.length,
+      i,
+      j,
+      sums = series.map(__WEBPACK_IMPORTED_MODULE_1__ascending__["a" /* sum */]),
+      order = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series).sort(function(a, b) { return sums[b] - sums[a]; }),
+      top = 0,
+      bottom = 0,
+      tops = [],
+      bottoms = [];
+
+  for (i = 0; i < n; ++i) {
+    j = order[i];
+    if (top < bottom) {
+      top += sums[j];
+      tops.push(j);
+    } else {
+      bottom += sums[j];
+      bottoms.push(j);
+    }
+  }
+
+  return bottoms.reverse().concat(tops);
+};
+
+
+/***/ }),
+/* 271 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__none__ = __webpack_require__(18);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(series) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__none__["a" /* default */])(series).reverse();
+};
+
+
+/***/ }),
+/* 272 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__descending__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__identity__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__math__ = __webpack_require__(16);
+
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var value = __WEBPACK_IMPORTED_MODULE_2__identity__["a" /* default */],
+      sortValues = __WEBPACK_IMPORTED_MODULE_1__descending__["a" /* default */],
+      sort = null,
+      startAngle = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(0),
+      endAngle = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_3__math__["c" /* tau */]),
+      padAngle = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(0);
+
+  function pie(data) {
+    var i,
+        n = data.length,
+        j,
+        k,
+        sum = 0,
+        index = new Array(n),
+        arcs = new Array(n),
+        a0 = +startAngle.apply(this, arguments),
+        da = Math.min(__WEBPACK_IMPORTED_MODULE_3__math__["c" /* tau */], Math.max(-__WEBPACK_IMPORTED_MODULE_3__math__["c" /* tau */], endAngle.apply(this, arguments) - a0)),
+        a1,
+        p = Math.min(Math.abs(da) / n, padAngle.apply(this, arguments)),
+        pa = p * (da < 0 ? -1 : 1),
+        v;
+
+    for (i = 0; i < n; ++i) {
+      if ((v = arcs[index[i] = i] = +value(data[i], i, data)) > 0) {
+        sum += v;
+      }
+    }
+
+    // Optionally sort the arcs by previously-computed values or by data.
+    if (sortValues != null) index.sort(function(i, j) { return sortValues(arcs[i], arcs[j]); });
+    else if (sort != null) index.sort(function(i, j) { return sort(data[i], data[j]); });
+
+    // Compute the arcs! They are stored in the original data's order.
+    for (i = 0, k = sum ? (da - n * pa) / sum : 0; i < n; ++i, a0 = a1) {
+      j = index[i], v = arcs[j], a1 = a0 + (v > 0 ? v * k : 0) + pa, arcs[j] = {
+        data: data[j],
+        index: i,
+        value: v,
+        startAngle: a0,
+        endAngle: a1,
+        padAngle: p
+      };
+    }
+
+    return arcs;
+  }
+
+  pie.value = function(_) {
+    return arguments.length ? (value = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(+_), pie) : value;
+  };
+
+  pie.sortValues = function(_) {
+    return arguments.length ? (sortValues = _, sort = null, pie) : sortValues;
+  };
+
+  pie.sort = function(_) {
+    return arguments.length ? (sort = _, sortValues = null, pie) : sort;
+  };
+
+  pie.startAngle = function(_) {
+    return arguments.length ? (startAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(+_), pie) : startAngle;
+  };
+
+  pie.endAngle = function(_) {
+    return arguments.length ? (endAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(+_), pie) : endAngle;
+  };
+
+  pie.padAngle = function(_) {
+    return arguments.length ? (padAngle = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__constant__["a" /* default */])(+_), pie) : padAngle;
+  };
+
+  return pie;
+};
+
+
+/***/ }),
+/* 273 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__curve_radial__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__area__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__radialLine__ = __webpack_require__(99);
+
+
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__area__["a" /* default */])().curve(__WEBPACK_IMPORTED_MODULE_0__curve_radial__["b" /* curveRadialLinear */]),
+      c = a.curve,
+      x0 = a.lineX0,
+      x1 = a.lineX1,
+      y0 = a.lineY0,
+      y1 = a.lineY1;
+
+  a.angle = a.x, delete a.x;
+  a.startAngle = a.x0, delete a.x0;
+  a.endAngle = a.x1, delete a.x1;
+  a.radius = a.y, delete a.y;
+  a.innerRadius = a.y0, delete a.y0;
+  a.outerRadius = a.y1, delete a.y1;
+  a.lineStartAngle = function() { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__radialLine__["a" /* radialLine */])(x0()); }, delete a.lineX0;
+  a.lineEndAngle = function() { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__radialLine__["a" /* radialLine */])(x1()); }, delete a.lineX1;
+  a.lineInnerRadius = function() { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__radialLine__["a" /* radialLine */])(y0()); }, delete a.lineY0;
+  a.lineOuterRadius = function() { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__radialLine__["a" /* radialLine */])(y1()); }, delete a.lineY1;
+
+  a.curve = function(_) {
+    return arguments.length ? c(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__curve_radial__["a" /* default */])(_)) : c()._curve;
+  };
+
+  return a;
+};
+
+
+/***/ }),
+/* 274 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constant__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__offset_none__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__order_none__ = __webpack_require__(18);
+
+
+
+
+
+function stackValue(d, key) {
+  return d[key];
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var keys = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])([]),
+      order = __WEBPACK_IMPORTED_MODULE_3__order_none__["a" /* default */],
+      offset = __WEBPACK_IMPORTED_MODULE_2__offset_none__["a" /* default */],
+      value = stackValue;
+
+  function stack(data) {
+    var kz = keys.apply(this, arguments),
+        i,
+        m = data.length,
+        n = kz.length,
+        sz = new Array(n),
+        oz;
+
+    for (i = 0; i < n; ++i) {
+      for (var ki = kz[i], si = sz[i] = new Array(m), j = 0, sij; j < m; ++j) {
+        si[j] = sij = [0, +value(data[j], ki, j, data)];
+        sij.data = data[j];
+      }
+      si.key = ki;
+    }
+
+    for (i = 0, oz = order(sz); i < n; ++i) {
+      sz[oz[i]].index = i;
+    }
+
+    offset(sz, oz);
+    return sz;
+  }
+
+  stack.keys = function(_) {
+    return arguments.length ? (keys = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__array__["a" /* slice */].call(_)), stack) : keys;
+  };
+
+  stack.value = function(_) {
+    return arguments.length ? (value = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(+_), stack) : value;
+  };
+
+  stack.order = function(_) {
+    return arguments.length ? (order = _ == null ? __WEBPACK_IMPORTED_MODULE_3__order_none__["a" /* default */] : typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__constant__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_0__array__["a" /* slice */].call(_)), stack) : order;
+  };
+
+  stack.offset = function(_) {
+    return arguments.length ? (offset = _ == null ? __WEBPACK_IMPORTED_MODULE_2__offset_none__["a" /* default */] : _, stack) : offset;
+  };
+
+  return stack;
+};
+
+
+/***/ }),
+/* 275 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_path__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__symbol_circle__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__symbol_cross__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__symbol_diamond__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__symbol_star__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__symbol_square__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__symbol_triangle__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__symbol_wye__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__constant__ = __webpack_require__(11);
+/* unused harmony export symbols */
+
+
+
+
+
+
+
+
+
+
+var symbols = [
+  __WEBPACK_IMPORTED_MODULE_1__symbol_circle__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_2__symbol_cross__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_3__symbol_diamond__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_5__symbol_square__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_4__symbol_star__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_6__symbol_triangle__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_7__symbol_wye__["a" /* default */]
+];
+
+/* unused harmony default export */ var _unused_webpack_default_export = function() {
+  var type = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__constant__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_1__symbol_circle__["a" /* default */]),
+      size = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__constant__["a" /* default */])(64),
+      context = null;
+
+  function symbol() {
+    var buffer;
+    if (!context) context = buffer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_path__["a" /* path */])();
+    type.apply(this, arguments).draw(context, +size.apply(this, arguments));
+    if (buffer) return context = null, buffer + "" || null;
+  }
+
+  symbol.type = function(_) {
+    return arguments.length ? (type = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__constant__["a" /* default */])(_), symbol) : type;
+  };
+
+  symbol.size = function(_) {
+    return arguments.length ? (size = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__constant__["a" /* default */])(+_), symbol) : size;
+  };
+
+  symbol.context = function(_) {
+    return arguments.length ? (context = _ == null ? null : _, symbol) : context;
+  };
+
+  return symbol;
+};
+
+
+/***/ }),
+/* 276 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isoFormat__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultLocale__ = __webpack_require__(50);
+
+
+
+function parseIsoNative(string) {
+  var date = new Date(string);
+  return isNaN(date) ? null : date;
+}
+
+var parseIso = +new Date("2000-01-01T00:00:00.000Z")
+    ? parseIsoNative
+    : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__defaultLocale__["b" /* utcParse */])(__WEBPACK_IMPORTED_MODULE_0__isoFormat__["a" /* isoSpecifier */]);
+
+/* unused harmony default export */ var _unused_webpack_default_export = parseIso;
+
+
+/***/ }),
+/* 277 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export days */
+
+
+
+var day = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setDate(date.getDate() + step);
+}, function(start, end) {
+  return (end - start - (end.getTimezoneOffset() - start.getTimezoneOffset()) * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]) / __WEBPACK_IMPORTED_MODULE_1__duration__["b" /* durationDay */];
+}, function(date) {
+  return date.getDate() - 1;
+});
+
+/* harmony default export */ __webpack_exports__["a"] = day;
+var days = day.range;
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export hours */
+
+
+
+var hour = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  var offset = date.getTimezoneOffset() * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */] % __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */];
+  if (offset < 0) offset += __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */];
+  date.setTime(Math.floor((+date - offset) / __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */]) * __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */] + offset);
+}, function(date, step) {
+  date.setTime(+date + step * __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */]);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */];
+}, function(date) {
+  return date.getHours();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = hour;
+var hours = hour.range;
+
+
+/***/ }),
+/* 279 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* unused harmony export milliseconds */
+
+
+var millisecond = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function() {
+  // noop
+}, function(date, step) {
+  date.setTime(+date + step);
+}, function(start, end) {
+  return end - start;
+});
+
+// An optimized implementation for this simple case.
+millisecond.every = function(k) {
+  k = Math.floor(k);
+  if (!isFinite(k) || !(k > 0)) return null;
+  if (!(k > 1)) return millisecond;
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+    date.setTime(Math.floor(date / k) * k);
+  }, function(date, step) {
+    date.setTime(+date + step * k);
+  }, function(start, end) {
+    return (end - start) / k;
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = millisecond;
+var milliseconds = millisecond.range;
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export minutes */
+
+
+
+var minute = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setTime(Math.floor(date / __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]) * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]);
+}, function(date, step) {
+  date.setTime(+date + step * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */];
+}, function(date) {
+  return date.getMinutes();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = minute;
+var minutes = minute.range;
+
+
+/***/ }),
+/* 281 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* unused harmony export months */
+
+
+var month = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setDate(1);
+  date.setHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setMonth(date.getMonth() + step);
+}, function(start, end) {
+  return end.getMonth() - start.getMonth() + (end.getFullYear() - start.getFullYear()) * 12;
+}, function(date) {
+  return date.getMonth();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = month;
+var months = month.range;
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export seconds */
+
+
+
+var second = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setTime(Math.floor(date / __WEBPACK_IMPORTED_MODULE_1__duration__["e" /* durationSecond */]) * __WEBPACK_IMPORTED_MODULE_1__duration__["e" /* durationSecond */]);
+}, function(date, step) {
+  date.setTime(+date + step * __WEBPACK_IMPORTED_MODULE_1__duration__["e" /* durationSecond */]);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["e" /* durationSecond */];
+}, function(date) {
+  return date.getUTCSeconds();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = second;
+var seconds = second.range;
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export utcDays */
+
+
+
+var utcDay = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setUTCHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setUTCDate(date.getUTCDate() + step);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["b" /* durationDay */];
+}, function(date) {
+  return date.getUTCDate() - 1;
+});
+
+/* harmony default export */ __webpack_exports__["a"] = utcDay;
+var utcDays = utcDay.range;
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export utcHours */
+
+
+
+var utcHour = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setUTCMinutes(0, 0, 0);
+}, function(date, step) {
+  date.setTime(+date + step * __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */]);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["c" /* durationHour */];
+}, function(date) {
+  return date.getUTCHours();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = utcHour;
+var utcHours = utcHour.range;
+
+
+/***/ }),
+/* 285 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* unused harmony export utcMinutes */
+
+
+
+var utcMinute = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setUTCSeconds(0, 0);
+}, function(date, step) {
+  date.setTime(+date + step * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]);
+}, function(start, end) {
+  return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */];
+}, function(date) {
+  return date.getUTCMinutes();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = utcMinute;
+var utcMinutes = utcMinute.range;
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* unused harmony export utcMonths */
+
+
+var utcMonth = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setUTCDate(1);
+  date.setUTCHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setUTCMonth(date.getUTCMonth() + step);
+}, function(start, end) {
+  return end.getUTCMonth() - start.getUTCMonth() + (end.getUTCFullYear() - start.getUTCFullYear()) * 12;
+}, function(date) {
+  return date.getUTCMonth();
+});
+
+/* harmony default export */ __webpack_exports__["a"] = utcMonth;
+var utcMonths = utcMonth.range;
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return utcSunday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return utcMonday; });
+/* unused harmony export utcTuesday */
+/* unused harmony export utcWednesday */
+/* unused harmony export utcThursday */
+/* unused harmony export utcFriday */
+/* unused harmony export utcSaturday */
+/* unused harmony export utcSundays */
+/* unused harmony export utcMondays */
+/* unused harmony export utcTuesdays */
+/* unused harmony export utcWednesdays */
+/* unused harmony export utcThursdays */
+/* unused harmony export utcFridays */
+/* unused harmony export utcSaturdays */
+
+
+
+function utcWeekday(i) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+    date.setUTCDate(date.getUTCDate() - (date.getUTCDay() + 7 - i) % 7);
+    date.setUTCHours(0, 0, 0, 0);
+  }, function(date, step) {
+    date.setUTCDate(date.getUTCDate() + step * 7);
+  }, function(start, end) {
+    return (end - start) / __WEBPACK_IMPORTED_MODULE_1__duration__["a" /* durationWeek */];
+  });
+}
+
+var utcSunday = utcWeekday(0);
+var utcMonday = utcWeekday(1);
+var utcTuesday = utcWeekday(2);
+var utcWednesday = utcWeekday(3);
+var utcThursday = utcWeekday(4);
+var utcFriday = utcWeekday(5);
+var utcSaturday = utcWeekday(6);
+
+var utcSundays = utcSunday.range;
+var utcMondays = utcMonday.range;
+var utcTuesdays = utcTuesday.range;
+var utcWednesdays = utcWednesday.range;
+var utcThursdays = utcThursday.range;
+var utcFridays = utcFriday.range;
+var utcSaturdays = utcSaturday.range;
+
+
+/***/ }),
+/* 288 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* unused harmony export utcYears */
+
+
+var utcYear = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setUTCMonth(0, 1);
+  date.setUTCHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setUTCFullYear(date.getUTCFullYear() + step);
+}, function(start, end) {
+  return end.getUTCFullYear() - start.getUTCFullYear();
+}, function(date) {
+  return date.getUTCFullYear();
+});
+
+// An optimized implementation for this simple case.
+utcYear.every = function(k) {
+  return !isFinite(k = Math.floor(k)) || !(k > 0) ? null : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+    date.setUTCFullYear(Math.floor(date.getUTCFullYear() / k) * k);
+    date.setUTCMonth(0, 1);
+    date.setUTCHours(0, 0, 0, 0);
+  }, function(date, step) {
+    date.setUTCFullYear(date.getUTCFullYear() + step * k);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = utcYear;
+var utcYears = utcYear.range;
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__duration__ = __webpack_require__(7);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return sunday; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return monday; });
+/* unused harmony export tuesday */
+/* unused harmony export wednesday */
+/* unused harmony export thursday */
+/* unused harmony export friday */
+/* unused harmony export saturday */
+/* unused harmony export sundays */
+/* unused harmony export mondays */
+/* unused harmony export tuesdays */
+/* unused harmony export wednesdays */
+/* unused harmony export thursdays */
+/* unused harmony export fridays */
+/* unused harmony export saturdays */
+
+
+
+function weekday(i) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+    date.setDate(date.getDate() - (date.getDay() + 7 - i) % 7);
+    date.setHours(0, 0, 0, 0);
+  }, function(date, step) {
+    date.setDate(date.getDate() + step * 7);
+  }, function(start, end) {
+    return (end - start - (end.getTimezoneOffset() - start.getTimezoneOffset()) * __WEBPACK_IMPORTED_MODULE_1__duration__["d" /* durationMinute */]) / __WEBPACK_IMPORTED_MODULE_1__duration__["a" /* durationWeek */];
+  });
+}
+
+var sunday = weekday(0);
+var monday = weekday(1);
+var tuesday = weekday(2);
+var wednesday = weekday(3);
+var thursday = weekday(4);
+var friday = weekday(5);
+var saturday = weekday(6);
+
+var sundays = sunday.range;
+var mondays = monday.range;
+var tuesdays = tuesday.range;
+var wednesdays = wednesday.range;
+var thursdays = thursday.range;
+var fridays = friday.range;
+var saturdays = saturday.range;
+
+
+/***/ }),
+/* 290 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interval__ = __webpack_require__(1);
+/* unused harmony export years */
+
+
+var year = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+  date.setMonth(0, 1);
+  date.setHours(0, 0, 0, 0);
+}, function(date, step) {
+  date.setFullYear(date.getFullYear() + step);
+}, function(start, end) {
+  return end.getFullYear() - start.getFullYear();
+}, function(date) {
+  return date.getFullYear();
+});
+
+// An optimized implementation for this simple case.
+year.every = function(k) {
+  return !isFinite(k = Math.floor(k)) || !(k > 0) ? null : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interval__["a" /* default */])(function(date) {
+    date.setFullYear(Math.floor(date.getFullYear() / k) * k);
+    date.setMonth(0, 1);
+    date.setHours(0, 0, 0, 0);
+  }, function(date, step) {
+    date.setFullYear(date.getFullYear() + step * k);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = year;
+var years = year.range;
+
+
+/***/ }),
+/* 291 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(52);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(callback, delay, time) {
+  var t = new __WEBPACK_IMPORTED_MODULE_0__timer__["b" /* Timer */], total = delay;
+  if (delay == null) return t.restart(callback, delay, time), t;
+  delay = +delay, time = time == null ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__timer__["c" /* now */])() : +time;
+  t.restart(function tick(elapsed) {
+    elapsed += total;
+    t.restart(tick, total += delay, time);
+    callback(elapsed);
+  }, delay, time);
+  return t;
+};
+
+
+/***/ }),
+/* 292 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timer__ = __webpack_require__(52);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(callback, delay, time) {
+  var t = new __WEBPACK_IMPORTED_MODULE_0__timer__["b" /* Timer */];
+  delay = delay == null ? 0 : +delay;
+  t.restart(function(elapsed) {
+    t.stop();
+    callback(elapsed + delay);
+  }, delay, time);
+  return t;
+};
+
+
+/***/ }),
+/* 293 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_selection_index__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_transition_index__ = __webpack_require__(8);
+/* unused harmony reexport transition */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_active__ = __webpack_require__(294);
+/* unused harmony reexport active */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_interrupt__ = __webpack_require__(111);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__src_interrupt__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 294 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transition_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transition_schedule__ = __webpack_require__(4);
+
+
+
+var root = [null];
+
+/* unused harmony default export */ var _unused_webpack_default_export = function(node, name) {
+  var schedules = node.__transition,
+      schedule,
+      i;
+
+  if (schedules) {
+    name = name == null ? null : name + "";
+    for (i in schedules) {
+      if ((schedule = schedules[i]).state > __WEBPACK_IMPORTED_MODULE_1__transition_schedule__["d" /* SCHEDULED */] && schedule.name === name) {
+        return new __WEBPACK_IMPORTED_MODULE_0__transition_index__["a" /* Transition */]([[node]], root, name, +i);
+      }
+    }
+  }
+
+  return null;
+};
+
+
+/***/ }),
+/* 295 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interrupt__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transition__ = __webpack_require__(297);
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_d3_selection__["f" /* selection */].prototype.interrupt = __WEBPACK_IMPORTED_MODULE_1__interrupt__["a" /* default */];
+__WEBPACK_IMPORTED_MODULE_0_d3_selection__["f" /* selection */].prototype.transition = __WEBPACK_IMPORTED_MODULE_2__transition__["a" /* default */];
+
+
+/***/ }),
+/* 296 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__interrupt__ = __webpack_require__(111);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(name) {
+  return this.each(function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__interrupt__["a" /* default */])(this, name);
+  });
+};
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__transition_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transition_schedule__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_ease__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_timer__ = __webpack_require__(110);
+
+
+
+
+
+var defaultTiming = {
+  time: null, // Set on use.
+  delay: 0,
+  duration: 250,
+  ease: __WEBPACK_IMPORTED_MODULE_2_d3_ease__["a" /* easeCubicInOut */]
+};
+
+function inherit(node, id) {
+  var timing;
+  while (!(timing = node.__transition) || !(timing = timing[id])) {
+    if (!(node = node.parentNode)) {
+      return defaultTiming.time = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["c" /* now */])(), defaultTiming;
+    }
+  }
+  return timing;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name) {
+  var id,
+      timing;
+
+  if (name instanceof __WEBPACK_IMPORTED_MODULE_0__transition_index__["a" /* Transition */]) {
+    id = name._id, name = name._name;
+  } else {
+    id = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__transition_index__["b" /* newId */])(), (timing = defaultTiming).time = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["c" /* now */])(), name = name == null ? null : name + "";
+  }
+
+  for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
+      if (node = group[i]) {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__transition_schedule__["h" /* default */])(node, name, id, i, group, timing || inherit(node, id));
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__transition_index__["a" /* Transition */](groups, this._parents, name, id);
+};
+
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tween__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interpolate__ = __webpack_require__(112);
+
+
+
+
+
+function attrRemove(name) {
+  return function() {
+    this.removeAttribute(name);
+  };
+}
+
+function attrRemoveNS(fullname) {
+  return function() {
+    this.removeAttributeNS(fullname.space, fullname.local);
+  };
+}
+
+function attrConstant(name, interpolate, value1) {
+  var value00,
+      interpolate0;
+  return function() {
+    var value0 = this.getAttribute(name);
+    return value0 === value1 ? null
+        : value0 === value00 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value1);
+  };
+}
+
+function attrConstantNS(fullname, interpolate, value1) {
+  var value00,
+      interpolate0;
+  return function() {
+    var value0 = this.getAttributeNS(fullname.space, fullname.local);
+    return value0 === value1 ? null
+        : value0 === value00 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value1);
+  };
+}
+
+function attrFunction(name, interpolate, value) {
+  var value00,
+      value10,
+      interpolate0;
+  return function() {
+    var value0, value1 = value(this);
+    if (value1 == null) return void this.removeAttribute(name);
+    value0 = this.getAttribute(name);
+    return value0 === value1 ? null
+        : value0 === value00 && value1 === value10 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value10 = value1);
+  };
+}
+
+function attrFunctionNS(fullname, interpolate, value) {
+  var value00,
+      value10,
+      interpolate0;
+  return function() {
+    var value0, value1 = value(this);
+    if (value1 == null) return void this.removeAttributeNS(fullname.space, fullname.local);
+    value0 = this.getAttributeNS(fullname.space, fullname.local);
+    return value0 === value1 ? null
+        : value0 === value00 && value1 === value10 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value10 = value1);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  var fullname = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["h" /* namespace */])(name), i = fullname === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["i" /* interpolateTransformSvg */] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
+  return this.attrTween(name, typeof value === "function"
+      ? (fullname.local ? attrFunctionNS : attrFunction)(fullname, i, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__tween__["b" /* tweenValue */])(this, "attr." + name, value))
+      : value == null ? (fullname.local ? attrRemoveNS : attrRemove)(fullname)
+      : (fullname.local ? attrConstantNS : attrConstant)(fullname, i, value));
+};
+
+
+/***/ }),
+/* 299 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+
+
+function attrTweenNS(fullname, value) {
+  function tween() {
+    var node = this, i = value.apply(node, arguments);
+    return i && function(t) {
+      node.setAttributeNS(fullname.space, fullname.local, i(t));
+    };
+  }
+  tween._value = value;
+  return tween;
+}
+
+function attrTween(name, value) {
+  function tween() {
+    var node = this, i = value.apply(node, arguments);
+    return i && function(t) {
+      node.setAttribute(name, i(t));
+    };
+  }
+  tween._value = value;
+  return tween;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value) {
+  var key = "attr." + name;
+  if (arguments.length < 2) return (key = this.tween(key)) && key._value;
+  if (value == null) return this.tween(key, null);
+  if (typeof value !== "function") throw new Error;
+  var fullname = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["h" /* namespace */])(name);
+  return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
+};
+
+
+/***/ }),
+/* 300 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__schedule__ = __webpack_require__(4);
+
+
+function delayFunction(id, value) {
+  return function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["g" /* init */])(this, id).delay = +value.apply(this, arguments);
+  };
+}
+
+function delayConstant(id, value) {
+  return value = +value, function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["g" /* init */])(this, id).delay = value;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  var id = this._id;
+
+  return arguments.length
+      ? this.each((typeof value === "function"
+          ? delayFunction
+          : delayConstant)(id, value))
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(this.node(), id).delay;
+};
+
+
+/***/ }),
+/* 301 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__schedule__ = __webpack_require__(4);
+
+
+function durationFunction(id, value) {
+  return function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id).duration = +value.apply(this, arguments);
+  };
+}
+
+function durationConstant(id, value) {
+  return value = +value, function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id).duration = value;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  var id = this._id;
+
+  return arguments.length
+      ? this.each((typeof value === "function"
+          ? durationFunction
+          : durationConstant)(id, value))
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(this.node(), id).duration;
+};
+
+
+/***/ }),
+/* 302 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__schedule__ = __webpack_require__(4);
+
+
+function easeConstant(id, value) {
+  if (typeof value !== "function") throw new Error;
+  return function() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */])(this, id).ease = value;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  var id = this._id;
+
+  return arguments.length
+      ? this.each(easeConstant(id, value))
+      : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(this.node(), id).ease;
+};
+
+
+/***/ }),
+/* 303 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(8);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(match) {
+  if (typeof match !== "function") match = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["i" /* matcher */])(match);
+
+  for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0; i < n; ++i) {
+      if ((node = group[i]) && match.call(node, node.__data__, i, group)) {
+        subgroup.push(node);
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_1__index__["a" /* Transition */](subgroups, this._parents, this._name, this._id);
+};
+
+
+/***/ }),
+/* 304 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(8);
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(transition) {
+  if (transition._id !== this._id) throw new Error;
+
+  for (var groups0 = this._groups, groups1 = transition._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
+    for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i = 0; i < n; ++i) {
+      if (node = group0[i] || group1[i]) {
+        merge[i] = node;
+      }
+    }
+  }
+
+  for (; j < m0; ++j) {
+    merges[j] = groups0[j];
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Transition */](merges, this._parents, this._name, this._id);
+};
+
+
+/***/ }),
+/* 305 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__schedule__ = __webpack_require__(4);
+
+
+function start(name) {
+  return (name + "").trim().split(/^|\s+/).every(function(t) {
+    var i = t.indexOf(".");
+    if (i >= 0) t = t.slice(0, i);
+    return !t || t === "start";
+  });
+}
+
+function onFunction(id, name, listener) {
+  var on0, on1, sit = start(name) ? __WEBPACK_IMPORTED_MODULE_0__schedule__["g" /* init */] : __WEBPACK_IMPORTED_MODULE_0__schedule__["e" /* set */];
+  return function() {
+    var schedule = sit(this, id),
+        on = schedule.on;
+
+    // If this node shared a dispatch with the previous node,
+    // just assign the updated shared dispatch and we’re done!
+    // Otherwise, copy-on-write.
+    if (on !== on0) (on1 = (on0 = on).copy()).on(name, listener);
+
+    schedule.on = on1;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, listener) {
+  var id = this._id;
+
+  return arguments.length < 2
+      ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__schedule__["f" /* get */])(this.node(), id).on.on(name)
+      : this.each(onFunction(id, name, listener));
+};
+
+
+/***/ }),
+/* 306 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function removeFunction(id) {
+  return function() {
+    var parent = this.parentNode;
+    for (var i in this.__transition) if (+i !== id) return;
+    if (parent) parent.removeChild(this);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return this.on("end.remove", removeFunction(this._id));
+};
+
+
+/***/ }),
+/* 307 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedule__ = __webpack_require__(4);
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(select) {
+  var name = this._name,
+      id = this._id;
+
+  if (typeof select !== "function") select = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["k" /* selector */])(select);
+
+  for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0; i < n; ++i) {
+      if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
+        if ("__data__" in node) subnode.__data__ = node.__data__;
+        subgroup[i] = subnode;
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__schedule__["h" /* default */])(subgroup[i], name, id, i, subgroup, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__schedule__["f" /* get */])(node, id));
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_1__index__["a" /* Transition */](subgroups, this._parents, name, id);
+};
+
+
+/***/ }),
+/* 308 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__schedule__ = __webpack_require__(4);
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function(select) {
+  var name = this._name,
+      id = this._id;
+
+  if (typeof select !== "function") select = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_selection__["j" /* selectorAll */])(select);
+
+  for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
+      if (node = group[i]) {
+        for (var children = select.call(node, node.__data__, i, group), child, inherit = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__schedule__["f" /* get */])(node, id), k = 0, l = children.length; k < l; ++k) {
+          if (child = children[k]) {
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__schedule__["h" /* default */])(child, name, id, k, children, inherit);
+          }
+        }
+        subgroups.push(children);
+        parents.push(node);
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_1__index__["a" /* Transition */](subgroups, parents, name, id);
+};
+
+
+/***/ }),
+/* 309 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+
+
+var Selection = __WEBPACK_IMPORTED_MODULE_0_d3_selection__["f" /* selection */].prototype.constructor;
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  return new Selection(this._groups, this._parents);
+};
+
+
+/***/ }),
+/* 310 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tween__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interpolate__ = __webpack_require__(112);
+
+
+
+
+
+function styleRemove(name, interpolate) {
+  var value00,
+      value10,
+      interpolate0;
+  return function() {
+    var style = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["g" /* window */])(this).getComputedStyle(this, null),
+        value0 = style.getPropertyValue(name),
+        value1 = (this.style.removeProperty(name), style.getPropertyValue(name));
+    return value0 === value1 ? null
+        : value0 === value00 && value1 === value10 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value10 = value1);
+  };
+}
+
+function styleRemoveEnd(name) {
+  return function() {
+    this.style.removeProperty(name);
+  };
+}
+
+function styleConstant(name, interpolate, value1) {
+  var value00,
+      interpolate0;
+  return function() {
+    var value0 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["g" /* window */])(this).getComputedStyle(this, null).getPropertyValue(name);
+    return value0 === value1 ? null
+        : value0 === value00 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value1);
+  };
+}
+
+function styleFunction(name, interpolate, value) {
+  var value00,
+      value10,
+      interpolate0;
+  return function() {
+    var style = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["g" /* window */])(this).getComputedStyle(this, null),
+        value0 = style.getPropertyValue(name),
+        value1 = value(this);
+    if (value1 == null) value1 = (this.style.removeProperty(name), style.getPropertyValue(name));
+    return value0 === value1 ? null
+        : value0 === value00 && value1 === value10 ? interpolate0
+        : interpolate0 = interpolate(value00 = value0, value10 = value1);
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value, priority) {
+  var i = (name += "") === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["f" /* interpolateTransformCss */] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
+  return value == null ? this
+          .styleTween(name, styleRemove(name, i))
+          .on("end.style." + name, styleRemoveEnd(name))
+      : this.styleTween(name, typeof value === "function"
+          ? styleFunction(name, i, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__tween__["b" /* tweenValue */])(this, "style." + name, value))
+          : styleConstant(name, i, value), priority);
+};
+
+
+/***/ }),
+/* 311 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function styleTween(name, value, priority) {
+  function tween() {
+    var node = this, i = value.apply(node, arguments);
+    return i && function(t) {
+      node.style.setProperty(name, i(t), priority);
+    };
+  }
+  tween._value = value;
+  return tween;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(name, value, priority) {
+  var key = "style." + (name += "");
+  if (arguments.length < 2) return (key = this.tween(key)) && key._value;
+  if (value == null) return this.tween(key, null);
+  if (typeof value !== "function") throw new Error;
+  return this.tween(key, styleTween(name, value, priority == null ? "" : priority));
+};
+
+
+/***/ }),
+/* 312 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tween__ = __webpack_require__(27);
+
+
+function textConstant(value) {
+  return function() {
+    this.textContent = value;
+  };
+}
+
+function textFunction(value) {
+  return function() {
+    var value1 = value(this);
+    this.textContent = value1 == null ? "" : value1;
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function(value) {
+  return this.tween("text", typeof value === "function"
+      ? textFunction(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__tween__["b" /* tweenValue */])(this, "text", value))
+      : textConstant(value == null ? "" : value + ""));
+};
+
+
+/***/ }),
+/* 313 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__schedule__ = __webpack_require__(4);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var name = this._name,
+      id0 = this._id,
+      id1 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__index__["b" /* newId */])();
+
+  for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
+    for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
+      if (node = group[i]) {
+        var inherit = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__schedule__["f" /* get */])(node, id0);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__schedule__["h" /* default */])(node, name, id1, i, group, {
+          time: inherit.time + inherit.delay + inherit.duration,
+          delay: 0,
+          duration: inherit.duration,
+          ease: inherit.ease
+        });
+      }
+    }
+  }
+
+  return new __WEBPACK_IMPORTED_MODULE_0__index__["a" /* Transition */](groups, this._parents, name, id1);
+};
+
+
+/***/ }),
+/* 314 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_zoom__ = __webpack_require__(318);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_zoom__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_transform__ = __webpack_require__(113);
+/* unused harmony reexport zoomTransform */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__src_transform__["a"]; });
+
+
+
+
+/***/ }),
+/* 315 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = function(x) {
+  return function() {
+    return x;
+  };
+};
+
+
+/***/ }),
+/* 316 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = ZoomEvent;
+function ZoomEvent(target, type, transform) {
+  this.target = target;
+  this.type = type;
+  this.transform = transform;
+}
+
+
+/***/ }),
+/* 317 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_selection__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["b"] = nopropagation;
+
+
+function nopropagation() {
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].stopImmediatePropagation();
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].preventDefault();
+  __WEBPACK_IMPORTED_MODULE_0_d3_selection__["b" /* event */].stopImmediatePropagation();
+};
+
+
+/***/ }),
+/* 318 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_dispatch__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_drag__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_selection__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3_transition__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__constant__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__event__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__transform__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__noevent__ = __webpack_require__(317);
+
+
+
+
+
+
+
+
+
+
+// Ignore right-click, since that should open the context menu.
+function defaultFilter() {
+  return !__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].button;
+}
+
+function defaultExtent() {
+  var e = this, w, h;
+  if (e instanceof SVGElement) {
+    e = e.ownerSVGElement || e;
+    w = e.width.baseVal.value;
+    h = e.height.baseVal.value;
+  } else {
+    w = e.clientWidth;
+    h = e.clientHeight;
+  }
+  return [[0, 0], [w, h]];
+}
+
+function defaultTransform() {
+  return this.__zoom || __WEBPACK_IMPORTED_MODULE_7__transform__["a" /* identity */];
+}
+
+/* harmony default export */ __webpack_exports__["a"] = function() {
+  var filter = defaultFilter,
+      extent = defaultExtent,
+      k0 = 0,
+      k1 = Infinity,
+      x0 = -k1,
+      x1 = k1,
+      y0 = x0,
+      y1 = x1,
+      duration = 250,
+      interpolate = __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__["e" /* interpolateZoom */],
+      gestures = [],
+      listeners = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_d3_dispatch__["a" /* dispatch */])("start", "zoom", "end"),
+      touchstarting,
+      touchending,
+      touchDelay = 500,
+      wheelDelay = 150;
+
+  function zoom(selection) {
+    selection
+        .on("wheel.zoom", wheeled)
+        .on("mousedown.zoom", mousedowned)
+        .on("dblclick.zoom", dblclicked)
+        .on("touchstart.zoom", touchstarted)
+        .on("touchmove.zoom", touchmoved)
+        .on("touchend.zoom touchcancel.zoom", touchended)
+        .style("-webkit-tap-highlight-color", "rgba(0,0,0,0)")
+        .property("__zoom", defaultTransform);
+  }
+
+  zoom.transform = function(collection, transform) {
+    var selection = collection.selection ? collection.selection() : collection;
+    selection.property("__zoom", defaultTransform);
+    if (collection !== selection) {
+      schedule(collection, transform);
+    } else {
+      selection.interrupt().each(function() {
+        gesture(this, arguments)
+            .start()
+            .zoom(null, typeof transform === "function" ? transform.apply(this, arguments) : transform)
+            .end();
+      });
+    }
+  };
+
+  zoom.scaleBy = function(selection, k) {
+    zoom.scaleTo(selection, function() {
+      var k0 = this.__zoom.k,
+          k1 = typeof k === "function" ? k.apply(this, arguments) : k;
+      return k0 * k1;
+    });
+  };
+
+  zoom.scaleTo = function(selection, k) {
+    zoom.transform(selection, function() {
+      var e = extent.apply(this, arguments),
+          t0 = this.__zoom,
+          p0 = centroid(e),
+          p1 = t0.invert(p0),
+          k1 = typeof k === "function" ? k.apply(this, arguments) : k;
+      return constrain(translate(scale(t0, k1), p0, p1), e);
+    });
+  };
+
+  zoom.translateBy = function(selection, x, y) {
+    zoom.transform(selection, function() {
+      return constrain(this.__zoom.translate(
+        typeof x === "function" ? x.apply(this, arguments) : x,
+        typeof y === "function" ? y.apply(this, arguments) : y
+      ), extent.apply(this, arguments));
+    });
+  };
+
+  function scale(transform, k) {
+    k = Math.max(k0, Math.min(k1, k));
+    return k === transform.k ? transform : new __WEBPACK_IMPORTED_MODULE_7__transform__["b" /* Transform */](k, transform.x, transform.y);
+  }
+
+  function translate(transform, p0, p1) {
+    var x = p0[0] - p1[0] * transform.k, y = p0[1] - p1[1] * transform.k;
+    return x === transform.x && y === transform.y ? transform : new __WEBPACK_IMPORTED_MODULE_7__transform__["b" /* Transform */](transform.k, x, y);
+  }
+
+  function constrain(transform, extent) {
+    var dx0 = transform.invertX(extent[0][0]) - x0,
+        dx1 = transform.invertX(extent[1][0]) - x1,
+        dy0 = transform.invertY(extent[0][1]) - y0,
+        dy1 = transform.invertY(extent[1][1]) - y1;
+    return transform.translate(
+      dx1 > dx0 ? (dx0 + dx1) / 2 : Math.min(0, dx0) || Math.max(0, dx1),
+      dy1 > dy0 ? (dy0 + dy1) / 2 : Math.min(0, dy0) || Math.max(0, dy1)
+    );
+  }
+
+  function centroid(extent) {
+    return [(+extent[0][0] + +extent[1][0]) / 2, (+extent[0][1] + +extent[1][1]) / 2];
+  }
+
+  function schedule(transition, transform, center) {
+    transition
+        .on("start.zoom", function() { gesture(this, arguments).start(); })
+        .on("interrupt.zoom end.zoom", function() { gesture(this, arguments).end(); })
+        .tween("zoom", function() {
+          var that = this,
+              args = arguments,
+              g = gesture(that, args),
+              e = extent.apply(that, args),
+              p = center || centroid(e),
+              w = Math.max(e[1][0] - e[0][0], e[1][1] - e[0][1]),
+              a = that.__zoom,
+              b = typeof transform === "function" ? transform.apply(that, args) : transform,
+              i = interpolate(a.invert(p).concat(w / a.k), b.invert(p).concat(w / b.k));
+          return function(t) {
+            if (t === 1) t = b; // Avoid rounding error on end.
+            else { var l = i(t), k = w / l[2]; t = new __WEBPACK_IMPORTED_MODULE_7__transform__["b" /* Transform */](k, p[0] - l[0] * k, p[1] - l[1] * k); }
+            g.zoom(null, t);
+          };
+        });
+  }
+
+  function gesture(that, args) {
+    for (var i = 0, n = gestures.length, g; i < n; ++i) {
+      if ((g = gestures[i]).that === that) {
+        return g;
+      }
+    }
+    return new Gesture(that, args);
+  }
+
+  function Gesture(that, args) {
+    this.that = that;
+    this.args = args;
+    this.index = -1;
+    this.active = 0;
+    this.extent = extent.apply(that, args);
+  }
+
+  Gesture.prototype = {
+    start: function() {
+      if (++this.active === 1) {
+        this.index = gestures.push(this) - 1;
+        this.emit("start");
+      }
+      return this;
+    },
+    zoom: function(key, transform) {
+      if (this.mouse && key !== "mouse") this.mouse[1] = transform.invert(this.mouse[0]);
+      if (this.touch0 && key !== "touch") this.touch0[1] = transform.invert(this.touch0[0]);
+      if (this.touch1 && key !== "touch") this.touch1[1] = transform.invert(this.touch1[0]);
+      this.that.__zoom = transform;
+      this.emit("zoom");
+      return this;
+    },
+    end: function() {
+      if (--this.active === 0) {
+        gestures.splice(this.index, 1);
+        this.index = -1;
+        this.emit("end");
+      }
+      return this;
+    },
+    emit: function(type) {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["e" /* customEvent */])(new __WEBPACK_IMPORTED_MODULE_6__event__["a" /* default */](zoom, type, this.that.__zoom), listeners.apply, listeners, [type, this.that, this.args]);
+    }
+  };
+
+  function wheeled() {
+    if (!filter.apply(this, arguments)) return;
+    var g = gesture(this, arguments),
+        t = this.__zoom,
+        k = Math.max(k0, Math.min(k1, t.k * Math.pow(2, -__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].deltaY * (__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].deltaMode ? 120 : 1) / 500))),
+        p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["c" /* mouse */])(this);
+
+    // If the mouse is in the same location as before, reuse it.
+    // If there were recent wheel events, reset the wheel idle timeout.
+    if (g.wheel) {
+      if (g.mouse[0][0] !== p[0] || g.mouse[0][1] !== p[1]) {
+        g.mouse[1] = t.invert(g.mouse[0] = p);
+      }
+      clearTimeout(g.wheel);
+    }
+
+    // If this wheel event won’t trigger a transform change, ignore it.
+    else if (t.k === k) return;
+
+    // Otherwise, capture the mouse point and location at the start.
+    else {
+      g.mouse = [p, t.invert(p)];
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_transition__["a" /* interrupt */])(this);
+      g.start();
+    }
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["a" /* default */])();
+    g.wheel = setTimeout(wheelidled, wheelDelay);
+    g.zoom("mouse", constrain(translate(scale(t, k), g.mouse[0], g.mouse[1]), g.extent));
+
+    function wheelidled() {
+      g.wheel = null;
+      g.end();
+    }
+  }
+
+  function mousedowned() {
+    if (touchending || !filter.apply(this, arguments)) return;
+    var g = gesture(this, arguments),
+        v = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].view).on("mousemove.zoom", mousemoved, true).on("mouseup.zoom", mouseupped, true),
+        p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["c" /* mouse */])(this);
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_drag__["b" /* dragDisable */])(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].view);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["b" /* nopropagation */])();
+    g.mouse = [p, this.__zoom.invert(p)];
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_transition__["a" /* interrupt */])(this);
+    g.start();
+
+    function mousemoved() {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["a" /* default */])();
+      g.moved = true;
+      g.zoom("mouse", constrain(translate(g.that.__zoom, g.mouse[0] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["c" /* mouse */])(g.that), g.mouse[1]), g.extent));
+    }
+
+    function mouseupped() {
+      v.on("mousemove.zoom mouseup.zoom", null);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_drag__["c" /* dragEnable */])(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].view, g.moved);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["a" /* default */])();
+      g.end();
+    }
+  }
+
+  function dblclicked() {
+    if (!filter.apply(this, arguments)) return;
+    var t0 = this.__zoom,
+        p0 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["c" /* mouse */])(this),
+        p1 = t0.invert(p0),
+        k1 = t0.k * (__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].shiftKey ? 0.5 : 2),
+        t1 = constrain(translate(scale(t0, k1), p0, p1), extent.apply(this, arguments));
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["a" /* default */])();
+    if (duration > 0) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(this).transition().duration(duration).call(schedule, t1, p0);
+    else __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(this).call(zoom.transform, t1);
+  }
+
+  function touchstarted() {
+    if (!filter.apply(this, arguments)) return;
+    var g = gesture(this, arguments),
+        touches = __WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].changedTouches,
+        started,
+        n = touches.length, i, t, p;
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["b" /* nopropagation */])();
+    for (i = 0; i < n; ++i) {
+      t = touches[i], p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["d" /* touch */])(this, touches, t.identifier);
+      p = [p, this.__zoom.invert(p), t.identifier];
+      if (!g.touch0) g.touch0 = p, started = true;
+      else if (!g.touch1) g.touch1 = p;
+    }
+
+    // If this is a dbltap, reroute to the (optional) dblclick.zoom handler.
+    if (touchstarting) {
+      touchstarting = clearTimeout(touchstarting);
+      if (!g.touch1) {
+        g.end();
+        p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(this).on("dblclick.zoom");
+        if (p) p.apply(this, arguments);
+        return;
+      }
+    }
+
+    if (started) {
+      touchstarting = setTimeout(function() { touchstarting = null; }, touchDelay);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_d3_transition__["a" /* interrupt */])(this);
+      g.start();
+    }
+  }
+
+  function touchmoved() {
+    var g = gesture(this, arguments),
+        touches = __WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].changedTouches,
+        n = touches.length, i, t, p, l;
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["a" /* default */])();
+    if (touchstarting) touchstarting = clearTimeout(touchstarting);
+    for (i = 0; i < n; ++i) {
+      t = touches[i], p = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["d" /* touch */])(this, touches, t.identifier);
+      if (g.touch0 && g.touch0[2] === t.identifier) g.touch0[0] = p;
+      else if (g.touch1 && g.touch1[2] === t.identifier) g.touch1[0] = p;
+    }
+    t = g.that.__zoom;
+    if (g.touch1) {
+      var p0 = g.touch0[0], l0 = g.touch0[1],
+          p1 = g.touch1[0], l1 = g.touch1[1],
+          dp = (dp = p1[0] - p0[0]) * dp + (dp = p1[1] - p0[1]) * dp,
+          dl = (dl = l1[0] - l0[0]) * dl + (dl = l1[1] - l0[1]) * dl;
+      t = scale(t, Math.sqrt(dp / dl));
+      p = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2];
+      l = [(l0[0] + l1[0]) / 2, (l0[1] + l1[1]) / 2];
+    }
+    else if (g.touch0) p = g.touch0[0], l = g.touch0[1];
+    else return;
+    g.zoom("touch", constrain(translate(t, p, l), g.extent));
+  }
+
+  function touchended() {
+    var g = gesture(this, arguments),
+        touches = __WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* event */].changedTouches,
+        n = touches.length, i, t;
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__noevent__["b" /* nopropagation */])();
+    if (touchending) clearTimeout(touchending);
+    touchending = setTimeout(function() { touchending = null; }, touchDelay);
+    for (i = 0; i < n; ++i) {
+      t = touches[i];
+      if (g.touch0 && g.touch0[2] === t.identifier) delete g.touch0;
+      else if (g.touch1 && g.touch1[2] === t.identifier) delete g.touch1;
+    }
+    if (g.touch1 && !g.touch0) g.touch0 = g.touch1, delete g.touch1;
+    if (!g.touch0) g.end();
+  }
+
+  zoom.filter = function(_) {
+    return arguments.length ? (filter = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__constant__["a" /* default */])(!!_), zoom) : filter;
+  };
+
+  zoom.extent = function(_) {
+    return arguments.length ? (extent = typeof _ === "function" ? _ : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__constant__["a" /* default */])([[+_[0][0], +_[0][1]], [+_[1][0], +_[1][1]]]), zoom) : extent;
+  };
+
+  zoom.scaleExtent = function(_) {
+    return arguments.length ? (k0 = +_[0], k1 = +_[1], zoom) : [k0, k1];
+  };
+
+  zoom.translateExtent = function(_) {
+    return arguments.length ? (x0 = +_[0][0], x1 = +_[1][0], y0 = +_[0][1], y1 = +_[1][1], zoom) : [[x0, y0], [x1, y1]];
+  };
+
+  zoom.duration = function(_) {
+    return arguments.length ? (duration = +_, zoom) : duration;
+  };
+
+  zoom.interpolate = function(_) {
+    return arguments.length ? (interpolate = _, zoom) : interpolate;
+  };
+
+  zoom.on = function() {
+    var value = listeners.on.apply(listeners, arguments);
+    return value === listeners ? zoom : value;
+  };
+
+  return zoom;
+};
+
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var has = Object.prototype.hasOwnProperty
+  , prefix = '~';
+
+/**
+ * Constructor to create a storage for our `EE` objects.
+ * An `Events` instance is a plain object whose properties are event names.
+ *
+ * @constructor
+ * @api private
+ */
+function Events() {}
+
+//
+// We try to not inherit from `Object.prototype`. In some engines creating an
+// instance in this way is faster than calling `Object.create(null)` directly.
+// If `Object.create(null)` is not supported we prefix the event names with a
+// character to make sure that the built-in object properties are not
+// overridden or used as an attack vector.
+//
+if (Object.create) {
+  Events.prototype = Object.create(null);
+
+  //
+  // This hack is needed because the `__proto__` property is still inherited in
+  // some old browsers like Android 4, iPhone 5.1, Opera 11 and Safari 5.
+  //
+  if (!new Events().__proto__) prefix = false;
+}
+
+/**
+ * Representation of a single event listener.
+ *
+ * @param {Function} fn The listener function.
+ * @param {Mixed} context The context to invoke the listener with.
+ * @param {Boolean} [once=false] Specify if the listener is a one-time listener.
+ * @constructor
+ * @api private
+ */
+function EE(fn, context, once) {
+  this.fn = fn;
+  this.context = context;
+  this.once = once || false;
+}
+
+/**
+ * Minimal `EventEmitter` interface that is molded against the Node.js
+ * `EventEmitter` interface.
+ *
+ * @constructor
+ * @api public
+ */
+function EventEmitter() {
+  this._events = new Events();
+  this._eventsCount = 0;
+}
+
+/**
+ * Return an array listing the events for which the emitter has registered
+ * listeners.
+ *
+ * @returns {Array}
+ * @api public
+ */
+EventEmitter.prototype.eventNames = function eventNames() {
+  var names = []
+    , events
+    , name;
+
+  if (this._eventsCount === 0) return names;
+
+  for (name in (events = this._events)) {
+    if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
+  }
+
+  if (Object.getOwnPropertySymbols) {
+    return names.concat(Object.getOwnPropertySymbols(events));
+  }
+
+  return names;
+};
+
+/**
+ * Return the listeners registered for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Boolean} exists Only check if there are listeners.
+ * @returns {Array|Boolean}
+ * @api public
+ */
+EventEmitter.prototype.listeners = function listeners(event, exists) {
+  var evt = prefix ? prefix + event : event
+    , available = this._events[evt];
+
+  if (exists) return !!available;
+  if (!available) return [];
+  if (available.fn) return [available.fn];
+
+  for (var i = 0, l = available.length, ee = new Array(l); i < l; i++) {
+    ee[i] = available[i].fn;
+  }
+
+  return ee;
+};
+
+/**
+ * Calls each of the listeners registered for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @returns {Boolean} `true` if the event had listeners, else `false`.
+ * @api public
+ */
+EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return false;
+
+  var listeners = this._events[evt]
+    , len = arguments.length
+    , args
+    , i;
+
+  if (listeners.fn) {
+    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
+
+    switch (len) {
+      case 1: return listeners.fn.call(listeners.context), true;
+      case 2: return listeners.fn.call(listeners.context, a1), true;
+      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
+      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
+      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+    }
+
+    for (i = 1, args = new Array(len -1); i < len; i++) {
+      args[i - 1] = arguments[i];
+    }
+
+    listeners.fn.apply(listeners.context, args);
+  } else {
+    var length = listeners.length
+      , j;
+
+    for (i = 0; i < length; i++) {
+      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
+
+      switch (len) {
+        case 1: listeners[i].fn.call(listeners[i].context); break;
+        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
+        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
+        case 4: listeners[i].fn.call(listeners[i].context, a1, a2, a3); break;
+        default:
+          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
+            args[j - 1] = arguments[j];
+          }
+
+          listeners[i].fn.apply(listeners[i].context, args);
+      }
+    }
+  }
+
+  return true;
+};
+
+/**
+ * Add a listener for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {Mixed} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.on = function on(event, fn, context) {
+  var listener = new EE(fn, context || this)
+    , evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) this._events[evt] = listener, this._eventsCount++;
+  else if (!this._events[evt].fn) this._events[evt].push(listener);
+  else this._events[evt] = [this._events[evt], listener];
+
+  return this;
+};
+
+/**
+ * Add a one-time listener for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {Mixed} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.once = function once(event, fn, context) {
+  var listener = new EE(fn, context || this, true)
+    , evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) this._events[evt] = listener, this._eventsCount++;
+  else if (!this._events[evt].fn) this._events[evt].push(listener);
+  else this._events[evt] = [this._events[evt], listener];
+
+  return this;
+};
+
+/**
+ * Remove the listeners of a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn Only remove the listeners that match this function.
+ * @param {Mixed} context Only remove the listeners that have this context.
+ * @param {Boolean} once Only remove one-time listeners.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return this;
+  if (!fn) {
+    if (--this._eventsCount === 0) this._events = new Events();
+    else delete this._events[evt];
+    return this;
+  }
+
+  var listeners = this._events[evt];
+
+  if (listeners.fn) {
+    if (
+         listeners.fn === fn
+      && (!once || listeners.once)
+      && (!context || listeners.context === context)
+    ) {
+      if (--this._eventsCount === 0) this._events = new Events();
+      else delete this._events[evt];
+    }
+  } else {
+    for (var i = 0, events = [], length = listeners.length; i < length; i++) {
+      if (
+           listeners[i].fn !== fn
+        || (once && !listeners[i].once)
+        || (context && listeners[i].context !== context)
+      ) {
+        events.push(listeners[i]);
+      }
+    }
+
+    //
+    // Reset the array, or remove it completely if we have no more listeners.
+    //
+    if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+    else if (--this._eventsCount === 0) this._events = new Events();
+    else delete this._events[evt];
+  }
+
+  return this;
+};
+
+/**
+ * Remove all listeners, or those of the specified event.
+ *
+ * @param {String|Symbol} [event] The event name.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
+  var evt;
+
+  if (event) {
+    evt = prefix ? prefix + event : event;
+    if (this._events[evt]) {
+      if (--this._eventsCount === 0) this._events = new Events();
+      else delete this._events[evt];
+    }
+  } else {
+    this._events = new Events();
+    this._eventsCount = 0;
+  }
+
+  return this;
+};
+
+//
+// Alias methods names because people roll like that.
+//
+EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
+EventEmitter.prototype.addListener = EventEmitter.prototype.on;
+
+//
+// This function doesn't apply anymore.
+//
+EventEmitter.prototype.setMaxListeners = function setMaxListeners() {
+  return this;
+};
+
+//
+// Expose the prefix.
+//
+EventEmitter.prefixed = prefix;
+
+//
+// Allow `EventEmitter` to be imported as module namespace.
+//
+EventEmitter.EventEmitter = EventEmitter;
+
+//
+// Expose the module.
+//
+if (true) {
+  module.exports = EventEmitter;
+}
+
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+var stylesInDom = {},
+	memoize = function(fn) {
+		var memo;
+		return function () {
+			if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+			return memo;
+		};
+	},
+	isOldIE = memoize(function() {
+		return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+	}),
+	getHeadElement = memoize(function () {
+		return document.head || document.getElementsByTagName("head")[0];
+	}),
+	singletonElement = null,
+	singletonCounter = 0,
+	styleElementsInsertedAtTop = [];
+
+module.exports = function(list, options) {
+	if(typeof DEBUG !== "undefined" && DEBUG) {
+		if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the bottom of <head>.
+	if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+	var styles = listToStyles(list);
+	addStylesToDom(styles, options);
+
+	return function update(newList) {
+		var mayRemove = [];
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+		if(newList) {
+			var newStyles = listToStyles(newList);
+			addStylesToDom(newStyles, options);
+		}
+		for(var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+			if(domStyle.refs === 0) {
+				for(var j = 0; j < domStyle.parts.length; j++)
+					domStyle.parts[j]();
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+}
+
+function addStylesToDom(styles, options) {
+	for(var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+		if(domStyle) {
+			domStyle.refs++;
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles(list) {
+	var styles = [];
+	var newStyles = {};
+	for(var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+		if(!newStyles[id])
+			styles.push(newStyles[id] = {id: id, parts: [part]});
+		else
+			newStyles[id].parts.push(part);
+	}
+	return styles;
+}
+
+function insertStyleElement(options, styleElement) {
+	var head = getHeadElement();
+	var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+	if (options.insertAt === "top") {
+		if(!lastStyleElementInsertedAtTop) {
+			head.insertBefore(styleElement, head.firstChild);
+		} else if(lastStyleElementInsertedAtTop.nextSibling) {
+			head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			head.appendChild(styleElement);
+		}
+		styleElementsInsertedAtTop.push(styleElement);
+	} else if (options.insertAt === "bottom") {
+		head.appendChild(styleElement);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement(styleElement) {
+	styleElement.parentNode.removeChild(styleElement);
+	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+	if(idx >= 0) {
+		styleElementsInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement(options) {
+	var styleElement = document.createElement("style");
+	styleElement.type = "text/css";
+	insertStyleElement(options, styleElement);
+	return styleElement;
+}
+
+function createLinkElement(options) {
+	var linkElement = document.createElement("link");
+	linkElement.rel = "stylesheet";
+	insertStyleElement(options, linkElement);
+	return linkElement;
+}
+
+function addStyle(obj, options) {
+	var styleElement, update, remove;
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+		styleElement = singletonElement || (singletonElement = createStyleElement(options));
+		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+	} else if(obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function") {
+		styleElement = createLinkElement(options);
+		update = updateLink.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+			if(styleElement.href)
+				URL.revokeObjectURL(styleElement.href);
+		};
+	} else {
+		styleElement = createStyleElement(options);
+		update = applyToTag.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle(newObj) {
+		if(newObj) {
+			if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+				return;
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag(styleElement, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = styleElement.childNodes;
+		if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+		if (childNodes.length) {
+			styleElement.insertBefore(cssNode, childNodes[index]);
+		} else {
+			styleElement.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag(styleElement, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		styleElement.setAttribute("media", media)
+	}
+
+	if(styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = css;
+	} else {
+		while(styleElement.firstChild) {
+			styleElement.removeChild(styleElement.firstChild);
+		}
+		styleElement.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink(linkElement, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	if(sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = linkElement.href;
+
+	linkElement.href = URL.createObjectURL(blob);
+
+	if(oldSrc)
+		URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(115);
+
+
+/***/ })
+/******/ ]);
+});
 //# sourceMappingURL=scatterplot.js.map
